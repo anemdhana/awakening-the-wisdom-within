@@ -6,7 +6,7 @@
   <title>PSSM Swadhyaya Notes · Pyramid Spiritual Societies Movement</title>
   <link rel="stylesheet" href="css/site.css">
   <style>
-    .search-box { margin: 0 0 22px; position: relative; }
+    .search-box { margin: 0 0 14px; position: relative; }
     .search-box input {
       width: 100%; box-sizing: border-box; padding: 12px 16px 12px 42px;
       font-size: 15px; font-family: Georgia, serif;
@@ -16,6 +16,14 @@
     .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(186, 122, 58, 0.15); }
     .search-box input::placeholder { color: #a08a72; }
     .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--accent); pointer-events: none; }
+    .lang-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; }
+    .lang-filter button {
+      font-family: Georgia, serif; font-size: 13px; padding: 6px 12px; border-radius: 8px;
+      border: 1px solid rgba(186, 122, 58, 0.3); background: #fff; color: var(--ink-muted); cursor: pointer;
+    }
+    .lang-filter button.active {
+      background: #2c1810; color: #f5ebe0; border-color: #2c1810;
+    }
     .collection-group { margin-bottom: 28px; }
     .collection-group:last-of-type { margin-bottom: 8px; }
     .group-title { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 14px; font-weight: 700; color: var(--accent); }
@@ -30,7 +38,7 @@
     .no-results { display: none; text-align: center; padding: 24px 16px; color: var(--ink-muted); font-size: 14.5px; }
     .no-results.visible { display: block; }
     .hub-card h1 { margin-bottom: 4px; }
-    .hub-card .lede { margin-bottom: 18px; }
+    .hub-card .lede { margin-bottom: 14px; }
   </style>
 </head>
 <body>
@@ -43,48 +51,63 @@
 
     <div class="hub-card">
       <h1>Collections</h1>
-      <p class="lede">Study notes from PSSM masters and related teachings. Search or browse by section.</p>
+      <p class="lede">Study notes from PSSM masters. Filter by language or search by title.</p>
 
       <div class="search-box">
         <span class="search-icon">⌕</span>
         <input type="search" id="searchInput" placeholder="Search by title, master, or topic…" autocomplete="off">
       </div>
-      <div id="noResults" class="no-results">No matching pages found. Try a different keyword.</div>
+
+      <div class="lang-filter" id="langFilter" role="group" aria-label="Language filter">
+        <button type="button" class="active" data-lang="all">All</button>
+        <button type="button" data-lang="en">English</button>
+        <button type="button" data-lang="hi">हिन्दी</button>
+        <button type="button" data-lang="te">తెలుగు</button>
+        <button type="button" data-lang="ta">தமிழ்</button>
+      </div>
+
+      <div id="noResults" class="no-results">No matching pages found. Try a different keyword or language.</div>
 
       <div class="collection-group" data-group>
         <p class="group-title">18 Guiding Principles <span>New</span></p>
 
-        <a class="item-card featured" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-complete-guide.html" data-search="complete guide 18 guiding principles practical self reflection checklist">
-          <strong>★ Complete Practical Guide · All 18 Principles</strong>
+        <a class="item-card featured" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-complete-guide.html" data-lang="en" data-search="complete guide 18 guiding principles practical self reflection checklist">
+          <strong>★ Complete Practical Guide · All 18 Principles <span class="lang-tag">EN</span></strong>
           <em>In-depth points, practical actions & daily self-reflection checklist</em>
         </a>
 
-        <a class="item-card featured" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/principles/index.html" data-search="individual principle pages expanded detail reflection images">
-          <strong>★ Individual Principle Pages (1–18)</strong>
+        <a class="item-card featured" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/principles/index.html" data-lang="en" data-search="individual principle pages expanded detail reflection images">
+          <strong>★ Individual Principle Pages (1–18) <span class="lang-tag">EN</span></strong>
           <em>Each principle in its own page — deeper detail, images, remember points & reflection</em>
         </a>
 
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-patriji.html" data-search="patriji 18 guiding principles">
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-patriji.html" data-lang="en" data-search="patriji 18 guiding principles">
           <strong>Brahmarshi Patriji · 18 Guiding Principles <span class="lang-tag">EN</span></strong>
           <em>Core teaching explained by the founder</em>
         </a>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-patriji-te.html" data-search="patriji 18 telugu">
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-patriji-te.html" data-lang="te" data-search="patriji 18 telugu adarsha">
           <strong>బ్రహ్మర్షి పత్రీజీ · 18 ఆదర్శ సూత్రాలు <span class="lang-tag">TE</span></strong>
           <em>మూల సూత్రాలు</em>
         </a>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-suvarna-suvvi.html" data-search="suvarna suvvi 18">
+
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-suvarna-suvvi.html" data-lang="en" data-search="suvarna suvvi 18">
           <strong>Suvarna Suvvi · 18 Guiding Principles <span class="lang-tag">EN</span></strong>
           <em>Deep explanation with stories & practical insights</em>
         </a>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-suvarna-suvvi-te.html" data-search="suvarna suvvi telugu">
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-suvarna-suvvi-hi.html" data-lang="hi" data-search="suvarna suvvi hindi 18 siddhant">
+          <strong>सुवर्णा सुव्वी · 18 सिद्धांत <span class="lang-tag">HI</span></strong>
+          <em>मूल हिंदी सत्र के अनुसार गहरी व्याख्या · लहसुन, अनुभव, गृहस्थ जीवन</em>
+        </a>
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/18-guiding-principles-by-suvarna-suvvi-te.html" data-lang="te" data-search="suvarna suvvi telugu">
           <strong>సువర్ణ సువ్వి · 18 ఆదర్శ సూత్రాలు <span class="lang-tag">TE</span></strong>
           <em>లోతైన వివరణ</em>
         </a>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/pyramid-masters-guidelines.html" data-search="padmavathi guidelines">
+
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/pyramid-masters-guidelines.html" data-lang="en" data-search="padmavathi guidelines">
           <strong>Padmavathi garu · Personal Guidelines <span class="lang-tag">EN</span></strong>
           <em>Yes, smile, self-love, forgiveness & self-check</em>
         </a>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/pyramid-masters-guidelines-te.html" data-search="padmavathi telugu">
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/18%20Guiding%20Principles/pyramid-masters-guidelines-te.html" data-lang="te" data-search="padmavathi telugu">
           <strong>పద్మావతి గారు · వ్యక్తిగత సూచనలు <span class="lang-tag">TE</span></strong>
           <em>యెస్, చిరునవ్వు, సెల్ఫ్-లవ్</em>
         </a>
@@ -92,27 +115,27 @@
 
       <div class="collection-group" data-group>
         <p class="group-title">Brahmarshi Patriji</p>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/pyramid-power.html" data-search="patriji pyramid power pyramid shakti cosmic energy 52 degree secular">
-          <strong>Pyramid Power · పిరమిడ్ శక్తి</strong>
-          <em>Why pyramid energy is central to PSSM · cosmic focus, secular centre, vasana purification</em>
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/pyramid-power.html" data-lang="en" data-search="patriji pyramid power shakti">
+          <strong>Pyramid Power · పిరమిడ్ శక్తి <span class="lang-tag">EN</span></strong>
+          <em>Cosmic focus, secular centre, vasana purification</em>
         </a>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/difficult-family-members.html" data-search="difficult family members">
-          <strong>Difficult Family Members</strong>
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Patriji/difficult-family-members.html" data-lang="en" data-search="difficult family members">
+          <strong>Difficult Family Members <span class="lang-tag">EN</span></strong>
           <em>Communication, attachment, and staying in relationship</em>
         </a>
       </div>
 
       <div class="collection-group" data-group>
         <p class="group-title">Dr. Newton Kondaveti</p>
-        <a class="item-card" href="Master-Speeches/DrNewton/Swasa%20Maha%20Vidya/index.html" data-search="swasa maha vidya newton">
-          <strong>శ్వాస మహావిద్య · Swasa Maha Vidya</strong>
+        <a class="item-card" href="Master-Speeches/DrNewton/Swasa%20Maha%20Vidya/index.html" data-lang="te" data-search="swasa maha vidya newton">
+          <strong>శ్వాస మహావిద్య · Swasa Maha Vidya <span class="lang-tag">TE</span></strong>
           <em>11 days + bonus · full teaching notes</em>
         </a>
-        <a class="item-card" href="Master-Speeches/DrNewton/2026-09-04-Sri-Krishnashtami-Homework.html" data-search="krishna homework">
+        <a class="item-card" href="Master-Speeches/DrNewton/2026-09-04-Sri-Krishnashtami-Homework.html" data-lang="en" data-search="krishna homework">
           <strong>Sri Krishna Homework · Krishnashtami <span class="lang-tag">EN</span></strong>
           <em>The Eight Living Gunas of Sri Krishna</em>
         </a>
-        <a class="item-card" href="Master-Speeches/DrNewton/2026-09-04-Sri-Krishnashtami-Homework-te.html" data-search="krishna telugu">
+        <a class="item-card" href="Master-Speeches/DrNewton/2026-09-04-Sri-Krishnashtami-Homework-te.html" data-lang="te" data-search="krishna telugu">
           <strong>శ్రీ కృష్ణా హోమ్‌వర్క్ <span class="lang-tag">TE</span></strong>
           <em>కృష్ణాష్టమి</em>
         </a>
@@ -120,48 +143,48 @@
 
       <div class="collection-group" data-group>
         <p class="group-title">Other Masters</p>
-        <a class="item-card" href="Master-Speeches/Brahmarshi%20Premnath/conquering-mind-meditation.html" data-search="premnath mind">
-          <strong>Brahmarshi Premnath · Conquering the Mind</strong>
+        <a class="item-card" href="Master-Speeches/Brahmarshi%20Premnath/conquering-mind-meditation.html" data-lang="en" data-search="premnath mind">
+          <strong>Brahmarshi Premnath · Conquering the Mind <span class="lang-tag">EN</span></strong>
           <em>Oneness, Vayu-Putra, practical meditation</em>
         </a>
-        <a class="item-card" href="Master-Speeches/gita-covid-19.html" data-search="gita covid">
-          <strong>Gita · COVID-19</strong>
+        <a class="item-card" href="Master-Speeches/gita-covid-19.html" data-lang="en" data-search="gita covid">
+          <strong>Gita · COVID-19 <span class="lang-tag">EN</span></strong>
           <em>Chapter 12, verses 1–13</em>
         </a>
       </div>
 
       <div class="collection-group" data-group>
         <p class="group-title">Session Schedules</p>
-        <a class="item-card" href="Session-Schedules/21-Day-Meditation-with-Music-PMMA/index.html" data-search="21 day meditation music">
-          <strong>21-Day Meditation with Music · PMMA</strong>
+        <a class="item-card" href="Session-Schedules/21-Day-Meditation-with-Music-PMMA/index.html" data-lang="en" data-search="21 day meditation music">
+          <strong>21-Day Meditation with Music · PMMA <span class="lang-tag">EN</span></strong>
           <em>Nada Yoga, chakras, frequencies</em>
         </a>
       </div>
 
       <div class="collection-group" data-group>
         <p class="group-title">Transformation Journeys</p>
-        <a class="item-card" href="Transformation-Journeys/index.html" data-search="transformation journey">
-          <strong>Person Transformation Journey</strong>
+        <a class="item-card" href="Transformation-Journeys/index.html" data-lang="en" data-search="transformation journey">
+          <strong>Person Transformation Journey <span class="lang-tag">EN</span></strong>
           <em>Lived stories · Vishwa Raiyani and more</em>
         </a>
       </div>
 
       <div class="collection-group" data-group>
         <p class="group-title">Book Reading Notes</p>
-        <a class="item-card" href="Book-Reading-Notes/Soul's%20Journey/souls-journey-after-death-qa.html" data-search="soul journey">
-          <strong>A Soul’s Journey · Life After Death Q&A</strong>
+        <a class="item-card" href="Book-Reading-Notes/Soul's%20Journey/souls-journey-after-death-qa.html" data-lang="en" data-search="soul journey">
+          <strong>A Soul’s Journey · Life After Death Q&A <span class="lang-tag">EN</span></strong>
           <em>Peter Richelieu / Acharya</em>
         </a>
-        <a class="item-card" href="Book-Reading-Notes/Ramtha/closed-mind-vs-opening.html" data-search="ramtha closed mind">
-          <strong>Ramtha · Closed Mind vs Opening the Mind</strong>
+        <a class="item-card" href="Book-Reading-Notes/Ramtha/closed-mind-vs-opening.html" data-lang="en" data-search="ramtha closed mind">
+          <strong>Ramtha · Closed Mind vs Opening the Mind <span class="lang-tag">EN</span></strong>
           <em>From The White Book</em>
         </a>
-        <a class="item-card" href="Book-Reading-Notes/Ramtha/ramtha-fear-transformation.html" data-search="ramtha fear">
-          <strong>Ramtha · Fear Transformation</strong>
+        <a class="item-card" href="Book-Reading-Notes/Ramtha/ramtha-fear-transformation.html" data-lang="en" data-search="ramtha fear">
+          <strong>Ramtha · Fear Transformation <span class="lang-tag">EN</span></strong>
           <em>Working with fear on the path</em>
         </a>
-        <a class="item-card" href="Book-Reading-Notes/Ramtha/ramtha-life-after-death-qa.html" data-search="ramtha life after death">
-          <strong>Ramtha · Life After Death Q&A</strong>
+        <a class="item-card" href="Book-Reading-Notes/Ramtha/ramtha-life-after-death-qa.html" data-lang="en" data-search="ramtha life after death">
+          <strong>Ramtha · Life After Death Q&A <span class="lang-tag">EN</span></strong>
           <em>Questions on the afterlife</em>
         </a>
       </div>
@@ -176,23 +199,39 @@
       const cards = document.querySelectorAll('.item-card');
       const groups = document.querySelectorAll('[data-group]');
       const noResults = document.getElementById('noResults');
-      function filter() {
+      const langBtns = document.querySelectorAll('#langFilter button');
+      let currentLang = 'all';
+
+      function applyFilters() {
         const q = input.value.trim().toLowerCase();
         let visibleCount = 0;
         cards.forEach(card => {
+          const lang = (card.getAttribute('data-lang') || 'en').toLowerCase();
           const text = (card.getAttribute('data-search') || '') + ' ' + card.textContent;
-          const match = !q || text.toLowerCase().includes(q);
-          card.classList.toggle('hidden', !match);
-          if (match) visibleCount++;
+          const langOk = currentLang === 'all' || lang === currentLang;
+          const textOk = !q || text.toLowerCase().includes(q);
+          const show = langOk && textOk;
+          card.classList.toggle('hidden', !show);
+          if (show) visibleCount++;
         });
         groups.forEach(group => {
           const hasVisible = group.querySelector('.item-card:not(.hidden)');
           group.style.display = hasVisible ? '' : 'none';
         });
-        noResults.classList.toggle('visible', visibleCount === 0 && q.length > 0);
+        noResults.classList.toggle('visible', visibleCount === 0);
       }
-      input.addEventListener('input', filter);
-      input.addEventListener('search', filter);
+
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          langBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentLang = btn.getAttribute('data-lang');
+          applyFilters();
+        });
+      });
+
+      input.addEventListener('input', applyFilters);
+      input.addEventListener('search', applyFilters);
     })();
   </script>
 </body>
