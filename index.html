@@ -352,11 +352,11 @@
     const META = {
       patriji: {
         title: "Patriji Teachings",
-        desc: "Brahmarshi Patriji · 18 guiding principles, pyramid power & practical guidelines"
+        desc: "Brahmarshi Patriji · 18 guiding principles, pyramid power and practical guidelines"
       },
       book: {
         title: "Book Reading (Swadhyaya)",
-        desc: "Ramtha · A Soul’s Journey — study notes from sacred reading"
+        desc: "Ramtha · A Soul's Journey — study notes from sacred reading"
       },
       sajjana: {
         title: "Sajjana Sangathya",
@@ -421,7 +421,7 @@
           if (/18 Guiding/i.test(g)) return 0;
           if (/Ramtha/i.test(g)) return 1;
           if (/Soul/i.test(g)) return 2;
-          if (/DrNewton|Newton/i.test(g)) return 1;
+          if (/Newton/i.test(g)) return 1;
           if (/Premnath/i.test(g)) return 2;
           if (/21-Day/i.test(g)) return 1;
           if (/7-Day/i.test(g)) return 2;
@@ -435,7 +435,11 @@
         const block = document.createElement("div");
         const gt = document.createElement("p");
         gt.className = "group-title";
-        gt.innerHTML = g + ' <span>' + groups[g].length + '</span>';
+        const label = document.createTextNode(g + " ");
+        const count = document.createElement("span");
+        count.textContent = String(groups[g].length);
+        gt.appendChild(label);
+        gt.appendChild(count);
         block.appendChild(gt);
         const cards = document.createElement("div");
         cards.className = "cards";
@@ -443,24 +447,21 @@
           const a = document.createElement("a");
           a.className = "item-card" + (it.featured ? " featured" : "");
           a.href = it.href;
-          const tag = LANG_LABEL[it.lang] || "EN";
-          a.innerHTML =
-            "<strong>" + escapeHtml(it.title) +
-            ' <span class="lang-tag">' + tag + "</span></strong>" +
-            "<em>" + escapeHtml(it.sub || "") + "</em>";
+          const strong = document.createElement("strong");
+          strong.appendChild(document.createTextNode(it.title + " "));
+          const tag = document.createElement("span");
+          tag.className = "lang-tag";
+          tag.textContent = LANG_LABEL[it.lang] || "EN";
+          strong.appendChild(tag);
+          const em = document.createElement("em");
+          em.textContent = it.sub || "";
+          a.appendChild(strong);
+          a.appendChild(em);
           cards.appendChild(a);
         });
         block.appendChild(cards);
         resultsEl.appendChild(block);
       });
-    }
-
-    function escapeHtml(s) {
-      return String(s)
-        .replace(/&/g, "&")
-        .replace(/</g, "<")
-        .replace(/>/g, ">")
-        .replace(/"/g, """);
     }
 
     document.querySelectorAll(".nav-item").forEach(btn => {
