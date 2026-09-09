@@ -22,6 +22,8 @@ SECTION_MAP = [
     ("Session Schedules", "schedules"),
 ]
 
+BRAND = "Awakenining the wisdom within"
+
 
 def section_for(path: Path) -> str:
     s = str(path).replace("\\", "/")
@@ -29,6 +31,13 @@ def section_for(path: Path) -> str:
         if s.startswith(prefix + "/") or s == prefix:
             return sec
     return ""
+
+
+def org_for(path: Path) -> str:
+    s = str(path).replace("\\", "/").lower()
+    if ("session classes/" in s or s.startswith("session classes")) and "brahmarshi premnath" not in s:
+        return "qlu"
+    return "pssm"
 
 
 def main() -> None:
@@ -43,7 +52,8 @@ def main() -> None:
         expected_css = "../" * depth + "css/site.css"
         home_href = "../" * depth + "index.html"
         sec = section_for(p)
-        home_href_sec = home_href + (f"?section={sec}" if sec else "")
+        org = org_for(p)
+        home_href_sec = home_href + (f"?org={org}&section={sec}" if sec else f"?org={org}")
 
         def repl_css(m):
             nonlocal css_fixed
@@ -55,7 +65,7 @@ def main() -> None:
                 return f"href={q}{expected_css}{q}"
             return m.group(0)
 
-        text = re.sub(r'href=(["\'"'])([^"\'"']*css/site\.css)\1', repl_css, text)
+        text = re.sub(r"href=(['\"])([^'\"]*css/site\.css)\1", repl_css, text)
 
         if "css/site.css" not in text and re.search(r"<head", text, re.I):
             text = re.sub(
@@ -67,41 +77,38 @@ def main() -> None:
             )
             css_added += 1
 
+        text = re.sub(r"\s*<p class=\"pssm-back-home\"[^>]*>.*?</p>\s*", "\n", text, count=0, flags=re.S | re.I)
+        text = text.replace("PSSM Swadhyaya Notes", BRAND)
+        text = text.replace("PSSM స్వాధ్యాయ నోట్స్", BRAND)
+        text = text.replace("Pyramid Spiritual Societies Movement", BRAND)
+        text = text.replace("Home · PSSM Swadhyaya Notes", f"Home · {BRAND}")
+        text = text.replace("← Home · PSSM Swadhyaya Notes", f"← Home · {BRAND}")
+        text = text.replace("Home · Pyramid Spiritual Societies Movement", f"Home · {BRAND}")
+
         def repl_home(m):
             nonlocal home_fixed
             q, href = m.group(1), m.group(2)
-            if re.fullmatch(r"(?:\.\./)+index\.html", href) or href == "/index.html":
+            if re.fullmatch(r"(?:\.\./)+index\.html(?:\?.*)?", href) or re.fullmatch(r"/index\.html(?:\?.*)?", href):
                 home_fixed += 1
                 return f"href={q}{home_href_sec}{q}"
             return m.group(0)
 
         text = re.sub(
-            r'href=(["\'"'])((?:\.\./)+index\.html|/index\.html)\1',
+            r"href=(['\"])((?:\.\./)+index\.html(?:\?.*)?|/index\.html(?:\?.*)?)\1",
             repl_home,
             text,
         )
 
-        if sec and f"?section={sec}" not in text:
-            home_link = (
-                f'<p class="pssm-back-home" style="margin:0 0 12px;font-size:13px;">'
-                f'<a href="{home_href_sec}">← Home · PSSM Swadhyaya Notes</a></p>'
-            )
-            if 'class="site-wrap"' in text:
-                text = text.replace(
-                    '<div class="site-wrap">',
-                    f'<div class="site-wrap">\n    {home_link}',
-                    1,
-                )
-                home_fixed += 1
-            elif re.search(r"<body[^>]*>", text, re.I):
-                text = re.sub(
-                    r"(<body[^>]*>)",
-                    rf"\1\n  {home_link}",
-                    text,
-                    count=1,
-                    flags=re.I,
-                )
-                home_fixed += 1
+        home_link = (
+            f'<p class="pssm-back-home" style="margin:0 0 12px;font-size:13px;">'
+            f'<a href="{home_href_sec}">← Home · {BRAND}</a></p>'
+        )
+        if 'class="site-wrap"' in text:
+            text = text.replace('<div class="site-wrap">', f'<div class="site-wrap">\n    {home_link}', 1)
+            home_fixed += 1
+        elif re.search(r"<body[^>]*>", text, re.I):
+            text = re.sub(r"(<body[^>]*>)", rf"\1\n  {home_link}", text, count=1, flags=re.I)
+            home_fixed += 1
 
         if text != original:
             p.write_text(text, encoding="utf-8")

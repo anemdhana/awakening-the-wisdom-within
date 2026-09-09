@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PSSM Swadhyaya Notes · Pyramid Spiritual Societies Movement</title>
+  <title>Awakenining the wisdom within</title>
   <link rel="stylesheet" href="css/site.css">
   <style>
     :root {
@@ -50,6 +50,50 @@
       top: 0;
       z-index: 20;
     }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      flex: 1;
+    }
+    .org-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .org-button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.88);
+      border-radius: 12px;
+      padding: 6px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      cursor: pointer;
+      font-family: Georgia, serif;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+    .org-button:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .org-button.active {
+      background: #2c1810;
+      color: #f8efe4;
+      border-color: #2c1810;
+      box-shadow: 0 6px 18px rgba(44,24,16,0.12);
+    }
+    .org-button img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.08));
+    }
     .brand {
       font-weight: 700;
       font-size: 15px;
@@ -57,12 +101,9 @@
       color: var(--heading);
       text-decoration: none;
       line-height: 1.25;
-    }
-    .brand span {
-      display: block;
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--ink-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .lang-pills { display: flex; flex-wrap: wrap; gap: 6px; }
     .lang-pills button {
@@ -215,9 +256,27 @@
   <div class="app">
     <header class="topbar">
       <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
-      <a class="brand" href="index.html">PSSM Swadhyaya Notes
-        <span>Pyramid Spiritual Societies Movement</span>
-      </a>
+      <div class="brand-wrap">
+        <div class="org-switcher" id="orgSwitcher" aria-label="Organization selector">
+          <button type="button" class="org-button active" data-org="pssm" aria-label="PSSM">
+            <img src="https://www.pssmovement.org/wp-content/uploads/2019/04/PSSMovement-Logo.png" alt="PSSM logo">
+            <span>PSSM</span>
+          </button>
+          <button type="button" class="org-button" data-org="qlu" aria-label="QLU">
+            <img src="https://qluglobal.org/qlu_logo.png" alt="QLU logo">
+            <span>QLU</span>
+          </button>
+          <button type="button" class="org-button" data-org="tiw" aria-label="Temple of Inner Wisdom">
+            <img src="https://www.templeofinnerwisdom.org/assets/images/tiw-logo-responsive.svg" alt="Temple of Inner Wisdom logo">
+            <span>Temple</span>
+          </button>
+          <button type="button" class="org-button" data-org="maitri" aria-label="Maitri Bodh">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='32' viewBox='0 0 120 32'%3E%3Crect width='120' height='32' rx='10' fill='%232c1810'/%3E%3Ctext x='60' y='21' text-anchor='middle' style='font:700 12px Georgia, serif; fill:%23f8efe4;'%3EMaitri Bodh%3C/text%3E%3C/svg%3E" alt="Maitri Bodh logo">
+            <span>Maitri</span>
+          </button>
+        </div>
+        <a class="brand" href="index.html">Awakenining the wisdom within</a>
+      </div>
       <div class="lang-pills" id="langPills" role="group" aria-label="Language">
         <button type="button" class="active" data-lang="all">All</button>
         <button type="button" data-lang="en">English</button>
@@ -264,7 +323,7 @@
       </div>
       <div id="results"></div>
       <div class="empty" id="empty">No matching pages. Try another language or keyword.</div>
-      <p class="footer-note">PSSM Swadhyaya Notes · GitHub Pages · Pyramid Spiritual Societies Movement</p>
+      <p class="footer-note">Awakenining the wisdom within</p>
     </main>
   </div>
 
@@ -296,22 +355,47 @@
       }
     };
 
+    const ORG_CONFIG = {
+      pssm: {
+        visibleSections: ["patriji", "book", "sajjana", "classes", "schedules"],
+        defaultSection: "patriji"
+      },
+      qlu: {
+        visibleSections: ["classes"],
+        defaultSection: "classes"
+      },
+      tiw: {
+        visibleSections: [],
+        defaultSection: ""
+      },
+      maitri: {
+        visibleSections: [],
+        defaultSection: ""
+      }
+    };
+
     const LANG_LABEL = { en: "EN", hi: "HI", te: "TE", ta: "TA" };
 
     let section = "patriji";
     let lang = "all";
     let query = "";
+    let currentOrg = "pssm";
+
+    function syncOrgButtonState() {
+      document.querySelectorAll(".org-button").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-org") === currentOrg);
+      });
+    }
 
     // Deep-link: index.html?section=book|patriji|sajjana|classes|schedules
     (function initSectionFromURL() {
       try {
         const params = new URLSearchParams(window.location.search);
         const s = (params.get("section") || "").toLowerCase();
+        const o = (params.get("org") || "pssm").toLowerCase();
+        if (o === "qlu" || o === "tiw" || o === "pssm" || o === "maitri") currentOrg = o;
         if (s && META[s]) {
           section = s;
-          document.querySelectorAll(".nav-item").forEach(b => {
-            b.classList.toggle("active", b.getAttribute("data-section") === s);
-          });
         }
       } catch (e) {}
     })();
@@ -323,15 +407,60 @@
     const searchInput = document.getElementById("searchInput");
     const sidebar = document.getElementById("sidebar");
 
+    function applyOrgVisibility() {
+      const visible = ORG_CONFIG[currentOrg].visibleSections;
+      document.querySelectorAll(".nav-item").forEach(btn => {
+        const key = btn.getAttribute("data-section");
+        const shouldShow = visible.includes(key);
+        btn.style.display = shouldShow ? "" : "none";
+      });
+
+      if (currentOrg === "tiw" || currentOrg === "maitri") {
+        section = "";
+        document.querySelectorAll(".nav-item").forEach(btn => btn.classList.remove("active"));
+        syncOrgButtonState();
+        return;
+      }
+
+      if (!visible.includes(section)) {
+        section = ORG_CONFIG[currentOrg].defaultSection;
+      }
+
+      document.querySelectorAll(".nav-item").forEach(btn => {
+        const isActive = btn.getAttribute("data-section") === section && visible.includes(btn.getAttribute("data-section"));
+        btn.classList.toggle("active", isActive);
+      });
+      syncOrgButtonState();
+    }
+
     function render() {
-      const meta = META[section];
+      if (currentOrg === "tiw") {
+        paneTitle.textContent = "Temple of Inner Wisdom";
+        paneDesc.textContent = "Content coming soon.";
+        searchInput.placeholder = "Search not available";
+        resultsEl.innerHTML = "";
+        emptyEl.textContent = "No content available for Temple of Inner Wisdom yet.";
+        emptyEl.classList.add("show");
+        return;
+      }
+      if (currentOrg === "maitri") {
+        paneTitle.textContent = "Maitri Bodh";
+        paneDesc.textContent = "Content coming soon.";
+        searchInput.placeholder = "Search not available";
+        resultsEl.innerHTML = "";
+        emptyEl.textContent = "No content available for Maitri Bodh yet.";
+        emptyEl.classList.add("show");
+        return;
+      }
+
+      const meta = META[section] || META[ORG_CONFIG[currentOrg].defaultSection];
       paneTitle.textContent = meta.title;
       paneDesc.textContent = meta.desc;
       searchInput.placeholder = "Search in " + meta.title + "…";
 
       const items = DATA[section] || [];
       const q = query.trim().toLowerCase();
-      const filtered = items.filter(it => {
+      let filtered = items.filter(it => {
         const langOk = lang === "all" || it.lang === lang;
         const textOk = !q || (it.search || "").includes(q) ||
           (it.title || "").toLowerCase().includes(q) ||
@@ -339,6 +468,14 @@
           (it.group || "").toLowerCase().includes(q);
         return langOk && textOk;
       });
+
+      if (section === "classes") {
+        if (currentOrg === "pssm") {
+          filtered = filtered.filter(it => /Brahmarshi Premnath/i.test(it.group || it.title || ""));
+        } else if (currentOrg === "qlu") {
+          filtered = filtered.filter(it => !/Brahmarshi Premnath/i.test(it.group || it.title || ""));
+        }
+      }
 
       resultsEl.innerHTML = "";
       if (!filtered.length) {
@@ -402,6 +539,24 @@
       });
     }
 
+    document.querySelectorAll(".org-button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentOrg = btn.getAttribute("data-org");
+        syncOrgButtonState();
+        applyOrgVisibility();
+        searchInput.value = "";
+        query = "";
+        sidebar.classList.remove("open");
+        try {
+          const url = new URL(window.location.href);
+          url.searchParams.set("org", currentOrg);
+          url.searchParams.set("section", section);
+          history.replaceState({}, "", url);
+        } catch (e) {}
+        render();
+      });
+    });
+
     document.querySelectorAll(".nav-item").forEach(btn => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
@@ -412,12 +567,16 @@
         sidebar.classList.remove("open");
         try {
           const url = new URL(window.location.href);
+          url.searchParams.set("org", currentOrg);
           url.searchParams.set("section", section);
           history.replaceState({}, "", url);
         } catch (e) {}
         render();
       });
     });
+
+    applyOrgVisibility();
+    render();
 
     document.querySelectorAll("#langPills button").forEach(btn => {
       btn.addEventListener("click", () => {
