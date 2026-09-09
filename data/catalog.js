@@ -1,0 +1,1 @@
+window.PSSM_CATALOG = {};
