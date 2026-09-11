@@ -37,25 +37,14 @@
     .app {
       display: grid;
       grid-template-columns: var(--sidebar-w) 1fr;
-      grid-template-rows: var(--top-h) 1fr;
+      grid-template-rows: 1fr;
       min-height: 100vh;
       max-width: 1280px;
       margin: 0 auto;
     }
 
     .topbar {
-      grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 0 18px;
-      background: rgba(255, 252, 247, 0.9);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      display: none;
     }
 
     .brand-wrap {
@@ -528,19 +517,19 @@
       const META = {
         patriji: {
           title: "Patriji Teachings",
-          desc: "Brahmarshi Patriji · 18 guiding principles, pyramid power and practical guidelines"
+          desc: "18 Guiding Principles · individual pages, complete guide, Suvarna Suvvi and Padmavathi garu"
         },
         book: {
           title: "Book Reading (Swadhyaya)",
-          desc: "Ramtha · A Soul's Journey — study notes from sacred reading"
+          desc: "Ramtha · closed mind vs opening the mind, fear transformation and life after death Q&A"
         },
         sajjana: {
-          title: "Sajjana Sangathya",
-          desc: "Transformation Journeys — lived stories of change and sangha"
+          title: "Transformation Journeys",
+          desc: "Vishwa Raiyani · life-changing experience and transformation story"
         },
         classes: {
           title: "Session Classes",
-          desc: "Dr. Newton Kondaveti · Brahmarshi Premnath · Gita sessions"
+          desc: "Teachings"
         },
         schedules: {
           title: "Session Schedules",

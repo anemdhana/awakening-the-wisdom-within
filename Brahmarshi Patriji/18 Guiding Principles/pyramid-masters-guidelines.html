@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,11 @@
       --shloka-bg: #fdf8f0;
       --shloka-border: #c9a66b;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Georgia", "Times New Roman", serif;
@@ -24,54 +29,126 @@
       color: var(--ink);
       background: #f4f0ea;
     }
-    .site-wrap { max-width: 820px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
     .site-header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
-      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 0.9rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.75rem;
+      gap: 1rem;
     }
+
     .site-brand {
-      font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
     }
-    .site-brand span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--muted); }
-    nav a { margin-left: 1rem; color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+
+    .site-brand span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    nav a {
+      margin-left: 0;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
     .author-row {
-      display: flex; gap: 1rem; align-items: center; margin: 1.5rem 0 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0 1rem;
     }
+
     .author-row img {
-      width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
       border: 2px solid var(--border);
     }
-    .author-info strong { display: block; font-size: 1.05rem; }
-    .author-info span { font-size: 0.85rem; color: var(--muted); }
-    .eyebrow {
-      font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--accent); margin: 0 0 0.35rem;
+
+    .author-info strong {
+      display: block;
+      font-size: 1.05rem;
     }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+
     h1 {
-      font-size: 1.85rem; line-height: 1.25; margin: 0 0 0.75rem;
+      font-size: 1.85rem;
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
       color: #2c1810;
     }
+
     .intro {
-      font-size: 1.05rem; color: var(--muted); margin-bottom: 1.75rem;
-      border-left: 3px solid var(--shloka-border); padding-left: 1rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
     }
+
     .section-title {
-      font-size: 1.35rem; margin: 2.5rem 0 1rem; padding-bottom: 0.4rem;
-      border-bottom: 2px solid var(--shloka-border); color: #3d2314;
+      font-size: 1.35rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: #3d2314;
     }
+
     .qa-block {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 1.25rem 1.4rem;
       margin-bottom: 1.25rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
+
     .qa-block h3 {
-      margin: 0 0 0.75rem; font-size: 1.12rem; color: #3d2314;
+      margin: 0 0 0.75rem;
+      font-size: 1.12rem;
+      color: #3d2314;
     }
-    .speaker { margin: 0.6rem 0; font-size: 1.02rem; }
+
+    .speaker {
+      margin: 0.6rem 0;
+      font-size: 1.02rem;
+    }
+
     .practical {
       background: #f0f7f4;
       border: 1px dashed #7a9e8a;
@@ -80,7 +157,11 @@
       margin: 1rem 0;
       font-size: 0.98rem;
     }
-    .practical strong { color: #2d5a45; }
+
+    .practical strong {
+      color: #2d5a45;
+    }
+
     .summary-card {
       background: #2c1810;
       color: #f5ebe0;
@@ -89,15 +170,28 @@
       margin: 2.5rem 0 1.5rem;
       line-height: 1.65;
     }
-    .summary-card strong { color: #e8c48a; }
+
+    .summary-card strong {
+      color: #e8c48a;
+    }
+
     .closing {
-      font-size: 0.9rem; color: var(--muted); text-align: center;
-      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
     }
+
     .site-footer {
-      text-align: center; font-size: 0.85rem; color: var(--muted);
-      margin-top: 2rem; padding: 1rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      padding: 1rem 0;
     }
+
     .sutra-list {
       background: var(--shloka-bg);
       border-left: 4px solid var(--shloka-border);
@@ -105,22 +199,26 @@
       margin: 1rem 0;
       border-radius: 0 8px 8px 0;
     }
+
     .sutra-list ol {
       margin: 0.5rem 0 0 1.2rem;
       padding: 0;
     }
+
     .sutra-list li {
       margin-bottom: 0.45rem;
       line-height: 1.5;
     }
+
     .hero-image {
       width: 100%;
       max-width: 640px;
       border-radius: 10px;
       margin: 1.5rem auto;
       display: block;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
+
     .image-caption {
       text-align: center;
       font-size: 0.9rem;
@@ -128,34 +226,37 @@
       margin-top: -0.5rem;
       margin-bottom: 1.5rem;
     }
+
     @media (max-width: 600px) {
-      h1 { font-size: 1.5rem; }
-      .author-row img { width: 56px; height: 56px; }
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="site-wrap">
-    <p class="pssm-back-home" style="margin:0 0 12px;font-size:13px;"><a href="../../index.html?org=pssm&section=patriji">← Home · Awakenining the wisdom within</a></p>
-
-<header class="site-header">
-      <a class="site-brand" href="../../index.html?org=pssm&section=patriji">Awakenining the wisdom within
-        <span>Master Speeches · Brahmarshi Patriji · 18 Guiding Principles</span>
-      </a>
-      <nav>
-        <a href="../../index.html?org=pssm&section=patriji">Home</a>
-        <a href="#summary">Summary</a>
-      </nav>
-    </header>
+    
 
     <article class="post-card">
       <div class="author-row">
-        <img src="https://i.ytimg.com/vi/i7ucFR0gOjc/hqdefault.jpg" alt="Padmavathi garu – Pyramid Masters Personal Guidelines">
+        <img src="https://i.ytimg.com/vi/i7ucFR0gOjc/hqdefault.jpg"
+          alt="Padmavathi garu – Pyramid Masters Personal Guidelines">
         <div class="author-info">
           <strong>Padmavathi garu</strong>
           <span>Dhyana Jagat Live Session · Personal Guidelines for Pyramid Masters</span>
         </div>
-      </div>
+</div>
+<nav>
+        <a href="../../index.html?org=pssm&section=patriji">Home</a>
+        <a href="#summary">Summary</a>
+      </nav>
 
       <p class="eyebrow">Anapanasati · 18 Adarsha Sutras · Self-Check</p>
       <h1>Pyramid Masters – Personal Guidelines & Living the 18 Adarsha Sutras</h1>
@@ -165,7 +266,8 @@
         into clear sections so that every Pyramid Master can use it for daily self-checking and growth.
       </p>
 
-      <img class="hero-image" src="https://i.ytimg.com/vi/i7ucFR0gOjc/maxresdefault.jpg" alt="Session thumbnail – Pyramid Masters Guidelines by Padmavathi garu">
+      <img class="hero-image" src="https://i.ytimg.com/vi/i7ucFR0gOjc/maxresdefault.jpg"
+        alt="Session thumbnail – Pyramid Masters Guidelines by Padmavathi garu">
       <p class="image-caption">Session source: YouTube i7ucFR0gOjc · Speaker: Padmavathi garu · Dhyana Jagat</p>
 
       <!-- ========== SECTION 1 ========== -->
@@ -174,19 +276,26 @@
       <div class="qa-block">
         <h3>Welcome and preparation</h3>
         <p class="speaker">
-          Atmaabhivandanams to all who have joined. Heartfelt thanks to the Dhyana Jagat team members for giving this opportunity.
+          Atmaabhivandanams to all who have joined. Heartfelt thanks to the Dhyana Jagat team members for giving this
+          opportunity.
         </p>
         <p class="speaker">
-          First let us all close our eyes and sit. Masters, interlock the fingers of both hands. If possible cross the legs. Sit in any comfortable, stable posture – chair, sofa or floor – wherever the body is at ease.
+          First let us all close our eyes and sit. Masters, interlock the fingers of both hands. If possible cross the
+          legs. Sit in any comfortable, stable posture – chair, sofa or floor – wherever the body is at ease.
         </p>
         <p class="speaker">
-          Masters, do not think of any form, any shape or any deity. We are all practising Anapanasati meditation. Whatever thoughts arise – cut, cut, cut. Thoughts will keep coming; we must keep cutting them. Chitta-vritti-nirodha through attention on the breath. Our breath itself is our Guru. Let us all place our attention on the breath.
+          Masters, do not think of any form, any shape or any deity. We are all practising Anapanasati meditation.
+          Whatever thoughts arise – cut, cut, cut. Thoughts will keep coming; we must keep cutting them.
+          Chitta-vritti-nirodha through attention on the breath. Our breath itself is our Guru. Let us all place our
+          attention on the breath.
         </p>
         <p class="speaker">
-          Eyes closed – outer world disappears, inner world appears. Let us remain in the inner world. Why do we meditate? To move from mind-level to soul-level, from a lower state to a higher state.
+          Eyes closed – outer world disappears, inner world appears. Let us remain in the inner world. Why do we
+          meditate? To move from mind-level to soul-level, from a lower state to a higher state.
         </p>
         <p class="speaker">
-          After the silent sitting the speaker gently brings everyone out: “Slowly open the eyes… five, four, three, two, one, zero… look outside.”
+          After the silent sitting the speaker gently brings everyone out: “Slowly open the eyes… five, four, three,
+          two, one, zero… look outside.”
         </p>
       </div>
 
@@ -196,10 +305,14 @@
       <div class="qa-block">
         <h3>Self-checking for every Pyramid Master</h3>
         <p class="speaker">
-          Today’s subject is personal guidelines for Pyramid Meditation. Even after years of practice, after attending many Dhyana Mahayagnams, after gathering knowledge, small slips keep happening. We must keep checking ourselves continuously so that we move from higher state to still higher state.
+          Today’s subject is personal guidelines for Pyramid Meditation. Even after years of practice, after attending
+          many Dhyana Mahayagnams, after gathering knowledge, small slips keep happening. We must keep checking
+          ourselves continuously so that we move from higher state to still higher state.
         </p>
         <p class="speaker">
-          Whether one is a senior master or a junior master makes no difference. Patriji has given us the 18 Adarsha Sutras exactly for this self-checking: How is my sadhana? What changes have come in me? How pure has my Vak-kshetram become? How well am I handling my emotions?
+          Whether one is a senior master or a junior master makes no difference. Patriji has given us the 18 Adarsha
+          Sutras exactly for this self-checking: How is my sadhana? What changes have come in me? How pure has my
+          Vak-kshetram become? How well am I handling my emotions?
         </p>
         <p class="speaker">
           In addition to the 18 principles he has also given personal guidelines. Let us examine them one by one.
@@ -212,16 +325,23 @@
       <div class="qa-block">
         <h3>The living example of today’s class itself</h3>
         <p class="speaker">
-          Pyramid Masters are compared by Patriji to pure pearls. We must always remain pure pearls. In every PSSM activity, whether we participate or not, the word “No” should never come out of our mouth. Only “Yes… Yes… Yes…”
+          Pyramid Masters are compared by Patriji to pure pearls. We must always remain pure pearls. In every PSSM
+          activity, whether we participate or not, the word “No” should never come out of our mouth. Only “Yes… Yes…
+          Yes…”
         </p>
         <p class="speaker">
-          Today’s class itself is the best example. At five o’clock Padmavathi garu received a call: “Will you take the class today?” Instantly the mind thought of many other works, yet the word “No” could not be spoken. Why? Because the first personal guideline is: always say Yes, never say No.
+          Today’s class itself is the best example. At five o’clock Padmavathi garu received a call: “Will you take the
+          class today?” Instantly the mind thought of many other works, yet the word “No” could not be spoken. Why?
+          Because the first personal guideline is: always say Yes, never say No.
         </p>
         <p class="speaker">
-          If one is able, one must help. If not able, remain silent. Never speak negatively. Never hurt the feelings of the other person with words. Our Vak-kshetram must remain pure. We must develop the quality of being helpful.
+          If one is able, one must help. If not able, remain silent. Never speak negatively. Never hurt the feelings of
+          the other person with words. Our Vak-kshetram must remain pure. We must develop the quality of being helpful.
         </p>
         <div class="practical">
-          <strong>Practical application:</strong> Whenever any request for service, class or help comes, the first response of a Pyramid Master is “Yes”. Only if genuinely impossible, a soft reason is given – never a flat “No”.
+          <strong>Practical application:</strong> Whenever any request for service, class or help comes, the first
+          response of a Pyramid Master is “Yes”. Only if genuinely impossible, a soft reason is given – never a flat
+          “No”.
         </div>
       </div>
 
@@ -231,10 +351,14 @@
       <div class="qa-block">
         <h3>Even in difficulty the face must radiate joy</h3>
         <p class="speaker">
-          Pyramid Masters must always have a smile playing on the face. Whatever difficulty or problem comes, the face must not become heavy. The joy of Atma-jnana and Brahma-jnana must keep changing our thought patterns so that wherever we go, with whomsoever we speak, the face remains smiling.
+          Pyramid Masters must always have a smile playing on the face. Whatever difficulty or problem comes, the face
+          must not become heavy. The joy of Atma-jnana and Brahma-jnana must keep changing our thought patterns so that
+          wherever we go, with whomsoever we speak, the face remains smiling.
         </p>
         <p class="speaker">
-          People will deliberately try to hurt us with words. Even then the face must remain smiling. Anger, irritation or hatred must never arise. How is this possible? Only through continuous Anapanasati practice. Anapanasati alone purifies the Vak-kshetram and the thought-field.
+          People will deliberately try to hurt us with words. Even then the face must remain smiling. Anger, irritation
+          or hatred must never arise. How is this possible? Only through continuous Anapanasati practice. Anapanasati
+          alone purifies the Vak-kshetram and the thought-field.
         </p>
       </div>
 
@@ -244,16 +368,21 @@
       <div class="qa-block">
         <h3>Personal experience of Padmavathi garu</h3>
         <p class="speaker">
-          In the beginning, when people insulted and abused me, I also cried. Later I left the matter completely. I never opened my mouth even once in retaliation. I simply continued to love them and taught them Anapanasati.
+          In the beginning, when people insulted and abused me, I also cried. Later I left the matter completely. I
+          never opened my mouth even once in retaliation. I simply continued to love them and taught them Anapanasati.
         </p>
         <p class="speaker">
-          Today those very people call me “Padma, my friend… Padma, my friend…” and show deep respect. They know what difficulties I went through. Because I loved them even when they were abusive, they now love me.
+          Today those very people call me “Padma, my friend… Padma, my friend…” and show deep respect. They know what
+          difficulties I went through. Because I loved them even when they were abusive, they now love me.
         </p>
         <p class="speaker">
-          If I had returned enmity with enmity, mental and physical health would have suffered. By forgiving, immense benefits came – physical health, mental joy, and the joy of seeing others also become happy. Difficulties themselves push us into deeper sadhana and automatic silence.
+          If I had returned enmity with enmity, mental and physical health would have suffered. By forgiving, immense
+          benefits came – physical health, mental joy, and the joy of seeing others also become happy. Difficulties
+          themselves push us into deeper sadhana and automatic silence.
         </p>
         <p class="speaker">
-          Right silence means speaking only when necessary and remaining silent when not necessary. That silence, combined with love, changes people.
+          Right silence means speaking only when necessary and remaining silent when not necessary. That silence,
+          combined with love, changes people.
         </p>
       </div>
 
@@ -263,13 +392,17 @@
       <div class="qa-block">
         <h3>Thanking every part of the body and every gift of life</h3>
         <p class="speaker">
-          We must have special affection for ourselves. Every day we must say: “I love myself… I love myself… I love myself.” We must thank every atom, every cell, every organ – from the toes to the sahasrara.
+          We must have special affection for ourselves. Every day we must say: “I love myself… I love myself… I love
+          myself.” We must thank every atom, every cell, every organ – from the toes to the sahasrara.
         </p>
         <p class="speaker">
-          Eyes see only because of the consciousness in them – thank the eyes. Speech happens only because sound arises – thank the Vak. Digestion happens only because of the intestines – thank the stomach. We can sit steadily only because the body has strength – thank the whole body.
+          Eyes see only because of the consciousness in them – thank the eyes. Speech happens only because sound arises
+          – thank the Vak. Digestion happens only because of the intestines – thank the stomach. We can sit steadily
+          only because the body has strength – thank the whole body.
         </p>
         <p class="speaker">
-          Before eating, for one moment thank Nature and the Universe for the food. In every action offer gratitude. Only then do we truly grow.
+          Before eating, for one moment thank Nature and the Universe for the food. In every action offer gratitude.
+          Only then do we truly grow.
         </p>
       </div>
 
@@ -284,13 +417,16 @@
 
         <div class="sutra-list">
           <ol>
-            <li>Practise only Anapanasati and help others practise the same. No complicated Hatha-yoga or Pranayama is required.</li>
+            <li>Practise only Anapanasati and help others practise the same. No complicated Hatha-yoga or Pranayama is
+              required.</li>
             <li>Read books that give true Atma-vijnana (Swadhyaya) and encourage others to read them.</li>
-            <li>Share meditational experiences freely and listen to others’ experiences with attention (Sajjana-sangathya).</li>
+            <li>Share meditational experiences freely and listen to others’ experiences with attention
+              (Sajjana-sangathya).</li>
             <li>Observe silence as much as possible.</li>
             <li>Utilise full-moon and Amavasya nights for intensive group meditation.</li>
             <li>Use pyramid energy wherever possible; every house should have a pyramid.</li>
-            <li>Give up allopathic medicines only after sufficient sadhana has been established; otherwise the name of Pyramid Meditation gets a bad reputation.</li>
+            <li>Give up allopathic medicines only after sufficient sadhana has been established; otherwise the name of
+              Pyramid Meditation gets a bad reputation.</li>
             <li>Never eat meat or eggs; eat only according to need, never according to greed.</li>
             <li>Spend time in pure natural environments – forests, mountains, river-sides.</li>
             <li>Never wear special “spiritual” clothing or sacred marks; remain ordinary and indistinguishable.</li>
@@ -306,7 +442,8 @@
         </div>
 
         <div class="practical">
-          <strong>Practical daily practice:</strong> Every night before sleep, quickly scan the 18 points and ask: “Where did I slip today? Where can I improve tomorrow?” This single habit keeps the pure-pearl quality alive.
+          <strong>Practical daily practice:</strong> Every night before sleep, quickly scan the 18 points and ask:
+          “Where did I slip today? Where can I improve tomorrow?” This single habit keeps the pure-pearl quality alive.
         </div>
       </div>
 
@@ -316,10 +453,12 @@
       <div class="qa-block">
         <h3>All are equal – all are divine souls</h3>
         <p class="speaker">
-          There is no senior or junior among us. All are equal. All are divine soul-forms. We have come to earth only to clear our karma and return to higher lokas. Nobody stays here forever.
+          There is no senior or junior among us. All are equal. All are divine soul-forms. We have come to earth only to
+          clear our karma and return to higher lokas. Nobody stays here forever.
         </p>
         <p class="speaker">
-          Let us love everyone. Let us remain happy and make others happy. “Kalisi unte kalusu sukham” – when we stay together there is collective joy. Let us practise this.
+          Let us love everyone. Let us remain happy and make others happy. “Kalisi unte kalusu sukham” – when we stay
+          together there is collective joy. Let us practise this.
         </p>
         <p class="speaker">
           Heartfelt pranams to the Dhyana Jagat team for this opportunity. Thank you… thank you… thank you so much.
@@ -335,7 +474,8 @@
           • Purify Vak-kshetram – speak only what is necessary, kind and true; otherwise remain silent.<br>
           • Meet abuse with love and Anapanasati teaching; enmity dissolves only through love.<br>
           • Practise daily self-love: thank every organ, every breath, every meal.<br>
-          • Keep the 18 Adarsha Sutras alive through constant self-checking – especially Anapanasati, Swadhyaya, silence, pyramid use, vegetarianism and living as a master.<br>
+          • Keep the 18 Adarsha Sutras alive through constant self-checking – especially Anapanasati, Swadhyaya,
+          silence, pyramid use, vegetarianism and living as a master.<br>
           • Remember: all are equal divine souls. Love all, remain joyful, and make others joyful.
         </p>
       </div>
@@ -353,4 +493,5 @@
     </footer>
   </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,11 @@
       --green: #2d5a45;
       --green-bg: #f0f7f4;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Georgia", "Times New Roman", serif;
@@ -26,46 +31,115 @@
       color: var(--ink);
       background: #f4f0ea;
     }
-    .site-wrap { max-width: 820px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .post-card {
+      padding-top: 0.15rem;
+    }
+
     .site-header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
-      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 0.9rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.75rem;
+      gap: 1rem;
     }
+
     .site-brand {
-      font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
     }
-    .site-brand span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--muted); }
-    nav a { margin-left: 1rem; color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+
+    .site-brand span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: auto;
+      padding-top: 0.15rem;
+    }
+
+    nav a {
+      margin-left: 0;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
     .author-row {
-      display: flex; gap: 1rem; align-items: center; margin: 1.5rem 0 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin: 0.25rem 0 0.8rem;
+      padding-top: 0.15rem;
     }
+
     .author-row img {
-      width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
       border: 2px solid var(--border);
     }
-    .author-info strong { display: block; font-size: 1.05rem; }
-    .author-info span { font-size: 0.85rem; color: var(--muted); }
-    .eyebrow {
-      font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--accent); margin: 0 0 0.35rem;
+
+    .author-info strong {
+      display: block;
+      font-size: 1.05rem;
     }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.3rem;
+    }
+
     h1 {
-      font-size: 1.85rem; line-height: 1.25; margin: 0 0 0.75rem;
+      font-size: 1.65rem;
+      line-height: 1.28;
+      margin: 0 0 0.6rem;
       color: #2c1810;
     }
+
     .intro {
-      font-size: 1.05rem; color: var(--muted); margin-bottom: 1.75rem;
-      border-left: 3px solid var(--shloka-border); padding-left: 1rem;
+      font-size: 0.99rem;
+      color: var(--muted);
+      margin-bottom: 1.35rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
     }
+
     .hero-image {
       width: 100%;
       max-width: 640px;
       border-radius: 10px;
       margin: 1.5rem auto;
       display: block;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
+
     .image-caption {
       text-align: center;
       font-size: 0.9rem;
@@ -73,124 +147,167 @@
       margin-top: -0.5rem;
       margin-bottom: 1.5rem;
     }
+
     .principle {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.4rem 1.5rem;
-      margin-bottom: 1.6rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     }
+
     .principle-num {
       display: inline-block;
       background: #2c1810;
       color: #f5ebe0;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       padding: 3px 10px;
       border-radius: 6px;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
+
     .principle h2 {
-      margin: 0 0 0.75rem;
-      font-size: 1.25rem;
+      margin: 0 0 0.6rem;
+      font-size: 1.12rem;
       color: #3d2314;
       line-height: 1.35;
     }
+
     .core {
-      font-size: 1.02rem;
-      margin-bottom: 1rem;
+      font-size: 0.97rem;
+      margin-bottom: 0.8rem;
       color: var(--ink);
     }
+
     .points {
-      margin: 0 0 1rem;
-      padding-left: 1.2rem;
+      margin: 0 0 0.8rem;
+      padding-left: 1.1rem;
     }
+
     .points li {
-      margin-bottom: 0.45rem;
-      font-size: 0.98rem;
-      line-height: 1.55;
+      margin-bottom: 0.35rem;
+      font-size: 0.94rem;
+      line-height: 1.5;
     }
+
     .practical {
       background: var(--green-bg);
       border: 1px dashed #7a9e8a;
       border-radius: 8px;
-      padding: 0.9rem 1.1rem;
-      margin: 0.9rem 0;
-      font-size: 0.97rem;
+      padding: 0.8rem 0.95rem;
+      margin: 0.7rem 0;
+      font-size: 0.94rem;
     }
-    .practical strong { color: var(--green); }
+
+    .practical strong {
+      color: var(--green);
+    }
+
     .remember {
       background: var(--shloka-bg);
       border-left: 4px solid var(--shloka-border);
-      padding: 0.85rem 1.1rem;
-      margin: 0.9rem 0 0;
+      padding: 0.75rem 0.95rem;
+      margin: 0.75rem 0 0;
       border-radius: 0 8px 8px 0;
-      font-size: 0.97rem;
+      font-size: 0.94rem;
     }
-    .remember strong { color: #6b4a1f; }
+
+    .remember strong {
+      color: #6b4a1f;
+    }
+
     .summary-card {
       background: #2c1810;
       color: #f5ebe0;
       border-radius: 12px;
-      padding: 1.5rem 1.7rem;
-      margin: 2.5rem 0 1.5rem;
-      line-height: 1.65;
+      padding: 1.2rem 1.35rem;
+      margin: 2rem 0 1.25rem;
+      line-height: 1.5;
     }
-    .summary-card strong { color: #e8c48a; }
+
+    .summary-card strong {
+      color: #e8c48a;
+    }
+
     .summary-card ol {
       margin: 0.8rem 0 0;
       padding-left: 1.3rem;
     }
+
     .summary-card li {
       margin-bottom: 0.4rem;
       font-size: 0.98rem;
     }
+
     .closing {
-      font-size: 0.9rem; color: var(--muted); text-align: center;
-      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
     }
+
     .site-footer {
-      text-align: center; font-size: 0.85rem; color: var(--muted);
-      margin-top: 2rem; padding: 1rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      padding: 1rem 0;
     }
+
     .sources {
       font-size: 0.88rem;
       color: var(--muted);
       margin-top: 1.5rem;
       padding: 0.8rem 1rem;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255, 255, 255, 0.6);
       border-radius: 8px;
     }
+
     @media (max-width: 600px) {
-      h1 { font-size: 1.5rem; }
-      .author-row img { width: 56px; height: 56px; }
-      .principle { padding: 1.15rem 1.2rem; }
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .author-row {
+        flex-wrap: wrap;
+      }
+
+      .author-row nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
+
+      .principle {
+        padding: 1.15rem 1.2rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="site-wrap">
-    <p class="pssm-back-home" style="margin:0 0 12px;font-size:13px;"><a href="../../index.html?org=pssm&section=patriji">← Home · Awakenining the wisdom within</a></p>
-
-<header class="site-header">
-      <a class="site-brand" href="../../index.html?org=pssm&section=patriji">Awakenining the wisdom within
-        <span>18 Guiding Principles · Complete Guide</span>
-      </a>
-      <nav>
-        <a href="../../index.html?org=pssm&section=patriji">Home</a>
-        <a href="#daily-check">Daily Check</a>
-      </nav>
-    </header>
-
     <article class="post-card">
       <div class="author-row">
         <img src="https://i.ytimg.com/vi/dD6RZOmt7Cg/hqdefault.jpg" alt="Brahmarshi Patriji – 18 Guiding Principles">
         <div class="author-info">
           <strong>Brahmarshi Patriji</strong>
-          <span>Founder · Awakenining the wisdom within</span>
+          <span>Founder · Pyramid Spiritual Socities Movement</span>
         </div>
-      </div>
+        </div>
+<nav>
+          <a href="../../index.html?org=pssm&section=patriji">Home</a>
+          <a href="#daily-check">Daily Check</a>
+        </nav>
 
       <p class="eyebrow">Anapanasati · 18 Guiding Principles · Complete Practical Guide</p>
       <h1>18 Guiding Principles<br>Complete Practical Guide</h1>
@@ -200,14 +317,17 @@
         Use this page every day for self-reflection, self-checking and steady growth as a Pyramid Master.
       </p>
 
-      <img class="hero-image" src="https://i.ytimg.com/vi/dD6RZOmt7Cg/maxresdefault.jpg" alt="Brahmarshi Patriji speaking on the 18 Guiding Principles">
-      <p class="image-caption">Foundational teaching · Brahmarshi Patriji · Consolidated with insights from Suvarna Suvvi & Padmavathi garu</p>
+      <img class="hero-image" src="https://i.ytimg.com/vi/dD6RZOmt7Cg/maxresdefault.jpg"
+        alt="Brahmarshi Patriji speaking on the 18 Guiding Principles">
+      <p class="image-caption">Foundational teaching · Brahmarshi Patriji · Consolidated with insights from Suvarna
+        Suvvi & Padmavathi garu</p>
 
       <!-- 1 -->
       <div class="principle">
         <div class="principle-num">Principle 1</div>
         <h2>Right Way of Anapanasati – Daily Meditation</h2>
-        <p class="core">Meditation is compulsory every day — rain or shine, pleasure or pain. From age 5 until the last breath of the body.</p>
+        <p class="core">Meditation is compulsory every day — rain or shine, pleasure or pain. From age 5 until the last
+          breath of the body.</p>
         <ul class="points">
           <li>Sit comfortably, interlock fingers, cross feet, close eyes.</li>
           <li>Simply observe the natural, continuous breath. No forcing, no controlling.</li>
@@ -219,24 +339,32 @@
           <li>Meditation prevents unnecessary interference in others’ lives and reduces karma.</li>
           <li>Without daily Anapanasati, all other principles remain incomplete.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Fix a definite daily time. Start with whatever minutes you can and gradually increase. Never skip. The world is a stage; meditation is the time you step off the stage.</div>
-        <div class="remember"><strong>Remember:</strong> “My breath is my Guru. Today I will sit with my breath, no matter what.”</div>
+        <div class="practical"><strong>Practical:</strong> Fix a definite daily time. Start with whatever minutes you
+          can and gradually increase. Never skip. The world is a stage; meditation is the time you step off the stage.
+        </div>
+        <div class="remember"><strong>Remember:</strong> “My breath is my Guru. Today I will sit with my breath, no
+          matter what.”</div>
       </div>
 
       <!-- 2 -->
       <div class="principle">
         <div class="principle-num">Principle 2</div>
         <h2>Read the Right Spiritual Books (Swadhyaya)</h2>
-        <p class="core">God gave two hands not only for work but for holding two books. Continuous Swadhyaya raises the soul.</p>
+        <p class="core">God gave two hands not only for work but for holding two books. Continuous Swadhyaya raises the
+          soul.</p>
         <ul class="points">
-          <li>Not every “spiritual” book uplifts the soul. Stories and Puranas may calm the mind temporarily but do not raise the soul.</li>
-          <li>Read books that give true Atma-vijnana / Soul Science — works of top masters (Seth, Illusions, Autobiography of a Yogi, recommended Western & Eastern masters).</li>
+          <li>Not every “spiritual” book uplifts the soul. Stories and Puranas may calm the mind temporarily but do not
+            raise the soul.</li>
+          <li>Read books that give true Atma-vijnana / Soul Science — works of top masters (Seth, Illusions,
+            Autobiography of a Yogi, recommended Western & Eastern masters).</li>
           <li>Patriji himself rose higher because he read thousands of books.</li>
           <li>Without Swadhyaya, even satsang remains incomplete.</li>
           <li>Keep at least one right book always with you.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Read minimum two pages every day — train, free time, anywhere. Create the habit first; quantity will grow later.</div>
-        <div class="remember"><strong>Remember:</strong> “Today I fed my soul with at least two pages of true wisdom.”</div>
+        <div class="practical"><strong>Practical:</strong> Read minimum two pages every day — train, free time,
+          anywhere. Create the habit first; quantity will grow later.</div>
+        <div class="remember"><strong>Remember:</strong> “Today I fed my soul with at least two pages of true wisdom.”
+        </div>
       </div>
 
       <!-- 3 -->
@@ -246,27 +374,32 @@
         <p class="core">True satsang is the sharing of real spiritual experiences among people who know Truth.</p>
         <ul class="points">
           <li>Sharing does not reduce energy. This is a common myth.</li>
-          <li>Two benefits: (1) Others get inspired and try deeper, (2) You realise we are one — their experience becomes yours.</li>
+          <li>Two benefits: (1) Others get inspired and try deeper, (2) You realise we are one — their experience
+            becomes yours.</li>
           <li>Hearing of long meditations or astral experiences motivates others to attempt more.</li>
           <li>Never compare and feel inferior. Patriji said: “Everyone’s experience is mine because we are one.”</li>
           <li>Listen with full attention and share without pride or fear.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> In every satsang or conversation with another meditator, share at least one genuine experience and listen to one.</div>
-        <div class="remember"><strong>Remember:</strong> “My experience belongs to all. Their experience belongs to me.”</div>
+        <div class="practical"><strong>Practical:</strong> In every satsang or conversation with another meditator,
+          share at least one genuine experience and listen to one.</div>
+        <div class="remember"><strong>Remember:</strong> “My experience belongs to all. Their experience belongs to me.”
+        </div>
       </div>
 
       <!-- 4 -->
       <div class="principle">
         <div class="principle-num">Principle 4</div>
         <h2>Practise Mouna (Silence)</h2>
-        <p class="core">As far as possible, keep the mouth shut. Silence conserves energy and deepens the inner journey.</p>
+        <p class="core">As far as possible, keep the mouth shut. Silence conserves energy and deepens the inner journey.
+        </p>
         <ul class="points">
           <li>Speak only when necessary, kind and true.</li>
           <li>Unnecessary talk drains soul energy.</li>
           <li>Right silence + love changes people more than arguments.</li>
           <li>Silence is a daily practice, not only a retreat activity.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Before speaking, pause and ask: Is it necessary? Is it kind? Is it true? If not, remain silent.</div>
+        <div class="practical"><strong>Practical:</strong> Before speaking, pause and ask: Is it necessary? Is it kind?
+          Is it true? If not, remain silent.</div>
         <div class="remember"><strong>Remember:</strong> “Today I will speak less and listen more.”</div>
       </div>
 
@@ -280,7 +413,8 @@
           <li>Group meditation multiplies the energy field.</li>
           <li>Participate in every possible full-moon and Amavasya group sitting.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Mark full-moon and new-moon dates in your calendar. Keep those evenings free for longer meditation.</div>
+        <div class="practical"><strong>Practical:</strong> Mark full-moon and new-moon dates in your calendar. Keep
+          those evenings free for longer meditation.</div>
         <div class="remember"><strong>Remember:</strong> “I will never miss the energy of the full moon.”</div>
       </div>
 
@@ -288,14 +422,16 @@
       <div class="principle">
         <div class="principle-num">Principle 6</div>
         <h2>Use Pyramid Energy</h2>
-        <p class="core">Sit inside or beneath a pyramid. This is why the movement is called Awakenining the wisdom within.</p>
+        <p class="core">Sit inside or beneath a pyramid. This is why the movement is called Awakenining the wisdom
+          within.</p>
         <ul class="points">
           <li>Pyramid energy multiplies the power of meditation.</li>
           <li>Every house should have at least one small pyramid.</li>
           <li>Construct pyramids everywhere possible.</li>
           <li>Spirituality belongs to metaphysics — beyond ordinary physics yet more real.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Meditate under or inside a pyramid daily. If you don’t have one, arrange for a small pyramid soon.</div>
+        <div class="practical"><strong>Practical:</strong> Meditate under or inside a pyramid daily. If you don’t have
+          one, arrange for a small pyramid soon.</div>
         <div class="remember"><strong>Remember:</strong> “Pyramid + Anapanasati = accelerated growth.”</div>
       </div>
 
@@ -303,14 +439,17 @@
       <div class="principle">
         <div class="principle-num">Principle 7</div>
         <h2>Give Up Medicines – Heal Yourself with Soul Energy</h2>
-        <p class="core">Every disease is self-created because soul energy fell. Therefore it must be self-solved by raising soul energy again.</p>
+        <p class="core">Every disease is self-created because soul energy fell. Therefore it must be self-solved by
+          raising soul energy again.</p>
         <ul class="points">
           <li>Doctors, medicines, surgery and hospitals are not the ultimate solution.</li>
           <li>Meditation, pyramid energy, full-moon energy, books, silence and service are the real medicines.</li>
           <li>When soul energy rises, the problem becomes small and vanishes.</li>
-          <li>Give up allopathic medicines only after sufficient sadhana is established; otherwise the name of Pyramid Meditation suffers.</li>
+          <li>Give up allopathic medicines only after sufficient sadhana is established; otherwise the name of Pyramid
+            Meditation suffers.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> For any new discomfort, first sit in longer meditation for 1–3 days and observe. Use medical help only when truly necessary, while continuing sadhana.</div>
+        <div class="practical"><strong>Practical:</strong> For any new discomfort, first sit in longer meditation for
+          1–3 days and observe. Use medical help only when truly necessary, while continuing sadhana.</div>
         <div class="remember"><strong>Remember:</strong> “My soul energy is my primary medicine.”</div>
       </div>
 
@@ -318,15 +457,18 @@
       <div class="principle">
         <div class="principle-num">Principle 8</div>
         <h2>Strict Vegetarianism & No Garlic</h2>
-        <p class="core">No meat, no birds, no fish, no eggs. Humans are herbivorous. Killing for the belly is anti-spiritual.</p>
+        <p class="core">No meat, no birds, no fish, no eggs. Humans are herbivorous. Killing for the belly is
+          anti-spiritual.</p>
         <ul class="points">
           <li>To be spiritual is to be compassionate. Vegetarianism is practical Ahimsa.</li>
-          <li>Garlic specifically damages the astral body, prevents it from flying, and cuts connection with higher masters.</li>
+          <li>Garlic specifically damages the astral body, prevents it from flying, and cuts connection with higher
+            masters.</li>
           <li>Onion is acceptable; garlic is not for those who want higher connection.</li>
           <li>The movement gives strong peer support for anyone who wants to switch.</li>
           <li>Eat according to need, never according to greed.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Completely stop meat, eggs and garlic. If guests cook with garlic, politely decline or eat only the items free of it.</div>
+        <div class="practical"><strong>Practical:</strong> Completely stop meat, eggs and garlic. If guests cook with
+          garlic, politely decline or eat only the items free of it.</div>
         <div class="remember"><strong>Remember:</strong> “My plate must never contain violence or garlic.”</div>
       </div>
 
@@ -334,13 +476,15 @@
       <div class="principle">
         <div class="principle-num">Principle 9</div>
         <h2>Live Close to Nature</h2>
-        <p class="core">Nature is pure energy. Time spent in forests, mountains and river-sides multiplies energy three times.</p>
+        <p class="core">Nature is pure energy. Time spent in forests, mountains and river-sides multiplies energy three
+          times.</p>
         <ul class="points">
           <li>Whenever possible, leave the house and meditate in pure natural environments.</li>
           <li>Trekking and sitting by rivers are powerful energy practices.</li>
           <li>Do not remain only inside four walls.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> At least once a week, sit for meditation in a park, garden, riverside or open natural space.</div>
+        <div class="practical"><strong>Practical:</strong> At least once a week, sit for meditation in a park, garden,
+          riverside or open natural space.</div>
         <div class="remember"><strong>Remember:</strong> “Nature recharges my soul faster than any indoor place.”</div>
       </div>
 
@@ -348,14 +492,16 @@
       <div class="principle">
         <div class="principle-num">Principle 10</div>
         <h2>No Special Clothing or Body Marks</h2>
-        <p class="core">Remain completely ordinary. Special clothes or marks only display stupidity, never greatness.</p>
+        <p class="core">Remain completely ordinary. Special clothes or marks only display stupidity, never greatness.
+        </p>
         <ul class="points">
           <li>The sun does not need to declare “I am the sun”.</li>
           <li>If real spiritual power is present, people will automatically recognise it.</li>
           <li>Showing off increases followers and binds us further in the cycle of birth and death.</li>
           <li>Dress simply and remain indistinguishable from ordinary people.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Check your wardrobe and body. Remove any item whose only purpose is to announce “I am spiritual”.</div>
+        <div class="practical"><strong>Practical:</strong> Check your wardrobe and body. Remove any item whose only
+          purpose is to announce “I am spiritual”.</div>
         <div class="remember"><strong>Remember:</strong> “I am ordinary outside, extraordinary inside.”</div>
       </div>
 
@@ -363,13 +509,15 @@
       <div class="principle">
         <div class="principle-num">Principle 11</div>
         <h2>Teach Meditation to Children from Early Age</h2>
-        <p class="core">If a child learns meditation early, you need not worry about them later. They will use even a knife or gun rightly.</p>
+        <p class="core">If a child learns meditation early, you need not worry about them later. They will use even a
+          knife or gun rightly.</p>
         <ul class="points">
           <li>Make children independent through meditation from childhood.</li>
           <li>Early Anapanasati builds lifelong spiritual strength and discrimination.</li>
           <li>The next generation must grow up with soul power from the beginning.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Sit with children for a few minutes of simple breath awareness every day. Make it joyful, never forced.</div>
+        <div class="practical"><strong>Practical:</strong> Sit with children for a few minutes of simple breath
+          awareness every day. Make it joyful, never forced.</div>
         <div class="remember"><strong>Remember:</strong> “The greatest gift I can give a child is Anapanasati.”</div>
       </div>
 
@@ -383,25 +531,31 @@
           <li>The words “disciple” and “discipline” do not exist here.</li>
           <li>Everything is of your own accord — you come, stay, learn and teach freely.</li>
           <li>Mastery means command over your own body, mind and intellect.</li>
-          <li>Always think positively and miraculously. Cut negative thoughts yourself; no one else can do it for you.</li>
+          <li>Always think positively and miraculously. Cut negative thoughts yourself; no one else can do it for you.
+          </li>
           <li>All are Masters, all are Friends, all are Gods.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Stop calling yourself a disciple. Stand on your own feet. When any negative thought comes, immediately cut it with “Correct, correct, correct” and return to the breath.</div>
-        <div class="remember"><strong>Remember:</strong> “I am a Master. I take full responsibility for my thoughts and my life.”</div>
+        <div class="practical"><strong>Practical:</strong> Stop calling yourself a disciple. Stand on your own feet.
+          When any negative thought comes, immediately cut it with “Correct, correct, correct” and return to the breath.
+        </div>
+        <div class="remember"><strong>Remember:</strong> “I am a Master. I take full responsibility for my thoughts and
+          my life.”</div>
       </div>
 
       <!-- 13 -->
       <div class="principle">
         <div class="principle-num">Principle 13</div>
         <h2>No Money for Spiritual Teaching</h2>
-        <p class="core">Knowledge and wisdom are the birthright of every human being. Never charge for teaching meditation.</p>
+        <p class="core">Knowledge and wisdom are the birthright of every human being. Never charge for teaching
+          meditation.</p>
         <ul class="points">
           <li>This is a strict thumb rule of PSSM.</li>
           <li>Taking money turns a sacred act of punya into business and cancels the punya.</li>
           <li>Go from village to village, home to home and teach whoever is willing.</li>
           <li>Voluntary donations for the work may be accepted if freely offered, but never demanded.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Whenever you teach or share, keep the energy of free giving. If someone insists on offering, receive it as donation for the larger work, never as fee.</div>
+        <div class="practical"><strong>Practical:</strong> Whenever you teach or share, keep the energy of free giving.
+          If someone insists on offering, receive it as donation for the larger work, never as fee.</div>
         <div class="remember"><strong>Remember:</strong> “I give what I received freely. Knowledge has no price.”</div>
       </div>
 
@@ -409,7 +563,8 @@
       <div class="principle">
         <div class="principle-num">Principle 14</div>
         <h2>No Idol Worship & No Worship of Living Masters</h2>
-        <p class="core">Idols are for inspiration only. Living masters are sources of inspiration, never objects of worship.</p>
+        <p class="core">Idols are for inspiration only. Living masters are sources of inspiration, never objects of
+          worship.</p>
         <ul class="points">
           <li>Seeing Krishna should remind us of the Gita; seeing Rama should remind us of Dharma.</li>
           <li>Worshipping the form itself does nothing.</li>
@@ -417,8 +572,10 @@
           <li>Real bhakti is research into one’s own true form (Swarupa Anusandhana) through meditation.</li>
           <li>No one is higher or lower. All are equal divine souls.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> If you feel inspired by someone, try to become like them through your own sadhana. Do not put them on a pedestal or yourself below.</div>
-        <div class="remember"><strong>Remember:</strong> “The Divine is inside me. I meet it through my own breath.”</div>
+        <div class="practical"><strong>Practical:</strong> If you feel inspired by someone, try to become like them
+          through your own sadhana. Do not put them on a pedestal or yourself below.</div>
+        <div class="remember"><strong>Remember:</strong> “The Divine is inside me. I meet it through my own breath.”
+        </div>
       </div>
 
       <!-- 15 -->
@@ -433,7 +590,8 @@
           <li>Even great masters had problems; they solved them themselves.</li>
           <li>As knowledge grows, the very way of looking at problems changes.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> When a problem appears, first sit longer in Anapanasati instead of immediately asking others or worrying. Watch what solution emerges from inside.</div>
+        <div class="practical"><strong>Practical:</strong> When a problem appears, first sit longer in Anapanasati
+          instead of immediately asking others or worrying. Watch what solution emerges from inside.</div>
         <div class="remember"><strong>Remember:</strong> “I own this problem. My meditation will dissolve it.”</div>
       </div>
 
@@ -441,7 +599,8 @@
       <div class="principle">
         <div class="principle-num">Principle 16</div>
         <h2>Live a Happy Family Life – The Middle Path</h2>
-        <p class="core">Do not renounce the world. Living in the family while walking the path of meditation is the highest and fastest way.</p>
+        <p class="core">Do not renounce the world. Living in the family while walking the path of meditation is the
+          highest and fastest way.</p>
         <ul class="points">
           <li>Sannyasa may take 100 births; family life with meditation can give everything in one birth.</li>
           <li>Participate fully in family joys, spend time with children, remain balanced.</li>
@@ -449,23 +608,28 @@
           <li>Do not become serious or withdrawn in the name of spirituality.</li>
           <li>Enjoy normal sexual life and care for fellow human and animal beings.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Be fully present with family. Laugh, play, share meals. Let meditation make you more loving and joyful, never dry or distant.</div>
-        <div class="remember"><strong>Remember:</strong> “My family is my first field of practice. Happiness at home is part of the path.”</div>
+        <div class="practical"><strong>Practical:</strong> Be fully present with family. Laugh, play, share meals. Let
+          meditation make you more loving and joyful, never dry or distant.</div>
+        <div class="remember"><strong>Remember:</strong> “My family is my first field of practice. Happiness at home is
+          part of the path.”</div>
       </div>
 
       <!-- 17 -->
       <div class="principle">
         <div class="principle-num">Principle 17</div>
         <h2>Establish Meditation Centres Everywhere</h2>
-        <p class="core">Every Pyramid Master must become available. Put up a board: “Meditation is taught here – Free.”</p>
+        <p class="core">Every Pyramid Master must become available. Put up a board: “Meditation is taught here – Free.”
+        </p>
         <ul class="points">
           <li>You do not need a big building. Even one room in your house can become a centre.</li>
           <li>Teach whatever you know — ABC or A to Z.</li>
           <li>When neighbours also meditate, the whole atmosphere becomes divine and protects your growth.</li>
           <li>Every home should become a centre; every centre is a temple.</li>
-          <li>This is how the movement spreads across the entire earth. The final goal: all 7 billion souls become masters of meditation.</li>
+          <li>This is how the movement spreads across the entire earth. The final goal: all 7 billion souls become
+            masters of meditation.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Decide a day and time every week when anyone can come to your home (or a fixed place) for free Anapanasati introduction. Start small and be consistent.</div>
+        <div class="practical"><strong>Practical:</strong> Decide a day and time every week when anyone can come to your
+          home (or a fixed place) for free Anapanasati introduction. Start small and be consistent.</div>
         <div class="remember"><strong>Remember:</strong> “I am available. Meditation is taught here free.”</div>
       </div>
 
@@ -473,15 +637,18 @@
       <div class="principle">
         <div class="principle-num">Principle 18</div>
         <h2>Write and Publish Your Experiences</h2>
-        <p class="core">Patriji waited one full year for this last principle. Whoever builds pyramids and writes their experiences has a confirmed seat in Satyaloka.</p>
+        <p class="core">Patriji waited one full year for this last principle. Whoever builds pyramids and writes their
+          experiences has a confirmed seat in Satyaloka.</p>
         <ul class="points">
           <li>Your book will live even after you leave the body and will guide thousands.</li>
           <li>When you feel you have become a complete Master, write your book.</li>
           <li>Every Master should eventually document their transformation and insights.</li>
           <li>Writing clarifies your own understanding and becomes a gift to future seekers.</li>
         </ul>
-        <div class="practical"><strong>Practical:</strong> Start a simple notebook or digital file today. After important sittings or realisations, write a few lines. Over years this becomes your book.</div>
-        <div class="remember"><strong>Remember:</strong> “My experiences are not only for me. One day they will help many.”</div>
+        <div class="practical"><strong>Practical:</strong> Start a simple notebook or digital file today. After
+          important sittings or realisations, write a few lines. Over years this becomes your book.</div>
+        <div class="remember"><strong>Remember:</strong> “My experiences are not only for me. One day they will help
+          many.”</div>
       </div>
 
       <!-- DAILY CHECKLIST -->
@@ -501,7 +668,7 @@
           <li>Did I move one small step closer to starting or supporting a centre / writing my experiences?</li>
         </ol>
         <p style="margin-top:1rem">Where I slipped today → I will improve tomorrow.<br>
-        This single habit keeps the pure-pearl quality alive.</p>
+          This single habit keeps the pure-pearl quality alive.</p>
       </div>
 
       <div class="sources">
@@ -524,4 +691,5 @@
     </footer>
   </div>
 </body>
+
 </html>

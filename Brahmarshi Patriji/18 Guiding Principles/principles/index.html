@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,76 +8,192 @@
   <link rel="stylesheet" href="../../../css/site.css">
   <style>
     :root {
-      --ink: #1a1a1a; --muted: #555; --accent: #8b4513; --border: #e8e0d5;
-      --shloka-border: #c9a66b; --card: #fff;
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #8b4513;
+      --border: #e8e0d5;
+      --shloka-border: #c9a66b;
+      --card: #fff;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Georgia, serif; line-height: 1.7; color: var(--ink); background: #f4f0ea; }
-    .site-wrap { max-width: 820px; margin: 0 auto; padding: 0 1rem 3rem; }
-    .site-header { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
-    .site-brand { font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
-    .site-brand span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--muted); }
-    nav a { margin-left: 1rem; color: var(--accent); text-decoration: none; font-size: 0.95rem; }
-    h1 { font-size: 1.75rem; color: #2c1810; margin: 0 0 0.5rem; }
-    .intro { color: var(--muted); border-left: 3px solid var(--shloka-border); padding-left: 1rem; margin-bottom: 1.75rem; }
-    .principle-list { list-style: none; padding: 0; margin: 0; }
-    .principle-list li { margin-bottom: 0.6rem; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #f4f0ea;
+    }
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 0.9rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.75rem;
+      gap: 1rem;
+    }
+
+    .site-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .site-brand span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    nav a {
+      margin-left: 0;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      color: #2c1810;
+      margin: 0 0 0.5rem;
+    }
+
+    .intro {
+      color: var(--muted);
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .principle-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .principle-list li {
+      margin-bottom: 0.6rem;
+    }
+
     .principle-list a {
-      display: flex; align-items: center; gap: 0.9rem;
-      padding: 0.85rem 1rem; background: var(--card); border: 1px solid var(--border);
-      border-radius: 10px; text-decoration: none; color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.85rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--ink);
       transition: border-color 0.15s;
     }
-    .principle-list a:hover { border-color: var(--accent); }
-    .num {
-      flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px;
-      background: #2c1810; color: #f5ebe0; display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 0.9rem;
+
+    .principle-list a:hover {
+      border-color: var(--accent);
     }
-    .principle-list strong { display: block; font-size: 1rem; color: #3d2314; }
-    .principle-list em { font-style: normal; font-size: 0.88rem; color: var(--muted); }
-    .site-footer { text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding: 1rem 0; }
+
+    .num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #2c1810;
+      color: #f5ebe0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .principle-list strong {
+      display: block;
+      font-size: 1rem;
+      color: #3d2314;
+    }
+
+    .principle-list em {
+      font-style: normal;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      padding: 1rem 0;
+    }
   </style>
 </head>
+
 <body>
   <div class="site-wrap">
-    <p class="pssm-back-home" style="margin:0 0 12px;font-size:13px;"><a href="../../../index.html?org=pssm&section=patriji">← Home · Awakenining the wisdom within</a></p>
-
-<header class="site-header">
-      <a class="site-brand" href="../../../index.html?org=pssm&section=patriji">Awakenining the wisdom within
-        <span>18 Guiding Principles · Individual Pages</span>
-      </a>
-      <nav>
-        <a href="../../../index.html?org=pssm&section=patriji">Home</a>
-        <a href="../18-guiding-principles-complete-guide.html">Full Guide</a>
-      </nav>
-    </header>
-
     <h1>18 Guiding Principles</h1>
-    <p class="intro">Each principle in its own page — with deeper detail, practical steps, reflection questions and a focused image. Open any principle for daily study and self-check.</p>
+    <p class="intro">Each principle in its own page — with deeper detail, practical steps, reflection questions and a
+      focused image. Open any principle for daily study and self-check.</p>
 
     <ul class="principle-list">
-      <li><a href="principle-01-anapanasati.html"><span class="num">1</span><span><strong>Right Way of Anapanasati</strong><em>Daily meditation · breath as Guru</em></span></a></li>
-      <li><a href="principle-02-swadhyaya.html"><span class="num">2</span><span><strong>Right Spiritual Books (Swadhyaya)</strong><em>Feed the soul with true wisdom</em></span></a></li>
-      <li><a href="principle-03-share-experiences.html"><span class="num">3</span><span><strong>Share Meditation Experiences</strong><em>True satsang · inspire and be inspired</em></span></a></li>
-      <li><a href="principle-04-mouna.html"><span class="num">4</span><span><strong>Practise Mouna (Silence)</strong><em>Conserve energy · pure speech</em></span></a></li>
-      <li><a href="principle-05-full-moon.html"><span class="num">5</span><span><strong>Full-Moon Energy & Group Meditation</strong><em>Harvest lunar power</em></span></a></li>
-      <li><a href="principle-06-pyramid.html"><span class="num">6</span><span><strong>Use Pyramid Energy</strong><em>Multiply the power of meditation</em></span></a></li>
-      <li><a href="principle-07-self-heal.html"><span class="num">7</span><span><strong>Heal Yourself with Soul Energy</strong><em>Raise energy · dissolve disease</em></span></a></li>
-      <li><a href="principle-08-vegetarian.html"><span class="num">8</span><span><strong>Strict Vegetarianism & No Garlic</strong><em>Ahimsa · protect the astral body</em></span></a></li>
-      <li><a href="principle-09-nature.html"><span class="num">9</span><span><strong>Live Close to Nature</strong><em>Pure energy · threefold recharge</em></span></a></li>
-      <li><a href="principle-10-ordinary.html"><span class="num">10</span><span><strong>No Special Clothing or Marks</strong><em>Remain ordinary · power speaks itself</em></span></a></li>
-      <li><a href="principle-11-children.html"><span class="num">11</span><span><strong>Teach Children from Early Age</strong><em>Gift of Anapanasati to the next generation</em></span></a></li>
-      <li><a href="principle-12-live-as-master.html"><span class="num">12</span><span><strong>Live as a Master</strong><em>Never as a disciple · own your power</em></span></a></li>
-      <li><a href="principle-13-no-money.html"><span class="num">13</span><span><strong>No Money for Spiritual Teaching</strong><em>Knowledge is free · give freely</em></span></a></li>
-      <li><a href="principle-14-no-worship.html"><span class="num">14</span><span><strong>No Idol or Living-Master Worship</strong><em>Inspiration only · Swarupa Anusandhana</em></span></a></li>
-      <li><a href="principle-15-own-problems.html"><span class="num">15</span><span><strong>Solve Your Own Problems</strong><em>Own responsibility · raise soul power</em></span></a></li>
-      <li><a href="principle-16-family-life.html"><span class="num">16</span><span><strong>Happy Family Life – Middle Path</strong><em>Fastest road to liberation</em></span></a></li>
-      <li><a href="principle-17-centres.html"><span class="num">17</span><span><strong>Establish Meditation Centres</strong><em>Become available · spread the light</em></span></a></li>
-      <li><a href="principle-18-write-experiences.html"><span class="num">18</span><span><strong>Write and Publish Experiences</strong><em>Leave a living guide for others</em></span></a></li>
+      <li><a href="principle-01-anapanasati.html"><span class="num">1</span><span><strong>Right Way of
+              Anapanasati</strong><em>Daily meditation · breath as Guru</em></span></a></li>
+      <li><a href="principle-02-swadhyaya.html"><span class="num">2</span><span><strong>Right Spiritual Books
+              (Swadhyaya)</strong><em>Feed the soul with true wisdom</em></span></a></li>
+      <li><a href="principle-03-share-experiences.html"><span class="num">3</span><span><strong>Share Meditation
+              Experiences</strong><em>True satsang · inspire and be inspired</em></span></a></li>
+      <li><a href="principle-04-mouna.html"><span class="num">4</span><span><strong>Practise Mouna
+              (Silence)</strong><em>Conserve energy · pure speech</em></span></a></li>
+      <li><a href="principle-05-full-moon.html"><span class="num">5</span><span><strong>Full-Moon Energy & Group
+              Meditation</strong><em>Harvest lunar power</em></span></a></li>
+      <li><a href="principle-06-pyramid.html"><span class="num">6</span><span><strong>Use Pyramid
+              Energy</strong><em>Multiply the power of meditation</em></span></a></li>
+      <li><a href="principle-07-self-heal.html"><span class="num">7</span><span><strong>Heal Yourself with Soul
+              Energy</strong><em>Raise energy · dissolve disease</em></span></a></li>
+      <li><a href="principle-08-vegetarian.html"><span class="num">8</span><span><strong>Strict Vegetarianism & No
+              Garlic</strong><em>Ahimsa · protect the astral body</em></span></a></li>
+      <li><a href="principle-09-nature.html"><span class="num">9</span><span><strong>Live Close to
+              Nature</strong><em>Pure energy · threefold recharge</em></span></a></li>
+      <li><a href="principle-10-ordinary.html"><span class="num">10</span><span><strong>No Special Clothing or
+              Marks</strong><em>Remain ordinary · power speaks itself</em></span></a></li>
+      <li><a href="principle-11-children.html"><span class="num">11</span><span><strong>Teach Children from Early
+              Age</strong><em>Gift of Anapanasati to the next generation</em></span></a></li>
+      <li><a href="principle-12-live-as-master.html"><span class="num">12</span><span><strong>Live as a
+              Master</strong><em>Never as a disciple · own your power</em></span></a></li>
+      <li><a href="principle-13-no-money.html"><span class="num">13</span><span><strong>No Money for Spiritual
+              Teaching</strong><em>Knowledge is free · give freely</em></span></a></li>
+      <li><a href="principle-14-no-worship.html"><span class="num">14</span><span><strong>No Idol or Living-Master
+              Worship</strong><em>Inspiration only · Swarupa Anusandhana</em></span></a></li>
+      <li><a href="principle-15-own-problems.html"><span class="num">15</span><span><strong>Solve Your Own
+              Problems</strong><em>Own responsibility · raise soul power</em></span></a></li>
+      <li><a href="principle-16-family-life.html"><span class="num">16</span><span><strong>Happy Family Life – Middle
+              Path</strong><em>Fastest road to liberation</em></span></a></li>
+      <li><a href="principle-17-centres.html"><span class="num">17</span><span><strong>Establish Meditation
+              Centres</strong><em>Become available · spread the light</em></span></a></li>
+      <li><a href="principle-18-write-experiences.html"><span class="num">18</span><span><strong>Write and Publish
+              Experiences</strong><em>Leave a living guide for others</em></span></a></li>
     </ul>
 
     <footer class="site-footer">Awakenining the wisdom within · 18 Guiding Principles · Individual Pages</footer>
   </div>
 </body>
+
 </html>
