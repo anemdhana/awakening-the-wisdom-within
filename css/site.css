@@ -230,7 +230,7 @@ a {
   padding-bottom: 6px;
 }
 
-.post-card > p {
+.post-card>p {
   margin: 0 0 14px;
   font-size: 15px;
   line-height: 1.7;
@@ -463,6 +463,7 @@ a {
 }
 
 @media (max-width: 480px) {
+
   .post-card,
   .hub-card {
     padding: 20px 16px 28px;
