@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" href="../../css/site.css">
   <meta charset="UTF-8">
@@ -16,7 +17,11 @@
       --shloka-bg: #fdf8f0;
       --shloka-border: #c9a66b;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Georgia", "Times New Roman", serif;
@@ -24,46 +29,91 @@
       color: var(--ink);
       background: #f4f0ea;
     }
-    .site-wrap { max-width: 820px; margin: 0 auto; padding: 0 1rem 3rem; }
-    .author-row {
-      display: flex; gap: 1rem; align-items: center; margin: 1.5rem 0 1rem;
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
     }
+
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0 1rem;
+    }
+
     .author-row img {
-      width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
       border: 2px solid var(--border);
     }
-    .author-info strong { display: block; font-size: 1.05rem; }
-    .author-info span { font-size: 0.85rem; color: var(--muted); }
-    .eyebrow {
-      font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--accent); margin: 0 0 0.35rem;
+
+    .author-info strong {
+      display: block;
+      font-size: 1.05rem;
     }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+
     h1 {
-      font-size: 1.75rem; line-height: 1.25; margin: 0 0 0.75rem;
+      font-size: 1.75rem;
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
       color: #2c1810;
     }
+
     .intro {
-      font-size: 1.05rem; color: var(--muted); margin-bottom: 1.75rem;
-      border-left: 3px solid var(--shloka-border); padding-left: 1rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
     }
+
     .section-title {
-      font-size: 1.3rem; margin: 2.4rem 0 1rem; padding-bottom: 0.4rem;
-      border-bottom: 2px solid var(--shloka-border); color: #3d2314;
+      font-size: 1.3rem;
+      margin: 2.4rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: #3d2314;
     }
+
     .qa-block {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 1.2rem 1.35rem;
       margin-bottom: 1.2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
+
     .qa-block h3 {
-      margin: 0 0 0.7rem; font-size: 1.1rem; color: #3d2314;
+      margin: 0 0 0.7rem;
+      font-size: 1.1rem;
+      color: #3d2314;
     }
-    .speaker, .answer, .question {
-      margin: 0.55rem 0; font-size: 1.02rem;
+
+    .speaker,
+    .answer,
+    .question {
+      margin: 0.55rem 0;
+      font-size: 1.02rem;
     }
+
     .highlight {
       background: var(--shloka-bg);
       border-left: 4px solid var(--shloka-border);
@@ -72,6 +122,7 @@
       border-radius: 0 6px 6px 0;
       font-size: 1.02rem;
     }
+
     .practical {
       background: #f0f7f4;
       border: 1px dashed #7a9e8a;
@@ -80,7 +131,11 @@
       margin: 1rem 0;
       font-size: 0.98rem;
     }
-    .practical strong { color: #2d5a45; }
+
+    .practical strong {
+      color: #2d5a45;
+    }
+
     .summary-card {
       background: #2c1810;
       color: #f5ebe0;
@@ -89,26 +144,130 @@
       margin: 2.5rem 0 1.5rem;
       line-height: 1.65;
     }
-    .summary-card strong { color: #e8c48a; }
-    .closing {
-      font-size: 0.9rem; color: var(--muted); text-align: center;
-      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+
+    .summary-card strong {
+      color: #e8c48a;
     }
+
+    .closing {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
     @media (max-width: 600px) {
-      h1 { font-size: 1.45rem; }
-      .author-row img { width: 56px; height: 56px; }
+      h1 {
+        font-size: 1.45rem;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  </style>
+
+  <style>
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .post-card {
+      padding-top: 0.15rem;
+    }
+
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin: 0.25rem 0 0.8rem;
+      padding-top: 0.15rem;
+    }
+
+    .author-row img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(186, 122, 58, 0.28);
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .author-row nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+
+    .author-row nav a {
+      margin-left: 0;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.3rem;
+    }
+
+    .post-card h1 {
+      margin: 0 0 0.6rem;
+      font-size: 1.7rem;
+      line-height: 1.28;
+    }
+
+    .intro {
+      margin-bottom: 1.35rem;
+    }
+
+    @media (max-width: 600px) {
+      .author-row {
+        flex-wrap: wrap;
+      }
+
+      .author-row nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="site-wrap">
-<article class="post-card">
+    <article class="post-card">
       <div class="author-row">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1EIT_ySCjTWN-q2iiqaRkl0pjZiVkB_qYphQ_pYemCpRLUMXUOQZvuMdiAcZGTkt8JrmaVSTjxZHdr91Js21H_DnBQk0sdo41tc7oWAd9flaxZUlUtfERmpabp42rNkDPiYssw7g2barLrBAs-2cuqfkVjO23ERy9oB_oUnavLutLoCCH_HAB8ELaKluk/s960/NewtonKondaveti.jpg" alt="Dr. Newton Kondaveti">
+        <img
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1EIT_ySCjTWN-q2iiqaRkl0pjZiVkB_qYphQ_pYemCpRLUMXUOQZvuMdiAcZGTkt8JrmaVSTjxZHdr91Js21H_DnBQk0sdo41tc7oWAd9flaxZUlUtfERmpabp42rNkDPiYssw7g2barLrBAs-2cuqfkVjO23ERy9oB_oUnavLutLoCCH_HAB8ELaKluk/s960/NewtonKondaveti.jpg"
+          alt="Dr. Newton Kondaveti">
         <div class="author-info">
           <strong>Dr. Newton Kondaveti</strong>
           <span>Founder, Quantum Life University · Wake-up Call 2023 · Day 1</span>
         </div>
+
+        <nav>
+          <a href="../../index.html?org=qlu&section=classes">Home</a>
+        </nav>
       </div>
 
       <p class="eyebrow">Wake-up Call 2023 · Nine Days of Abundance · Day 1</p>
@@ -123,13 +282,22 @@
       <h2 class="section-title">1. Opening – Auspicious Beginning &amp; Theme</h2>
       <div class="qa-block">
         <p class="speaker">
-          Wonderful friends. Happy Ganesh Chaturthi. Some of us celebrated yesterday and some of us are continuing to celebrate today and for the next nine days till the immersion. It is an auspicious moment. As citizens of Bharat Desh, Ganesha represents so many things for us – success, prosperity, abundance, spirituality, wisdom. This Divine Force represents something very special for all of us.
+          Wonderful friends. Happy Ganesh Chaturthi. Some of us celebrated yesterday and some of us are continuing to
+          celebrate today and for the next nine days till the immersion. It is an auspicious moment. As citizens of
+          Bharat Desh, Ganesha represents so many things for us – success, prosperity, abundance, spirituality, wisdom.
+          This Divine Force represents something very special for all of us.
         </p>
         <p class="speaker">
-          We started this program called Wake-up Call last year. The theme then was simply “waking up” – waking up from deep slumber, from laziness, from several things. Today the theme of these nine days is <strong>Abundance</strong> – the state of abundance, claiming our Birthright, the abundant state of being.
+          We started this program called Wake-up Call last year. The theme then was simply “waking up” – waking up from
+          deep slumber, from laziness, from several things. Today the theme of these nine days is
+          <strong>Abundance</strong> – the state of abundance, claiming our Birthright, the abundant state of being.
         </p>
         <p class="speaker">
-          All of us would like to become abundant beings. Nobody wants limitation. Our soul, the God-consciousness inside us, always seeks abundance because the soul itself is abundant. There is no limitation for the soul. It is vast, unlimited, beyond time and space, beyond expression. Every soul is abundant. The only thing is physicalising, manifesting that abundance in the physical plane. If we can live as an abundant being in the physical way, then it brings fulfilment.
+          All of us would like to become abundant beings. Nobody wants limitation. Our soul, the God-consciousness
+          inside us, always seeks abundance because the soul itself is abundant. There is no limitation for the soul. It
+          is vast, unlimited, beyond time and space, beyond expression. Every soul is abundant. The only thing is
+          physicalising, manifesting that abundance in the physical plane. If we can live as an abundant being in the
+          physical way, then it brings fulfilment.
         </p>
       </div>
 
@@ -137,19 +305,30 @@
       <h2 class="section-title">2. The Quarryman Story – The Cycle of Dissatisfaction</h2>
       <div class="qa-block">
         <p class="speaker">
-          Many of us think abundance means only money. There are billionaires and millionaires who still have scarcity consciousness. They feel lack inside; they are dissatisfied with what they have.
+          Many of us think abundance means only money. There are billionaires and millionaires who still have scarcity
+          consciousness. They feel lack inside; they are dissatisfied with what they have.
         </p>
         <p class="speaker">
-          I tell a story about a quarryman who breaks stones day and night, sometimes even in the hot summer, so that he can eat. He thinks: “If I am a rich businessman who has all comforts, all three meals a day, then my life would be great. I will be very satisfied.”
+          I tell a story about a quarryman who breaks stones day and night, sometimes even in the hot summer, so that he
+          can eat. He thinks: “If I am a rich businessman who has all comforts, all three meals a day, then my life
+          would be great. I will be very satisfied.”
         </p>
         <p class="speaker">
-          An angel appears and says, “So be it.” He becomes a businessman living in a high-storey apartment. Looking down from the window he sees a queen (or king) going in procession with many people attending. He thinks, “If I become a king my life will be great.” The angel makes him a king.
+          An angel appears and says, “So be it.” He becomes a businessman living in a high-storey apartment. Looking
+          down from the window he sees a queen (or king) going in procession with many people attending. He thinks, “If
+          I become a king my life will be great.” The angel makes him a king.
         </p>
         <p class="speaker">
-          As a king he looks at the hot sun burning everyone and thinks, “If I become the bright sun in the sky my life will be great.” He becomes the sun. Then he sees a cloud that prevents the sun from reaching the desert land and thinks the cloud is more powerful. He becomes a cloud. Then he sees a big rock that is not affected by the rain and thinks the rock is more powerful. He becomes a rock. Finally he finds a quarryman breaking the stones and realises that the quarryman is more powerful than the rock. He comes back to his original form and is finally satisfied.
+          As a king he looks at the hot sun burning everyone and thinks, “If I become the bright sun in the sky my life
+          will be great.” He becomes the sun. Then he sees a cloud that prevents the sun from reaching the desert land
+          and thinks the cloud is more powerful. He becomes a cloud. Then he sees a big rock that is not affected by the
+          rain and thinks the rock is more powerful. He becomes a rock. Finally he finds a quarryman breaking the stones
+          and realises that the quarryman is more powerful than the rock. He comes back to his original form and is
+          finally satisfied.
         </p>
         <div class="highlight">
-          Many people are always dissatisfied with what they already have. There is so much dissatisfaction and unhappiness about the base state of being – who they are and what they are.
+          Many people are always dissatisfied with what they already have. There is so much dissatisfaction and
+          unhappiness about the base state of being – who they are and what they are.
         </div>
       </div>
 
@@ -157,13 +336,20 @@
       <h2 class="section-title">3. Holistic Abundance – Not Only Money</h2>
       <div class="qa-block">
         <p class="speaker">
-          In India we talk about Ashta Lakshmis – the eight forms of prosperity. Even if you have a lot of money, if you have difficult, painful relationships you will suffer; you will not feel abundance at all. Even though you have lots of money, if you do not have well-being you will not really appreciate your money.
+          In India we talk about Ashta Lakshmis – the eight forms of prosperity. Even if you have a lot of money, if you
+          have difficult, painful relationships you will suffer; you will not feel abundance at all. Even though you
+          have lots of money, if you do not have well-being you will not really appreciate your money.
         </p>
         <p class="speaker">
-          Money is just one of the aspects of abundance. You need to have enough money, but there is no limit to how much some people want. They want to become millionaires, then billionaires – it is never satisfying. There is a basic dissatisfaction in the physical plane.
+          Money is just one of the aspects of abundance. You need to have enough money, but there is no limit to how
+          much some people want. They want to become millionaires, then billionaires – it is never satisfying. There is
+          a basic dissatisfaction in the physical plane.
         </p>
         <p class="speaker">
-          Paramahansa Yogananda talks about material contentment and spiritual dissatisfaction. Material contentment is a very good state. You need to be dissatisfied about your spiritual evolution – that acts as an impetus, a trigger: “I need to meditate, I need to learn, I need to progress spiritually.” But materially we need to feel contentment.
+          Paramahansa Yogananda talks about material contentment and spiritual dissatisfaction. Material contentment is
+          a very good state. You need to be dissatisfied about your spiritual evolution – that acts as an impetus, a
+          trigger: “I need to meditate, I need to learn, I need to progress spiritually.” But materially we need to feel
+          contentment.
         </p>
       </div>
 
@@ -171,16 +357,26 @@
       <h2 class="section-title">4. First Principle – Inner Abundance Attracts Outer Abundance</h2>
       <div class="qa-block">
         <p class="speaker">
-          Before we manifest anything in the outside plane – external abundance, physical abundance, financial abundance – we need to recognise the state of abundance within us, inside us, in our own inner being.
+          Before we manifest anything in the outside plane – external abundance, physical abundance, financial abundance
+          – we need to recognise the state of abundance within us, inside us, in our own inner being.
         </p>
         <p class="speaker">
-          Many of us attract temporarily all the good things, but along with abundance all the challenges also come. You open the portals, you get a lot of money; along with it so many challenges come and you will not know how to face them. People become jealous, friends stop speaking, income-tax issues arise. That is why what is most important is to have the experience of <strong>inner abundance</strong> before we attract the outer abundance. Then you can sail through the abundance or the challenges; you can hold everything that comes along with physical abundance.
+          Many of us attract temporarily all the good things, but along with abundance all the challenges also come. You
+          open the portals, you get a lot of money; along with it so many challenges come and you will not know how to
+          face them. People become jealous, friends stop speaking, income-tax issues arise. That is why what is most
+          important is to have the experience of <strong>inner abundance</strong> before we attract the outer abundance.
+          Then you can sail through the abundance or the challenges; you can hold everything that comes along with
+          physical abundance.
         </p>
         <div class="highlight">
-          If you only want Lakshmi Mata into your home she will not stay for a long time; one day she leaves. But if you first invite and welcome Saraswati Mata, she will stay and both will come – they are like twin aspects.
+          If you only want Lakshmi Mata into your home she will not stay for a long time; one day she leaves. But if you
+          first invite and welcome Saraswati Mata, she will stay and both will come – they are like twin aspects.
         </div>
         <p class="speaker">
-          The inner abundance, the spiritual growth that you achieve, is the most essential thing. Everything else that we accumulate or earn will go away; it will not stay forever. But one treasure which will stay with you even when you reach your deathbed and even after death is this inner treasure – the wisdom, the spiritual growth, the state of being that you achieved.
+          The inner abundance, the spiritual growth that you achieve, is the most essential thing. Everything else that
+          we accumulate or earn will go away; it will not stay forever. But one treasure which will stay with you even
+          when you reach your deathbed and even after death is this inner treasure – the wisdom, the spiritual growth,
+          the state of being that you achieved.
         </p>
       </div>
 
@@ -188,10 +384,18 @@
       <h2 class="section-title">5. Lakshmi, Saraswati, Parvati – Service, Wisdom, Energy</h2>
       <div class="qa-block">
         <p class="speaker">
-          In the book <em>Thousand Seeds of Joy</em> by Ananda Karunesh there is beautiful information about the deities. Parvati Mata represents meditation and energy. Through meditation that energy gets activated and reaches the third eye (Ajna). From there we get the wisdom of the soul – not just intellectual or bookish wisdom. Theoretical knowledge helps only to one extent; beyond that you need your own experiences of the soul that you gain through practice.
+          In the book <em>Thousand Seeds of Joy</em> by Ananda Karunesh there is beautiful information about the
+          deities. Parvati Mata represents meditation and energy. Through meditation that energy gets activated and
+          reaches the third eye (Ajna). From there we get the wisdom of the soul – not just intellectual or bookish
+          wisdom. Theoretical knowledge helps only to one extent; beyond that you need your own experiences of the soul
+          that you gain through practice.
         </p>
         <p class="speaker">
-          Lakshmi Mata represents service. When you are doing service, you don’t even need to ask – money will flow. Lakshmi Mata becomes very happy. Whether you work in an office, as a doctor, engineer, farmer or government employee, if the quality of your service is high it attracts Lakshmi Mata’s attention. Spiritual service is known as the highest service because you are helping others cross the cycle of birth and death. Lakshmi Mata definitely comes.
+          Lakshmi Mata represents service. When you are doing service, you don’t even need to ask – money will flow.
+          Lakshmi Mata becomes very happy. Whether you work in an office, as a doctor, engineer, farmer or government
+          employee, if the quality of your service is high it attracts Lakshmi Mata’s attention. Spiritual service is
+          known as the highest service because you are helping others cross the cycle of birth and death. Lakshmi Mata
+          definitely comes.
         </p>
       </div>
 
@@ -199,13 +403,23 @@
       <h2 class="section-title">6. What is the Inner State of Abundance?</h2>
       <div class="qa-block">
         <p class="speaker">
-          How can we recognise the inner state of abundance? It is a state in which you are positioned – the stance of your Consciousness. Many of us, when something hits us in the physical plane, immediately go into low states; we feel lack, scarcity, poverty consciousness, sadness. But with sadhana, with practice, one can achieve a state of consciousness where, whatever is happening around you – trouble in relationships, bankruptcy in finances – you remain like a mountain. You are shaken in the physical plane but still unshakable in your inner being. You have not identified with what is happening around you; you are identified with a new identity within you – Soul Consciousness, God Consciousness, Divine Consciousness within you.
+          How can we recognise the inner state of abundance? It is a state in which you are positioned – the stance of
+          your Consciousness. Many of us, when something hits us in the physical plane, immediately go into low states;
+          we feel lack, scarcity, poverty consciousness, sadness. But with sadhana, with practice, one can achieve a
+          state of consciousness where, whatever is happening around you – trouble in relationships, bankruptcy in
+          finances – you remain like a mountain. You are shaken in the physical plane but still unshakable in your inner
+          being. You have not identified with what is happening around you; you are identified with a new identity
+          within you – Soul Consciousness, God Consciousness, Divine Consciousness within you.
         </p>
         <div class="highlight">
-          True abundance is spiritual abundance. Financial abundance is only one of the things. After you achieve this inner state of abundance, you become a magnet; everything manifests for you, often unasked and unintended.
+          True abundance is spiritual abundance. Financial abundance is only one of the things. After you achieve this
+          inner state of abundance, you become a magnet; everything manifests for you, often unasked and unintended.
         </div>
         <p class="speaker">
-          From childhood we are programmed that we must earn money. We are not taught how to stay joyful, how to live with joy and happiness. Everyone is running after money and still there is so much dissatisfaction. After having money many people feel completely messed up; they cannot even sleep. Money is only one aspect of abundance.
+          From childhood we are programmed that we must earn money. We are not taught how to stay joyful, how to live
+          with joy and happiness. Everyone is running after money and still there is so much dissatisfaction. After
+          having money many people feel completely messed up; they cannot even sleep. Money is only one aspect of
+          abundance.
         </p>
       </div>
 
@@ -213,16 +427,28 @@
       <h2 class="section-title">7. Poverty Consciousness vs Prosperity Consciousness</h2>
       <div class="qa-block">
         <p class="speaker">
-          From childhood many of us have internalised beliefs that create limitations. Nobody wants ill-health, yet we experience sickness. Nobody wants suffering in relationships, yet troubled relationships appear. We are taught “we create our own reality,” yet sometimes what we consciously intend does not happen; something else happens.
+          From childhood many of us have internalised beliefs that create limitations. Nobody wants ill-health, yet we
+          experience sickness. Nobody wants suffering in relationships, yet troubled relationships appear. We are taught
+          “we create our own reality,” yet sometimes what we consciously intend does not happen; something else happens.
         </p>
         <p class="speaker">
-          The reason is deep inner resistance. Deep down we feel “I don’t deserve.” There is lack of self-worth, lack of self-appreciation, lack of self-confidence. When we lack these things in the conscious plane we try to compensate by overdoing outside – seeking appreciation, praise and compliments from others. But even those compliments do not reach deep inside the heart because we have not appreciated ourselves.
+          The reason is deep inner resistance. Deep down we feel “I don’t deserve.” There is lack of self-worth, lack of
+          self-appreciation, lack of self-confidence. When we lack these things in the conscious plane we try to
+          compensate by overdoing outside – seeking appreciation, praise and compliments from others. But even those
+          compliments do not reach deep inside the heart because we have not appreciated ourselves.
         </p>
         <p class="speaker">
-          This lack of self-knowingness comes because we do not know who we really are. We have not connected to our deeper selves. The reptilian brain keeps saying “you are not safe, people will betray you.” If we connect beyond the brain, beyond the mind, to the soul, then self-appreciation and self-knowingness arise. Louise Hay speaks of Prosperity Consciousness versus Poverty Consciousness. Many of us have more than 70 % poverty consciousness because our identity is defined by limitations. The real identity is the soul – the eternal, uncorrupted, undisturbed Consciousness entity that is all the time within us.
+          This lack of self-knowingness comes because we do not know who we really are. We have not connected to our
+          deeper selves. The reptilian brain keeps saying “you are not safe, people will betray you.” If we connect
+          beyond the brain, beyond the mind, to the soul, then self-appreciation and self-knowingness arise. Louise Hay
+          speaks of Prosperity Consciousness versus Poverty Consciousness. Many of us have more than 70 % poverty
+          consciousness because our identity is defined by limitations. The real identity is the soul – the eternal,
+          uncorrupted, undisturbed Consciousness entity that is all the time within us.
         </p>
         <div class="practical">
-          <strong>Practical recognition:</strong> Look at your own life situations. Observe how much prosperity-consciousness quotient versus poverty-consciousness quotient you are carrying. The more you identify with the unlimited soul, the more the outer limitations lose their power.
+          <strong>Practical recognition:</strong> Look at your own life situations. Observe how much
+          prosperity-consciousness quotient versus poverty-consciousness quotient you are carrying. The more you
+          identify with the unlimited soul, the more the outer limitations lose their power.
         </div>
       </div>
 
@@ -230,10 +456,15 @@
       <h2 class="section-title">8. Second Principle – Inner Resistance Sabotages Manifestation</h2>
       <div class="qa-block">
         <p class="speaker">
-          The second important principle: inner resistance prevents you, sabotages whatever intentions you want to manifest. You want something and at the same time you do not want it. Conscious mind wants it; subconsciously there is fear. There is a productive thought and a counter-productive thought that pushes you back.
+          The second important principle: inner resistance prevents you, sabotages whatever intentions you want to
+          manifest. You want something and at the same time you do not want it. Conscious mind wants it; subconsciously
+          there is fear. There is a productive thought and a counter-productive thought that pushes you back.
         </p>
         <p class="speaker">
-          Attachment styles formed from the mother’s womb onwards (secure, anxious, etc.) also shape how we relate to abundance and safety. Practice is needed. There are many challenges and dramas in the physical plane. Temptations come. We need impeccability and unbending intent – the word from Carlos Castaneda / shamanic literature – moving forward with intention and putting it into action, not just planning.
+          Attachment styles formed from the mother’s womb onwards (secure, anxious, etc.) also shape how we relate to
+          abundance and safety. Practice is needed. There are many challenges and dramas in the physical plane.
+          Temptations come. We need impeccability and unbending intent – the word from Carlos Castaneda / shamanic
+          literature – moving forward with intention and putting it into action, not just planning.
         </p>
       </div>
 
@@ -241,13 +472,21 @@
       <h2 class="section-title">9. Sagar Manthan, Vishuddhi &amp; the Third Eye – Bottle of Abundance</h2>
       <div class="qa-block">
         <p class="speaker">
-          In the story of the churning of the ocean, first Halahala (poison) comes. We need tolerance, patience; hold it, do not spit it out on others, do not project it, do not swallow it in a way that harms you. Purify it. A meditator learns to witness everything, stays in the middle, in the witness state. Suddenly you are transported beyond duality, beyond the five elemental nature, into the third eye.
+          In the story of the churning of the ocean, first Halahala (poison) comes. We need tolerance, patience; hold
+          it, do not spit it out on others, do not project it, do not swallow it in a way that harms you. Purify it. A
+          meditator learns to witness everything, stays in the middle, in the witness state. Suddenly you are
+          transported beyond duality, beyond the five elemental nature, into the third eye.
         </p>
         <p class="speaker">
-          The third eye is a bottle of abundance. All desires will be fulfilled. From here you receive Amrita and the other treasures that came from the churning. You recognise the deathless, immortal nature of the soul – not that you will live in this physical body for thousands of years, but that the soul never dies. From the third eye you witness your own self – not the personality, but the Consciousness that is running this body, the sensory organs, the intelligence, the buddhi. That soul is revealed.
+          The third eye is a bottle of abundance. All desires will be fulfilled. From here you receive Amrita and the
+          other treasures that came from the churning. You recognise the deathless, immortal nature of the soul – not
+          that you will live in this physical body for thousands of years, but that the soul never dies. From the third
+          eye you witness your own self – not the personality, but the Consciousness that is running this body, the
+          sensory organs, the intelligence, the buddhi. That soul is revealed.
         </p>
         <div class="highlight">
-          Once you reach this inner abundant state you do not even need to intend “I want money, I want a good relationship…” Everything that is best for you will come to your doorsteps.
+          Once you reach this inner abundant state you do not even need to intend “I want money, I want a good
+          relationship…” Everything that is best for you will come to your doorsteps.
         </div>
       </div>
 
@@ -260,10 +499,14 @@
         <ul>
           <li><strong>Omnipresent</strong> – all-pervasive, everywhere, beyond time and space.</li>
           <li><strong>Omnipotent</strong> – all-powerful; it has every capacity.</li>
-          <li><strong>Omniscient</strong> – all-knowing; it knows the entire creation because the soul was never born and never dies.</li>
+          <li><strong>Omniscient</strong> – all-knowing; it knows the entire creation because the soul was never born
+            and never dies.</li>
         </ul>
         <p class="speaker">
-          If we know this Soul, then we are an abundant being. How to know this? Not from books, not from listening to any guide or Guru alone. Listening will not make you experience it. Only by our own sincere practice – bringing the mind to a thought-free state, extinguishing the subconscious chatter – does it happen. That happens in dhyana, in the meditation state.
+          If we know this Soul, then we are an abundant being. How to know this? Not from books, not from listening to
+          any guide or Guru alone. Listening will not make you experience it. Only by our own sincere practice –
+          bringing the mind to a thought-free state, extinguishing the subconscious chatter – does it happen. That
+          happens in dhyana, in the meditation state.
         </p>
       </div>
 
@@ -271,19 +514,34 @@
       <h2 class="section-title">11. The Practice – Anapanasati, Rhythm &amp; 40-Day Mandala</h2>
       <div class="qa-block">
         <p class="speaker">
-          Rituals have their beauty in duality, but rituals alone will not make us experience the thought-free state. You need to journey inside, close your eyes, go within, stop the monkey mind with consistent regular practice.
+          Rituals have their beauty in duality, but rituals alone will not make us experience the thought-free state.
+          You need to journey inside, close your eyes, go within, stop the monkey mind with consistent regular practice.
         </p>
         <p class="speaker">
-          Practice is needed every day. Take out some time – maybe one hour, two times or three times (morning, afternoon, evening). As humans we need a rhythm. Once we build the rhythm it becomes much easier. There must be a minimum time of practice till the boiling point is reached. If you meditate only ten minutes, by the time thoughts settle you open your eyes; you have not reached the boiling point. Minimum around 40 minutes (or at least a sustained period) is needed. Sometimes go a little more – one hour; maximum three hours is not required for most householders.
+          Practice is needed every day. Take out some time – maybe one hour, two times or three times (morning,
+          afternoon, evening). As humans we need a rhythm. Once we build the rhythm it becomes much easier. There must
+          be a minimum time of practice till the boiling point is reached. If you meditate only ten minutes, by the time
+          thoughts settle you open your eyes; you have not reached the boiling point. Minimum around 40 minutes (or at
+          least a sustained period) is needed. Sometimes go a little more – one hour; maximum three hours is not
+          required for most householders.
         </p>
         <p class="speaker">
-          A great master, the Guru of Swami Deshikagiri, worked in his office daytime and meditated at night till retirement and reached great spiritual heights. “I don’t have time” is an excuse. Those who really want to know themselves create the time.
+          A great master, the Guru of Swami Deshikagiri, worked in his office daytime and meditated at night till
+          retirement and reached great spiritual heights. “I don’t have time” is an excuse. Those who really want to
+          know themselves create the time.
         </p>
         <div class="practical">
-          <strong>40-day Mandala Deeksha:</strong> In India we do many deekshas for 21 or 40 days. Anything we practice for a minimum of 40 days brings certain results. If you break the practice in the middle you start from the beginning again. Commit to at least 40 continuous days so that you reach the abundant nature of yourself.
+          <strong>40-day Mandala Deeksha:</strong> In India we do many deekshas for 21 or 40 days. Anything we practice
+          for a minimum of 40 days brings certain results. If you break the practice in the middle you start from the
+          beginning again. Commit to at least 40 continuous days so that you reach the abundant nature of yourself.
         </div>
         <p class="speaker">
-          Simple practice taught by my Guru Brahmashreeji – Anapanasati: sit in a comfortable posture, clasp the hands, close the eyes, notice the in-breath and the out-breath, the slight pause between inhalation and exhalation. Follow the natural normal breathing rhythm. Thoughts may come and go; disidentify, do not run after them; keep observing the breath. Slowly the mind becomes empty and silent. Notice the changes. Just be with your breath. Be still. Be a witness. Then connect to the one who is observing the breath – the inner abundant being beyond time, space and expression.
+          Simple practice taught by my Guru Brahmashreeji – Anapanasati: sit in a comfortable posture, clasp the hands,
+          close the eyes, notice the in-breath and the out-breath, the slight pause between inhalation and exhalation.
+          Follow the natural normal breathing rhythm. Thoughts may come and go; disidentify, do not run after them; keep
+          observing the breath. Slowly the mind becomes empty and silent. Notice the changes. Just be with your breath.
+          Be still. Be a witness. Then connect to the one who is observing the breath – the inner abundant being beyond
+          time, space and expression.
         </p>
       </div>
 
@@ -291,10 +549,18 @@
       <h2 class="section-title">12. Ganesha – The Auspicious Energy of the Nine Days</h2>
       <div class="qa-block">
         <p class="speaker">
-          This is such an auspicious time – Vinayaka Chavithi. Ganesha is a total of energy. In India we always begin any work by chanting Vinayaka’s name. There are stories in the Ganesh Purana that can seem confusing – how can the son perform the marriage of Parvati and Shiva when he is not yet born? Because the Para-Shakti wanted to manifest in the form of Maha Ganapati first; then Maha Ganapati took birth. He said he would not be born through the normal birth process but would just manifest. The two forms of Ganapati point to the all-pervading energy-consciousness.
+          This is such an auspicious time – Vinayaka Chavithi. Ganesha is a total of energy. In India we always begin
+          any work by chanting Vinayaka’s name. There are stories in the Ganesh Purana that can seem confusing – how can
+          the son perform the marriage of Parvati and Shiva when he is not yet born? Because the Para-Shakti wanted to
+          manifest in the form of Maha Ganapati first; then Maha Ganapati took birth. He said he would not be born
+          through the normal birth process but would just manifest. The two forms of Ganapati point to the all-pervading
+          energy-consciousness.
         </p>
         <p class="speaker">
-          Our aim in these nine days is holistic abundance – not just one aspect. Some people have everything but no time; they are always rushing, no time for family, no time for joy, no time for meditation. Abundance in all aspects is what we are aiming at. First spiritual abundance; then we re-create that spiritual abundance in the physical plane and experience it in all aspects.
+          Our aim in these nine days is holistic abundance – not just one aspect. Some people have everything but no
+          time; they are always rushing, no time for family, no time for joy, no time for meditation. Abundance in all
+          aspects is what we are aiming at. First spiritual abundance; then we re-create that spiritual abundance in the
+          physical plane and experience it in all aspects.
         </p>
       </div>
 
@@ -302,15 +568,20 @@
       <h2 class="section-title">13. Closing Intention &amp; Group Meditation</h2>
       <div class="qa-block">
         <p class="speaker">
-          Let us all intend to achieve this Prosperity Consciousness. Nobody is stopping us from reaching the inner joy. Even a person with cancer or body pains can still reach the inner joy if they do not identify only with the physical body. Identify temporarily, watch, witness the body and physical life, and go within.
+          Let us all intend to achieve this Prosperity Consciousness. Nobody is stopping us from reaching the inner joy.
+          Even a person with cancer or body pains can still reach the inner joy if they do not identify only with the
+          physical body. Identify temporarily, watch, witness the body and physical life, and go within.
         </p>
         <p class="speaker">
-          Ramana Maharshi, even while undergoing surgery without anaesthesia for a sarcoma, never identified; he remained joyful because he had already reached that abundant state. The goal is Sat-Chit-Ananda – eternal consciousness, eternal bliss, unbounded and unlimited.
+          Ramana Maharshi, even while undergoing surgery without anaesthesia for a sarcoma, never identified; he
+          remained joyful because he had already reached that abundant state. The goal is Sat-Chit-Ananda – eternal
+          consciousness, eternal bliss, unbounded and unlimited.
         </p>
         <p class="speaker">
           First principle: Inner abundance attracts outer abundance.<br>
           Second principle: Inner resistance sabotages manifestation.<br>
-          Reach the third-eye state of non-duality and the soul’s own attributes; then everything that is meant for you comes.
+          Reach the third-eye state of non-duality and the soul’s own attributes; then everything that is meant for you
+          comes.
         </p>
       </div>
 
@@ -318,12 +589,16 @@
         <p><strong>Core Take-aways – Abundance is our Birthright</strong></p>
         <p>
           • The soul is already abundant; the work is to physicalise that abundance without losing the inner state.<br>
-          • Dissatisfaction is endless if we keep changing outer forms (quarryman → businessman → king → sun → cloud → rock → back to quarryman).<br>
-          • Money is only one of the Ashta Lakshmis. Relationships, health, time, peace and spiritual growth complete the picture.<br>
-          • Invite Saraswati (wisdom / inner growth) first; then Lakshmi stays. Service, especially spiritual service, attracts Lakshmi.<br>
+          • Dissatisfaction is endless if we keep changing outer forms (quarryman → businessman → king → sun → cloud →
+          rock → back to quarryman).<br>
+          • Money is only one of the Ashta Lakshmis. Relationships, health, time, peace and spiritual growth complete
+          the picture.<br>
+          • Invite Saraswati (wisdom / inner growth) first; then Lakshmi stays. Service, especially spiritual service,
+          attracts Lakshmi.<br>
           • Inner abundance is a stance of Consciousness – mountain-like even when the outer world shakes.<br>
           • Poverty consciousness is rooted in lack of self-knowingness and deep “I don’t deserve” resistance.<br>
-          • Third-eye opening (after purifying Halahala at Vishuddhi) is the bottle of abundance; from there desires fulfil themselves.<br>
+          • Third-eye opening (after purifying Halahala at Vishuddhi) is the bottle of abundance; from there desires
+          fulfil themselves.<br>
           • Soul = Omnipresent + Omnipotent + Omniscient. Knowing the soul is being an abundant being.<br>
           • Daily Anapanasati with regularity (ideally 40-day mandala) is the practical path.<br>
           • Holistic abundance includes time, joy, relationships and spiritual fulfilment – not only money.
@@ -339,4 +614,5 @@
     </article>
   </div>
 </body>
+
 </html>

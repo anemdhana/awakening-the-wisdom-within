@@ -37,22 +37,36 @@
     .app {
       display: grid;
       grid-template-columns: var(--sidebar-w) 1fr;
-      grid-template-rows: 1fr;
+      grid-template-areas:
+        "topbar topbar"
+        "sidebar main";
       min-height: 100vh;
       max-width: 1280px;
       margin: 0 auto;
     }
 
     .topbar {
-      display: none;
+      grid-area: topbar;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 52px;
+      padding: 8px 12px 7px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 248, 238, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .brand-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       min-width: 0;
       flex: 1;
+      min-height: 36px;
     }
 
     .org-switcher {
@@ -60,20 +74,26 @@
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
+      margin-right: 10px;
+      min-height: 32px;
     }
 
     .org-button {
       appearance: none;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.88);
-      border-radius: 12px;
-      padding: 6px 10px;
+      background: rgba(255, 255, 255, 0.84);
+      border-radius: 10px;
+      padding: 5px 9px;
+      min-height: 30px;
+      height: 30px;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       color: var(--ink);
       cursor: pointer;
       font-family: Georgia, serif;
+      font-size: 12px;
+      line-height: 1.2;
       transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
     }
 
@@ -86,12 +106,12 @@
       background: #2c1810;
       color: #f8efe4;
       border-color: #2c1810;
-      box-shadow: 0 6px 18px rgba(44, 24, 16, 0.12);
+      box-shadow: 0 4px 12px rgba(44, 24, 16, 0.12);
     }
 
     .org-button img {
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
       object-fit: contain;
       display: block;
       filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.08));
@@ -99,11 +119,11 @@
 
     .brand {
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
       letter-spacing: 0.03em;
       color: var(--heading);
       text-decoration: none;
-      line-height: 1.25;
+      line-height: 1.2;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -143,6 +163,7 @@
     }
 
     .sidebar {
+      grid-area: sidebar;
       background: var(--side-bg);
       border-right: 1px solid var(--border);
       padding: 16px 10px 28px;
@@ -209,6 +230,7 @@
     }
 
     .main {
+      grid-area: main;
       padding: 18px 20px 40px;
       overflow-y: auto;
     }
@@ -359,7 +381,10 @@
     @media (max-width: 820px) {
       .app {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+          "topbar"
+          "sidebar"
+          "main";
       }
 
       .topbar {
@@ -374,16 +399,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-      }
-
-      .org-switcher {
-        width: 100%;
-      }
-
-      .org-button {
-        flex: 1 1 calc(50% - 8px);
-        justify-content: center;
-        min-width: 110px;
       }
 
       .brand {
@@ -423,12 +438,6 @@
 
       .search-box {
         width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .org-button {
-        flex-basis: 100%;
       }
     }
   </style>
@@ -569,6 +578,34 @@
         });
       }
 
+      function applyOrgVisibility() {
+        const visible = ORG_CONFIG[currentOrg].visibleSections;
+        document.querySelectorAll(".nav-item").forEach(btn => {
+          const key = btn.getAttribute("data-section");
+          const shouldShow = visible.includes(key);
+          btn.style.display = shouldShow ? "" : "none";
+        });
+
+        if (currentOrg === "tiw" || currentOrg === "maitri") {
+          document.querySelectorAll(".nav-item").forEach(btn => {
+            btn.classList.remove("active");
+          });
+          section = "";
+          syncOrgButtonState();
+          return;
+        }
+
+        if (!visible.includes(section)) {
+          section = ORG_CONFIG[currentOrg].defaultSection;
+        }
+
+        document.querySelectorAll(".nav-item").forEach(btn => {
+          const isActive = btn.getAttribute("data-section") === section && visible.includes(btn.getAttribute("data-section"));
+          btn.classList.toggle("active", isActive);
+        });
+        syncOrgButtonState();
+      }
+
       // Deep-link: index.html?section=book|patriji|sajjana|classes|schedules
       (function initSectionFromURL() {
         try {
@@ -589,58 +626,45 @@
       const searchInput = document.getElementById("searchInput");
       const sidebar = document.getElementById("sidebar");
 
-      function applyOrgVisibility() {
-        const visible = ORG_CONFIG[currentOrg].visibleSections;
-        document.querySelectorAll(".nav-item").forEach(btn => {
-          const key = btn.getAttribute("data-section");
-          const shouldShow = visible.includes(key);
-          btn.style.display = shouldShow ? "" : "none";
-        });
+      function getCatalogItemsForOrg(sectionKey, org) {
+        const allItems = DATA[sectionKey] || [];
 
-        if (currentOrg === "tiw" || currentOrg === "maitri") {
-          section = "";
-          document.querySelectorAll(".nav-item").forEach(btn => btn.classList.remove("active"));
-          syncOrgButtonState();
-          return;
+        if (sectionKey !== "classes") {
+          return allItems;
         }
 
-        if (!visible.includes(section)) {
-          section = ORG_CONFIG[currentOrg].defaultSection;
+        if (org === "pssm") {
+          return allItems.filter(item => /brahmarshi premnath/i.test(item.group || item.title || ""));
         }
 
-        document.querySelectorAll(".nav-item").forEach(btn => {
-          const isActive = btn.getAttribute("data-section") === section && visible.includes(btn.getAttribute("data-section"));
-          btn.classList.toggle("active", isActive);
-        });
-        syncOrgButtonState();
+        if (org === "qlu") {
+          return allItems.filter(item => !/brahmarshi premnath/i.test(item.group || item.title || ""));
+        }
+
+        return allItems;
       }
 
       function render() {
-        if (currentOrg === "tiw") {
-          paneTitle.textContent = "Temple of Inner Wisdom";
+        if (currentOrg === "tiw" || currentOrg === "maitri") {
+          const title = currentOrg === "tiw" ? "Temple of Inner Wisdom" : "Maitri Bodh";
+          const msg = currentOrg === "tiw"
+            ? "No content available for Temple of Inner Wisdom yet."
+            : "No content available for Maitri Bodh yet.";
+          paneTitle.textContent = title;
           paneDesc.textContent = "Content coming soon.";
           searchInput.placeholder = "Search not available";
           resultsEl.innerHTML = "";
-          emptyEl.textContent = "No content available for Temple of Inner Wisdom yet.";
-          emptyEl.classList.add("show");
-          return;
-        }
-        if (currentOrg === "maitri") {
-          paneTitle.textContent = "Maitri Bodh";
-          paneDesc.textContent = "Content coming soon.";
-          searchInput.placeholder = "Search not available";
-          resultsEl.innerHTML = "";
-          emptyEl.textContent = "No content available for Maitri Bodh yet.";
+          emptyEl.textContent = msg;
           emptyEl.classList.add("show");
           return;
         }
 
-        const meta = META[section] || META[ORG_CONFIG[currentOrg].defaultSection];
+        const meta = META[section] || META.patriji;
         paneTitle.textContent = meta.title;
         paneDesc.textContent = meta.desc;
         searchInput.placeholder = "Search in " + meta.title + "…";
 
-        const items = DATA[section] || [];
+        const items = getCatalogItemsForOrg(section, currentOrg);
         const q = query.trim().toLowerCase();
         let filtered = items.filter(it => {
           const langOk = lang === "all" || it.lang === lang;
@@ -650,14 +674,6 @@
             (it.group || "").toLowerCase().includes(q);
           return langOk && textOk;
         });
-
-        if (section === "classes") {
-          if (currentOrg === "pssm") {
-            filtered = filtered.filter(it => /Brahmarshi Premnath/i.test(it.group || it.title || ""));
-          } else if (currentOrg === "qlu") {
-            filtered = filtered.filter(it => !/Brahmarshi Premnath/i.test(it.group || it.title || ""));
-          }
-        }
 
         resultsEl.innerHTML = "";
         if (!filtered.length) {
@@ -724,7 +740,6 @@
       document.querySelectorAll(".org-button").forEach(btn => {
         btn.addEventListener("click", () => {
           currentOrg = btn.getAttribute("data-org");
-          syncOrgButtonState();
           applyOrgVisibility();
           searchInput.value = "";
           query = "";

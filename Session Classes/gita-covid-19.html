@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,11 @@
       --shloka-bg: #fdf8f0;
       --shloka-border: #c9a66b;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Georgia", "Times New Roman", serif;
@@ -25,57 +30,126 @@
       color: var(--ink);
       background: #f4f0ea;
     }
-    .site-wrap { max-width: 820px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
     .site-header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
       margin-bottom: 1rem;
     }
+
     .site-brand {
-      font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
     }
-    .site-brand span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--muted); }
-    nav a { margin-left: 1rem; color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+
+    .site-brand span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
     .author-row {
-      display: flex; gap: 1rem; align-items: center; margin: 1.5rem 0 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0 1rem;
     }
+
     .author-row img {
-      width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
       border: 2px solid var(--border);
     }
-    .author-info strong { display: block; font-size: 1.05rem; }
-    .author-info span { font-size: 0.85rem; color: var(--muted); }
-    .eyebrow {
-      font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--accent); margin: 0 0 0.35rem;
+
+    .author-info strong {
+      display: block;
+      font-size: 1.05rem;
     }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+
     h1 {
-      font-size: 1.85rem; line-height: 1.25; margin: 0 0 0.75rem;
+      font-size: 1.85rem;
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
       color: #2c1810;
     }
+
     .intro {
-      font-size: 1.05rem; color: var(--muted); margin-bottom: 1.75rem;
-      border-left: 3px solid var(--shloka-border); padding-left: 1rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
     }
+
     .section-title {
-      font-size: 1.35rem; margin: 2.5rem 0 1rem; padding-bottom: 0.4rem;
-      border-bottom: 2px solid var(--shloka-border); color: #3d2314;
+      font-size: 1.35rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: #3d2314;
     }
+
     .qa-block {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 1.25rem 1.4rem;
       margin-bottom: 1.25rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
+
     .qa-block h3 {
-      margin: 0 0 0.75rem; font-size: 1.12rem; color: #3d2314;
+      margin: 0 0 0.75rem;
+      font-size: 1.12rem;
+      color: #3d2314;
     }
-    .speaker, .answer, .question {
-      margin: 0.6rem 0; font-size: 1.02rem;
+
+    .speaker,
+    .answer,
+    .question {
+      margin: 0.6rem 0;
+      font-size: 1.02rem;
     }
-    .question { color: #5a3e2b; font-style: italic; }
+
+    .question {
+      color: #5a3e2b;
+      font-style: italic;
+    }
+
     .shloka {
       background: var(--shloka-bg);
       border-left: 4px solid var(--shloka-border);
@@ -86,15 +160,34 @@
       line-height: 1.55;
       border-radius: 0 6px 6px 0;
     }
-    .shloka .translit { display: block; font-weight: 600; color: #5c3d1e; margin-bottom: 0.35rem; }
-    .shloka .meaning { display: block; font-size: 0.95rem; color: #4a4a4a; font-style: italic; }
+
+    .shloka .translit {
+      display: block;
+      font-weight: 600;
+      color: #5c3d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .shloka .meaning {
+      display: block;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      font-style: italic;
+    }
+
     .dialogue {
       background: #f9f6f1;
       border-radius: 8px;
       padding: 0.9rem 1.1rem;
       margin: 0.8rem 0;
     }
-    .dialogue .who { font-weight: 700; color: var(--accent); margin-right: 0.4rem; }
+
+    .dialogue .who {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+
     .practical {
       background: #f0f7f4;
       border: 1px dashed #7a9e8a;
@@ -103,7 +196,11 @@
       margin: 1rem 0;
       font-size: 0.98rem;
     }
-    .practical strong { color: #2d5a45; }
+
+    .practical strong {
+      color: #2d5a45;
+    }
+
     .summary-card {
       background: #2c1810;
       color: #f5ebe0;
@@ -112,37 +209,150 @@
       margin: 2.5rem 0 1.5rem;
       line-height: 1.65;
     }
-    .summary-card strong { color: #e8c48a; }
+
+    .summary-card strong {
+      color: #e8c48a;
+    }
+
     .closing {
-      font-size: 0.9rem; color: var(--muted); text-align: center;
-      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
     }
+
     .site-footer {
-      text-align: center; font-size: 0.85rem; color: var(--muted);
-      margin-top: 2rem; padding: 1rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      padding: 1rem 0;
     }
-    .pager { display: flex; justify-content: space-between; margin: 2rem 0; font-size: 0.95rem; }
-    .pager a { color: var(--accent); text-decoration: none; }
+
+    .pager {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .pager a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     @media (max-width: 600px) {
-      h1 { font-size: 1.5rem; }
-      .author-row img { width: 56px; height: 56px; }
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  </style>
+
+  <style>
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .post-card {
+      padding-top: 0.15rem;
+    }
+
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin: 0.25rem 0 0.8rem;
+      padding-top: 0.15rem;
+    }
+
+    .author-row img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(186, 122, 58, 0.28);
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .author-row nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+
+    .author-row nav a {
+      margin-left: 0;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.3rem;
+    }
+
+    .post-card h1 {
+      margin: 0 0 0.6rem;
+      font-size: 1.7rem;
+      line-height: 1.28;
+    }
+
+    .intro {
+      margin-bottom: 1.35rem;
+    }
+
+    @media (max-width: 600px) {
+      .author-row {
+        flex-wrap: wrap;
+      }
+
+      .author-row nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="site-wrap">
-<article class="post-card">
+    <article class="post-card">
       <div class="author-row">
-        <img src="https://i.ytimg.com/vi/byGwaMPL6AA/hqdefault.jpg" alt="Geeta K – Wisdom of Bhagavad Gita during COVID-19">
+        <img src="https://i.ytimg.com/vi/byGwaMPL6AA/hqdefault.jpg"
+          alt="Geeta K – Wisdom of Bhagavad Gita during COVID-19">
         <div class="author-info">
           <strong>Geeta K</strong>
           <span>QLU Trainer · Sunday Session · Quantum Life University</span>
         </div>
-</div>
-<nav>
-        <a href="index.html">Home</a>
-        <a href="#summary">Summary</a>
-      </nav>
+        <nav>
+          <a href="../index.html?org=qlu&section=classes">Home</a>
+          <a href="#summary">Summary</a>
+        </nav>
+      </div>
 
       <p class="eyebrow">Bhagavad Gita · COVID-19 Wisdom</p>
       <h1>The Song Eternal in the Time of COVID-19</h1>
@@ -265,11 +475,15 @@
       <div class="qa-block">
         <h3>Arjuna’s words on the battlefield</h3>
         <div class="dialogue">
-          <p><span class="who">Arjuna:</span> Seeing my own kinsmen all arrayed for battle, my limbs are giving way, I am shaking and trembling, my mouth is drying up. What do I do? I am in despair.</p>
+          <p><span class="who">Arjuna:</span> Seeing my own kinsmen all arrayed for battle, my limbs are giving way, I
+            am shaking and trembling, my mouth is drying up. What do I do? I am in despair.</p>
           <p>At one point he actually throws down his Gandiva, puts it on the ground and just collapses.</p>
         </div>
         <div class="dialogue">
-          <p><span class="who">Krishna:</span> My dear Arjuna, from where has this faint-heartedness come to you? How has this delusion overcome you in this hour where your courage is needed the most? This kind of weakness is not befitting an honourable person. It will not lead you to higher abodes; it will actually lead you to disgrace. So arise, awake, Arjuna. This is not how you should be behaving.</p>
+          <p><span class="who">Krishna:</span> My dear Arjuna, from where has this faint-heartedness come to you? How
+            has this delusion overcome you in this hour where your courage is needed the most? This kind of weakness is
+            not befitting an honourable person. It will not lead you to higher abodes; it will actually lead you to
+            disgrace. So arise, awake, Arjuna. This is not how you should be behaving.</p>
         </div>
         <p class="speaker">
           This is what Arjuna hears from his mentor Krishna on the battlefield. Throughout the Gita we
@@ -326,9 +540,9 @@
         </p>
         <div class="shloka">
           <span class="translit">na jāyate mriyate vā kadācin<br>
-          nāyaṃ bhūtvā bhavitā vā na bhūyaḥ<br>
-          ajo nityaḥ śāśvato ’yaṃ purāṇo<br>
-          na hanyate hanyamāne śarīre</span>
+            nāyaṃ bhūtvā bhavitā vā na bhūyaḥ<br>
+            ajo nityaḥ śāśvato ’yaṃ purāṇo<br>
+            na hanyate hanyamāne śarīre</span>
           <span class="meaning">
             The soul is never born and never dies. It is unborn, eternal, everlasting and primeval.
             It is not slain when the body is slain. (Bhagavad Gita 2.20)
@@ -376,7 +590,10 @@
           walk? How does he talk? How does he conduct himself?
         </p>
         <div class="dialogue">
-          <p><span class="who">Krishna:</span> O Pārtha, it is he whose mind is untroubled in the midst of sorrows, free from desire amid pleasures; he who has given up passion, fear and anger – he is called a sthita-prajña. He who is able to withdraw his senses from sense objects like a tortoise which withdraws its limbs into its shell.</p>
+          <p><span class="who">Krishna:</span> O Pārtha, it is he whose mind is untroubled in the midst of sorrows, free
+            from desire amid pleasures; he who has given up passion, fear and anger – he is called a sthita-prajña. He
+            who is able to withdraw his senses from sense objects like a tortoise which withdraws its limbs into its
+            shell.</p>
         </div>
         <p class="speaker">
           At this point let us remember that much of the misery that we have brought upon ourselves today
@@ -443,7 +660,7 @@
         </p>
         <div class="shloka">
           <span class="translit">anudvegakaraṃ vākyaṃ satyaṃ priya-hitaṃ ca yat<br>
-          svādhyāyābhyasanaṃ caiva vāṅ-mayaṃ tapa ucyate</span>
+            svādhyāyābhyasanaṃ caiva vāṅ-mayaṃ tapa ucyate</span>
           <span class="meaning">
             Words that do not agitate others, that are truthful, pleasing and beneficial, and the regular
             practice of the study of the scriptures – these are declared to be the austerity of speech.
@@ -473,7 +690,7 @@
         </p>
         <div class="shloka">
           <span class="translit">uddhared ātmanātmānaṃ nātmānam avasādayet<br>
-          ātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ</span>
+            ātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ</span>
           <span class="meaning">
             One must elevate, not degrade, oneself by one’s own mind. The mind is the friend of the
             conditioned soul, and his enemy as well. (Bhagavad Gita 6.5)
@@ -530,9 +747,9 @@
         </p>
         <div class="shloka">
           <span class="translit">vāsāṃsi jīrṇāni yathā vihāya<br>
-          navāni gṛhṇāti naro ’parāṇi<br>
-          tathā śarīrāṇi vihāya jīrṇāny<br>
-          anyāni saṃyāti navāni dehī</span>
+            navāni gṛhṇāti naro ’parāṇi<br>
+            tathā śarīrāṇi vihāya jīrṇāny<br>
+            anyāni saṃyāti navāni dehī</span>
           <span class="meaning">
             As a person puts on new garments, giving up old ones, the soul similarly accepts new material
             bodies, giving up the old and useless ones. (Bhagavad Gita 2.22)
@@ -555,7 +772,11 @@
           down. We locked ourselves to knowledge and we opened ourselves to fear – which is not necessary.
         </p>
         <div class="dialogue">
-          <p><span class="who">Krishna:</span> Please, Arjuna, awake, arise. Sever the ignorance and doubt in your heart with the sword of self-knowledge. Use the sword of self-knowledge and cut away all that ignorance and doubt that is arising – because you know the mind: it’s like bubbles rising every minute, every second, with every breath. The mind brings up so much of turbulence and turmoil that you feel that you are unable to handle it. At some point it overwhelms you.</p>
+          <p><span class="who">Krishna:</span> Please, Arjuna, awake, arise. Sever the ignorance and doubt in your heart
+            with the sword of self-knowledge. Use the sword of self-knowledge and cut away all that ignorance and doubt
+            that is arising – because you know the mind: it’s like bubbles rising every minute, every second, with every
+            breath. The mind brings up so much of turbulence and turmoil that you feel that you are unable to handle it.
+            At some point it overwhelms you.</p>
         </div>
         <p class="speaker">
           Change is inevitable. One must learn from tough times and we must learn to embrace change.
@@ -601,7 +822,7 @@
         </p>
         <div class="shloka">
           <span class="translit">yuktāhāra-vihārasya yukta-ceṣṭasya karmasu<br>
-          yukta-svapnāvabodhasya yogo bhavati duḥkha-hā</span>
+            yukta-svapnāvabodhasya yogo bhavati duḥkha-hā</span>
           <span class="meaning">
             For one who is moderate in eating and recreation, moderate in effort in actions, and regulated
             in sleep and wakefulness – yoga becomes the destroyer of all misery. (Bhagavad Gita 6.17)
@@ -702,14 +923,15 @@
           important for us. And the description – Krishna advised Arjuna when Arjuna is overwhelmed by the kind of
           despair with which we are overwhelmed today – he says: Be steadfast in the performance of your duty, O Pārtha,
           abandoning attachment to success and failure. Just be unwavering when faced with this situation. Do not waver.
-          That is very important. Equanimity in the face of adversity. Lead your lifestyle knowing that there is adversity.
+          That is very important. Equanimity in the face of adversity. Lead your lifestyle knowing that there is
+          adversity.
           We are faced with it. We are facing it. It’s staring us in the face. So what can we do? Do we choose to still
           sink or do we choose to stay afloat? How do we stay afloat? By practicing equanimity, equilibrium –
           <em>samatvaṃ yoga ucyate</em>.
         </p>
         <div class="shloka">
           <span class="translit">yoga-sthaḥ kuru karmāṇi saṅgaṃ tyaktvā dhanañjaya<br>
-          siddhy-asiddhyoḥ samo bhūtvā samatvaṃ yoga ucyate</span>
+            siddhy-asiddhyoḥ samo bhūtvā samatvaṃ yoga ucyate</span>
           <span class="meaning">
             Perform your duty equipoised, O Arjuna, abandoning all attachment to success or failure.
             Such equanimity is called yoga. (Bhagavad Gita 2.48)
@@ -717,14 +939,16 @@
         </div>
         <p class="speaker">
           The Lord tells Arjuna that Arjuna – what you need now in this hour of grief – for you it is an hour of grief.
-          He is going to see his own kinsmen, his own relatives, his uncles, his grandsire, his own cousins – all of them
+          He is going to see his own kinsmen, his own relatives, his uncles, his grandsire, his own cousins – all of
+          them
           being destroyed in the war, all of them losing their lives. There are going to be millions of deaths. They say
           it was about 1.6 million if we were to talk in today’s terms – that was the loss of life that happened during
           the Kurukshetra war. And just like what Ashoka faced at the end of the Kalinga war which prompted him to take
           up Buddhism – Ashoka was appalled at what he saw: the bodies lying one on each other, blood all around – and
           that was the moment when the shift happened in Ashoka and he chose to give up being a Kshatriya and he said
           “I want to adopt the path of the Buddha.” That is what happened with Ashoka. But here Arjuna is called upon by
-          the Lord to perform his duty, his righteous duty. And that is why Krishna says: Be a sthita-prajña. Move around
+          the Lord to perform his duty, his righteous duty. And that is why Krishna says: Be a sthita-prajña. Move
+          around
           like a sthita-prajña. Do your duty. Stay unwavering. Stay in equilibrium. Practice samatva and just go ahead.
           And if in the discharge of your duty you are to lose your life then it’s okay – because you are not really
           losing your life. You never do – because you were never born and you never die.
@@ -739,15 +963,21 @@
           These words give us immense consolation in this time of stress, in this time of fear, in this time of anxiety.
           Indeed they do. They give us a lot of consolation because we know that we are safe and secure and there is
           nothing really to fear. And the moment we are attacked by fear and anxiety we know that the stress response is
-          immunosuppressive. We can do a lot of things – you know we can build up immunity today. A lot of stuff is doing
+          immunosuppressive. We can do a lot of things – you know we can build up immunity today. A lot of stuff is
+          doing
           the rounds: drink this, do that, have this juice, have that medicine… Yes indeed a lot of things people are
           resorting to because it’s a desperate measure to keep yourself away from the virus. Many of them of course may
-          be effective. But what is most effective? What keeps your immune system really strong? What keeps your vibrations
-          harmonious? What is it that keeps you strong? It is the lack of stress. When you are in the stress mode immediately
-          your immune system is compromised. We need to understand this. Immune system becomes depressed and compromised when
+          be effective. But what is most effective? What keeps your immune system really strong? What keeps your
+          vibrations
+          harmonious? What is it that keeps you strong? It is the lack of stress. When you are in the stress mode
+          immediately
+          your immune system is compromised. We need to understand this. Immune system becomes depressed and compromised
+          when
           we are victims of stress, of fear, of anxiety. We are severely compromised and we cannot afford for our immune
-          systems to get compromised. So if we really want a vibrant immune system, if we want to stay immune, we want to
-          stay healthy – then we need to have a healthy mind in a healthy body. And we need to practice, we need to train
+          systems to get compromised. So if we really want a vibrant immune system, if we want to stay immune, we want
+          to
+          stay healthy – then we need to have a healthy mind in a healthy body. And we need to practice, we need to
+          train
           our minds for this.
         </p>
       </div>
@@ -758,41 +988,67 @@
       <div class="qa-block">
         <h3>Discard selfish desires; find satisfaction in the Self</h3>
         <p class="speaker">
-          Krishna says: O Arjuna, when one discards all selfish desires and unnecessary cravings of the senses – and these
-          are the ones that form into the mind – and becomes satisfied in the realisation of the Self – when you are realised
-          in your own Self – such a person is said to be a sthita-prajña or transcendentally situated, stabilised in consciousness.
+          Krishna says: O Arjuna, when one discards all selfish desires and unnecessary cravings of the senses – and
+          these
+          are the ones that form into the mind – and becomes satisfied in the realisation of the Self – when you are
+          realised
+          in your own Self – such a person is said to be a sthita-prajña or transcendentally situated, stabilised in
+          consciousness.
           That is very important. And I think it would do us all good to actually practice becoming sthita-prajñas.
         </p>
         <p class="speaker">
-          How do we do this? Each one of us has different coping mechanisms. Some of us – you know we are doing our daily work.
-          Many of us are working from home. Even that is a big stress of it. It is not easy. We may not be going to our offices
-          or workplaces. Many of us may be going, some of us may not be going. We are not in a complete lockdown now. In fact the
-          unlock process has been set in motion and slowly things are normalising. As and when required states are going in for
-          temporary lockdowns. But on the whole there is resumption of work. So what does one do now? The fear is more. You see
-          when the lockdown was in place we were more safe and secure. We were in the secure confines of our home. We were taking
-          care of ourselves and we were hoping for a better tomorrow. But now that the lockdown is no longer there and we have to
-          step out and we have to go to our workplaces – or even if we are working from home we have to go out for certain work –
-          fear increases. There is increase in stress because in the outside world nothing has really subsided. Every day there is
-          news of the COVID-19 surge and inflated figures and they say “You know we are not getting the real figures, we do not know
-          what is happening, what is the ground reality.” And the moment we step out we are stepping into fear psychosis that has
-          been created. So how do we deal with that? What do we do? What can we do to keep ourselves in equilibrium in that kind of
+          How do we do this? Each one of us has different coping mechanisms. Some of us – you know we are doing our
+          daily work.
+          Many of us are working from home. Even that is a big stress of it. It is not easy. We may not be going to our
+          offices
+          or workplaces. Many of us may be going, some of us may not be going. We are not in a complete lockdown now. In
+          fact the
+          unlock process has been set in motion and slowly things are normalising. As and when required states are going
+          in for
+          temporary lockdowns. But on the whole there is resumption of work. So what does one do now? The fear is more.
+          You see
+          when the lockdown was in place we were more safe and secure. We were in the secure confines of our home. We
+          were taking
+          care of ourselves and we were hoping for a better tomorrow. But now that the lockdown is no longer there and
+          we have to
+          step out and we have to go to our workplaces – or even if we are working from home we have to go out for
+          certain work –
+          fear increases. There is increase in stress because in the outside world nothing has really subsided. Every
+          day there is
+          news of the COVID-19 surge and inflated figures and they say “You know we are not getting the real figures, we
+          do not know
+          what is happening, what is the ground reality.” And the moment we step out we are stepping into fear psychosis
+          that has
+          been created. So how do we deal with that? What do we do? What can we do to keep ourselves in equilibrium in
+          that kind of
           a situation?
         </p>
         <p class="speaker">
-          We need to practice. We need to practice keeping the mind stable. We can adopt any practice we feel like. We can adopt
-          breath practices. We can practice simple meditation. We can set aside a certain time of the day – because this is a huge
-          coping mechanism which has to become part of our daily lives. It is very, very important. And therefore it is important
-          for us to realise that we can seek solace. We can seek solace from this ancient text even today. It is as relevant as it
-          was thousands of years ago and it will remain relevant – because the Gita is not bound by any religious orthodoxy. It is
-          not bound by any religious doctrine. It is universal truth that has come to us in the form of this dialogue between Arjuna
-          and his mentor, master Krishna. And let us use this beautiful celestial song to strengthen ourselves in this period of
+          We need to practice. We need to practice keeping the mind stable. We can adopt any practice we feel like. We
+          can adopt
+          breath practices. We can practice simple meditation. We can set aside a certain time of the day – because this
+          is a huge
+          coping mechanism which has to become part of our daily lives. It is very, very important. And therefore it is
+          important
+          for us to realise that we can seek solace. We can seek solace from this ancient text even today. It is as
+          relevant as it
+          was thousands of years ago and it will remain relevant – because the Gita is not bound by any religious
+          orthodoxy. It is
+          not bound by any religious doctrine. It is universal truth that has come to us in the form of this dialogue
+          between Arjuna
+          and his mentor, master Krishna. And let us use this beautiful celestial song to strengthen ourselves in this
+          period of
           distress and despair. Let us turn to it.
         </p>
         <p class="speaker">
-          Mahatma Gandhi said he used to turn to the Gita when he used to be plunged in sorrow, plunged in confusion. All he did was
-          turn to the Gita. Graham Greene said there are millions of people who have turned to the Gita to seek consolation, to seek
-          advice – and it has always appeared to them – because this is divine advice. It is coming to us from the very depths of our
-          soul. Because it is <em>ahaṃ brahmāsmi</em>. We are divine and we need to awaken to that reality. That is very important.
+          Mahatma Gandhi said he used to turn to the Gita when he used to be plunged in sorrow, plunged in confusion.
+          All he did was
+          turn to the Gita. Graham Greene said there are millions of people who have turned to the Gita to seek
+          consolation, to seek
+          advice – and it has always appeared to them – because this is divine advice. It is coming to us from the very
+          depths of our
+          soul. Because it is <em>ahaṃ brahmāsmi</em>. We are divine and we need to awaken to that reality. That is very
+          important.
         </p>
       </div>
 
@@ -802,69 +1058,107 @@
       <div class="qa-block">
         <h3>The truly learned see with equal vision</h3>
         <p class="speaker">
-          What about stigma? What about the social stigma that is happening? That is also a reality. The other day I read about a
-          mother who had been kept – the son said the mother had come back from a different state where she was stuck and the son
-          refused entry to a mother who was 70-plus. And I was shocked to read that. And then later on I found many such news –
-          many such news items of people being ostracised in their neighbourhood, people being put away, people being driven out of
-          their homes because they tested positive or somebody known to them tested positive or because a family member tested positive.
-          And it was appalling. Are we really progressing? Can we call ourselves a progressive society if we are doing this to our
+          What about stigma? What about the social stigma that is happening? That is also a reality. The other day I
+          read about a
+          mother who had been kept – the son said the mother had come back from a different state where she was stuck
+          and the son
+          refused entry to a mother who was 70-plus. And I was shocked to read that. And then later on I found many such
+          news –
+          many such news items of people being ostracised in their neighbourhood, people being put away, people being
+          driven out of
+          their homes because they tested positive or somebody known to them tested positive or because a family member
+          tested positive.
+          And it was appalling. Are we really progressing? Can we call ourselves a progressive society if we are doing
+          this to our
           fellow men? I don’t think so.
         </p>
         <p class="speaker">
-          What is learning? What is awakening? What is the sign of a truly learned man? Is it that “I am able to chant so many verses,
-          I know so many pujas, I do so many rituals, I am conducting homas every day in my home to stay safe from the virus, I am
-          conducting a yajna”? Is that what is required in this hour of crisis? How does one deal with it? What is the sign of a
+          What is learning? What is awakening? What is the sign of a truly learned man? Is it that “I am able to chant
+          so many verses,
+          I know so many pujas, I do so many rituals, I am conducting homas every day in my home to stay safe from the
+          virus, I am
+          conducting a yajna”? Is that what is required in this hour of crisis? How does one deal with it? What is the
+          sign of a
           truly learned man?
         </p>
         <div class="shloka">
           <span class="translit">vidyā-vinaya-sampanne brāhmaṇe gavi hastini<br>
-          śuni caiva śva-pāke ca paṇḍitāḥ sama-darśinaḥ</span>
+            śuni caiva śva-pāke ca paṇḍitāḥ sama-darśinaḥ</span>
           <span class="meaning">
-            The humble sages, by virtue of true knowledge, see with equal vision a learned and gentle brāhmaṇa, a cow, an elephant,
+            The humble sages, by virtue of true knowledge, see with equal vision a learned and gentle brāhmaṇa, a cow,
+            an elephant,
             a dog and a dog-eater. (Bhagavad Gita 5.18)
           </span>
         </div>
         <p class="speaker">
-          With true knowledge comes humility. Humility is the trademark. Seeing everyone as equal – equality of vision. So the truly
-          learned man, the truly progressive man, with the eyes of divine knowledge, he sees with equal vision a brāhmaṇa, a cow, an
-          elephant, a dog and an outcast. He sees everyone <em>sama-darśinaḥ</em> – with equality of vision. Looking at everyone with
-          equality. Is it somebody’s fault that he has fallen prey to the COVID virus? It can come to anyone at any time. So is it
-          right on our part to treat somebody who has become a victim to this virus as an outcast? Is it right? There are horror
-          stories doing the rounds of bodies being discarded… Of course we understand these are all fear reactions. And it is this
-          fear that we must fight – because this fear is coming out of what? It is coming out of ignorance. It is stemming out of deep
-          ignorance. And it is not the virus that we must fight. It is this fear, this darkness and this ignorance that we must fight
+          With true knowledge comes humility. Humility is the trademark. Seeing everyone as equal – equality of vision.
+          So the truly
+          learned man, the truly progressive man, with the eyes of divine knowledge, he sees with equal vision a
+          brāhmaṇa, a cow, an
+          elephant, a dog and an outcast. He sees everyone <em>sama-darśinaḥ</em> – with equality of vision. Looking at
+          everyone with
+          equality. Is it somebody’s fault that he has fallen prey to the COVID virus? It can come to anyone at any
+          time. So is it
+          right on our part to treat somebody who has become a victim to this virus as an outcast? Is it right? There
+          are horror
+          stories doing the rounds of bodies being discarded… Of course we understand these are all fear reactions. And
+          it is this
+          fear that we must fight – because this fear is coming out of what? It is coming out of ignorance. It is
+          stemming out of deep
+          ignorance. And it is not the virus that we must fight. It is this fear, this darkness and this ignorance that
+          we must fight
           so that we can stand together, stand united. That is very, very important.
         </p>
         <div class="shloka">
           <span class="translit">yo māṃ paśyati sarvatra sarvaṃ ca mayi paśyati<br>
-          tasyāhaṃ na praṇaśyāmi sa ca me na praṇaśyati</span>
+            tasyāhaṃ na praṇaśyāmi sa ca me na praṇaśyati</span>
           <span class="meaning">
-            For one who sees Me everywhere and sees everything in Me, I am never lost, nor is he ever lost to Me. (Bhagavad Gita 6.30)
+            For one who sees Me everywhere and sees everything in Me, I am never lost, nor is he ever lost to Me.
+            (Bhagavad Gita 6.30)
           </span>
         </div>
         <p class="speaker">
-          The Lord says: I have your back. All you need to do is see Me everywhere. Now how do we integrate this to our current scenario?
-          Can we see the divine in all those whom we see around us today – whether COVID-affected, whether COVID-free, whether a patient
-          who has recovered, a family member, a friend who is going through some trauma? Is it possible for us to bring ourselves to
+          The Lord says: I have your back. All you need to do is see Me everywhere. Now how do we integrate this to our
+          current scenario?
+          Can we see the divine in all those whom we see around us today – whether COVID-affected, whether COVID-free,
+          whether a patient
+          who has recovered, a family member, a friend who is going through some trauma? Is it possible for us to bring
+          ourselves to
           truly see the divine in everything and everyone around us? And that is what we need to practice now.
         </p>
         <p class="speaker">
-          You see it is very easy to preach. It is very easy to talk of lofty ideas when times are good. It is extremely easy – you know
-          to recite the scriptures, to fall back on a lot of maybe Vedic texts or texts connected to each one’s religion and to say “This
-          is quoted here, this is for today and this is how we must live.” All very easy in good times when everything is going well.
-          Now today this scenario has called on our inner reserves of strength, challenged our resilience like nothing ever has. Yes there
-          was the flu 100 years ago but we were not there then – or maybe we were in different bodies. A few hundred more years ago there
-          was something else. And many such pandemics have come and gone. And today we are here. Probably we signed up for this when we
-          came to the earth plane. We signed up to learn certain lessons, to be part of this pandemic. Probably yes we have signed up and
-          that is why we are here as part of this pandemic. And we need to do something to bring ourselves out and to see what the real
-          persona is – what we really are. Let us awaken to the divine within us. And we can awaken to the divine within us not just by
-          talking of <em>ahaṃ brahmāsmi</em>. That will never happen. It is not that easy. But can we see the divine? Can we see the divine
-          in our pet? Can we see the divine in our spouse? The divine in our parents? The divine in our colleagues? Can we see the divine
-          in our neighbours? Can we truly see it – or is it just lip service that we are doing? That is very important. We need to
-          contemplate on that. We need to reflect on that. The more reflective and contemplative we become, the more inner stillness we
-          achieve. And the more inner stillness we achieve, all the turbulence slowly settles down. All that inner turmoil settles down.
-          And when we have reached that inner stillness then we are out of confusion, we are out of delusion and we are away from the
-          clutches of Maya. That is very important. The most important thing for us now is to be away from the clutches of ignorance which
+          You see it is very easy to preach. It is very easy to talk of lofty ideas when times are good. It is extremely
+          easy – you know
+          to recite the scriptures, to fall back on a lot of maybe Vedic texts or texts connected to each one’s religion
+          and to say “This
+          is quoted here, this is for today and this is how we must live.” All very easy in good times when everything
+          is going well.
+          Now today this scenario has called on our inner reserves of strength, challenged our resilience like nothing
+          ever has. Yes there
+          was the flu 100 years ago but we were not there then – or maybe we were in different bodies. A few hundred
+          more years ago there
+          was something else. And many such pandemics have come and gone. And today we are here. Probably we signed up
+          for this when we
+          came to the earth plane. We signed up to learn certain lessons, to be part of this pandemic. Probably yes we
+          have signed up and
+          that is why we are here as part of this pandemic. And we need to do something to bring ourselves out and to
+          see what the real
+          persona is – what we really are. Let us awaken to the divine within us. And we can awaken to the divine within
+          us not just by
+          talking of <em>ahaṃ brahmāsmi</em>. That will never happen. It is not that easy. But can we see the divine?
+          Can we see the divine
+          in our pet? Can we see the divine in our spouse? The divine in our parents? The divine in our colleagues? Can
+          we see the divine
+          in our neighbours? Can we truly see it – or is it just lip service that we are doing? That is very important.
+          We need to
+          contemplate on that. We need to reflect on that. The more reflective and contemplative we become, the more
+          inner stillness we
+          achieve. And the more inner stillness we achieve, all the turbulence slowly settles down. All that inner
+          turmoil settles down.
+          And when we have reached that inner stillness then we are out of confusion, we are out of delusion and we are
+          away from the
+          clutches of Maya. That is very important. The most important thing for us now is to be away from the clutches
+          of ignorance which
           is created by a lot of fear, a lot of confusion, anxiety and a lot of stress.
         </p>
       </div>
@@ -875,18 +1169,30 @@
       <div class="qa-block">
         <h3>Right action, right speech, right thought</h3>
         <p class="speaker">
-          So how do we keep ourselves immune? We keep ourselves immune by practicing, as I said before, austerity – austerity of body,
-          spiritual hygiene, physical hygiene, emotional and mental austerity of speech and austerity of thought – three <em>karaṇa</em>:
-          kāyena, vācā, manasā. Do the right action, whatever you are. Follow your Dharma. Right speech, right thought – and you are in
-          the right place. That is all it takes. You see we look around for very complicated solutions when life itself is extremely simple.
-          We like to make it complex. We look around for extremely complex-sounding terms. Life is not so complex. When it all boils down
-          to something extremely simple: let us rest safe and secure in the thought that this is not who we really are. We are innately
-          powerful beings. We are divine sparks. We are all interconnected – that huge web – and we are loved and we are secure. And when
-          we say this, immense confidence surges up within us. And we need to connect to that confidence. Not only should we rest in that
-          confidence – we should also work towards spreading that confidence, spreading that light to those around us – in whatever little
-          way we can. Whatever little way we can. It could be charity. It could be helping a neighbour. It could be your words of solace.
-          It could be encouraging someone. It could be just lifting the phone, calling and just lending an ear, holding space for someone
-          who’s going through a lot of turmoil. It could be anything. But it is your duty. It is your Dharma. And you do it and you know
+          So how do we keep ourselves immune? We keep ourselves immune by practicing, as I said before, austerity –
+          austerity of body,
+          spiritual hygiene, physical hygiene, emotional and mental austerity of speech and austerity of thought – three
+          <em>karaṇa</em>:
+          kāyena, vācā, manasā. Do the right action, whatever you are. Follow your Dharma. Right speech, right thought –
+          and you are in
+          the right place. That is all it takes. You see we look around for very complicated solutions when life itself
+          is extremely simple.
+          We like to make it complex. We look around for extremely complex-sounding terms. Life is not so complex. When
+          it all boils down
+          to something extremely simple: let us rest safe and secure in the thought that this is not who we really are.
+          We are innately
+          powerful beings. We are divine sparks. We are all interconnected – that huge web – and we are loved and we are
+          secure. And when
+          we say this, immense confidence surges up within us. And we need to connect to that confidence. Not only
+          should we rest in that
+          confidence – we should also work towards spreading that confidence, spreading that light to those around us –
+          in whatever little
+          way we can. Whatever little way we can. It could be charity. It could be helping a neighbour. It could be your
+          words of solace.
+          It could be encouraging someone. It could be just lifting the phone, calling and just lending an ear, holding
+          space for someone
+          who’s going through a lot of turmoil. It could be anything. But it is your duty. It is your Dharma. And you do
+          it and you know
           that you have uplifted yourself. That is very important.
         </p>
       </div>
@@ -897,31 +1203,56 @@
       <div class="qa-block">
         <h3>Slow down, need very little, live every moment meaningfully</h3>
         <p class="speaker">
-          In the past few months life has taken a 360-degree turn for all of us as the virus took over the world with tremendous speed.
-          We have been reeling under its impact. We have blamed it and we have cursed it for messing up our lives. Somewhere in some corner
-          of our minds people have done it. Many of us may not have done it. Many of us may have understood that yes the virus has appeared
-          as a teacher. But for most part many have not understood. It’s all right. We can always start from now. But COVID has done humanity
-          a tremendous favour and it has taught us mainly to slow down. No more frenzy. No more mad rush. It has taught us to stand still,
-          to step back. We were rushing blindly so it told us: Wait. Stop there. Step back and take a re-look. Rethink what is the kind of
-          life you are leading. Stop and think. It has taught us pause. Stop there. And we cannot deny that we were leading extremely mechanical
-          lives propelled purely by materialistic pursuits, materialistic goals. And what did we compromise? We compromised big time on simple
-          joys. We compromised on meaningful interactions. We compromised on connecting with nature. We compromised. We started seeking happiness
-          in frivolous things. And COVID has taught us that we really need very, very little to be happy and contented. We really do not need
-          all that we thought we actually need. Not at all. We had a long list. Many of us – most of the population – “If I have this I will be
-          happy… If I have that I will be happy… If I eat this I will be happy… If I get to party for so many hours I’ll be happy… If I go and
-          visit this place I’ll be happy… If I have a home like this I’ll be happy… If I have this kind of a salary I’ll be happy… If I have
-          two-three cars I’ll be happy…” It could be anything. These are simple examples I’m giving. But there was a burning desire to get from
-          here to there. We wanted to jump. We wanted to reach somewhere. And there was a mad rush and we blinded ourselves to reality. We
-          disconnected in a big way from nature. We disconnected – whereas nature was there all along. Nature didn’t change. We changed. We changed
-          and so nature changed and she gave us the virus and she told us: “Here is a gift I’m giving you. Do what you want but step back and think
-          and rethink and then unlearn and then relearn.” And that is what we need to do. And the biggest lesson as I said we have learnt is: we
-          really need very, very little to be happy and contented. Most of what we thought we needed has – if you have seen it as it is – submerged
-          now. It has gone into the background, totally put on the back-burner. We don’t need any of that. All the big lists that we had made thinking
-          that “If I have all of this I will reach some happiness somewhere” – some far-off goal. Happiness is lying somewhere there and I have to
-          reach, I have to cross so many milestones and then I will find that happiness. And happiness is elusive. It is like the butterfly: you run
-          behind the butterfly and you are not going to catch it. But you sit still, sit quietly and calmly and very soon you might just find the
-          butterfly sitting on your shoulder flapping its delicate wings. And that is what we have to realise now. It is time. The time is now – not
-          yesterday, not tomorrow. COVID has taught us to live every moment meaningfully. And this lesson is the most beautiful lesson that we needed.
+          In the past few months life has taken a 360-degree turn for all of us as the virus took over the world with
+          tremendous speed.
+          We have been reeling under its impact. We have blamed it and we have cursed it for messing up our lives.
+          Somewhere in some corner
+          of our minds people have done it. Many of us may not have done it. Many of us may have understood that yes the
+          virus has appeared
+          as a teacher. But for most part many have not understood. It’s all right. We can always start from now. But
+          COVID has done humanity
+          a tremendous favour and it has taught us mainly to slow down. No more frenzy. No more mad rush. It has taught
+          us to stand still,
+          to step back. We were rushing blindly so it told us: Wait. Stop there. Step back and take a re-look. Rethink
+          what is the kind of
+          life you are leading. Stop and think. It has taught us pause. Stop there. And we cannot deny that we were
+          leading extremely mechanical
+          lives propelled purely by materialistic pursuits, materialistic goals. And what did we compromise? We
+          compromised big time on simple
+          joys. We compromised on meaningful interactions. We compromised on connecting with nature. We compromised. We
+          started seeking happiness
+          in frivolous things. And COVID has taught us that we really need very, very little to be happy and contented.
+          We really do not need
+          all that we thought we actually need. Not at all. We had a long list. Many of us – most of the population –
+          “If I have this I will be
+          happy… If I have that I will be happy… If I eat this I will be happy… If I get to party for so many hours I’ll
+          be happy… If I go and
+          visit this place I’ll be happy… If I have a home like this I’ll be happy… If I have this kind of a salary I’ll
+          be happy… If I have
+          two-three cars I’ll be happy…” It could be anything. These are simple examples I’m giving. But there was a
+          burning desire to get from
+          here to there. We wanted to jump. We wanted to reach somewhere. And there was a mad rush and we blinded
+          ourselves to reality. We
+          disconnected in a big way from nature. We disconnected – whereas nature was there all along. Nature didn’t
+          change. We changed. We changed
+          and so nature changed and she gave us the virus and she told us: “Here is a gift I’m giving you. Do what you
+          want but step back and think
+          and rethink and then unlearn and then relearn.” And that is what we need to do. And the biggest lesson as I
+          said we have learnt is: we
+          really need very, very little to be happy and contented. Most of what we thought we needed has – if you have
+          seen it as it is – submerged
+          now. It has gone into the background, totally put on the back-burner. We don’t need any of that. All the big
+          lists that we had made thinking
+          that “If I have all of this I will reach some happiness somewhere” – some far-off goal. Happiness is lying
+          somewhere there and I have to
+          reach, I have to cross so many milestones and then I will find that happiness. And happiness is elusive. It is
+          like the butterfly: you run
+          behind the butterfly and you are not going to catch it. But you sit still, sit quietly and calmly and very
+          soon you might just find the
+          butterfly sitting on your shoulder flapping its delicate wings. And that is what we have to realise now. It is
+          time. The time is now – not
+          yesterday, not tomorrow. COVID has taught us to live every moment meaningfully. And this lesson is the most
+          beautiful lesson that we needed.
         </p>
       </div>
 
@@ -931,48 +1262,71 @@
       <div class="qa-block">
         <h3>Santoshaḥ satataṃ yogī</h3>
         <p class="speaker">
-          Talking of contentment – what does the Gita say? When Krishna is asked by Arjuna: Tell me, O Krishna, please define those qualities –
-          who is dear to You? Who actually rests in You? He says… (similarly in every chapter the questions of Arjuna are few and the answers of
-          Krishna run into many, many verses). Basically Arjuna is just asking on behalf of all of us – Nara with Narayana – he’s asking Narayana:
+          Talking of contentment – what does the Gita say? When Krishna is asked by Arjuna: Tell me, O Krishna, please
+          define those qualities –
+          who is dear to You? Who actually rests in You? He says… (similarly in every chapter the questions of Arjuna
+          are few and the answers of
+          Krishna run into many, many verses). Basically Arjuna is just asking on behalf of all of us – Nara with
+          Narayana – he’s asking Narayana:
           Tell me how does one behave?
         </p>
         <div class="shloka">
           <span class="translit">santuṣṭaḥ satataṃ yogī yatātmā dṛḍha-niścayaḥ<br>
-          mayy arpita-mano-buddhir yo mad-bhaktaḥ sa me priyaḥ</span>
+            mayy arpita-mano-buddhir yo mad-bhaktaḥ sa me priyaḥ</span>
           <span class="meaning">
-            One who is ever content, who is a yogi, self-controlled, of firm determination, with mind and intelligence offered to Me –
+            One who is ever content, who is a yogi, self-controlled, of firm determination, with mind and intelligence
+            offered to Me –
             such a devotee is very dear to Me. (Bhagavad Gita 12.14)
           </span>
         </div>
         <p class="speaker">
-          How beautiful it is to even imagine such a life – <em>santuṣṭaḥ satataṃ yogī</em> – eternally contented, determination strong-willed
-          and yet contented – contented because you’re self-realised – and body, mind, intellect, spirit all surrendered to that One, to Oneness.
-          You may choose to call that One Krishna or Shiva or Allah or Jesus or God or the Supreme or Divine Consciousness – many names but one
-          reality – and you live in a state of surrender. And that is divine bliss. So <em>santuṣṭaḥ satataṃ yogī</em> – ever peaceful, ever calm,
-          not tormented. How do you get tormented? You get tormented because the mind plays with you. It plays games with you. You get caught up in
-          all that entanglement, in a lot of story and drama and you’re caught up in mind. And the mind plays with you. And when you run behind the
-          mind then it is endless. You cannot fathom what’s happening to you. And before you realise you have become overwhelmed and you do not know –
-          you have sunk into the depths of despair, into the depths of helplessness. You become powerless. So how do you reclaim your power? How do
-          you reclaim your power? You reclaim your power by remaining – or choosing to remain – in steadfastness, in stabilised consciousness.
+          How beautiful it is to even imagine such a life – <em>santuṣṭaḥ satataṃ yogī</em> – eternally contented,
+          determination strong-willed
+          and yet contented – contented because you’re self-realised – and body, mind, intellect, spirit all surrendered
+          to that One, to Oneness.
+          You may choose to call that One Krishna or Shiva or Allah or Jesus or God or the Supreme or Divine
+          Consciousness – many names but one
+          reality – and you live in a state of surrender. And that is divine bliss. So <em>santuṣṭaḥ satataṃ yogī</em> –
+          ever peaceful, ever calm,
+          not tormented. How do you get tormented? You get tormented because the mind plays with you. It plays games
+          with you. You get caught up in
+          all that entanglement, in a lot of story and drama and you’re caught up in mind. And the mind plays with you.
+          And when you run behind the
+          mind then it is endless. You cannot fathom what’s happening to you. And before you realise you have become
+          overwhelmed and you do not know –
+          you have sunk into the depths of despair, into the depths of helplessness. You become powerless. So how do you
+          reclaim your power? How do
+          you reclaim your power? You reclaim your power by remaining – or choosing to remain – in steadfastness, in
+          stabilised consciousness.
         </p>
         <div class="shloka">
           <span class="translit">adveṣṭā sarva-bhūtānāṃ maitraḥ karuṇa eva ca<br>
-          nirmamo nirahaṅkāraḥ sama-duḥkha-sukhaḥ kṣamī</span>
+            nirmamo nirahaṅkāraḥ sama-duḥkha-sukhaḥ kṣamī</span>
           <span class="meaning">
-            One who is not envious but is a kind friend to all living entities, who does not think himself a proprietor, who is free from false ego
+            One who is not envious but is a kind friend to all living entities, who does not think himself a proprietor,
+            who is free from false ego
             and equal both in happiness and distress, who is tolerant… (Bhagavad Gita 12.13)
           </span>
         </div>
         <p class="speaker">
-          Simple things. These are the simplest of verses in the Gita. There are many, many, many and we can go on – but the simplest of verses, the
-          most commonly used is what I have picked up. These are very close to my heart and they keep playing because these are extremely simple – even
-          a child can understand. Compassion towards all living beings – compassion towards animate and inanimate. Do not see anything as different.
-          Stay away from discrimination. Stay away from anger. Stay away from envy and jealousy and pride, conceit and all of that. <em>Nirmama</em> –
-          without sense of proprietorship “this belongs to me”. <em>Mamatā</em> creates a lot of attachment, a lot of entanglements. And today COVID is
-          teaching us that mamatā is of no value. <em>Nirahaṅkāra</em> – put that ego aside. An inflated ego does not do you any good. And then you are
-          without this – what happens? <em>Sama-duḥkha-sukhaḥ</em> – stable-minded in sukha and duḥkha. That is you are not overjoyed and elated and
-          going on cloud nine and getting carried away by pleasures and joys, neither are you sinking into depths because of the sorrows that have
-          befallen you. So you are equipoise. That is the word – equipoise. Stable in the face of death and destruction, stable in the face of victory
+          Simple things. These are the simplest of verses in the Gita. There are many, many, many and we can go on – but
+          the simplest of verses, the
+          most commonly used is what I have picked up. These are very close to my heart and they keep playing because
+          these are extremely simple – even
+          a child can understand. Compassion towards all living beings – compassion towards animate and inanimate. Do
+          not see anything as different.
+          Stay away from discrimination. Stay away from anger. Stay away from envy and jealousy and pride, conceit and
+          all of that. <em>Nirmama</em> –
+          without sense of proprietorship “this belongs to me”. <em>Mamatā</em> creates a lot of attachment, a lot of
+          entanglements. And today COVID is
+          teaching us that mamatā is of no value. <em>Nirahaṅkāra</em> – put that ego aside. An inflated ego does not do
+          you any good. And then you are
+          without this – what happens? <em>Sama-duḥkha-sukhaḥ</em> – stable-minded in sukha and duḥkha. That is you are
+          not overjoyed and elated and
+          going on cloud nine and getting carried away by pleasures and joys, neither are you sinking into depths
+          because of the sorrows that have
+          befallen you. So you are equipoise. That is the word – equipoise. Stable in the face of death and destruction,
+          stable in the face of victory
           and triumph and joy.
         </p>
       </div>
@@ -983,50 +1337,74 @@
       <div class="qa-block">
         <h3>Hypocrisy of outer restraint vs true karma-yoga</h3>
         <p class="speaker">
-          Those who restrain all the external organs of action and you know they go about saying “Oh I am very restrained” but they continue to dwell
-          on sense objects – they take their pleasures and they keep driven by pleasures – so the Lord says these people are in a state of delusion.
-          They act as if they have gained complete victory over their senses but in the mind they are dwelling on those sense objects. So does it help?
-          He says such people are hypocrites. So they are not truly away from the senses. He says only those people who sincerely try to control their
-          senses with their mind and engage in working without attachment – discharging their duties without attachment to the fruit of action – only
+          Those who restrain all the external organs of action and you know they go about saying “Oh I am very
+          restrained” but they continue to dwell
+          on sense objects – they take their pleasures and they keep driven by pleasures – so the Lord says these people
+          are in a state of delusion.
+          They act as if they have gained complete victory over their senses but in the mind they are dwelling on those
+          sense objects. So does it help?
+          He says such people are hypocrites. So they are not truly away from the senses. He says only those people who
+          sincerely try to control their
+          senses with their mind and engage in working without attachment – discharging their duties without attachment
+          to the fruit of action – only
           such people are truly karma-yogis.
         </p>
         <div class="shloka">
           <span class="translit">karmaṇy evādhikāras te mā phaleṣu kadācana<br>
-          mā karma-phala-hetur bhūr mā te saṅgo ’stv akarmaṇi</span>
+            mā karma-phala-hetur bhūr mā te saṅgo ’stv akarmaṇi</span>
           <span class="meaning">
-            You have a right to perform your prescribed duty, but you are not entitled to the fruits of action. Never consider yourself the cause of
+            You have a right to perform your prescribed duty, but you are not entitled to the fruits of action. Never
+            consider yourself the cause of
             the results of your activities, and never be attached to not doing your duty. (Bhagavad Gita 2.47)
           </span>
         </div>
         <p class="speaker">
-          So he says: You have a right only to action. Surrender the fruits of action to Me. Perform your prescribed duties – whatever they may be.
-          You may be a sweeper, you may be a cleaner, you may be a cook, you may be an engineer, a doctor or an IT professional, a teacher – do your
-          prescribed duties and let go of the fruits of action. Don’t consider yourself to be the doer – because immediately that will lead to inflation
-          of ego. And when you are caught up in the ego you’re caught up in the mind. So he says: Don’t be attached to action or inaction. There can
-          never be a time when you are not acting. That is what Krishna says. You’re always in action. Karma is part of you. You cannot be devoid of
-          karma. You cannot say “Oh karma will lead to karma – in the sense of action will lead to Karma for me – so let me just sit inert and lazy,
-          let me resort to inaction, let me just sit quietly in one corner and do nothing and I can escape karma.” No. The Lord Himself says: Arjuna,
-          I Myself am engaged in karma all the time. There is not a moment when I am in inaction. I am always engaged in karma. This multiverse is
-          happening all the time. It is in motion. There is no split second when things have come to a standstill. So Krishna says: Perform your work.
-          Set an example for the good of the world. And whatever actions such people do – when they do it with sincerity, with commitment – the common
-          people follow such actions. This is for our leaders maybe, for the government, for people who are leading us. So Krishna has a word to say
+          So he says: You have a right only to action. Surrender the fruits of action to Me. Perform your prescribed
+          duties – whatever they may be.
+          You may be a sweeper, you may be a cleaner, you may be a cook, you may be an engineer, a doctor or an IT
+          professional, a teacher – do your
+          prescribed duties and let go of the fruits of action. Don’t consider yourself to be the doer – because
+          immediately that will lead to inflation
+          of ego. And when you are caught up in the ego you’re caught up in the mind. So he says: Don’t be attached to
+          action or inaction. There can
+          never be a time when you are not acting. That is what Krishna says. You’re always in action. Karma is part of
+          you. You cannot be devoid of
+          karma. You cannot say “Oh karma will lead to karma – in the sense of action will lead to Karma for me – so let
+          me just sit inert and lazy,
+          let me resort to inaction, let me just sit quietly in one corner and do nothing and I can escape karma.” No.
+          The Lord Himself says: Arjuna,
+          I Myself am engaged in karma all the time. There is not a moment when I am in inaction. I am always engaged in
+          karma. This multiverse is
+          happening all the time. It is in motion. There is no split second when things have come to a standstill. So
+          Krishna says: Perform your work.
+          Set an example for the good of the world. And whatever actions such people do – when they do it with
+          sincerity, with commitment – the common
+          people follow such actions. This is for our leaders maybe, for the government, for people who are leading us.
+          So Krishna has a word to say
           for them also.
         </p>
         <div class="shloka">
           <span class="translit">yad yad ācarati śreṣṭhas tat tad evetaro janaḥ<br>
-          sa yat pramāṇaṃ kurute lokas tad anuvartate</span>
+            sa yat pramāṇaṃ kurute lokas tad anuvartate</span>
           <span class="meaning">
-            Whatever action a great man performs, common men follow. And whatever standards he sets by exemplary acts, all the world pursues.
+            Whatever action a great man performs, common men follow. And whatever standards he sets by exemplary acts,
+            all the world pursues.
             (Bhagavad Gita 3.21)
           </span>
         </div>
         <p class="speaker">
-          Krishna compares – he says: Look at Janaka Maharaja. He did not give up. He was a karma-yogi. He was rich, he was a king, he enjoyed all
-          the pleasures that a king enjoys – but he was a yogi. He was a householder. He was not sitting in some mountain and meditating. He discharged
-          all his duties but he was a highly evolved soul. And that is why Krishna says: Perform your work to set an example for the good of the world.
-          Whatever actions great people perform, common people follow them. Whatever standards you set, all the world will pursue. So when leaders set
-          great standards then the people follow them. So it is therefore imperative that those of us who are in positions of leadership – we need to do
-          our duties with commitment, with honour – so that others learn and follow. We must set the right example. We must become good role models. It
+          Krishna compares – he says: Look at Janaka Maharaja. He did not give up. He was a karma-yogi. He was rich, he
+          was a king, he enjoyed all
+          the pleasures that a king enjoys – but he was a yogi. He was a householder. He was not sitting in some
+          mountain and meditating. He discharged
+          all his duties but he was a highly evolved soul. And that is why Krishna says: Perform your work to set an
+          example for the good of the world.
+          Whatever actions great people perform, common people follow them. Whatever standards you set, all the world
+          will pursue. So when leaders set
+          great standards then the people follow them. So it is therefore imperative that those of us who are in
+          positions of leadership – we need to do
+          our duties with commitment, with honour – so that others learn and follow. We must set the right example. We
+          must become good role models. It
           is very important.
         </p>
       </div>
@@ -1037,31 +1415,50 @@
       <div class="qa-block">
         <h3>Thousands reflecting on the true meaning of life</h3>
         <p class="speaker">
-          This pandemic also has done something else. It just crossed my mind the other day. All of a sudden this pandemic has uplifted collective thought.
-          And I personally feel this is a very beautiful shift that has happened – because at this very moment thousands across the globe, even as we are
-          here, thousands across the globe are today reflecting – maybe at this very moment – on the true meaning of life. So look at the shift that has
-          happened because of the coronavirus. There is a huge shift that has come about. There is reflection. There is contemplation. And this is a good
-          sign – because all of us are suddenly thinking: How can I meet life better? What can I do to improve? What can I do to work upon myself? And
-          therefore we should thank the virus for giving us this opportunity, for giving us this time to reflect and to contemplate and to make us better
-          versions of ourselves. That is very important. As Lord Tennyson said: “The old order changeth, yielding place to the new.” The old order is
-          changing and we have to welcome the change. The change may be bringing with it a lot of turbulence, loss, bereavement – and we may be reacting
-          sometimes in anger and in grief and in desperation – but there is always a solution. There is always the inner reserve of strength which we can
-          call upon. There is always the resilience which we can call upon. It is there within us. All we need to do is connect to that resilience. All we
+          This pandemic also has done something else. It just crossed my mind the other day. All of a sudden this
+          pandemic has uplifted collective thought.
+          And I personally feel this is a very beautiful shift that has happened – because at this very moment thousands
+          across the globe, even as we are
+          here, thousands across the globe are today reflecting – maybe at this very moment – on the true meaning of
+          life. So look at the shift that has
+          happened because of the coronavirus. There is a huge shift that has come about. There is reflection. There is
+          contemplation. And this is a good
+          sign – because all of us are suddenly thinking: How can I meet life better? What can I do to improve? What can
+          I do to work upon myself? And
+          therefore we should thank the virus for giving us this opportunity, for giving us this time to reflect and to
+          contemplate and to make us better
+          versions of ourselves. That is very important. As Lord Tennyson said: “The old order changeth, yielding place
+          to the new.” The old order is
+          changing and we have to welcome the change. The change may be bringing with it a lot of turbulence, loss,
+          bereavement – and we may be reacting
+          sometimes in anger and in grief and in desperation – but there is always a solution. There is always the inner
+          reserve of strength which we can
+          call upon. There is always the resilience which we can call upon. It is there within us. All we need to do is
+          connect to that resilience. All we
           need to do is to connect to the divine within us. That is the most important.
         </p>
         <p class="speaker">
-          Therefore what can we do now? What kind of coping mechanisms can be resorted to? Can we set aside a little time of the day to spend and to send
-          out some good energy and vibrations to the whole globe – to all the countries, to all the continents, to all the people? Can we do that? It is
-          not something very difficult. We can set aside a little bit of time to meditate, to turn inwards, to become an <em>antarmukha</em>. From
-          <em>bahirmukha</em> we have been given this gift of time. We can do <em>paropakāra</em> – lending a hand, maybe lending ourselves in service to
-          others – whatever little we can. Let nothing be a constraint. <em>Paropakārāya idaṃ śarīram</em> – like the river, like the tree, like the cow –
-          they all, Mother Nature – they are all beautiful examples of just <em>paropakāra</em>. They exist for others. Can we try and become
-          <em>paropakārīs</em> in the real sense of the word? Can we try and exist not just for ourselves steeped in selfishness? Can we strive for a truly
+          Therefore what can we do now? What kind of coping mechanisms can be resorted to? Can we set aside a little
+          time of the day to spend and to send
+          out some good energy and vibrations to the whole globe – to all the countries, to all the continents, to all
+          the people? Can we do that? It is
+          not something very difficult. We can set aside a little bit of time to meditate, to turn inwards, to become an
+          <em>antarmukha</em>. From
+          <em>bahirmukha</em> we have been given this gift of time. We can do <em>paropakāra</em> – lending a hand,
+          maybe lending ourselves in service to
+          others – whatever little we can. Let nothing be a constraint. <em>Paropakārāya idaṃ śarīram</em> – like the
+          river, like the tree, like the cow –
+          they all, Mother Nature – they are all beautiful examples of just <em>paropakāra</em>. They exist for others.
+          Can we try and become
+          <em>paropakārīs</em> in the real sense of the word? Can we try and exist not just for ourselves steeped in
+          selfishness? Can we strive for a truly
           noble and selfless existence in these times?
         </p>
         <div class="practical">
-          <strong>Practical example – 5-minute world prayer:</strong> Sit quietly, place one hand on the heart, and silently offer:
-          “May all beings everywhere be free from fear, free from suffering, and rest in the knowledge of their true nature.” Do this once daily.
+          <strong>Practical example – 5-minute world prayer:</strong> Sit quietly, place one hand on the heart, and
+          silently offer:
+          “May all beings everywhere be free from fear, free from suffering, and rest in the knowledge of their true
+          nature.” Do this once daily.
           The cumulative field effect is real and measurable in one’s own nervous system first.
         </div>
       </div>
@@ -1072,47 +1469,80 @@
       <div class="qa-block">
         <h3>Guided silence and the final prayer</h3>
         <p class="speaker">
-          For now, all those who are here on this platform – let us take a few minutes to sit quietly wherever we are and to contemplate on what we have
-          discussed so far – on the thoughts that have been shared so far. Let us take a few moments. Let us sit in silence. Let us close our eyes and
-          let us try to integrate as much as we can. Let us wait for that divine spark within us to offer us insights as we have spent the last hour and
-          little more discussing what the Gita has to offer to us in COVID times – what are the lessons that we can glean from the Gita. However simple
-          they may sound, these lessons have profound meaning for us in this hour and in any hour for that matter. And because we are discussing COVID,
-          because we are in the thick of COVID, because we are surrounded and bombarded by news about COVID – we see it, we hear it and we are with it
-          all the time – we are affected. We are affected physically, mentally, emotionally – and therefore we turn towards spirit. We turn towards spirit
+          For now, all those who are here on this platform – let us take a few minutes to sit quietly wherever we are
+          and to contemplate on what we have
+          discussed so far – on the thoughts that have been shared so far. Let us take a few moments. Let us sit in
+          silence. Let us close our eyes and
+          let us try to integrate as much as we can. Let us wait for that divine spark within us to offer us insights as
+          we have spent the last hour and
+          little more discussing what the Gita has to offer to us in COVID times – what are the lessons that we can
+          glean from the Gita. However simple
+          they may sound, these lessons have profound meaning for us in this hour and in any hour for that matter. And
+          because we are discussing COVID,
+          because we are in the thick of COVID, because we are surrounded and bombarded by news about COVID – we see it,
+          we hear it and we are with it
+          all the time – we are affected. We are affected physically, mentally, emotionally – and therefore we turn
+          towards spirit. We turn towards spirit
           and we seek insight. And the insight will come.
         </p>
         <p class="speaker">
-          Let us take a few moments to silently contemplate on what lessons the Gita has offered us… Take a deep breath. Sit in the most comfortable
-          posture. Take a deep breath – inhale and exhale – and gently bring your focus to your breath. However your breathing is – it may be deep, it
-          may be shallow – let it be. Let us all connect to the space – the space of silence. Let us connect to stillness now. Let us connect through our
-          breath. Bring your awareness to your breath – the in-breath and the out-breath. Breathing in and breathing out. As you find yourself going deeper
-          and deeper into the beautiful space in your heart centre, with every breath shift your awareness to your heart centre and feel and observe. Let
-          every breath take you closer and closer to the lotus of your heart. Connect to the divine light residing in that lotus. Allow every breath to
-          connect you more and more to this spark which is within you which holds all the answers – this spark of wisdom that is right there within you.
-          Open yourself to receive those answers from that very light. Open yourself to receiving all the insights that you need right now in this hour,
-          in this situation – knowing full well that all that you seek you will find within. Let the insights unfold for each one – the answers which are
-          most relevant now, answers to questions you may be seeking – moving away from the chatter of the mind as the doorways of inner stillness open to
-          you. See those answers flowing towards you. Register those insights flowing towards you. All that you ever needed, all that you will ever need
-          in this journey has already been there and will always be there. In these moments of stillness tap into that divinity. Tap into the true you who
-          is already aware, who is already awakened. When you are ready you can choose to gently come back into the present moment. You are coming back with
-          your answers. You are coming back with insights. You are coming back with all that you need for your life in the present. When you feel you are
-          ready you can gently bring yourself back into the present moment and open your eyes by gently placing your palms on your eyes before opening them –
-          feeling refreshed, connected to that stillness, that space of inner joy and inner truth – the space which you can always reach whenever you want –
+          Let us take a few moments to silently contemplate on what lessons the Gita has offered us… Take a deep breath.
+          Sit in the most comfortable
+          posture. Take a deep breath – inhale and exhale – and gently bring your focus to your breath. However your
+          breathing is – it may be deep, it
+          may be shallow – let it be. Let us all connect to the space – the space of silence. Let us connect to
+          stillness now. Let us connect through our
+          breath. Bring your awareness to your breath – the in-breath and the out-breath. Breathing in and breathing
+          out. As you find yourself going deeper
+          and deeper into the beautiful space in your heart centre, with every breath shift your awareness to your heart
+          centre and feel and observe. Let
+          every breath take you closer and closer to the lotus of your heart. Connect to the divine light residing in
+          that lotus. Allow every breath to
+          connect you more and more to this spark which is within you which holds all the answers – this spark of wisdom
+          that is right there within you.
+          Open yourself to receive those answers from that very light. Open yourself to receiving all the insights that
+          you need right now in this hour,
+          in this situation – knowing full well that all that you seek you will find within. Let the insights unfold for
+          each one – the answers which are
+          most relevant now, answers to questions you may be seeking – moving away from the chatter of the mind as the
+          doorways of inner stillness open to
+          you. See those answers flowing towards you. Register those insights flowing towards you. All that you ever
+          needed, all that you will ever need
+          in this journey has already been there and will always be there. In these moments of stillness tap into that
+          divinity. Tap into the true you who
+          is already aware, who is already awakened. When you are ready you can choose to gently come back into the
+          present moment. You are coming back with
+          your answers. You are coming back with insights. You are coming back with all that you need for your life in
+          the present. When you feel you are
+          ready you can gently bring yourself back into the present moment and open your eyes by gently placing your
+          palms on your eyes before opening them –
+          feeling refreshed, connected to that stillness, that space of inner joy and inner truth – the space which you
+          can always reach whenever you want –
           the space that truly defines you.
         </p>
         <p class="speaker">
-          I hope the past few moments have brought you what you needed, what you were looking for. You can always choose to go back to the space because it
-          is part of you. It is you. And the more you keep going back the more you will learn and the more you will connect to your higher Self, to the inner
-          wisdom, to your inner Self – the inner Self which sustains you, which is you, and which has all the questions and all the answers that you ever need.
+          I hope the past few moments have brought you what you needed, what you were looking for. You can always choose
+          to go back to the space because it
+          is part of you. It is you. And the more you keep going back the more you will learn and the more you will
+          connect to your higher Self, to the inner
+          wisdom, to your inner Self – the inner Self which sustains you, which is you, and which has all the questions
+          and all the answers that you ever need.
         </p>
         <p class="speaker">
-          Dear friends, it was a very gratifying experience for me this session today. And I genuinely hope – although there were a few interruptions which
-          were beyond my control – I genuinely hope that this session was beneficial for you and you enjoyed it as much as I did. And I would like to close
-          this session today by thanking all of you who are present on this platform here today with me, by thanking the Divine for this opportunity. And I
-          would end with the Serenity Prayer. This prayer is also extremely, extremely close to my heart because I chanced upon it when I was a young girl.
-          I was all of 15 and I read it somewhere and somehow at that point it made a very deep impact upon me – although I didn’t know why. So I remember
-          reading it and then coming back home and writing it on a piece of paper which has stayed with me. And the Serenity Prayer is also very relevant for
-          our times – the time which we are living in now. So join me as I say this prayer as I leave you with these thoughts:
+          Dear friends, it was a very gratifying experience for me this session today. And I genuinely hope – although
+          there were a few interruptions which
+          were beyond my control – I genuinely hope that this session was beneficial for you and you enjoyed it as much
+          as I did. And I would like to close
+          this session today by thanking all of you who are present on this platform here today with me, by thanking the
+          Divine for this opportunity. And I
+          would end with the Serenity Prayer. This prayer is also extremely, extremely close to my heart because I
+          chanced upon it when I was a young girl.
+          I was all of 15 and I read it somewhere and somehow at that point it made a very deep impact upon me –
+          although I didn’t know why. So I remember
+          reading it and then coming back home and writing it on a piece of paper which has stayed with me. And the
+          Serenity Prayer is also very relevant for
+          our times – the time which we are living in now. So join me as I say this prayer as I leave you with these
+          thoughts:
         </p>
         <div class="shloka" style="text-align:center;">
           <span class="translit">
@@ -1123,8 +1553,10 @@
           </span>
         </div>
         <p class="speaker">
-          I leave this session once again with a word of gratitude and a word of thanks for all of you. And thank you to Quantum Life University for this
-          beautiful opportunity and for this beautiful association. Thank you, dear friends. Thank you so much. And wish you all health, happiness and inner
+          I leave this session once again with a word of gratitude and a word of thanks for all of you. And thank you to
+          Quantum Life University for this
+          beautiful opportunity and for this beautiful association. Thank you, dear friends. Thank you so much. And wish
+          you all health, happiness and inner
           awakening always. Thank you to you, friends.
         </p>
       </div>
@@ -1134,15 +1566,24 @@
         <p><strong>Core Take-aways from the Session</strong></p>
         <p>
           • The virus is not the enemy – it is a timely teacher that forced humanity to pause, reflect and realign.<br>
-          • We stand today exactly where Arjuna stood – overwhelmed, confused, limbs trembling – and the same medicine applies: uphold Swadharma without attachment to results.<br>
-          • The soul is unborn and undying; death is only a change of garment. Fear of death itself suppresses immunity more than the virus.<br>
-          • Equanimity (<em>samatvam</em>) and the state of sthita-prajña are the practical armour for every COVID warrior – doctor, parent, student or neighbour.<br>
-          • Practice three austerities daily: body (hygiene + moderation), speech (no agitation, truth, kindness), mind (simplicity, purity of thought).<br>
-          • Lifestyle prescription of the Gita: <em>yuktāhāra-vihārasya</em> – moderation in food, recreation, sleep and effort.<br>
-          • COVID has already delivered its greatest gift: the realisation that we need very little to be content, and that happiness is found by sitting still, not by chasing the butterfly.<br>
-          • See the Divine in every being – the recovered patient, the frightened neighbour, the frontline worker. Equality of vision is the hallmark of true knowledge.<br>
-          • You have a right only to action; the fruits belong to the Divine. Lead by example – the world follows what the best among us actually live.<br>
-          • Five minutes of silent offering for the welfare of all beings is one of the most powerful contributions any of us can make right now.
+          • We stand today exactly where Arjuna stood – overwhelmed, confused, limbs trembling – and the same medicine
+          applies: uphold Swadharma without attachment to results.<br>
+          • The soul is unborn and undying; death is only a change of garment. Fear of death itself suppresses immunity
+          more than the virus.<br>
+          • Equanimity (<em>samatvam</em>) and the state of sthita-prajña are the practical armour for every COVID
+          warrior – doctor, parent, student or neighbour.<br>
+          • Practice three austerities daily: body (hygiene + moderation), speech (no agitation, truth, kindness), mind
+          (simplicity, purity of thought).<br>
+          • Lifestyle prescription of the Gita: <em>yuktāhāra-vihārasya</em> – moderation in food, recreation, sleep and
+          effort.<br>
+          • COVID has already delivered its greatest gift: the realisation that we need very little to be content, and
+          that happiness is found by sitting still, not by chasing the butterfly.<br>
+          • See the Divine in every being – the recovered patient, the frightened neighbour, the frontline worker.
+          Equality of vision is the hallmark of true knowledge.<br>
+          • You have a right only to action; the fruits belong to the Divine. Lead by example – the world follows what
+          the best among us actually live.<br>
+          • Five minutes of silent offering for the welfare of all beings is one of the most powerful contributions any
+          of us can make right now.
         </p>
       </div>
 
@@ -1156,7 +1597,7 @@
 
     <nav class="pager">
       <span></span>
-      <a href="index.html">← Back to Home</a>
+      <a href="gita-covid-19.html" class="next">Back to top</a>
     </nav>
 
     <footer class="site-footer">
@@ -1164,4 +1605,5 @@
     </footer>
   </div>
 </body>
+
 </html>
