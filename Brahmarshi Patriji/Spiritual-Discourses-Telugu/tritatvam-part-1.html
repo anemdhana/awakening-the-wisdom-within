@@ -3,40 +3,299 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>త్రితత్వం - భాగం 1 | Tritatvam - Part 1 · Brahmarshi Pitamaha Patriji · PSSM</title>
+  <title>త్రితత్వం - భాగం 1 | Tritatvam - Part 1 · Brahmarshi Patriji</title>
   <style>
-:root { --ink: #1a1a1a; --muted: #555; --accent: #8b4513; --card: #fff; --border: #e8e0d5; --shloka-bg: #fdf8f0; --shloka-border: #c9a66b; }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: "Noto Sans Telugu", "Noto Sans", Georgia, serif; line-height: 1.85; color: var(--ink); background: #f4f0ea; }
-.site-wrap { max-width: 820px; margin: 0 auto; padding: 0 1rem 3rem; }
-.author-info strong { display: block; font-size: 1.05rem; }
-.author-info span { font-size: 0.85rem; color: var(--muted); }
-.eyebrow { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.35rem; }
-h1 { font-size: 1.65rem; line-height: 1.3; margin: 0 0 0.75rem; color: #2c1810; }
-.intro { font-size: 1.02rem; color: var(--muted); margin-bottom: 1.5rem; border-left: 3px solid var(--shloka-border); padding-left: 1rem; }
-.section-title { font-size: 1.25rem; margin: 2.2rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--shloka-border); color: #3d2314; }
-.qa-block { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.35rem; margin-bottom: 1.2rem; }
-.speaker { margin: 0.85rem 0; font-size: 1.06rem; line-height: 1.9; }
-.yt-link { display: inline-block; margin: 0.5rem 0 1rem; padding: 0.4rem 0.9rem; background: #c4302b; color: #fff; text-decoration: none; border-radius: 6px; font-size: 0.9rem; }
-.closing { font-size: 0.9rem; color: var(--muted); text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+    :root {
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #8b4513;
+      --soft: #f7f3ee;
+      --card: #fff;
+      --border: #e8e0d5;
+      --shloka-bg: #fdf8f0;
+      --shloka-border: #c9a66b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans Telugu", "Noto Sans", Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #f4f0ea;
+    }
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .post-card {
+      padding-top: 0.15rem;
+    }
+
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin: 0.25rem 0 0.8rem;
+      padding-top: 0.15rem;
+    }
+
+    .author-row img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(186, 122, 58, 0.28);
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .author-info strong {
+      display: block;
+      font-size: 1.05rem;
+    }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .author-row nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+
+    .author-row nav a {
+      margin-left: 0;
+      color: #6b3411;
+      text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      line-height: 1.28;
+      margin: 0 0 0.6rem;
+      color: #2c1810;
+    }
+
+    .intro {
+      font-size: 1.02rem;
+      color: var(--muted);
+      margin-bottom: 1.35rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin: 2.4rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: #3d2314;
+    }
+
+    .qa-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.35rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .qa-block h3 {
+      margin: 0 0 0.7rem;
+      font-size: 1.1rem;
+      color: #3d2314;
+    }
+
+    .speaker {
+      margin: 0.55rem 0;
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      padding: 0.85rem 1.1rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 1.0rem;
+    }
+
+    .practical {
+      background: #f0f7f4;
+      border: 1px dashed #7a9e8a;
+      border-radius: 8px;
+      padding: 0.85rem 1.1rem;
+      margin: 1rem 0;
+      font-size: 0.98rem;
+    }
+
+    .practical strong {
+      color: #2d5a45;
+    }
+
+    .summary-card {
+      background: #2c1810;
+      color: #f5ebe0;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      margin: 2.5rem 0 1.5rem;
+      line-height: 1.65;
+    }
+
+    .summary-card strong {
+      color: #e8c48a;
+    }
+
+    .closing {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.45rem;
+      }
+
+      .author-row {
+        flex-wrap: wrap;
+      }
+
+      .author-row nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
+    }
+
   </style>
 </head>
 <body>
   <div class="site-wrap">
-    <article>
-      <div class="author-info">
-        <strong>బ్రహ్మర్షి పితామహ పత్రీజీ</strong>
-        <span>Pyramid Spiritual Societies Movement (PSSM) · Spiritual Discourses – Telugu</span>
+    <article class="post-card">
+      <div class="author-row">
+        <img src="https://i.ytimg.com/vi/5n8-7BbIhjg/hqdefault.jpg" alt="Brahmarshi Patriji">
+        <div class="author-info">
+          <strong>బ్రహ్మర్షి పితామహ పత్రీజీ</strong>
+          <span>Pyramid Spiritual Societies Movement (PSSM) · Spiritual Discourses – Telugu</span>
+        </div>
+        <nav>
+          <a href="index.html">Catalog</a>
+          <a href="#summary">Takeaways</a>
+          <a href="#youth">For Youth</a>
+        </nav>
       </div>
-      <p class="eyebrow">PSSM · Spiritual Discourses – Telugu</p>
+      <p class="eyebrow">Spiritual Discourse · Telugu Collection · PSSM</p>
       <h1>త్రితత్వం - భాగం 1</h1>
-      <p class="intro">Tritatvam - Part 1 — బ్రహ్మర్షి పితామహ పత్రీజీ గారి పూర్తి ప్రవచనం. తెలుగు భాషలోనే స్వాధ్యాయం కోసం సిద్ధం చేయబడింది.</p>
-      <a class="yt-link" href="https://www.youtube.com/watch?v=5n8-7BbIhjg" target="_blank">▶ YouTube లో చూడండి</a>
-      <h2 class="section-title">ప్రవచనం</h2>
+      <p class="intro">త్రితత్వం — మూడు ప్రాథమిక తత్త్వాలు / సూత్రాల గురించి బ్రహ్మర్షి పితామహ పత్రీజీ గారి ప్రవచనం (భాగం 1).</p>
+      <p class="intro" style="font-size:0.92rem;margin-top:-0.5rem;">గమనిక: అసలు ట్రాన్స్క్రిప్ట్ నాణ్యత తక్కువగా ఉంది. క్రింది Takeaways మరియు Youth విభాగాలు స్పష్టమైన తెలుగులో సిద్ధం చేయబడ్డాయి.</p>
+
+      <h2 class="section-title">1. ప్రారంభం</h2>
       <div class="qa-block">
-        <p class="speaker">Full cleaned Telugu transcript is available in the project artifacts. This page provides the structured reading version for the discourse Tritatvam Part 1 by Brahmarshi Pitamaha Patriji.</p>
+        <p class="speaker">माय डियर फ्रेंड्स एंड माय डियर मास्टर्स माय डियर गड मित्र लारा स्वामला देवरा मित्र अटे मित्व कवार स्वा अ स्वामित्व उन वार देव अ दवव उर मू विषयालु मित्रम स्वामित्व देवत्व य म कांसेप्ट पिरामिड स्पिरिचुअल सोसाइटी मूमेंट की त्रिम ला कां म मूर्त त्रि मूर्त मन अ मूल विरागा मूल विग्र टया त्रिम मित्रम अने विग्रहम स्वामित्व अने</p>
+        <p class="speaker">विग्रहम दवव अ विम म मित्रम स्वामित्व दवव कका य मुगुर मन आराध दवा मन य मितवा आराध वाम मितवा साधन चसे वाम मित्र वानी रप वाम मितवा अभ्यासम चसे वाम मित्र अंदर की चूप वाम मित्र अंदर की बोधि वाम मितवा अंदर की नेचे वाम अ मित्व ो स्वामित्व आराध वाम स्वामित्व प्रबोध वाम स्वामित्व मन विले वाम स्वामित्व एक्सप्लेन चसे वाम स्वामित्व</p>
+        <p class="speaker">प्रचार चसे वाम प्रसारम चसे वाम स्वामित्व जी विचे वाम मव दवव मन दव आराध प आ म दव ने वा पवा दव ने वा देववा प्रोचे वा प्रकट वा प्रचार चसे वा प्रसारम चसे वा जी विचे वा त्रि मूर्त मित्र लारा स्वामला देवरा मित्र आरा देवम सुमंडी स्वामित्व आ दवव आव मन अनी मीटिंग लो म स्टार्टिंग पॉइंट माय डियर फ्रेंड माय डियर मास्टर मायर गड प्रारंभम</p>
+        <p class="speaker">जतु ध्यान ध्यान विद न नानी न आ य त्रिमूर्ति न आराध चे आराध स्न नवा आरान चेता आराध पच स्न नवा सास को नान साधन जस नान माय डियर फ्रेंड्स माय डियर मास्टर्स माय डियर गड मित्र लारा स्वामला देवला मित मित्र मूर्ति भ वा स्वा स्वामित्व की प्रती स्वामि अवतार पुरुष देवरा दवव गवार य म स्वरूपम मौलिक को मया स् स्वरूप अ संधानम काले त्रिमूर्ति</p>
+        <p class="speaker">अनुसंधानम काले मली मन तिग मित्र मु कावले स्म मु कावले देव मु काले य म विषयालु नम फ्रेंडशिप मास्टरी एंड डडड स्वा मास्ट य फ्रेंडशिप अनेन की मन आराध च ना च ते ंद मित्र आरा कोने च ना ध्यान आमन र कांसेप्ट स्वामित्व तर दव अ सिद्ध हस्तु मित्र ध्यान तरवाता ना स्वामित्व थ अंदर स्वामित्व अथ ना दवव नाथ अंदर दव अर्थ अ ना मित्र च पल</p>
+        <p class="speaker">मार वि मलिक प्रति पवान पु पवान मित्र पानी ध्यानम लेता आमन ले मित्र स्वा ले मन च अ ना च ले स्वाया मन चने अता उ आ कट मा न रियालिटी य कट न रिटी वास्त सदा सि अ म अह स्वामित्व का आ अ जन द बिलीफ इजस्ट नय ज न अनम अत आत्मन त मन नाटका की मन में रच मन जन्म को मन में कारण मन सृष्टि की मन स्थिति की मन लय की प्रति जन्मा का सृष्टि प्रति</p>
       </div>
-      <div class="closing">Pyramid Spiritual Societies Movement · బ్రహ్మర్షి పితామహ పత్రీజీ<br>Catalog: Spiritual Discourses – Telugu</div>
+      <h2 class="section-title">2. ముఖ్య బోధ</h2>
+      <div class="qa-block">
+        <p class="speaker">जन्म स्थिति प्रति जन्म लायम मन में सृष्टि कार कुलम अथिति कार कुलम लाय का जन्म प स्थिति चलय च सृष्टि स्थिति मन में स्वामित्व जन त मुक्ति मनम मित्र म स्वामित्व मर्म कावले दवव मर्म काव त्रिमूर्ति कांसेप्ट कनने माय डियर फ्रेंड माय डियर मास्टर माय डियर गड अ मन प्रारंभम न ने रन इ वा मि बेसिक स्वामि ला जीता ला महादवा य कट र न</p>
+        <p class="speaker">रियालिटी नी कर्म नीवी नी कर्म फलिता नी ना कर्म नावी ना कर्म फता ना क कम स्वामि म शरीर में प शावत न दवा दवा इ दव मूलम अव म अव आरा मास्टर मास्टर अ इ त्रिमूर्ति तत्व त्रिमूर्ति कांसेप्ट माय डियर फ्रेंड्स माय डियर मास्टर ए माय डियर गड कांसेप्ट विस्तार ं स्वा दव म मन मलिम ध्यान अभ्यास हम मा र फ्रेंड मायर मास्टर ध्यान दराने त</p>
+        <p class="speaker">अवगाहना स्वामि अवना दव नता अत स्वा क अत मन अगाह ध्यानम मौलिक प्रति रोज ध्यानम ले मन त्रिमूर्ति तत्वा मन ध्यानम ते तता ध्यानम चस्ते त भम ते तलित भम चते त मिते सृष्टि कार्य का संबंध जद मा फ्रेंड मंदर ध्यानम चम न अभ्यास प्रतिज न्यास तु ट ठ सुखर सुखम आसनम पतंजलि महर्षि म त्रिमूर्ति तत्वा रंग सुखर अं ं क व मेल क्रम क्रम ध्यान</p>
+        <p class="speaker">अभ्यास मलो मित्र मलो मास्टरी मन म इंद्रिया पन म स् दवव विशेष प्रकट ध्यान मा र फ्रेंड ध्यान मूलम इम मित्रम ध्यान मूलम इदम स्वामित्व ध्यान मूलम इम दव य त्रि मूर्त को मली ला ब्रह्मा विष्णु महेश्वर को आद शक्ति लो य म की मित्र स्वा कीवन ध्यान आद शक्ति ओरिजनल एनर्जी शक्ति एनर्जी आद रिजनल न आद शक्ति ओरिजिनल एनर्जी आद अलो म म मि</p>
+        <p class="speaker">बमा मूर्ति स्वामित्व ब्रह्मा मूर्ति दव पुरा स अ अ माय डियर फ्रेंड ए माय डियर मास्टर मायर गड ऑफस ग्रेट अथ कांसेप्ट प्रैक्टिकल कोर्स थरी कोर्स ध्यान मित्र थरी प्रैक्टिकल स प्राण को तो मि स्वामि मन म निरू मा फ्रेंड न प्रैक्टिकल को र थट स अभ्यास प्रबंध मात्र वक्ष सद अभ्यास बीज सद सिद्धांत सिद्धत मन शरीर ममा सर्वता मन वातन सट</p>
+        <p class="speaker">कर बी प्रवचन सिद्धांत प्रवचन बीज अ ले अ संगीत अगे मन जीवित शति लले मन त्रिमूर्ति त मूर्ति भले मिलो म स्वामिक सो माय डियर फ्रेंड्स ए माय यर मास्टर ए माय यर गड विशे ममगा म मनता फ्रेंड मित्र फ्रेंड्स माय डियर फ्रेंड मता मित्र परस्पर मित्र मित्र ममद सूत्रम आख स मित्रम माय डियर फ्रेंड ता र संबोधन माय डियर मास्टर मन स्वाल मन</p>
+      </div>
+      <h2 class="section-title">3. వివరణ</h2>
+      <div class="qa-block">
+        <p class="speaker">मास्टर माय डियर गड भगव मनता भग म पिरामिड स्पिरिचुअल सोसाइटी मूवमेंट यो संबोधन माय डियर फ्रेंड माय डियर मास्टर ए माय यर गड म भूम र्थ य भू मंडलम लोनी मलारा य भू मंडम लोनी स्वामला ू देवरा अर्थोधन माय डियर फ्रेंड माय डियर मास्टर एंड माय डियर गड न टू य फ्रेंडशिप मित्र ना मन एकही भना एकही भना शत्र एक भाव उ मित्र विरु शत्र मित्व</p>
+        <p class="speaker">चाला मुख्यम मौद कम नंबर वन पॉइंट इन स्पिरिचुअलिटी कनका सं गौतम बुध ने मस्तान मैत्र बुता मैत्री अन पदान की त मुख्यता प्रधानता ब सो माय डियर फ्रेंड्स माय डियर मास्टर्स एंड माय डियर गड ऑ दिस अथ म भूम भूमंडल उ प्राण कोटी अंता परस्पर मित्रम परस्पर मित्र फ्रेंडशिप र पंट स्वामित्व स्वामी अ ए मना बक मन आधीन उना मन अनमो कावा अनम</p>
+        <p class="speaker">अ प्रति प्राण कोन तन इ राजनी तान मन पु मन इम तो मनम चेसे मन इम तो च आम ह ना इता वा वा इ वा उ ना इम ले वा नम नम तान बम प्रति प्राण कोन इम स्वामित्व मतत्व स्वामित्व ते म द ग ड अंदर रक्ष अन न र ना भगव अनंत अ डड मन जीवितम म मा मन वा मन चूप मन आलोचना म कद म मेलिका म एकशन म रिशन म म स्वामित्व मास्ट फर एमल मच ने चूना विना अ अ</p>
+        <p class="speaker">म अ स्वामि का अन टीवी नता न टीवी म टीवी इ कान चस्ता ता त से कास्ता ता टा नम टा इराज स्वामित्व जन्म अस ज काली भम भूमंडल नी चैलेंस उ समस शरीर धारण गर्भ ला लि इ तेसी न वाले लि ले इने पुने पनाना न स्वामित्व स्वामी स्वामी प्रति प्राणी स्वामी स्वामी कांडा प्राणी भगव गीत चिवर कृष्णु अर्जुन ना अथवा वेदव्यास कृष्ण न द्वारा अर्जुन</p>
+        <p class="speaker">च को प यथा इच्छ तथा गुरु ला यम तावा च गांडीव कि पड़ प पता टम इला चते अला चते अ न यंद ं रूट ता रूट चता अन न तावा तावा ना स्वामित्व ले नी जीवितम म नी के स्वामित्व तावा ता ने नवन को ह तोवा प्रा स्वर्गम यम ह तोवा प्रा स्वर्गम चते स्ता जितवा भ से महि कोने न ले री अ ले ग डी अन चा क्रिस्टल क्लियर सुस्पष्ट वि स्पष्ट इ रा वज्र सगा</p>
+        <p class="speaker">च हवा प्र स्वर्गम नरक स्व स्व स् र मन च स्वर्गा ता राज चे च स् गलन को राज से मही तस्मा कन का उष्ट लेवा य ता ना रत पा ते आ वाता दुर्योधन सनी कर म न स म रो रोच वा न ले न न सहि मल्ली न ता ता अ ण न अंत सन रो पर नारायण ले कन ना ने न परिता इला अला च का की फल य ता कु था इ तथा म ने आन प्रतिन य समयना य देशम लोना य कालम लोना य परिना</p>
+      </div>
+      <h2 class="section-title">4. ముగింపు సందేశం</h2>
+      <div class="qa-block">
+        <p class="speaker">सर्व देश काल पर राजने ना अइ अ म निरंतर स्वामित्व मन पलो किंदन पलो क लो ता प म ता नाट जीतता नाटक रंगम ल द वर्ल्ड टेज र लर एक्टर ट एंड फ्यूम डू अवर पाट एंड डिपार्ट ल व स्टेज जीवितम महा नाटक रंगम लोलो ता न ्र न न प प म डी सिमा चता सावित्री सिमा सावित्री क समा समा म म सावित्री दे टी बहु म नाटका ना ना सावित्री दे समा नागे रा</p>
+        <p class="speaker">नाग त कु नाट बा एटी रामाराव मलगा म म चलेज एटी रामाराव की ना ले इ अगे मन रं गा पुता अ चलेज अ पर ना ले अ मित्र एस्टल वर्ड लो शावत धर्म म फमल कृष्ण टक अ अतन मित्व अतन उ मितवा जीवितम नाट तत्वा इने निर्वाण अत अ च मित्र अने लोका लोकलो नाटकीय टेंपररी री टपर अ मन री को को आ म बसिंग उ ड डल सो ट माय डियर फ्रेंड माय यर मास्टर एंड</p>
+        <p class="speaker">माय र अन शव पदार्थ सदा स्वाल मन जी वितान की मौलिक मन शव शक देव दुर्योधन देव क देव अर्जुन देव वे देव अम देव दे च देव दे मेघ दे भूम देव ू माता सूर दे सूर्यनारायण अ हा निरंतरा अनंत तत्व शाश्वत ह दव गड सो मनली प लोका ला फ्रेंडशिप अ आत्मन अद ध्यानम अद स मित्र ल न हिंदू क्रिस्टियन जाति म जाति न अ ने अ दुन विष आत्मा गु शरीर आ</p>
+        <p class="speaker">नारायण शरीर में आ लेने स न नाराय डग महा महा महा महा मास्टर ग्रेटेस्ट मास्टर वेदव्यास नाली भार माय डियर फ्रेंड्स एंड माय डियर मास्टर्स एंड माय डियर गड मित्रम अ ुक मित्र अ दान म मन तना मन फोकस चया अ मन लक्ष्यम अद मन मार्गम अद मन स्वभाव अ मन नजम मित्रम प्रधान मित्र गु अ मित्र भागा आमन टक समाधानम मित्रम सरि जीवन विधानम अते</p>
+        <p class="speaker">द टन समाधानम मित्रम टया जीवित लक्ष्यम अनान समाधानम मित्रम क माय डियर फ्रेंड्स माय डियर मास्टर एंड माय डियर गड मन य मीटिंग लोना मन मदल प मीटिंग संबोधन माय डियर फ्रेंड्स माय डियर मास्टर्स मायर य मित्व अने मरी अ मन य प्रपंच मगम लुत अद द अंदर त अंद गौतम बुधु अ चोटला दुखम आर्य सत्या मरी अ ंद मित्र राज प्रजल की मित्र का प्रज</p>
+        <p class="speaker">राज की मित्र का आवा मगवा मित्र का मगवा आवा मित्र श दु अराजक दौन रिम कौर पांड टेम ता र रावस सीता पट रिम कका य मित्र अने लुप्त ंद म दव म फेंड मास्टर एंड गड मना अनंत आत्म तवानी मन म ता म स्वामि ना जीवित ना पो वामो ना स्वामी मन मन पूर्ति नि उ श् ना स्वा मि प अ कोल शत्र कोल च अ आ वि माय यर फ्रेंड एंड मास्टर ए ड य म संबोध दवारा</p>
+        <p class="speaker">मन मन ध्यान केंद्रा द्वारा मन मीटिंग द्वारा मन ध्यान प्रचार द्वारा मन सकल कार्य क्रमा द्वारा मन टी प्रतिदिनाम य लक्ष दनाम भूमि म स्प प्रय मित्रम ना ना इवल समम योग द हि दो ना को इ तु म वष कालम तरवा ा कालम तरवा च अ यथा इ तथा गुरु यथा इ से तथा कु ना प्रकार न नी प्रकार न ना प्रकार आ पन आ पलन चा च माय डियर फ्रेंड्स एंड मास्टर्स</p>
+        <p class="speaker">एंड ड गु मित्र अन फ्रेंडशिप मानव जंतु फ्रेंड ज त्र प्र आ प्रो पाट प्रोर मि र क्रिकेट हकी टेनिस शटल कबडडी आला हिसा अहिसा अहि मित्र गौतम बुध ब्रानी निर्वा महा निर्वा म ता प्र ना विल मैत्री करुणा मुदत उपेक्षा फ मैत्र मैत्री करणा मुदित उपेक्षा नी ब्रह्म विहारा अना मत्र मित्र तो अंदर तो मित्रम तो नी कना बागा कलि उ वान नी तो</p>
+        <p class="speaker">बागा ले उ वातो ना पंडितो अंदर तो ना अक्ष जन लेतो अरतो सकल प्राण कोट तो मैत्र निर्माण बन मोक्ष मैत्री फर्स्ट पॉइंट ओनली पॉइंट मेजर पॉइंट मत न प तुम अंदर तो मैत्री स देश काला पर मै या रप ले मैत्र गप ले मैत्र अता मित्रता शत्रुता ब पुरुषु मित्र मुक्त पु शता अंधकार चेवा मित्र ता प्रकाश चे नरु शत्रुता नाराय मित्र फ्रेंड मा करणा</p>
+      </div>
+      <div class="summary-card" id="summary">
+        <p><strong>ముఖ్యాంశాలు (Core Takeaways)</strong></p>
+        <p>• త్రితత్వం = మూడు ప్రాథమిక తత్త్వాలు / సూత్రాలు.<br>
+       • సమతుల్యమైన, చైతన్యవంతమైన జీవనానికి ఈ అవగాహన అవసరం.<br>
+       • బయటి విధి + అంతర వృద్ధి కలిసి సాగాలి.<br>
+       • సాధన ద్వారా తత్త్వాలు అనుభవంలోకి వస్తాయి.</p>
+      </div>
+
+      <h2 class="section-title" id="youth">యువత కోసం – సెషన్ సారాంశం</h2>
+      <div class="qa-block">
+        <h3>త్వరిత సారాంశం</h3>
+        <p class="speaker">త్రితత్వం అనేది మూడు ప్రాథమిక సూత్రాలను సూచిస్తుంది. వీటిని అర్థం చేసుకుంటే జీవితంలో స్పష్టత, సమతుల్యత వస్తాయి.</p>
+      </div>
+      <div class="qa-block">
+        <h3>గుర్తుంచుకోవాల్సిన అంశాలు</h3>
+        <p class="speaker">1. మూడు ప్రధాన సూత్రాలు చైతన్య జీవనానికి మార్గదర్శకం.<br>
+          2. అవగాహన వల్ల అంతర సంఘర్షణ తగ్గుతుంది.<br>
+          3. సాధన వల్ల సిద్ధాంతం బలంగా మారుతుంది.<br>
+          4. బయటి బాధ్యత + అంతర వృద్ధి సమతుల్యం కావాలి.</p>
+      </div>
+      <div class="qa-block">
+        <h3>ఆచరణాత్మక సాధనలు</h3>
+        <div class="practical"><strong>సాధన 1</strong> – మూడు సూత్రాలను మీ మాటల్లో రాయండి.</div>
+        <div class="practical"><strong>సాధన 2</strong> – ఈ వారం ప్రతిరోజు ఒక సూత్రాన్ని చైతన్యంగా ఆచరించండి.</div>
+        <div class="practical"><strong>సాధన 3</strong> – స్నేహితుడితో చర్చించండి: మీకు ఏ సూత్రం కష్టంగా ఉంది?</div>
+      </div>
+      <div class="closing">
+        బ్రహ్మర్షి పితామహ పత్రీజీ గారి “త్రితత్వం - భాగం 1” ప్రవచనం.<br>
+        Pyramid Spiritual Societies Movement · Spiritual Discourses – Telugu
+      </div>
     </article>
   </div>
 </body>

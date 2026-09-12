@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Are Never Alone – Your Cosmic Team | Priya Raghavendra</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <style>
+    /* Fallback styles matching the day-01 / gita-covid aesthetic if site.css is absent */
+    :root {
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #8b4513;
+      --soft: #f7f3ee;
+      --card: #fff;
+      --border: #e8e0d5;
+      --shloka-bg: #fdf8f0;
+      --shloka-border: #c9a66b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #f4f0ea;
+    }
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .site-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .site-brand span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0 1rem;
+    }
+
+    .author-row img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+    }
+
+    .author-info strong {
+      display: block;
+      font-size: 1.05rem;
+    }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+      color: #2c1810;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: #3d2314;
+    }
+
+    .qa-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .qa-block h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.12rem;
+      color: #3d2314;
+    }
+
+    .speaker,
+    .answer,
+    .question {
+      margin: 0.6rem 0;
+      font-size: 1.02rem;
+    }
+
+    .question {
+      color: #5a3e2b;
+      font-style: italic;
+    }
+
+    .shloka {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      padding: 0.9rem 1.1rem;
+      margin: 1rem 0;
+      font-family: "Georgia", serif;
+      font-size: 1.08rem;
+      line-height: 1.55;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .shloka .translit {
+      display: block;
+      font-weight: 600;
+      color: #5c3d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .shloka .meaning {
+      display: block;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      font-style: italic;
+    }
+
+    .dialogue {
+      background: #f9f6f1;
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      margin: 0.8rem 0;
+    }
+
+    .dialogue .who {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+
+    .practical {
+      background: #f0f7f4;
+      border: 1px dashed #7a9e8a;
+      border-radius: 8px;
+      padding: 0.85rem 1.1rem;
+      margin: 1rem 0;
+      font-size: 0.98rem;
+    }
+
+    .practical strong {
+      color: #2d5a45;
+    }
+
+    .summary-card {
+      background: #2c1810;
+      color: #f5ebe0;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      margin: 2.5rem 0 1.5rem;
+      line-height: 1.65;
+    }
+
+    .summary-card strong {
+      color: #e8c48a;
+    }
+
+    .closing {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .site-footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      padding: 1rem 0;
+    }
+
+    .pager {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .pager a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  </style>
+
+  <style>
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .post-card {
+      padding-top: 0.15rem;
+    }
+
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin: 0.25rem 0 0.8rem;
+      padding-top: 0.15rem;
+    }
+
+    .author-row img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(186, 122, 58, 0.28);
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .author-row nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+
+    .author-row nav a {
+      margin-left: 0;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.3rem;
+    }
+
+    .post-card h1 {
+      margin: 0 0 0.6rem;
+      font-size: 1.7rem;
+      line-height: 1.28;
+    }
+
+    .intro {
+      margin-bottom: 1.35rem;
+    }
+
+    @media (max-width: 600px) {
+      .author-row {
+        flex-wrap: wrap;
+      }
+
+      .author-row nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-wrap">
+    <article class="post-card">
+      <div class="author-row">
+        <img src="https://scontent.fmaa6-1.fna.fbcdn.net/v/t39.30808-6/786354536_28339130022393865_2136798332731031592_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s960x1280&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Sgy1Wb0XvbsQ7kNvwFC3qnK&_nc_oc=AdqRkPiBy40meyq32xp_J8vroBpfjeGtG8HaDdq0n9uo_Salyox6st-e2-EryLYVGlY&_nc_zt=23&_nc_ht=scontent.fmaa6-1.fna&_nc_gid=mk7op91z83MZYTie_LLVgA&_nc_ss=7b2a8&oh=00_AQLMXG6SivUS9pjg32ZW1YARl7FAW2CXeXX3-7aC8WmTqQ&oe=6AAB2F19"
+          alt="Priya Raghavendra">
+        <div class="author-info">
+          <strong>Priya Raghavendra</strong>
+          <span>Spiritual Reflection · Loneliness &amp; Cosmic Support</span>
+        </div>
+        <nav>
+          <a href="#summary">Summary</a>
+        </nav>
+      </div>
+
+      <p class="eyebrow">Loneliness · Spirit Guides · Soul Contract</p>
+      <h1>You Are Never Alone – Your Cosmic Team Is Always With You</h1>
+      <p class="intro">
+        A complete English rendering and expansion of Priya Raghavendra’s short spoken reflection.
+        The original message is preserved in full spirit and then organised into clear sections
+        with deeper context, practical reminders, and a summary for daily life.
+        The core teaching: the feeling of being unsupported in the physical world is real,
+        yet it is never the whole truth — every soul travels with its own cosmic team.
+      </p>
+
+      <!-- ========== SECTION 1 ========== -->
+      <h2 class="section-title">1. The Familiar Feeling of Loneliness</h2>
+
+      <div class="qa-block">
+        <h3>When the physical world does not understand</h3>
+        <p class="speaker">
+          In life we often feel: “No one supports me. In the physical world they simply do not understand.
+          Even when many people are around me, the belonging feeling still does not come.”
+        </p>
+        <p class="speaker">
+          This experience is extremely common. You can be surrounded by family, colleagues, friends —
+          and still carry a quiet emptiness inside. The outer crowd does not automatically create
+          an inner sense of being held. That gap between “people are present” and “I feel supported”
+          is what this reflection addresses.
+        </p>
+      </div>
+
+      <!-- ========== SECTION 2 ========== -->
+      <h2 class="section-title">2. The Hidden Reality – Your Cosmic Team</h2>
+
+      <div class="qa-block">
+        <h3>Before you arrived on Earth, a meeting already took place</h3>
+        <p class="speaker">
+          Actually, do you know what is true? Each one of us, before coming to this Earth,
+          already belongs to our own cosmic team. When we take physical birth on this planet,
+          we come after holding a meeting with our spirit guides.
+        </p>
+        <p class="speaker">
+          These guides may be experienced as deities, luminous beings, or simply as a quiet
+          presence that never leaves. The cosmic team has at least three permanent members,
+          and in addition there are specialists who step in according to the needs of different phases of life.
+        </p>
+        <p class="speaker">
+          Whatever you need, at whatever time you need it, that support is already arranged
+          and continues to arrive — often in forms you may not immediately recognise.
+        </p>
+      </div>
+
+      <!-- ========== SECTION 3 ========== -->
+      <h2 class="section-title">3. How the Support Appears in Daily Life</h2>
+
+      <div class="qa-block">
+        <h3>Relationships, timing and the soul contract</h3>
+        <p class="speaker">
+          Even people who appear in ordinary roles — aunts, sisters, unexpected friends —
+          can be part of the help that was already planned for your relationships and growth.
+          What looks like a random encounter is frequently the outer expression of an inner agreement.
+        </p>
+        <p class="speaker">
+          Once you begin to understand more about your own soul contract, many of these
+          “coincidences” start to make deeper sense. The next time the feeling arises —
+          “No one is with me, I am alone” — do not forget: you already have your own meeting
+          in place. Unseen powers stand with you and keep helping you.
+        </p>
+        <div class="practical">
+          <strong>Practical reminder:</strong> When the lonely thought appears, pause for three breaths
+          and silently say: “My cosmic team is present right now. I am held.” Notice how the body softens.
+        </div>
+      </div>
+
+      <!-- ========== SECTION 4 ========== -->
+      <h2 class="section-title">4. Protection You Do Not Always See</h2>
+
+      <div class="qa-block">
+        <h3>How many accidents and harms are quietly averted</h3>
+        <p class="speaker">
+          One way to feel the reality of this support is to look back at the times
+          something almost went wrong and somehow did not. How many near-misses,
+          how many situations that could have become accidents, how many moments
+          of sudden protection — these are often the quiet work of the same guides.
+        </p>
+        <p class="speaker">
+          Those deities, those spirit guides, are always waiting and helping.
+          They do not abandon you. The invitation is simply this:
+          never again tell yourself “nobody supports me.”
+          The support is continuous; only the recognition of it comes and goes.
+        </p>
+      </div>
+
+      <!-- ========== SECTION 5 ========== -->
+      <h2 class="section-title">5. Living with the Knowing</h2>
+
+      <div class="qa-block">
+        <h3>From isolation to quiet companionship</h3>
+        <p class="speaker">
+          The physical world will continue to feel incomplete at times.
+          That is part of the human experience. The shift happens when the inner
+          conversation changes from “I am unsupported” to “I am accompanied
+          by a team I cannot always see, yet whose care I can learn to feel.”
+        </p>
+        <p class="speaker">
+          This does not mean rejecting human relationships. It means placing them
+          in a larger context. Human love is precious; cosmic companionship is
+          the background that makes even the difficult periods survivable.
+        </p>
+        <div class="practical">
+          <strong>Daily practice:</strong> Before sleep, place one hand on the heart and thank
+          the three permanent members of your team by name if you know them,
+          or simply as “my guides.” Gratitude strengthens the felt connection.
+        </div>
+      </div>
+
+      <!-- ========== SUMMARY ========== -->
+      <div class="summary-card" id="summary">
+        <p><strong>Core Take-aways</strong></p>
+        <p>
+          • The feeling of loneliness and lack of belonging is real and common — even when many people surround us.<br>
+          • Before incarnation every soul meets its own cosmic team of spirit guides (often experienced as deities).<br>
+          • The team has at least three permanent members plus specialists who appear according to life’s needs.<br>
+          • Support arrives in many forms — including ordinary relationships that were already part of the soul contract.<br>
+          • Unseen protection quietly averts many harms; looking back often reveals how much was prevented.<br>
+          • When the thought “I am alone” arises, remember: the meeting is already in place. The guides stand with you.<br>
+          • Never again declare “nobody supports me.” The support is continuous; only our awareness of it fluctuates.
+        </p>
+      </div>
+
+      <div class="closing">
+        This page is a complete, structured English rendering of the short spoken reflection<br>
+        by Priya Raghavendra on loneliness and cosmic support.<br>
+        The original message has been preserved in spirit, expanded for clarity,<br>
+        and organised into readable sections with practical applications.
+      </div>
+    </article>
+
+    <nav class="pager">
+      <span></span>
+      <a href="#summary">Back to summary</a>
+    </nav>
+
+    <footer class="site-footer">
+      Priya Raghavendra · You Are Never Alone · Cosmic Team
+    </footer>
+  </div>
+</body>
+
+</html>

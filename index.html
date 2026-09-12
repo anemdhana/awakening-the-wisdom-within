@@ -503,6 +503,10 @@
         <span class="ico" aria-hidden="true">🎓</span>
         <span>Session Classes<small>Newton · Premnath · Gita</small></span>
       </button>
+      <button class="nav-item" data-section="discussions">
+        <span class="ico" aria-hidden="true">💬</span>
+        <span>Discussions<small>Q&A and conversations</small></span>
+      </button>
       <button class="nav-item" data-section="schedules">
         <span class="ico" aria-hidden="true">🗓️</span>
         <span>Session Schedules<small>21-day · Kids chanting</small></span>
@@ -548,6 +552,10 @@
           title: "Session Classes",
           desc: "Teachings"
         },
+        discussions: {
+          title: "Discussions",
+          desc: "Discussions and Q&A"
+        },
         schedules: {
           title: "Session Schedules",
           desc: "Session Schedules and knowledge resources"
@@ -556,7 +564,7 @@
 
       const ORG_CONFIG = {
         pssm: {
-          visibleSections: ["patriji", "book", "sajjana", "classes", "schedules"],
+          visibleSections: ["patriji", "book", "sajjana", "classes", "discussions", "schedules"],
           defaultSection: "patriji"
         },
         qlu: {
@@ -599,13 +607,13 @@
         });
 
         if (currentOrg === "qlu") {
-          const order = ["classes", "patriji", "book", "sajjana", "schedules"];
+          const order = ["classes", "patriji", "book", "sajjana", "discussions", "schedules"];
           order.forEach(key => {
             const btn = document.querySelector('.nav-item[data-section="' + key + '"]');
             if (btn) sidebar.appendChild(btn);
           });
         } else {
-          const order = ["patriji", "book", "sajjana", "classes", "schedules"];
+          const order = ["patriji", "book", "sajjana", "classes", "discussions", "schedules"];
           order.forEach(key => {
             const btn = document.querySelector('.nav-item[data-section="' + key + '"]');
             if (btn) sidebar.appendChild(btn);
