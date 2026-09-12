@@ -1,395 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pyramid Sajjana Sangatyam Movement (PSSM) | Brahmarshi Patriji</title>
-  <link rel="stylesheet" href="../css/site.css">
-  <style>
-    :root {
-      --ink: #1b1a1a;
-      --muted: #555;
-      --accent: #8b4513;
-      --accent-dark: #6b3411;
-      --soft: #f7f3ee;
-      --card: #fff;
-      --border: #e8e0d5;
-      --shloka-bg: #fdf8f0;
-      --shloka-border: #c9a66b;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid Sajjana Sangatyam Movement (PSSM) | Brahmarshi Patriji</title>
+    <link rel="stylesheet" href="../css/site.css">
+    <style>
+        :root {
+            --ink: #1b1a1a;
+            --muted: #555;
+            --accent: #8b4513;
+            --accent-dark: #6b3411;
+            --soft: #f7f3ee;
+            --card: #fff;
+            --border: #e8e0d5;
+            --shloka-bg: #fdf8f0;
+            --shloka-border: #c9a66b;
+        }
 
-    * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.7;
-      color: var(--ink);
-      background: #f4f0ea;
-    }
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: #f4f0ea;
+        }
 
-    .site-wrap {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 0 1rem 3rem;
-    }
+        .site-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem;
+        }
 
-    .post-card {
-      padding-top: 0.15rem;
-    }
+        .post-card {
+            padding-top: 0.15rem;
+        }
 
-    .author-row {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      margin: 0.25rem 0 0.8rem;
-      padding-top: 0.15rem;
-    }
+        .author-row {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin: 0.25rem 0 0.8rem;
+            padding-top: 0.15rem;
+        }
 
-    .author-row img {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 2px solid rgba(186, 122, 58, 0.28);
-      flex-shrink: 0;
-    }
+        .author-row img {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 2px solid rgba(186, 122, 58, 0.28);
+            flex-shrink: 0;
+        }
 
-    .author-info {
-      flex: 1;
-      min-width: 0;
-    }
+        .author-info {
+            flex: 1;
+            min-width: 0;
+        }
 
-    .author-row nav {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-left: auto;
-      justify-content: flex-end;
-    }
+        .author-row nav {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-left: auto;
+            justify-content: flex-end;
+        }
 
-    .author-row nav a {
-      margin-left: 0;
-      color: var(--accent-dark);
-      text-decoration: none;
-      font-size: 0.95rem;
-      white-space: nowrap;
-    }
+        .author-row nav a {
+            margin-left: 0;
+            color: var(--accent-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
 
-    .eyebrow {
-      margin: 0 0 0.3rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
+        .eyebrow {
+            margin: 0 0 0.3rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
 
-    h1 {
-      font-size: 1.85rem;
-      line-height: 1.25;
-      margin: 0 0 0.75rem;
-      color: #2c1810;
-    }
+        h1 {
+            font-size: 1.85rem;
+            line-height: 1.25;
+            margin: 0 0 0.75rem;
+            color: #2c1810;
+        }
 
-    .intro {
-      font-size: 1.04rem;
-      color: var(--muted);
-      margin-bottom: 1.75rem;
-      border-left: 3px solid var(--shloka-border);
-      padding-left: 1rem;
-    }
+        .intro {
+            font-size: 1.04rem;
+            color: var(--muted);
+            margin-bottom: 1.75rem;
+            border-left: 3px solid var(--shloka-border);
+            padding-left: 1rem;
+        }
 
-    .section-title {
-      font-size: 1.38rem;
-      margin: 2.5rem 0 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 2px solid var(--shloka-border);
-      color: #3d2314;
-    }
+        .section-title {
+            font-size: 1.38rem;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--shloka-border);
+            color: #3d2314;
+        }
 
-    .qa-block {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem 1.4rem;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
+        .qa-block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem 1.4rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
 
-    .qa-block h3 {
-      margin: 0 0 0.75rem;
-      font-size: 1.12rem;
-      color: #3d2314;
-    }
+        .qa-block h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.12rem;
+            color: #3d2314;
+        }
 
-    .speaker,
-    .answer,
-    .question {
-      margin: 0.6rem 0;
-      font-size: 1.02rem;
-    }
+        .speaker,
+        .answer,
+        .question {
+            margin: 0.6rem 0;
+            font-size: 1.02rem;
+        }
 
-    .question {
-      color: #5a3e2b;
-      font-style: italic;
-    }
+        .question {
+            color: #5a3e2b;
+            font-style: italic;
+        }
 
-    .dialogue {
-      background: #f9f6f1;
-      border-radius: 8px;
-      padding: 0.9rem 1.1rem;
-      margin: 0.8rem 0;
-    }
+        .dialogue {
+            background: #f9f6f1;
+            border-radius: 8px;
+            padding: 0.9rem 1.1rem;
+            margin: 0.8rem 0;
+        }
 
-    .dialogue .who {
-      font-weight: 700;
-      color: var(--accent);
-      margin-right: 0.4rem;
-    }
+        .dialogue .who {
+            font-weight: 700;
+            color: var(--accent);
+            margin-right: 0.4rem;
+        }
 
-    .practical {
-      background: #f0f7f4;
-      border: 1px dashed #7a9e8a;
-      border-radius: 8px;
-      padding: 0.85rem 1.1rem;
-      margin: 1rem 0;
-      font-size: 0.98rem;
-    }
+        .practical {
+            background: #f0f7f4;
+            border: 1px dashed #7a9e8a;
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            margin: 1rem 0;
+            font-size: 0.98rem;
+        }
 
-    .practical strong {
-      color: #2d5a45;
-    }
+        .practical strong {
+            color: #2d5a45;
+        }
 
-    .summary-card {
-      background: #2c1810;
-      color: #f5ebe0;
-      border-radius: 12px;
-      padding: 1.4rem 1.6rem;
-      margin: 2.5rem 0 1.5rem;
-      line-height: 1.65;
-    }
+        .summary-card {
+            background: #2c1810;
+            color: #f5ebe0;
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem;
+            margin: 2.5rem 0 1.5rem;
+            line-height: 1.65;
+        }
 
-    .summary-card strong {
-      color: #e8c48a;
-    }
+        .summary-card strong {
+            color: #e8c48a;
+        }
 
-    .closing {
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
+        .closing {
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
 
-    .site-footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 2rem;
-      padding: 1rem 0;
-    }
+        .site-footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 2rem;
+            padding: 1rem 0;
+        }
 
-    .pager {
-      display: flex;
-      justify-content: space-between;
-      margin: 2rem 0;
-      font-size: 0.95rem;
-    }
+        .pager {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
 
-    .pager a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+        .pager a {
+            color: var(--accent);
+            text-decoration: none;
+        }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 1.5rem; }
-      .author-row img { width: 56px; height: 56px; }
-    }
-  </style>
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .author-row img {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="site-wrap">
-    <article class="post-card">
-      <div class="author-row">
-        <img src="https://i.ytimg.com/vi/MjJj7Y58RnA/hqdefault.jpg" alt="Brahmarshi Patriji - Pyramid Sajjana Sangatyam Movement">
-        <div class="author-info">
-          <strong>Brahmarshi Patriji</strong>
-          <span>Awakenining the wisdom within · Spiritual movement and collective awakening</span>
-        </div>
-        <nav>
-          <a href="../index.html?org=pssm&section=spiritual-discourses-telugu">Home</a>
-          <a href="#summary">Summary</a>
+    <div class="site-wrap">
+        <article class="post-card">
+            <div class="author-row">
+                <img src="https://i.ytimg.com/vi/MjJj7Y58RnA/hqdefault.jpg"
+                    alt="Brahmarshi Patriji - Pyramid Sajjana Sangatyam Movement">
+                <div class="author-info">
+                    <strong>Brahmarshi Patriji</strong>
+                    <span>Awakenining the wisdom within · Spiritual movement and collective awakening</span>
+                </div>
+                <nav>
+                    <a href="../index.html?org=pssm&section=spiritual-discourses-telugu">Home</a>
+                    <a href="#summary">Summary</a>
+                </nav>
+            </div>
+
+            <p class="eyebrow">Spiritual Discourse · Telugu Collection</p>
+            <h1>Pyramid Sajjana Sangatyam Movement (PSSM)</h1>
+            <p class="intro">
+                This discourse explores the deeper meaning behind the Pyramid Sajjana Sangatyam Movement, the spiritual
+                foundations of collective transformation, and the role of meditation, self-discipline, service, and
+                inner awakening in building a living movement of conscious people.
+            </p>
+
+            <h2 class="section-title">1. Opening – Why this movement matters</h2>
+
+            <div class="qa-block">
+                <h3>Moving beyond individual spirituality</h3>
+                <p class="speaker">
+                    A movement is not merely a gathering, a platform, or an organization. A true spiritual movement is a
+                    living expression of inner transformation becoming visible in collective human behavior. When
+                    individuals awaken inwardly, the community begins to change. That is the deeper purpose of any
+                    genuine movement.
+                </p>
+                <p class="speaker">
+                    The Pyramid Sajjana Sangatyam Movement is not built around politics, power, status, or public image.
+                    It is rooted in the idea that human beings must transform from within, become more conscious, more
+                    humble, more truthful, and more compassionate. The movement is meant to awaken people to the reality
+                    that the deepest change is not external—it is inner, ethical, and spiritual.
+                </p>
+            </div>
+
+            <h2 class="section-title">2. What is the pyramid principle?</h2>
+
+            <div class="qa-block">
+                <h3>A structure of inner ascent and outward service</h3>
+                <p class="speaker">
+                    The pyramid is a powerful symbol because it reflects a natural law: the base is wide, the top is
+                    narrow. This means many people are required at the foundation to live with sincerity, discipline,
+                    and responsibility; fewer are called to lead, guide, and hold vision. The structure is not about
+                    hierarchy in the usual egoic sense. It is about the disciplined spread of awareness from the inner
+                    centre outward.
+                </p>
+                <p class="speaker">
+                    In a real spiritual movement, the many at the base are not low in status; they are the main body of
+                    the movement. Their daily responsibility is simple but profound: live with self-control, speak
+                    truth, be steady, support others, and continue meditation. The apex is not a place for dominance. It
+                    is a place of responsibility, wisdom, and service.
+                </p>
+                <div class="practical">
+                    <strong>Practical insight:</strong> A spiritual movement grows when ordinary people live with
+                    integrity, not when a few charismatic voices dominate the room. The pyramid works when the base is
+                    strong and the apex is surrendered.
+                </div>
+            </div>
+
+            <h2 class="section-title">3. PSSM as a call to collective awakening</h2>
+
+            <div class="qa-block">
+                <h3>Not a campaign, but a spiritual culture</h3>
+                <p class="speaker">
+                    When we speak of a movement, we are really speaking of a culture. A culture of inner discipline, of
+                    moral clarity, of self-responsibility, and of loving contribution. A true movement does not merely
+                    ask people to attend a lecture. It asks people to change the way they think, talk, live, and relate.
+                </p>
+                <p class="speaker">
+                    PSSM is therefore not an event-based identity but a state of consciousness. It is a way of seeing
+                    life: that every fall, every challenge, every relationship is an opportunity to become more
+                    conscious. The movement draws attention away from the noise of the world and toward the depth of the
+                    inner self.
+                </p>
+                <p class="speaker">
+                    People who are drawn to such a movement are usually those who are tired of superficial living. They
+                    sense that the world cannot be healed by only external policies or social arrangements. The deeper
+                    need is for awakened human beings who can embody compassion, balance, and responsibility.
+                </p>
+            </div>
+
+            <h2 class="section-title">4. Inner transformation before outer change</h2>
+
+            <div class="qa-block">
+                <h3>A movement without inner purity cannot endure</h3>
+                <p class="speaker">
+                    Many social attempts fail because they are based on enthusiasm but not on inner purification. You
+                    can organize people externally, but if the inner mind is still filled with pride, anger, greed, or
+                    fear, the structure will not remain stable. Real movement requires inner discipline.
+                </p>
+                <p class="speaker">
+                    The Gita teaches that action must be performed without attachment to results; spiritual life
+                    requires quietness, clarity, and balance. Similarly, a movement must be more than human ambition. It
+                    must be rooted in humility, endurance, and surrender to the higher purpose.
+                </p>
+                <p class="speaker">
+                    A community can become a support system only when each person is able to manage the mind, restrain
+                    reactions, and cultivate compassion. Otherwise, the same egoic patterns that divide families and
+                    societies will also divide the movement itself.
+                </p>
+            </div>
+
+            <h2 class="section-title">5. Meditation, silence, and the training of the mind</h2>
+
+            <div class="qa-block">
+                <h3>Without inner stillness, service becomes performance</h3>
+                <p class="speaker">
+                    The movement emphasizes meditation not as a ritual but as a practical tool of transformation.
+                    Meditation is where the mind learns to stop reacting blindly. It is where emotional turbulence
+                    becomes observable, where fear loses power, and where deeper wisdom begins to rise.
+                </p>
+                <p class="speaker">
+                    When one sits quietly and turns inward, one sees the patterns of the mind more clearly. The mind may
+                    seek recognition, control, comparison, or comfort. Meditation brings these patterns into awareness
+                    without judgment. Over time, such awareness changes behavior.
+                </p>
+                <div class="practical">
+                    <strong>Practical application:</strong> If a person wants to contribute truly to a spiritual
+                    movement, the first qualification is not public speaking or leadership—it is inner steadiness. If
+                    the mind is unstable, the work becomes noisy and fragmented.
+                </div>
+            </div>
+
+            <h2 class="section-title">6. The purpose of service</h2>
+
+            <div class="qa-block">
+                <h3>Service without ego is spiritual power</h3>
+                <p class="speaker">
+                    Service is not simply helping others in a social sense. It is a transformation of the self from “I”
+                    to “we,” and eventually from “we” to “that which is greater than the ego.” True service arises from
+                    compassion, not from emotional display or recognition. It is grounded in humility and care.
+                </p>
+                <p class="speaker">
+                    In a true movement, people do not serve because they expect gratitude or reward. They serve because
+                    they know the path of life is not about accumulation but about uplifting others. This does not mean
+                    sacrificing personal wellbeing; rather, it means releasing the clinging mind and acting out of
+                    consciousness rather than compulsion.
+                </p>
+            </div>
+
+            <h2 class="section-title">7. Family, society, and the broader field</h2>
+
+            <div class="qa-block">
+                <h3>The small circle becomes the larger field</h3>
+                <p class="speaker">
+                    The movement is also about a fresh way of seeing relationships. Inner awakening begins at home,
+                    within family, between partners, among parents and children, and in the workplace. Spiritual life
+                    cannot remain confined to a lecture hall or a meditation room. It must transform ordinary life.
+                </p>
+                <p class="speaker">
+                    When human beings become more aware, their communication changes. They become less reactive, less
+                    controlling, and less trapped in ego. They begin to see that the emotional atmosphere of a home or a
+                    community is shaped by everyone’s inner state. This is where the deeper significance of a movement
+                    becomes visible.
+                </p>
+                <p class="speaker">
+                    A society cannot rise through slogans alone. It rises when individuals become responsible,
+                    compassionate, and truthful. That is why the spiritual movement is not an escape from life—it is a
+                    way of living life more consciously.
+                </p>
+            </div>
+
+            <h2 class="section-title">8. The role of sincerity and discipline</h2>
+
+            <div class="qa-block">
+                <h3>Discipline is not suppression; it is alignment</h3>
+                <p class="speaker">
+                    A movement can be sincere only if it is disciplined. Discipline does not mean rigid control or
+                    harshness. Real discipline is alignment. It means the body, mind, speech, and intention are moving
+                    in the same direction. It means the person is not pulled by emotional confusion, random impulses, or
+                    social imitation.
+                </p>
+                <p class="speaker">
+                    This is where meditation, simplicity, and ethical living become crucial. Discipline is cultivated
+                    through repetition, patience, and honest self-observation. It is not a glamorous quality. It is
+                    quiet and practical, but it is the foundation of any serious spiritual path.
+                </p>
+            </div>
+
+            <h2 class="section-title">9. A living movement is shaped by conscious people</h2>
+
+            <div class="qa-block">
+                <h3>Each person becomes a node of transformation</h3>
+                <p class="speaker">
+                    The real power of a movement is not in numbers alone. It is in depth. A small group of conscious
+                    people can have a far greater effect than a large crowd driven by emotional slogans. This is the
+                    principle behind the pyramid: not visible size, but inner quality and stable contribution.
+                </p>
+                <p class="speaker">
+                    Each person becomes a node of awakening. Through daily practice, honest effort, and compassionate
+                    action, a person strengthens the whole. This is how a movement becomes more than an idea—it becomes
+                    a living energy field of transformation.
+                </p>
+            </div>
+
+            <h2 class="section-title">10. The deeper message</h2>
+
+            <div class="qa-block">
+                <h3>The movement is a reminder to return inward</h3>
+                <p class="speaker">
+                    If there is a single message in this discourse, it is this: the world is not healed by reaction or
+                    noise; it is healed by the awakening of human beings. The Pyramid Sajjana Sangatyam Movement asks
+                    people to return inward, live with responsibility, and contribute from a deeper place than ego.
+                </p>
+                <p class="speaker">
+                    It is a reminder that transformation is not a distant ideal—it is a daily practice. Each moment
+                    becomes an opportunity to be more truthful, more gentle, more disciplined, and more aware. When
+                    enough people begin to live like this, a collective spiritual field becomes possible.
+                </p>
+            </div>
+
+            <div class="summary-card" id="summary">
+                <p><strong>Core takeaways</strong></p>
+                <p>
+                    - PSSM is not just a social network or event; it is a living spiritual culture.<br>
+                    - The pyramid symbolizes broad foundations, disciplined inner living, and responsible
+                    leadership.<br>
+                    - Real movement begins with inner purification, meditation, and self-control.<br>
+                    - Service is meaningful only when it is free of ego and attachment.<br>
+                    - Transformation is collective when each individual lives with sincerity, love, and awareness.
+                </p>
+            </div>
+
+            <div class="closing">
+                Prepared from the discourse on the Pyramid Sajjana Sangatyam Movement (PSSM) by Brahmarshi Patriji,
+                structured for reading and reflection in the same comprehensive style as the QLU Gita teaching page.
+            </div>
+        </article>
+
+        <nav class="pager">
+            <span></span>
+            <a href="#top">Back to top</a>
         </nav>
-      </div>
 
-      <p class="eyebrow">Spiritual Discourse · Telugu Collection</p>
-      <h1>Pyramid Sajjana Sangatyam Movement (PSSM)</h1>
-      <p class="intro">
-        This discourse explores the deeper meaning behind the Pyramid Sajjana Sangatyam Movement, the spiritual foundations of collective transformation, and the role of meditation, self-discipline, service, and inner awakening in building a living movement of conscious people.
-      </p>
-
-      <h2 class="section-title">1. Opening – Why this movement matters</h2>
-
-      <div class="qa-block">
-        <h3>Moving beyond individual spirituality</h3>
-        <p class="speaker">
-          A movement is not merely a gathering, a platform, or an organization. A true spiritual movement is a living expression of inner transformation becoming visible in collective human behavior. When individuals awaken inwardly, the community begins to change. That is the deeper purpose of any genuine movement.
-        </p>
-        <p class="speaker">
-          The Pyramid Sajjana Sangatyam Movement is not built around politics, power, status, or public image. It is rooted in the idea that human beings must transform from within, become more conscious, more humble, more truthful, and more compassionate. The movement is meant to awaken people to the reality that the deepest change is not external—it is inner, ethical, and spiritual.
-        </p>
-      </div>
-
-      <h2 class="section-title">2. What is the pyramid principle?</h2>
-
-      <div class="qa-block">
-        <h3>A structure of inner ascent and outward service</h3>
-        <p class="speaker">
-          The pyramid is a powerful symbol because it reflects a natural law: the base is wide, the top is narrow. This means many people are required at the foundation to live with sincerity, discipline, and responsibility; fewer are called to lead, guide, and hold vision. The structure is not about hierarchy in the usual egoic sense. It is about the disciplined spread of awareness from the inner centre outward.
-        </p>
-        <p class="speaker">
-          In a real spiritual movement, the many at the base are not low in status; they are the main body of the movement. Their daily responsibility is simple but profound: live with self-control, speak truth, be steady, support others, and continue meditation. The apex is not a place for dominance. It is a place of responsibility, wisdom, and service.
-        </p>
-        <div class="practical">
-          <strong>Practical insight:</strong> A spiritual movement grows when ordinary people live with integrity, not when a few charismatic voices dominate the room. The pyramid works when the base is strong and the apex is surrendered.
-        </div>
-      </div>
-
-      <h2 class="section-title">3. PSSM as a call to collective awakening</h2>
-
-      <div class="qa-block">
-        <h3>Not a campaign, but a spiritual culture</h3>
-        <p class="speaker">
-          When we speak of a movement, we are really speaking of a culture. A culture of inner discipline, of moral clarity, of self-responsibility, and of loving contribution. A true movement does not merely ask people to attend a lecture. It asks people to change the way they think, talk, live, and relate.
-        </p>
-        <p class="speaker">
-          PSSM is therefore not an event-based identity but a state of consciousness. It is a way of seeing life: that every fall, every challenge, every relationship is an opportunity to become more conscious. The movement draws attention away from the noise of the world and toward the depth of the inner self.
-        </p>
-        <p class="speaker">
-          People who are drawn to such a movement are usually those who are tired of superficial living. They sense that the world cannot be healed by only external policies or social arrangements. The deeper need is for awakened human beings who can embody compassion, balance, and responsibility.
-        </p>
-      </div>
-
-      <h2 class="section-title">4. Inner transformation before outer change</h2>
-
-      <div class="qa-block">
-        <h3>A movement without inner purity cannot endure</h3>
-        <p class="speaker">
-          Many social attempts fail because they are based on enthusiasm but not on inner purification. You can organize people externally, but if the inner mind is still filled with pride, anger, greed, or fear, the structure will not remain stable. Real movement requires inner discipline.
-        </p>
-        <p class="speaker">
-          The Gita teaches that action must be performed without attachment to results; spiritual life requires quietness, clarity, and balance. Similarly, a movement must be more than human ambition. It must be rooted in humility, endurance, and surrender to the higher purpose.
-        </p>
-        <p class="speaker">
-          A community can become a support system only when each person is able to manage the mind, restrain reactions, and cultivate compassion. Otherwise, the same egoic patterns that divide families and societies will also divide the movement itself.
-        </p>
-      </div>
-
-      <h2 class="section-title">5. Meditation, silence, and the training of the mind</h2>
-
-      <div class="qa-block">
-        <h3>Without inner stillness, service becomes performance</h3>
-        <p class="speaker">
-          The movement emphasizes meditation not as a ritual but as a practical tool of transformation. Meditation is where the mind learns to stop reacting blindly. It is where emotional turbulence becomes observable, where fear loses power, and where deeper wisdom begins to rise.
-        </p>
-        <p class="speaker">
-          When one sits quietly and turns inward, one sees the patterns of the mind more clearly. The mind may seek recognition, control, comparison, or comfort. Meditation brings these patterns into awareness without judgment. Over time, such awareness changes behavior.
-        </p>
-        <div class="practical">
-          <strong>Practical application:</strong> If a person wants to contribute truly to a spiritual movement, the first qualification is not public speaking or leadership—it is inner steadiness. If the mind is unstable, the work becomes noisy and fragmented.
-        </div>
-      </div>
-
-      <h2 class="section-title">6. The purpose of service</h2>
-
-      <div class="qa-block">
-        <h3>Service without ego is spiritual power</h3>
-        <p class="speaker">
-          Service is not simply helping others in a social sense. It is a transformation of the self from “I” to “we,” and eventually from “we” to “that which is greater than the ego.” True service arises from compassion, not from emotional display or recognition. It is grounded in humility and care.
-        </p>
-        <p class="speaker">
-          In a true movement, people do not serve because they expect gratitude or reward. They serve because they know the path of life is not about accumulation but about uplifting others. This does not mean sacrificing personal wellbeing; rather, it means releasing the clinging mind and acting out of consciousness rather than compulsion.
-        </p>
-      </div>
-
-      <h2 class="section-title">7. Family, society, and the broader field</h2>
-
-      <div class="qa-block">
-        <h3>The small circle becomes the larger field</h3>
-        <p class="speaker">
-          The movement is also about a fresh way of seeing relationships. Inner awakening begins at home, within family, between partners, among parents and children, and in the workplace. Spiritual life cannot remain confined to a lecture hall or a meditation room. It must transform ordinary life.
-        </p>
-        <p class="speaker">
-          When human beings become more aware, their communication changes. They become less reactive, less controlling, and less trapped in ego. They begin to see that the emotional atmosphere of a home or a community is shaped by everyone’s inner state. This is where the deeper significance of a movement becomes visible.
-        </p>
-        <p class="speaker">
-          A society cannot rise through slogans alone. It rises when individuals become responsible, compassionate, and truthful. That is why the spiritual movement is not an escape from life—it is a way of living life more consciously.
-        </p>
-      </div>
-
-      <h2 class="section-title">8. The role of sincerity and discipline</h2>
-
-      <div class="qa-block">
-        <h3>Discipline is not suppression; it is alignment</h3>
-        <p class="speaker">
-          A movement can be sincere only if it is disciplined. Discipline does not mean rigid control or harshness. Real discipline is alignment. It means the body, mind, speech, and intention are moving in the same direction. It means the person is not pulled by emotional confusion, random impulses, or social imitation.
-        </p>
-        <p class="speaker">
-          This is where meditation, simplicity, and ethical living become crucial. Discipline is cultivated through repetition, patience, and honest self-observation. It is not a glamorous quality. It is quiet and practical, but it is the foundation of any serious spiritual path.
-        </p>
-      </div>
-
-      <h2 class="section-title">9. A living movement is shaped by conscious people</h2>
-
-      <div class="qa-block">
-        <h3>Each person becomes a node of transformation</h3>
-        <p class="speaker">
-          The real power of a movement is not in numbers alone. It is in depth. A small group of conscious people can have a far greater effect than a large crowd driven by emotional slogans. This is the principle behind the pyramid: not visible size, but inner quality and stable contribution.
-        </p>
-        <p class="speaker">
-          Each person becomes a node of awakening. Through daily practice, honest effort, and compassionate action, a person strengthens the whole. This is how a movement becomes more than an idea—it becomes a living energy field of transformation.
-        </p>
-      </div>
-
-      <h2 class="section-title">10. The deeper message</h2>
-
-      <div class="qa-block">
-        <h3>The movement is a reminder to return inward</h3>
-        <p class="speaker">
-          If there is a single message in this discourse, it is this: the world is not healed by reaction or noise; it is healed by the awakening of human beings. The Pyramid Sajjana Sangatyam Movement asks people to return inward, live with responsibility, and contribute from a deeper place than ego.
-        </p>
-        <p class="speaker">
-          It is a reminder that transformation is not a distant ideal—it is a daily practice. Each moment becomes an opportunity to be more truthful, more gentle, more disciplined, and more aware. When enough people begin to live like this, a collective spiritual field becomes possible.
-        </p>
-      </div>
-
-      <div class="summary-card" id="summary">
-        <p><strong>Core takeaways</strong></p>
-        <p>
-          - PSSM is not just a social network or event; it is a living spiritual culture.<br>
-          - The pyramid symbolizes broad foundations, disciplined inner living, and responsible leadership.<br>
-          - Real movement begins with inner purification, meditation, and self-control.<br>
-          - Service is meaningful only when it is free of ego and attachment.<br>
-          - Transformation is collective when each individual lives with sincerity, love, and awareness.
-        </p>
-      </div>
-
-      <div class="closing">
-        Prepared from the discourse on the Pyramid Sajjana Sangatyam Movement (PSSM) by Brahmarshi Patriji,
-        structured for reading and reflection in the same comprehensive style as the QLU Gita teaching page.
-      </div>
-    </article>
-
-    <nav class="pager">
-      <span></span>
-      <a href="#top">Back to top</a>
-    </nav>
-
-    <footer class="site-footer">
-      Brahmarshi Patriji · Pyramid Sajjana Sangatyam Movement · PSSM
-    </footer>
-  </div>
+        <footer class="site-footer">
+            Brahmarshi Patriji · Pyramid Sajjana Sangatyam Movement · PSSM
+        </footer>
+    </div>
 </body>
+
 </html>
