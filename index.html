@@ -511,6 +511,10 @@
         <span class="ico" aria-hidden="true">🗓️</span>
         <span>Session Schedules<small>21-day · Kids chanting</small></span>
       </button>
+      <button class="nav-item" data-section="maitri">
+        <span class="ico" aria-hidden="true">🌿</span>
+        <span>Maitri Bodh<small>Messages and reflections</small></span>
+      </button>
     </aside>
 
     <main class="main">
@@ -559,6 +563,10 @@
         schedules: {
           title: "Session Schedules",
           desc: "Session Schedules and knowledge resources"
+        },
+        maitri: {
+          title: "Maitri Bodh",
+          desc: "Messages and reflections from Maitri Bodh"
         }
       };
 
@@ -576,8 +584,8 @@
           defaultSection: ""
         },
         maitri: {
-          visibleSections: [],
-          defaultSection: ""
+          visibleSections: ["maitri"],
+          defaultSection: "maitri"
         }
       };
 
@@ -596,7 +604,7 @@
 
       function applyOrgVisibility() {
         const visible = ORG_CONFIG[currentOrg].visibleSections;
-        const emptyOrg = currentOrg === "tiw" || currentOrg === "maitri";
+        const emptyOrg = currentOrg === "tiw";
         const allItems = Array.from(document.querySelectorAll(".nav-item"));
 
         document.querySelectorAll(".nav-item").forEach(btn => {
@@ -663,6 +671,10 @@
       function getCatalogItemsForOrg(sectionKey, org) {
         const allItems = DATA[sectionKey] || [];
 
+        if (sectionKey === "maitri") {
+          return allItems;
+        }
+
         if (sectionKey !== "classes") {
           return allItems;
         }
@@ -679,11 +691,9 @@
       }
 
       function render() {
-        if (currentOrg === "tiw" || currentOrg === "maitri") {
-          const title = currentOrg === "tiw" ? "Temple of Inner Wisdom" : "Maitri Bodh";
-          const msg = currentOrg === "tiw"
-            ? "No content available for Temple of Inner Wisdom yet."
-            : "No content available for Maitri Bodh yet.";
+        if (currentOrg === "tiw") {
+          const title = "Temple of Inner Wisdom";
+          const msg = "No content available for Temple of Inner Wisdom yet.";
           paneTitle.textContent = title;
           paneDesc.textContent = "Content coming soon.";
           searchInput.placeholder = "Search not available";
