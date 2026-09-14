@@ -197,7 +197,7 @@
     }
 
     .nav-item.is-hidden {
-      visibility: hidden;
+      display: none !important;
       opacity: 0;
       pointer-events: none;
     }
@@ -473,6 +473,13 @@
             <img src="assets/logos/MaitriBodh-logo.png" alt="Maitri Bodh logo">
             <span>Maitri</span>
           </button>
+          <button type="button" class="org-button soulcast-button" data-org="soulcast"
+            aria-label="Shreans Daga Foundation">
+            <img
+              src="https://scontent.fmaa9-1.fna.fbcdn.net/v/t39.30808-1/299600325_603813538060256_2716781792230094510_n.jpg?stp=dst-jpg_tt6&cstp=mx640x640&ctp=s200x200&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=pwq25JY3JXgQ7kNvwFqkbVK&_nc_oc=AdoqdrxSxvHwMGB_z9gCce2HixAJ83_o8KgWjGz3kp6Jmf0Y6OSxsiXT5DzjcyP1QID4RLsFAhGAVCtIdnOGA9ut&_nc_zt=24&_nc_ht=scontent.fmaa9-1.fna&_nc_gid=9F9HZ5yniZUJC4mblGZa_g&_nc_ss=7b2a8&oh=00_AQLj53I2pRgEWWBPAruDRSPqawcN_x6KJ77KcISALvInTw&oe=6AADF9C7"
+              alt="Shreans Daga Foundation logo">
+            <span>Shreans Daga</span>
+          </button>
         </div>
         <a class="brand" href="index.html">Awakenining the wisdom within</a>
       </div>
@@ -506,6 +513,10 @@
       <button class="nav-item" data-section="discussions">
         <span class="ico" aria-hidden="true">💬</span>
         <span>Discussions<small>Q&A and conversations</small></span>
+      </button>
+      <button class="nav-item" data-section="soulcast">
+        <span class="ico" aria-hidden="true">🎙️</span>
+        <span>Shreans Daga Foundation<small>Soulcast · quotes · meditation</small></span>
       </button>
       <button class="nav-item" data-section="schedules">
         <span class="ico" aria-hidden="true">🗓️</span>
@@ -564,6 +575,10 @@
           title: "Session Schedules",
           desc: "Session Schedules and knowledge resources"
         },
+        soulcast: {
+          title: "Shreans Daga Foundation",
+          desc: "Teaching and meditation resources from Shreans Daga Foundation"
+        },
         maitri: {
           title: "Maitri Bodh",
           desc: "Messages and reflections from Maitri Bodh"
@@ -572,8 +587,12 @@
 
       const ORG_CONFIG = {
         pssm: {
-          visibleSections: ["patriji", "book", "sajjana", "classes", "discussions", "schedules"],
+          visibleSections: ["patriji", "book", "sajjana", "classes", "discussions", "soulcast", "schedules"],
           defaultSection: "patriji"
+        },
+        soulcast: {
+          visibleSections: ["soulcast"],
+          defaultSection: "soulcast"
         },
         qlu: {
           visibleSections: ["classes"],
@@ -598,7 +617,8 @@
 
       function syncOrgButtonState() {
         document.querySelectorAll(".org-button").forEach(btn => {
-          btn.classList.toggle("active", btn.getAttribute("data-org") === currentOrg);
+          const isCurrent = btn.getAttribute("data-org") === currentOrg;
+          btn.classList.toggle("active", isCurrent);
         });
       }
 
@@ -611,17 +631,18 @@
           const key = btn.getAttribute("data-section");
           const shouldShow = emptyOrg ? false : visible.includes(key);
           btn.classList.toggle("is-hidden", !shouldShow);
+          btn.style.display = shouldShow ? "" : "none";
           btn.style.visibility = shouldShow ? "visible" : "hidden";
         });
 
         if (currentOrg === "qlu") {
-          const order = ["classes", "patriji", "book", "sajjana", "discussions", "schedules"];
+          const order = ["classes", "patriji", "book", "sajjana", "discussions", "soulcast", "schedules"];
           order.forEach(key => {
             const btn = document.querySelector('.nav-item[data-section="' + key + '"]');
             if (btn) sidebar.appendChild(btn);
           });
         } else {
-          const order = ["patriji", "book", "sajjana", "classes", "discussions", "schedules"];
+          const order = ["patriji", "book", "sajjana", "classes", "discussions", "soulcast", "schedules"];
           order.forEach(key => {
             const btn = document.querySelector('.nav-item[data-section="' + key + '"]');
             if (btn) sidebar.appendChild(btn);
@@ -654,7 +675,7 @@
           const params = new URLSearchParams(window.location.search);
           const s = (params.get("section") || "").toLowerCase();
           const o = (params.get("org") || "pssm").toLowerCase();
-          if (o === "qlu" || o === "tiw" || o === "pssm" || o === "maitri") currentOrg = o;
+          if (o === "qlu" || o === "tiw" || o === "pssm" || o === "maitri" || o === "soulcast") currentOrg = o;
           if (s && META[s]) {
             section = s;
           }

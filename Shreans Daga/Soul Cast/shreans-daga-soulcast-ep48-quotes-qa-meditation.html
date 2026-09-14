@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soulcast Ep 48 · Quotes, Q&amp;A &amp; Meditation | Shreans Daga</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #8b4513;
+      --card: #fff;
+      --border: #e8e0d5;
+      --shloka-bg: #fdf8f0;
+      --shloka-border: #c9a66b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #f4f0ea;
+    }
+
+    .site-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0.9rem 0 0.2rem;
+      gap: 0.9rem 1rem;
+      position: sticky;
+      top: 0;
+      background: rgba(244, 240, 234, 0.9);
+      backdrop-filter: blur(4px);
+      z-index: 10;
+    }
+
+    .top-nav a {
+      color: #6b3411;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 0.8rem 0 1rem;
+    }
+
+    .author-row img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(186, 122, 58, 0.28);
+      background: #e8d9c4;
+    }
+
+    .author-info strong {
+      display: block;
+      font-size: 1.05rem;
+    }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 1.65rem;
+      line-height: 1.3;
+      margin: 0 0 0.7rem;
+      color: #2c1810;
+    }
+
+    .intro {
+      font-size: 1.02rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      margin: 2.3rem 0 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: #3d2314;
+      scroll-margin-top: 72px;
+    }
+
+    .qa-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem 1.3rem;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .qa-block h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.05rem;
+      color: #3d2314;
+    }
+
+    .qa-block p {
+      margin: 0.5rem 0;
+      font-size: 1.02rem;
+    }
+
+    .q-label {
+      font-weight: 700;
+      color: #8b4513;
+    }
+
+    .quote-card {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      border-radius: 0 10px 10px 0;
+      padding: 1.15rem 1.3rem;
+      margin: 1.1rem 0;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: #2c1810;
+    }
+
+    .quote-card .ref {
+      display: block;
+      margin-top: 0.7rem;
+      font-size: 0.88rem;
+      color: #8b4513;
+      font-style: italic;
+    }
+
+    .highlight {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      padding: 0.85rem 1.1rem;
+      margin: 0.9rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 1.0rem;
+    }
+
+    .summary-card {
+      background: #2c1810;
+      color: #f5ebe0;
+      border-radius: 12px;
+      padding: 1.35rem 1.5rem;
+      margin: 2.2rem 0 1.4rem;
+      line-height: 1.65;
+    }
+
+    .summary-card strong {
+      color: #e8c48a;
+    }
+
+    .closing {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .speaker-label {
+      font-size: 0.85rem;
+      color: #8b4513;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .progress-qa .qa-block {
+      border-left: 3px solid rgba(186, 122, 58, 0.35);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      .author-row img {
+        width: 56px;
+        height: 56px;
+      }
+
+      .top-nav {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="site-wrap">
+
+    <div class="top-nav">
+      <a href="#" id="topHomeLink">Home</a>
+      <a href="#short-qa">Short Q&amp;A</a>
+      <a href="#quotes">Quotes</a>
+      <a href="#audience-qa">Audience Q&amp;A</a>
+      <a href="#meditation">Meditation</a>
+      <a href="#top">Back to Top</a>
+    </div>
+
+    <article>
+      <div class="author-row">
+        <img src="../../assets/images/shreans-daga.jpg" alt="Shreans Daga"
+          onerror="this.style.background='#e8d9c4';this.removeAttribute('src')">
+        <div class="author-info">
+          <strong>Shreans Daga</strong>
+          <span>Soulcast · Decoding Spiritual Quotes &amp; Concepts · Episode 48</span>
+        </div>
+      </div>
+
+      <p class="eyebrow">Quotes · Q&amp;A · Guided Meditation</p>
+      <h1>Soulcast Episode 48 — Quotes, Audience Q&amp;A &amp; Awakening the Buddha Within</h1>
+      <p class="intro">
+        Handwritten quotes born from three decades of spiritual practice under many masters, followed by live audience
+        questions and the guided meditation “Awaken the Buddha Within.” Speaker’s words, context and intention preserved
+        throughout.
+      </p>
+
+      <!-- ========== SHORT PROGRESSIVE Q&A ========== -->
+      <h2 class="section-title" id="short-qa">Short Q&amp;A — Complete Session at a Glance</h2>
+      <div class="progress-qa">
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q1.</span> When is power sought, and when is love enough?</h3>
+          <p><strong>A:</strong> When you want to harm, control or dominate, you seek power. When you want to heal,
+            uplift and create, love is enough. Love itself is the greatest power. The true test of humility is staying
+            in love even after power and position have come.</p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q2.</span> Why can pain be a blessing?</h3>
+          <p><strong>A:</strong> When life is comfortable we rarely look within. Pain disillusion us with the outer
+            world and opens the possibility of transformation. From the soul’s view, pain is not punishment — it is
+            happening for you so you can evolve. The deeper the pain, the stronger the possibility of transformation.
+          </p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q3.</span> What is conscious breath, and why does it matter?</h3>
+          <p><strong>A:</strong> Conscious breath is full awareness of each natural in-breath and out-breath. Breath is
+            more than survival; it is the flow of life, spirit and consciousness. It is the natural bridge between the
+            physical body and the subtle dimensions. Every breath taken with awareness is a silent thread between the
+            seen and the unseen, and a rise in consciousness.</p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q4.</span> Why do the same challenges keep returning?</h3>
+          <p><strong>A:</strong> We repeat what we don’t repair. Challenges are not coincidence; the soul plans them so
+            it can evolve faster and demonstrate mastery. The true test is: in spite of challenges, do you keep your
+            alignment with the inner being?</p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q5.</span> Is manifestation the main goal?</h3>
+          <p><strong>A:</strong> No. The real goal is to feel aligned, joyful and alive moment by moment. Life is the
+            coming together of all these moments. Manifestation is only one moment; life is every moment.</p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q6.</span> How do I stop living inside my limitations?</h3>
+          <p><strong>A:</strong> If you keep fighting for your limitations, you will keep them. Change the narrative.
+            Challenge yourself. It is okay to be laughed at. Whether you think you can or you cannot, you are right — so
+            choose “I can.”</p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q7.</span> What is alignment?</h3>
+          <p><strong>A:</strong> Alignment is connection with the inner being — bathing and resting in your source, in
+            pure consciousness. When resistance to existence drops, alignment happens naturally. Meditation helps
+            because the ego-identity falls away and the real Self is known.</p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q8.</span> How should I handle anger at work or in family triggers?</h3>
+          <p><strong>A:</strong> There are no justified resentments. No outer situation justifies losing alignment. Help
+            others (clients, family) from a calm, aligned state. Energy speaks louder than arguments. Triggers are
+            teachers; the point is to rise every time you fall, not to never fall.</p>
+        </div>
+
+        <div class="qa-block">
+          <h3><span class="q-label">Q9.</span> What is the essence of the Buddha meditation?</h3>
+          <p><strong>A:</strong> The Buddha is not only a historical person; it is a possibility already within you.
+            Through conscious breath, dropping identity, resting in stillness, and opening the heart in compassion, what
+            was sought outside is recognised as already here. What you are seeking, you already are.</p>
+        </div>
+
+      </div>
+
+      <!-- ========== FULL QUOTES ========== -->
+      <h2 class="section-title" id="quotes">1. Core Quotes &amp; Deeper Meaning</h2>
+
+      <div class="quote-card">
+        When you want to harm, control or dominate, you seek power.<br>
+        When you want to heal, uplift and create, love is enough.
+        <span class="ref">— Shreans Daga</span>
+      </div>
+      <div class="qa-block">
+        <p>
+          Many times we chase power and position. Often the motive is control, domination, or even the ability to harm.
+          When the intention is to heal, uplift and create, love itself is sufficient — no power over others is
+          required.
+        </p>
+        <p>
+          It is easy to stay humble when you have no power; you have no choice. The true test is: when power, position
+          and money come, can you still remain humble, still stay in love, still keep the original motive of service and
+          healing? Ego loves to enter from the back door. Motive can start pure and later change. Authenticity is
+          remaining in love even when you have everything.
+        </p>
+        <p>
+          Love is the biggest power. No other power is needed when love is present.
+        </p>
+      </div>
+
+      <div class="quote-card">
+        The deeper the pain, the stronger is the possibility for our transformation.
+        <span class="ref">— Shreans Daga</span>
+      </div>
+      <div class="qa-block">
+        <p>
+          When everything outside is going well, we rarely look within. Dopamine from the outer world keeps us busy.
+          Pain and suffering disillusion us with the impermanence of people and things. The same love that was a source
+          of joy becomes a source of pain when it is lost. In that space we begin to ask: what is permanent joy?
+        </p>
+        <p>
+          Many enter spirituality precisely because of some adversity — illness, loss, depression, contrast. Pain is not
+          a curse or a punishment. From the soul’s perspective it is happening <em>for</em> you, so that you can evolve,
+          heal and transform. When loved ones go through challenges, one need not only feel pity; one can also feel a
+          quiet excitement for the possibility of transformation that is opening.
+        </p>
+      </div>
+
+      <div class="quote-card">
+        Breath is more than survival. It is the flow of life, spirit and consciousness moving through you. It is the
+        most natural bridge between the physical body and the subtle dimension. Every breath taken with awareness
+        becomes a silent thread between the seen and the unseen, the body and the being, the physical and the spiritual.
+        Every conscious breath is a rise in consciousness.
+        <span class="ref">— Shreans Daga</span>
+      </div>
+      <div class="qa-block">
+        <p>
+          We usually treat breath only as survival. The moment awareness is brought to it, the same breath becomes
+          cosmic life-force. It heals at physical, mental, emotional and spiritual levels. It is no longer only a
+          biological process; it becomes sacred.
+        </p>
+        <p>
+          We are not only a physical body. We have multiple layers (koshas). Breath is the bridge that gives access to
+          the subtler dimensions. Those dimensions are not “up there”; they are vibrational and already within us. When
+          vibration changes, one is already in that dimension. Jesus pointed to the same truth: the kingdom of heaven is
+          within.
+        </p>
+        <p>
+          What the eyes see is less than 1% of the light spectrum. Gravity, quantum field, 5G, X-rays — all exist though
+          unseen. Conscious breath and the activation of inner vision allow us to tune into frequencies the naked eye
+          cannot register. Out-of-body experiences, past-life and between-life states become possible because vibration
+          has shifted. Every conscious breath is therefore a rise in consciousness.
+        </p>
+        <p>
+          <strong>What is conscious breath?</strong> Being fully aware of each and every breath — not shallow, not
+          automatic — a silent witness to the natural rhythm.
+        </p>
+      </div>
+
+      <div class="quote-card">
+        When we are faced time and again with challenges, it is not a coincidence. Your soul is trying to tell you to
+        wake up now. We repeat what we don’t repair. As a soul we plan the challenges. When the soul wants to evolve
+        faster, it plans more challenges so that mastery of thoughts and emotions can be demonstrated. The true test is:
+        in spite of challenges, you do not lose your alignment with your inner being.
+        <span class="ref">— Shreans Daga</span>
+      </div>
+      <div class="qa-block">
+        <p>
+          Challenges are co-created incidents, not random misfortune. They are teachers. The issue is not how many times
+          you fall; it is rising every time you fall. What is life without a royal challenge?
+        </p>
+      </div>
+
+      <div class="quote-card">
+        The goal is not just to manifest what you want. The real goal is to feel aligned, joyful and alive moment by
+        moment as life unfolds. After all, life is nothing but the coming together of all these moments. Manifestation
+        is only one moment. Life is every moment.
+        <span class="ref">— Shreans Daga</span>
+      </div>
+      <div class="qa-block">
+        <p>
+          People become obsessed with manifestation. The deeper goal is transformation — what you become in the process.
+          Overcome and overcome until you become. Experience can only happen in the present moment. Present moment is
+          all you have. Happiness is possible every moment; it does not have to wait for a particular manifestation.
+        </p>
+      </div>
+
+      <div class="quote-card">
+        If you keep fighting for your limitations, then you’ve got to keep them. Whether you think you can or you
+        cannot, you are right. Change the narrative. Challenge yourself. It is okay to be laughed at. At least you are
+        doing what you want to do.
+        <span class="ref">— Shreans Daga</span>
+      </div>
+      <div class="qa-block">
+        <p>
+          Stage fear, “I can’t,” repeated limitation stories — these keep the limitation in place. Reputation is often
+          the investment of ego in others’ opinions. When one is willing to lose reputation, the restlessness of
+          protecting it drops. Mind over matter: change the inner narrative from “I can’t” to “I can; let me try.”
+          Courage is required, but fighting for the limitation only guarantees that it stays.
+        </p>
+      </div>
+
+      <!-- ========== AUDIENCE Q&A ========== -->
+      <h2 class="section-title" id="audience-qa">2. Audience Questions &amp; Answers</h2>
+
+      <div class="qa-block">
+        <p class="speaker-label">Question — on manifestation &amp; controlling a child</p>
+        <p>
+          “When we aim for basic manifestation like ‘my son should listen to parents,’ is that not lifetime happiness
+          rather than single-moment happiness? Is seeking that not like seeking power so I can control my child?”
+        </p>
+        <p>
+          <strong>Shreans:</strong> The foundation itself is wrong. Wanting the child to listen so that you can feel
+          happy is the ego trying to tell you that control will give permanent happiness. It will not. Alignment with
+          your own being is independent of whether the child behaves as you wish.
+        </p>
+      </div>
+
+      <div class="qa-block">
+        <p class="speaker-label">Question — anger in the legal profession</p>
+        <p>
+          An advocate shares that clients’ suffering and the way courts function trigger strong anger. Even when trying
+          to witness, the anger still comes out. How to handle this?
+        </p>
+        <p>
+          <strong>Shreans:</strong> There are no justified resentments. No matter what justification you give for anger
+          toward courts, government or the ecosystem, there is no justification that allows you to lose alignment with
+          your own being.
+        </p>
+        <p>
+          The best way to help a client is from the right state of being. Arguments, case laws and volume matter, yet
+          when they come from calm, aligned energy they carry a different power. The quantum field does not care about
+          your reasons for the vibration you are offering; it simply matches the vibration. If the profession itself
+          keeps you in resistance, no real good happens for the client or for you.
+        </p>
+        <p>
+          You can argue loudly and firmly while the inner state remains peaceful. That state of being gives an edge that
+          pure intellectual argument cannot. Energy speaks to the judge more than the words alone.
+        </p>
+      </div>
+
+      <div class="qa-block">
+        <p class="speaker-label">Question — parent–child friction &amp; karmic bond</p>
+        <p>
+          A mother living with her daughter feels the daughter does not listen or behave as desired. She wonders if it
+          is a past karmic bond and finds herself losing alignment despite daily practice.
+        </p>
+        <p>
+          <strong>Shreans:</strong> Why should that make you lose your alignment? It is not a justification. These
+          triggers are teachers. There is no coincidence; it is co-creation at its best. The issue is not how many times
+          you fall, but rising every time you fall.
+        </p>
+      </div>
+
+      <div class="qa-block">
+        <p class="speaker-label">Question — What exactly is alignment?</p>
+        <p>
+          <strong>Shreans:</strong> Alignment is connection with the inner being — bathing in your source, marinating in
+          your source, resting in your consciousness. When you lose resistance to all forms of existence, you naturally
+          come into alignment.
+        </p>
+        <p>
+          Meditation is a powerful tool because you lose identity, forget who you are (the ego self), resistance drops,
+          and you connect to the consciousness self — not the selfie, but the real Self.
+        </p>
+      </div>
+
+      <!-- ========== MEDITATION ========== -->
+      <h2 class="section-title" id="meditation">3. Guided Meditation — Awaken the Buddha Within</h2>
+
+      <div class="qa-block">
+        <p>
+          Before we begin, take a comfortable position. Sit up straight. When ready, gently close the eyes and allow
+          yourself to arrive here.
+        </p>
+        <p>
+          There is a story that changed the course of human consciousness. A young prince, Siddhartha, had everything
+          the world could offer — comfort, luxury, protection — yet something within remained unsettled. A quiet
+          question rose: “Is this really all there is?”
+        </p>
+        <p>
+          One day he stepped outside the palace walls and saw life as it truly is: an old man, a sick man, a lifeless
+          body. The question deepened: if everything changes and fades, what is real? That question did not leave him.
+          It pulled him inward until he left everything behind — not out of rejection, but because the question mattered
+          more. It became a quest.
+        </p>
+        <p>
+          Years of seeking passed. Finally he sat under the Bodhi tree with a simple, unwavering resolve: “I will not
+          get up from here until I see the truth.” No more searching outside. No more running. Just sitting, observing,
+          being.
+        </p>
+        <p>
+          In that stillness something revealed itself — not something he achieved, but something he realised: what he
+          was seeking was never outside. It was always within.
+        </p>
+        <div class="highlight">
+          The Buddha is not only a person from the past. It is a possibility within you — a state of awareness that is
+          not created but recognised. What you are seeking, you already are.
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <h3>The practice of conscious breath</h3>
+        <p>
+          One of the simplest and deepest ways into that awakening is the natural, conscious, sacred breath. Through
+          awareness of the breath the Buddha touched the silence within.
+        </p>
+        <p>
+          Bring awareness to the nostrils. Observe the natural rhythm of in-breath and out-breath. Feel a gentle wave of
+          relaxation. Notice the cool sensation of air entering and the gentle warmth as it leaves. With every breath,
+          be here now — fully present, fully alive.
+        </p>
+      </div>
+
+      <div class="qa-block">
+        <h3>Dropping identity</h3>
+        <p>
+          Turn attention to the sense of “I” — the ego that holds names, roles and positions. Ask: “Am I the roles I
+          play, or is there something deeper?” Realise that the identity held so dearly is a construct of the mind. Drop
+          language, labels and titles. When you detach from identity you dissolve into nothingness — and that
+          nothingness contains everything. What remains is pure awareness, witnessing the breath.
+        </p>
+        <p>
+          Hook onto the breath. Let not a single breath slip by without awareness. If the mind wanders, neither cling
+          nor push away; simply return. Create no relationship with anything that appears. You are the witness to both
+          appearance and disappearance. Past and future exist only as thoughts; when thoughts recede, past and future
+          disappear and you arrive fully into the stillness of the present.
+        </p>
+        <p>
+          Just as muddy water must become still to clear, the mind must become still to realise the clarity of the Self.
+          Lose yourself in nothing to become everything.
+        </p>
+      </div>
+
+      <div class="qa-block">
+        <h3>Resting in stillness</h3>
+        <p>
+          In alert stillness, feel surrender. There is nothing to change, nothing to achieve, nothing to seek, nowhere
+          to go. When you realise there is nothing lacking, the whole world belongs to you. To the mind that is still,
+          the whole universe surrenders. Dissolve into the space between thoughts — an experience of emptiness that is
+          full of innate silence. This stillness is the mind of God in you. With each breath, merge with the greater
+          Self and become pure consciousness.
+        </p>
+      </div>
+
+      <div class="qa-block">
+        <h3>The ancient refuge</h3>
+        <p>
+          <em>Buddham saranam gacchami</em> — I return to the awakened awareness within me.<br>
+          <em>Dhammam saranam gacchami</em> — I rest in truth, in the deeper intelligence that guides life.<br>
+          <em>Sangham saranam gacchami</em> — I settle into the wholeness where nothing within me is divided.
+        </p>
+        <p>
+          Notice the part of you that is already aware — aware of breath, body and every passing thought, yet untouched
+          by all of it. Thoughts appear and dissolve; sensations rise and fade; awareness remains. Rest here without
+          trying. Just awake. Just here.
+        </p>
+        <p>
+          There is an intelligence quietly moving through breath and heartbeat. For a moment, stop interfering. Stop
+          managing every experience. Move with it like a river that does not force yet never loses its way. Life no
+          longer feels like a weight you carry; it begins to carry you.
+        </p>
+        <p>
+          As effort and resistance drop, thoughts, emotions and body settle into a shared rhythm — distinct yet in
+          harmony. A wholeness reveals itself that was never missing, only waiting to be remembered.
+        </p>
+      </div>
+
+      <div class="qa-block">
+        <h3>Heart and compassion (Green Tara)</h3>
+        <p>
+          Gently move attention into the space around the heart. Allow the breath to move in and out of that centre. A
+          warmth may gather — unforced, unhurried. Green Tara is the embodiment of compassionate action, a living
+          potential within you. Allow love and compassion to awaken. Judgment dissolves; compassion flows; forgiveness
+          no longer feels forced. Feel connection and oneness as boundaries soften.
+        </p>
+        <p>
+          Remain here a few moments. The breath slow and steady, the body rested, the mind quieter. What began as the
+          story of Siddhartha is now unfolding as Buddha within you. A calm awareness, still and unchanging, always here
+          — and within it a quiet kindness that holds and asks for nothing.
+        </p>
+        <p>
+          Let this feeling extend into relationships, conversations and the world: a little more patience, presence and
+          peace. Choose love where there was distance, compassion where there was resistance, empathy where there was
+          judgment. Let this become your way.
+        </p>
+      </div>
+
+      <div class="summary-card">
+        <p><strong>Remember</strong></p>
+        <p>
+          • Love is enough when the motive is to heal and uplift; power is sought when the motive is to control.<br>
+          • Pain is a doorway to transformation, not a punishment.<br>
+          • Conscious breath is the bridge between the physical and the subtle — every aware breath raises
+          consciousness.<br>
+          • Challenges are co-created teachers; do not lose alignment because of them.<br>
+          • Manifestation is one moment; life is every moment of alignment and joy.<br>
+          • Do not fight for your limitations; change the narrative.<br>
+          • Alignment = resting in the inner being. Meditation dissolves the ego-self so the real Self can be known.<br>
+          • The Buddha is a possibility already within you. What you seek, you already are.
+        </p>
+      </div>
+
+      <p class="closing">
+        Soulcast with Shreans Daga · Episode 48<br>
+        Quotes, live Q&amp;A and the meditation “Awaken the Buddha Within”<br>
+        Speaker’s words, context and intention preserved.
+      </p>
+    </article>
+  </div>
+
+  <script>
+    (function () {
+      const topHomeLink = document.getElementById('topHomeLink');
+      if (!topHomeLink) return;
+
+      const fallbackUrl = '../../index.html?org=soulcast&section=soulcast';
+      const referrer = document.referrer || '';
+
+      if (referrer && referrer !== location.href) {
+        try {
+          const referrerUrl = new URL(referrer, window.location.href);
+          if (referrerUrl.origin === window.location.origin) {
+            topHomeLink.href = referrerUrl.href;
+          } else {
+            topHomeLink.href = fallbackUrl;
+          }
+        } catch (error) {
+          topHomeLink.href = fallbackUrl;
+        }
+      } else {
+        topHomeLink.href = fallbackUrl;
+      }
+    })();
+  </script>
+</body>
+
+</html>
