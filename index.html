@@ -100,152 +100,140 @@
     }
 
     .org-button.active {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(186, 122, 58, 0.18);
-      background: #fff;
+      background: #2c1810;
+      color: #f8efe4;
+      border-color: #2c1810;
+      box-shadow: 0 4px 12px rgba(44, 24, 16, 0.12);
     }
 
     .org-button img {
       width: 18px;
       height: 18px;
       object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.08));
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .brand img {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
-    .brand-text {
-      min-width: 0;
-    }
-
-    .brand-text strong {
-      display: block;
+      font-weight: 700;
       font-size: 14px;
-      line-height: 1.15;
+      letter-spacing: 0.03em;
+      color: var(--heading);
+      text-decoration: none;
+      line-height: 1.2;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .brand-text span {
+    .brand small {
       display: block;
+      font-weight: 400;
       font-size: 11px;
       color: var(--ink-muted);
+      letter-spacing: 0;
+    }
+
+    .lang-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
-    .search-wrap {
-      position: relative;
-      width: min(320px, 42vw);
-    }
-
-    .search-wrap input {
-      width: 100%;
-      height: 32px;
+    .lang-pills button {
+      font-family: Georgia, serif;
+      font-size: 12.5px;
+      padding: 6px 11px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.9);
-      padding: 0 14px 0 34px;
-      font-family: Georgia, serif;
-      font-size: 13px;
-      color: var(--ink);
-      outline: none;
-    }
-
-    .search-wrap input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(186, 122, 58, 0.15);
-    }
-
-    .search-wrap::before {
-      content: "⌕";
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
+      background: #fff;
       color: var(--ink-muted);
-      font-size: 14px;
+      cursor: pointer;
+      line-height: 1.1;
+    }
+
+    .lang-pills button.active {
+      background: #2c1810;
+      color: #f5ebe0;
+      border-color: #2c1810;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px 10px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
     .sidebar {
       grid-area: sidebar;
       background: var(--side-bg);
       border-right: 1px solid var(--border);
-      padding: 14px 10px 24px;
-      min-height: calc(100vh - 54px);
-      position: sticky;
-      top: 54px;
-      max-height: calc(100vh - 54px);
-      overflow: auto;
+      padding: 16px 10px 28px;
     }
 
     .nav-label {
       font-size: 11px;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--ink-muted);
-      margin: 8px 8px 6px;
+      letter-spacing: 0.08em;
+      color: var(--accent-dark);
+      padding: 4px 12px 10px;
+      font-weight: 700;
     }
 
     .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       width: 100%;
-      appearance: none;
-      border: 0;
-      background: transparent;
+      height: 58px;
       text-align: left;
-      padding: 9px 10px;
+      border: none;
+      background: transparent;
+      padding: 11px 12px;
       border-radius: 10px;
       cursor: pointer;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
       color: var(--ink);
       font-family: Georgia, serif;
+      font-size: 14px;
       margin-bottom: 4px;
+      transition: background 0.15s, color 0.15s;
     }
 
     .nav-item:hover {
-      background: rgba(186, 122, 58, 0.08);
+      background: rgba(186, 122, 58, 0.1);
     }
 
     .nav-item.active {
-      background: rgba(186, 122, 58, 0.14);
-      box-shadow: inset 0 0 0 1px rgba(186, 122, 58, 0.18);
+      background: #2c1810;
+      color: #f8efe4;
     }
 
     .nav-item .icon {
-      width: 18px;
-      height: 18px;
-      margin-top: 1px;
-      flex: 0 0 auto;
-      opacity: 0.8;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+      background: rgba(186, 122, 58, 0.12);
     }
 
-    .nav-item span {
-      display: block;
-      font-size: 13.5px;
-      line-height: 1.25;
+    .nav-item.active .icon {
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .nav-item small {
       display: block;
-      margin-top: 2px;
       font-size: 11px;
-      color: var(--ink-muted);
-      line-height: 1.3;
+      opacity: 0.75;
+      margin-top: 1px;
     }
 
     .main {
@@ -254,50 +242,29 @@
       min-width: 0;
     }
 
-    .hero {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px 18px;
-      margin-bottom: 14px;
-      box-shadow: 0 8px 24px rgba(90, 60, 20, 0.05);
-    }
-
-    .hero h1 {
-      margin: 0 0 4px;
-      font-size: 1.35rem;
-      color: var(--heading);
-    }
-
-    .hero p {
-      margin: 0;
-      color: var(--ink-muted);
-      font-size: 0.95rem;
-    }
-
     .filters {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 0 0 14px;
+      margin-bottom: 12px;
     }
 
     .chip {
       appearance: none;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 999px;
       padding: 6px 12px;
       font-family: Georgia, serif;
-      font-size: 12px;
-      color: var(--ink);
+      font-size: 12.5px;
+      color: var(--ink-muted);
       cursor: pointer;
     }
 
     .chip.active {
-      background: rgba(186, 122, 58, 0.14);
-      border-color: rgba(186, 122, 58, 0.35);
-      color: var(--accent-dark);
+      background: #2c1810;
+      color: #f5ebe0;
+      border-color: #2c1810;
     }
 
     .list {
@@ -313,75 +280,70 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 14px 16px;
+      box-shadow: 0 6px 18px rgba(90, 60, 20, 0.04);
       transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
-      box-shadow: 0 4px 14px rgba(90, 60, 20, 0.04);
+      cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-1px);
-      border-color: rgba(186, 122, 58, 0.4);
+      border-color: var(--accent);
       box-shadow: 0 10px 24px rgba(90, 60, 20, 0.08);
     }
 
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: flex-start;
-      margin-bottom: 6px;
-    }
-
-    .card-title {
-      font-size: 1.02rem;
+    .card h3 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
       color: var(--heading);
-      margin: 0;
-      line-height: 1.3;
     }
 
-    .badge {
-      flex: 0 0 auto;
-      font-size: 11px;
-      border-radius: 999px;
-      padding: 3px 8px;
-      background: rgba(186, 122, 58, 0.12);
-      color: var(--accent-dark);
-      border: 1px solid rgba(186, 122, 58, 0.2);
-    }
-
-    .card-sub {
+    .card p {
       margin: 0;
-      color: var(--ink-muted);
       font-size: 0.9rem;
-      line-height: 1.4;
+      color: var(--ink-muted);
     }
 
-    .card-meta {
+    .card .meta {
       margin-top: 8px;
       font-size: 11px;
-      color: var(--ink-muted);
+      color: var(--accent-dark);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .empty {
-      background: var(--card);
-      border: 1px dashed var(--border);
-      border-radius: 14px;
-      padding: 22px;
+      padding: 28px 12px;
       text-align: center;
       color: var(--ink-muted);
+      font-size: 0.95rem;
+    }
+
+    .search-wrap {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .search-wrap input {
+      flex: 1;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      background: #fff;
+      color: var(--ink);
     }
 
     .viewer {
       display: none;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      min-height: 70vh;
-      box-shadow: 0 10px 30px rgba(90, 60, 20, 0.06);
+      flex-direction: column;
+      gap: 8px;
     }
 
     .viewer.active {
-      display: block;
+      display: flex;
     }
 
     .viewer-toolbar {
@@ -389,21 +351,20 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(255, 248, 238, 0.92);
     }
 
-    .viewer-toolbar button {
+    .viewer-toolbar button,
+    .viewer-toolbar a {
       appearance: none;
       border: 1px solid var(--border);
       background: #fff;
       border-radius: 8px;
-      padding: 6px 10px;
+      padding: 7px 12px;
       font-family: Georgia, serif;
-      font-size: 12px;
-      cursor: pointer;
+      font-size: 13px;
       color: var(--ink);
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .viewer-toolbar a {
@@ -420,7 +381,6 @@
     }
 
     .list-view.hidden,
-    .hero.hidden,
     .filters.hidden {
       display: none;
     }
@@ -438,21 +398,22 @@
       }
 
       .search-wrap {
-        width: min(220px, 40vw);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .org-switcher {
-        gap: 4px;
+        flex-wrap: wrap;
       }
 
-      .org-button span {
-        display: none;
+      .menu-toggle {
+        display: inline-flex;
       }
 
-      .brand-text {
-        display: none;
+      .sidebar.open {
+        display: block;
+        position: fixed;
+        top: 54px;
+        left: 0;
+        bottom: 0;
+        width: min(280px, 85vw);
+        z-index: 20;
+        box-shadow: 8px 0 24px rgba(0, 0, 0, 0.12);
       }
     }
   </style>
@@ -461,46 +422,49 @@
 <body>
   <div class="app">
     <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
       <div class="brand-wrap">
-        <div class="org-switcher" id="orgSwitcher">
-          <button type="button" class="org-button" data-org="pssm" aria-label="PSSM">
-            <img src="assets/logos/pssm-logo.svg" alt="PSSM logo">
-            <span>PSSM</span>
+        <div class="org-switcher" id="orgSwitcher" aria-label="Organization selector">
+          <button type="button" class="org-button active" data-org="pssm" aria-label="PSSM">
+            <img src="assets/logos/pssm-logo.svg" alt="PSSM logo" onerror="this.style.display='none'">
+            PSSM
           </button>
           <button type="button" class="org-button" data-org="soulcast" aria-label="Soulcast">
-            <img src="assets/logos/soulcast-logo.svg" alt="Soulcast logo">
-            <span>Soulcast</span>
+            <img src="assets/logos/soulcast-logo.svg" alt="Soulcast logo" onerror="this.style.display='none'">
+            Soulcast
           </button>
           <button type="button" class="org-button" data-org="qlu" aria-label="QLU">
-            <img src="assets/logos/qlu-logo.svg" alt="QLU logo">
-            <span>QLU</span>
+            <img src="assets/logos/qlu-logo.svg" alt="QLU logo" onerror="this.style.display='none'">
+            QLU
           </button>
           <button type="button" class="org-button" data-org="tiw" aria-label="Temple of Inner Wisdom">
-            <img src="assets/logos/tiw-logo-responsive.svg" alt="Temple of Inner Wisdom logo">
-            <span>TIW</span>
+            <img src="assets/logos/tiw-logo-responsive.svg" alt="Temple of Inner Wisdom logo" onerror="this.style.display='none'">
+            TIW
           </button>
           <button type="button" class="org-button" data-org="maitri" aria-label="Maitri Bodh">
-            <img src="assets/logos/maitri-logo.svg" alt="Maitri logo">
-            <span>Maitri</span>
+            <img src="https://scontent.fmaa9-1.fna.fbcdn.net/v/t39.30808-1/299600325_603813538060256_2716781792230094510_n.jpg?stp=dst-jpg_tt6&cstp=mx640x640&ctp=s200x200&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=pwq25JY3JXgQ7kNvwFqkbVK&_nc_oc=AdoqdrxSxvHwMGB_z9gCce2HixAJ83_o8KgWjGz3kp6Jmf0Y6OSxsiXT5DzjcyP1QID4RLsFAhGAVCtIdnOGA9ut&_nc_zt=24&_nc_ht=scontent.fmaa9-1.fna&_nc_gid=9F9HZ5yniZUJC4mblGZa_g&_nc_ss=7b2a8&oh=00_AQLj53I2pRgEWWBPAruDRSPqawcN_x6KJ77KcISALvInTw&oe=6AADF9C7" alt="Maitri Bodh logo" onerror="this.style.display='none'">
+            Maitri
           </button>
         </div>
-        <div class="brand">
-          <div class="brand-text">
-            <strong id="brandTitle">Awakening the Wisdom Within</strong>
-            <span id="brandSub">Spiritual study notes &amp; discourses</span>
-          </div>
-        </div>
+        <a class="brand" href="./">
+          <span id="brandTitle">Awakening the Wisdom Within</span>
+          <small id="brandSub">Spiritual study notes &amp; discourses</small>
+        </a>
       </div>
-      <div class="search-wrap">
-        <input id="searchInput" type="search" placeholder="Search titles, topics…" autocomplete="off">
+      <div class="lang-pills" id="langPills" role="group" aria-label="Language">
+        <button type="button" data-lang="all" class="active">All</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="hi">HI</button>
+        <button type="button" data-lang="te">TE</button>
+        <button type="button" data-lang="ta">TA</button>
       </div>
     </header>
 
     <aside class="sidebar" id="sidebar">
       <div class="nav-label">Collections</div>
-      <button class="nav-item" data-section="patriji">
+      <button class="nav-item active" data-section="patriji">
         <span class="icon">◆</span>
-        <span>Patriji Teachings<small>Wisdom of PSSM Masters</small></span>
+        <span>Patriji Teachings<small>Guiding principles &amp; pyramid</small></span>
       </button>
       <button class="nav-item" data-section="book">
         <span class="icon">◆</span>
@@ -508,7 +472,7 @@
       </button>
       <button class="nav-item" data-section="sajjana">
         <span class="icon">◆</span>
-        <span>Sajjana Sangathya<small>Conversations</small></span>
+        <span>Sajjana Sangathya<small>Conversations with Masters</small></span>
       </button>
       <button class="nav-item" data-section="classes">
         <span class="icon">◆</span>
@@ -524,7 +488,7 @@
       </button>
       <button class="nav-item" data-section="schedules">
         <span class="icon">◆</span>
-        <span>Session Schedules<small>Programmes</small></span>
+        <span>Session Schedules<small>Programmes &amp; resources</small></span>
       </button>
       <button class="nav-item" data-section="maitri">
         <span class="icon">◆</span>
@@ -537,11 +501,6 @@
     </aside>
 
     <main class="main">
-      <section class="hero" id="hero">
-        <h1 id="sectionTitle">Loading…</h1>
-        <p id="sectionDesc"></p>
-      </section>
-
       <div class="filters" id="filters"></div>
       <div class="list list-view" id="list"></div>
 
@@ -632,11 +591,8 @@
       const el = {
         orgSwitcher: document.getElementById("orgSwitcher"),
         sidebar: document.getElementById("sidebar"),
-        sectionTitle: document.getElementById("sectionTitle"),
-        sectionDesc: document.getElementById("sectionDesc"),
         filters: document.getElementById("filters"),
         list: document.getElementById("list"),
-        hero: document.getElementById("hero"),
         viewer: document.getElementById("viewer"),
         frame: document.getElementById("frame"),
         backBtn: document.getElementById("backBtn"),
@@ -695,7 +651,6 @@
       }
 
       function showList() {
-        el.hero.classList.remove("hidden");
         el.filters.classList.remove("hidden");
         el.list.classList.remove("hidden");
         el.viewer.classList.remove("active");
@@ -703,7 +658,6 @@
       }
 
       function showViewer(href, title) {
-        el.hero.classList.add("hidden");
         el.filters.classList.add("hidden");
         el.list.classList.add("hidden");
         el.viewer.classList.add("active");
@@ -713,10 +667,6 @@
       }
 
       function render() {
-        const meta = META[currentSection] || META.patriji;
-        el.sectionTitle.textContent = meta.title;
-        el.sectionDesc.textContent = meta.desc;
-
         const items = (DATA[currentSection] || []).slice();
         const groups = Array.from(new Set(items.map(i => i.group || "Other")));
 
@@ -751,64 +701,78 @@
         }
 
         filtered.forEach(item => {
-          const a = document.createElement("a");
-          a.className = "card";
-          a.href = item.href;
-          a.onclick = (e) => {
+          const card = document.createElement("a");
+          card.className = "card";
+          card.href = item.href;
+          card.innerHTML = "<h3>" + (item.title || "") + "</h3><p>" + (item.sub || "") + "</p><div class=\"meta\">" + (item.group || "") + (item.lang ? " · " + (LANG_LABEL[item.lang] || item.lang.toUpperCase()) : "") + "</div>";
+          card.onclick = (e) => {
             e.preventDefault();
             showViewer(item.href, item.title);
           };
-          a.innerHTML = `
-            <div class="card-top">
-              <h2 class="card-title">${item.title}</h2>
-              <span class="badge">${LANG_LABEL[item.lang] || (item.lang || "").toUpperCase()}</span>
-            </div>
-            <p class="card-sub">${item.sub || ""}</p>
-            <div class="card-meta">${item.group || ""}</div>
-          `;
-          el.list.appendChild(a);
+          el.list.appendChild(card);
         });
       }
 
       // events
-      el.orgSwitcher.addEventListener("click", (e) => {
-        const btn = e.target.closest(".org-button");
-        if (!btn) return;
-        currentOrg = btn.dataset.org;
-        currentSection = ORG_CONFIG[currentOrg].defaultSection;
-        currentGroup = "all";
-        setOrg(currentOrg);
-        document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n.dataset.section === currentSection));
-        updateUrl();
-        showList();
-        render();
+      document.querySelectorAll(".org-button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          setOrg(btn.dataset.org);
+          currentSection = ORG_CONFIG[currentOrg].defaultSection;
+          currentGroup = "all";
+          document.querySelectorAll(".nav-item").forEach(n => {
+            n.classList.toggle("active", n.dataset.section === currentSection);
+          });
+          updateUrl();
+          showList();
+          render();
+        });
       });
 
-      el.sidebar.addEventListener("click", (e) => {
-        const btn = e.target.closest(".nav-item");
-        if (!btn) return;
-        currentSection = btn.dataset.section;
-        currentGroup = "all";
-        document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n === btn));
-        updateUrl();
-        showList();
-        render();
+      document.querySelectorAll(".nav-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentSection = btn.dataset.section;
+          currentGroup = "all";
+          document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
+          btn.classList.add("active");
+          updateUrl();
+          showList();
+          render();
+        });
       });
 
-      el.backBtn.addEventListener("click", () => {
-        showList();
+      if (el.backBtn) {
+        el.backBtn.addEventListener("click", () => {
+          showList();
+        });
+      }
+
+      const menuToggle = document.getElementById("menuToggle");
+      if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+          el.sidebar.classList.toggle("open");
+        });
+      }
+
+      // lang pills — optional filter by language if present on items
+      document.querySelectorAll("#langPills button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#langPills button").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const lang = btn.dataset.lang;
+          currentQuery = lang === "all" ? "" : lang;
+          // simple approach: use search field semantics via currentQuery on lang code in haystack
+          render();
+        });
       });
 
-      el.searchInput.addEventListener("input", () => {
-        currentQuery = el.searchInput.value || "";
-        render();
-      });
-
-      // boot
+      // init
       parseUrl();
       setOrg(currentOrg);
-      document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n.dataset.section === currentSection));
+      document.querySelectorAll(".nav-item").forEach(n => {
+        n.classList.toggle("active", n.dataset.section === currentSection);
+      });
       updateUrl();
+      showList();
       render();
     })();
   </script>
