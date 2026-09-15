@@ -242,6 +242,39 @@
       min-width: 0;
     }
 
+    .search-wrap {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .search-wrap input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px 10px 36px;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .search-wrap input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(186, 122, 58, 0.15);
+    }
+
+    .search-wrap::before {
+      content: "⌕";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+      font-size: 14px;
+      pointer-events: none;
+    }
+
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -318,24 +351,6 @@
       font-size: 0.95rem;
     }
 
-    .search-wrap {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .search-wrap input {
-      flex: 1;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 9px 12px;
-      font-family: Georgia, serif;
-      font-size: 14px;
-      background: #fff;
-      color: var(--ink);
-    }
-
     .viewer {
       display: none;
       flex-direction: column;
@@ -370,7 +385,6 @@
     .viewer-toolbar a {
       color: var(--accent-dark);
       font-size: 12px;
-      text-decoration: none;
     }
 
     .viewer iframe {
@@ -398,7 +412,7 @@
       }
 
       .search-wrap {
-        flex-wrap: wrap;
+        /* ok */
       }
 
       .menu-toggle {
@@ -501,6 +515,9 @@
     </aside>
 
     <main class="main">
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Search titles, topics…" autocomplete="off">
+      </div>
       <div class="filters" id="filters"></div>
       <div class="list list-view" id="list"></div>
 
@@ -612,7 +629,6 @@
           const show = visible.includes(btn.dataset.section);
           btn.style.display = show ? "" : "none";
         });
-        // brand text
         if (currentOrg === "tiw") {
           el.brandTitle.textContent = "Temple of Inner Wisdom";
           el.brandSub.textContent = "Festival messages & deeper invitations";
@@ -670,7 +686,6 @@
         const items = (DATA[currentSection] || []).slice();
         const groups = Array.from(new Set(items.map(i => i.group || "Other")));
 
-        // filters
         el.filters.innerHTML = "";
         const allChip = document.createElement("button");
         allChip.className = "chip" + (currentGroup === "all" ? " active" : "");
@@ -685,7 +700,6 @@
           el.filters.appendChild(chip);
         });
 
-        // list
         el.list.innerHTML = "";
         const q = currentQuery.trim().toLowerCase();
         const filtered = items.filter(item => {
@@ -713,7 +727,6 @@
         });
       }
 
-      // events
       document.querySelectorAll(".org-button").forEach(btn => {
         btn.addEventListener("click", () => {
           setOrg(btn.dataset.org);
@@ -741,31 +754,35 @@
       });
 
       if (el.backBtn) {
-        el.backBtn.addEventListener("click", () => {
-          showList();
-        });
+        el.backBtn.addEventListener("click", () => showList());
       }
 
       const menuToggle = document.getElementById("menuToggle");
       if (menuToggle) {
-        menuToggle.addEventListener("click", () => {
-          el.sidebar.classList.toggle("open");
+        menuToggle.addEventListener("click", () => el.sidebar.classList.toggle("open"));
+      }
+
+      if (el.searchInput) {
+        el.searchInput.addEventListener("input", () => {
+          currentQuery = el.searchInput.value || "";
+          render();
         });
       }
 
-      // lang pills — optional filter by language if present on items
       document.querySelectorAll("#langPills button").forEach(btn => {
         btn.addEventListener("click", () => {
           document.querySelectorAll("#langPills button").forEach(b => b.classList.remove("active"));
           btn.classList.add("active");
           const lang = btn.dataset.lang;
-          currentQuery = lang === "all" ? "" : lang;
-          // simple approach: use search field semantics via currentQuery on lang code in haystack
+          if (lang === "all") {
+            currentQuery = el.searchInput ? el.searchInput.value : "";
+          } else {
+            currentQuery = lang;
+          }
           render();
         });
       });
 
-      // init
       parseUrl();
       setOrg(currentOrg);
       document.querySelectorAll(".nav-item").forEach(n => {
