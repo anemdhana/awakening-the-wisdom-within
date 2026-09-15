@@ -1,17 +1,817 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Awakenining the wisdom within</title>
-  <meta http-equiv="refresh" content="0;url=https://anemdhana.github.io/awakening-the-wisdom-within/">
-  <script>
-    // Temporary bootstrap while full index is restored
-    location.replace('./?org=tiw&section=messages');
-  </script>
+  <link rel="stylesheet" href="css/site.css">
+  <style>
+    :root {
+      --sidebar-w: 260px;
+      --top-h: 64px;
+      --ink: #2a241f;
+      --ink-muted: #56483a;
+      --accent: #ba7a3a;
+      --accent-dark: #8a5a2b;
+      --heading: #6e4a25;
+      --card: rgba(255, 252, 247, 0.95);
+      --side-bg: rgba(255, 248, 238, 0.96);
+      --border: rgba(186, 122, 58, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #f7e7cf 0, #f7e7cf 18%, transparent 19%),
+        linear-gradient(135deg, #f6efe6 0%, #efe2d1 45%, #e2d2bb 100%);
+      min-height: 100vh;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+      grid-template-areas:
+        "topbar topbar"
+        "sidebar main";
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      grid-area: topbar;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      height: 54px;
+      padding: 0 12px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 248, 238, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .org-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+
+    .org-button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.84);
+      border-radius: 10px;
+      padding: 5px 9px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+      cursor: pointer;
+      font-family: Georgia, serif;
+      font-size: 12px;
+      line-height: 1.2;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+
+    .org-button:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .org-button.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(186, 122, 58, 0.18);
+      background: #fff;
+    }
+
+    .org-button img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.15;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 11px;
+      color: var(--ink-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .search-wrap {
+      position: relative;
+      width: min(320px, 42vw);
+    }
+
+    .search-wrap input {
+      width: 100%;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0 14px 0 34px;
+      font-family: Georgia, serif;
+      font-size: 13px;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .search-wrap input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(186, 122, 58, 0.15);
+    }
+
+    .search-wrap::before {
+      content: "⌕";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+      font-size: 14px;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: var(--side-bg);
+      border-right: 1px solid var(--border);
+      padding: 14px 10px 24px;
+      min-height: calc(100vh - 54px);
+      position: sticky;
+      top: 54px;
+      max-height: calc(100vh - 54px);
+      overflow: auto;
+    }
+
+    .nav-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin: 8px 8px 6px;
+    }
+
+    .nav-item {
+      width: 100%;
+      appearance: none;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      padding: 9px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--ink);
+      font-family: Georgia, serif;
+      margin-bottom: 4px;
+    }
+
+    .nav-item:hover {
+      background: rgba(186, 122, 58, 0.08);
+    }
+
+    .nav-item.active {
+      background: rgba(186, 122, 58, 0.14);
+      box-shadow: inset 0 0 0 1px rgba(186, 122, 58, 0.18);
+    }
+
+    .nav-item .icon {
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      flex: 0 0 auto;
+      opacity: 0.8;
+    }
+
+    .nav-item span {
+      display: block;
+      font-size: 13.5px;
+      line-height: 1.25;
+    }
+
+    .nav-item small {
+      display: block;
+      margin-top: 2px;
+      font-size: 11px;
+      color: var(--ink-muted);
+      line-height: 1.3;
+    }
+
+    .main {
+      grid-area: main;
+      padding: 18px 18px 40px;
+      min-width: 0;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 24px rgba(90, 60, 20, 0.05);
+    }
+
+    .hero h1 {
+      margin: 0 0 4px;
+      font-size: 1.35rem;
+      color: var(--heading);
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+
+    .chip {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-family: Georgia, serif;
+      font-size: 12px;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .chip.active {
+      background: rgba(186, 122, 58, 0.14);
+      border-color: rgba(186, 122, 58, 0.35);
+      color: var(--accent-dark);
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      box-shadow: 0 4px 14px rgba(90, 60, 20, 0.04);
+    }
+
+    .card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(186, 122, 58, 0.4);
+      box-shadow: 0 10px 24px rgba(90, 60, 20, 0.08);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1.02rem;
+      color: var(--heading);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(186, 122, 58, 0.12);
+      color: var(--accent-dark);
+      border: 1px solid rgba(186, 122, 58, 0.2);
+    }
+
+    .card-sub {
+      margin: 0;
+      color: var(--ink-muted);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .card-meta {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--ink-muted);
+    }
+
+    .empty {
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+      color: var(--ink-muted);
+    }
+
+    .viewer {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 70vh;
+      box-shadow: 0 10px 30px rgba(90, 60, 20, 0.06);
+    }
+
+    .viewer.active {
+      display: block;
+    }
+
+    .viewer-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 248, 238, 0.92);
+    }
+
+    .viewer-toolbar button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-family: Georgia, serif;
+      font-size: 12px;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .viewer-toolbar a {
+      color: var(--accent-dark);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .viewer iframe {
+      width: 100%;
+      height: calc(100vh - 160px);
+      border: 0;
+      background: #fff;
+    }
+
+    .list-view.hidden,
+    .hero.hidden,
+    .filters.hidden {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .app {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "topbar"
+          "main";
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .search-wrap {
+        width: min(220px, 40vw);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .org-switcher {
+        gap: 4px;
+      }
+
+      .org-button span {
+        display: none;
+      }
+
+      .brand-text {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <p>Loading… If you are not redirected, <a href="./?org=tiw&section=messages">open Temple of Inner Wisdom · Festival Messages</a>.</p>
-  <p>Site index is being restored. Catalog and message page are live.</p>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="org-switcher" id="orgSwitcher">
+          <button type="button" class="org-button" data-org="pssm" aria-label="PSSM">
+            <img src="assets/logos/pssm-logo.svg" alt="PSSM logo">
+            <span>PSSM</span>
+          </button>
+          <button type="button" class="org-button" data-org="soulcast" aria-label="Soulcast">
+            <img src="assets/logos/soulcast-logo.svg" alt="Soulcast logo">
+            <span>Soulcast</span>
+          </button>
+          <button type="button" class="org-button" data-org="qlu" aria-label="QLU">
+            <img src="assets/logos/qlu-logo.svg" alt="QLU logo">
+            <span>QLU</span>
+          </button>
+          <button type="button" class="org-button" data-org="tiw" aria-label="Temple of Inner Wisdom">
+            <img src="assets/logos/tiw-logo-responsive.svg" alt="Temple of Inner Wisdom logo">
+            <span>TIW</span>
+          </button>
+          <button type="button" class="org-button" data-org="maitri" aria-label="Maitri Bodh">
+            <img src="assets/logos/maitri-logo.svg" alt="Maitri logo">
+            <span>Maitri</span>
+          </button>
+        </div>
+        <div class="brand">
+          <div class="brand-text">
+            <strong id="brandTitle">Awakening the Wisdom Within</strong>
+            <span id="brandSub">Spiritual study notes &amp; discourses</span>
+          </div>
+        </div>
+      </div>
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Search titles, topics…" autocomplete="off">
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="nav-label">Collections</div>
+      <button class="nav-item" data-section="patriji">
+        <span class="icon">◆</span>
+        <span>Patriji Teachings<small>Wisdom of PSSM Masters</small></span>
+      </button>
+      <button class="nav-item" data-section="book">
+        <span class="icon">◆</span>
+        <span>Book Reading<small>Swadhyaya notes</small></span>
+      </button>
+      <button class="nav-item" data-section="sajjana">
+        <span class="icon">◆</span>
+        <span>Sajjana Sangathya<small>Conversations</small></span>
+      </button>
+      <button class="nav-item" data-section="classes">
+        <span class="icon">◆</span>
+        <span>Session Classes<small>Teachings</small></span>
+      </button>
+      <button class="nav-item" data-section="discussions">
+        <span class="icon">◆</span>
+        <span>Discussions<small>Q&amp;A and reflections</small></span>
+      </button>
+      <button class="nav-item" data-section="soulcast">
+        <span class="icon">◆</span>
+        <span>Soulcast<small>Shreans Daga Foundation</small></span>
+      </button>
+      <button class="nav-item" data-section="schedules">
+        <span class="icon">◆</span>
+        <span>Session Schedules<small>Programmes</small></span>
+      </button>
+      <button class="nav-item" data-section="maitri">
+        <span class="icon">◆</span>
+        <span>Maitri Bodh<small>Messages &amp; reflections</small></span>
+      </button>
+      <button class="nav-item" data-section="messages">
+        <span class="icon">◆</span>
+        <span>Festival Messages<small>Deeper messages to understand</small></span>
+      </button>
+    </aside>
+
+    <main class="main">
+      <section class="hero" id="hero">
+        <h1 id="sectionTitle">Loading…</h1>
+        <p id="sectionDesc"></p>
+      </section>
+
+      <div class="filters" id="filters"></div>
+      <div class="list list-view" id="list"></div>
+
+      <div class="viewer" id="viewer">
+        <div class="viewer-toolbar">
+          <button type="button" id="backBtn">← Back to list</button>
+          <a id="openNew" href="#" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+        <iframe id="frame" title="Content viewer"></iframe>
+      </div>
+    </main>
+  </div>
+
+  <script src="data/catalog.js"></script>
+  <script>
+    (function () {
+      const DATA = window.PSSM_CATALOG || {};
+
+      const META = {
+        patriji: {
+          title: "Patriji Teachings",
+          desc: "Wisdom of PSSM Masters"
+        },
+        book: {
+          title: "Book Reading (Swadhyaya)",
+          desc: "Book Reading Notes"
+        },
+        sajjana: {
+          title: "Sajjana Sangathya",
+          desc: "Conversations with Masters and seekers"
+        },
+        classes: {
+          title: "Session Classes",
+          desc: "Teachings"
+        },
+        discussions: {
+          title: "Discussions",
+          desc: "Discussions and Q&A"
+        },
+        schedules: {
+          title: "Session Schedules",
+          desc: "Session Schedules and knowledge resources"
+        },
+        soulcast: {
+          title: "Shreans Daga Foundation",
+          desc: "Teaching and meditation resources from Shreans Daga Foundation"
+        },
+        maitri: {
+          title: "Maitri Bodh",
+          desc: "Messages and reflections from Maitri Bodh"
+        },
+        messages: {
+          title: "Festival Messages",
+          desc: "Deeper messages to understand"
+        }
+      };
+
+      const ORG_CONFIG = {
+        pssm: {
+          visibleSections: ["patriji", "book", "sajjana", "classes", "discussions", "soulcast", "schedules"],
+          defaultSection: "patriji"
+        },
+        soulcast: {
+          visibleSections: ["soulcast"],
+          defaultSection: "soulcast"
+        },
+        qlu: {
+          visibleSections: ["classes"],
+          defaultSection: "classes"
+        },
+        tiw: {
+          visibleSections: ["messages"],
+          defaultSection: "messages"
+        },
+        maitri: {
+          visibleSections: ["maitri"],
+          defaultSection: "maitri"
+        }
+      };
+
+      const LANG_LABEL = { en: "EN", hi: "HI", te: "TE", ta: "TA" };
+
+      let currentOrg = "pssm";
+      let currentSection = "patriji";
+      let currentGroup = "all";
+      let currentQuery = "";
+
+      const el = {
+        orgSwitcher: document.getElementById("orgSwitcher"),
+        sidebar: document.getElementById("sidebar"),
+        sectionTitle: document.getElementById("sectionTitle"),
+        sectionDesc: document.getElementById("sectionDesc"),
+        filters: document.getElementById("filters"),
+        list: document.getElementById("list"),
+        hero: document.getElementById("hero"),
+        viewer: document.getElementById("viewer"),
+        frame: document.getElementById("frame"),
+        backBtn: document.getElementById("backBtn"),
+        openNew: document.getElementById("openNew"),
+        searchInput: document.getElementById("searchInput"),
+        brandTitle: document.getElementById("brandTitle"),
+        brandSub: document.getElementById("brandSub")
+      };
+
+      function setOrg(org) {
+        currentOrg = org;
+        const visible = ORG_CONFIG[currentOrg].visibleSections;
+        document.querySelectorAll(".org-button").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.org === currentOrg);
+        });
+        document.querySelectorAll(".nav-item").forEach(btn => {
+          const show = visible.includes(btn.dataset.section);
+          btn.style.display = show ? "" : "none";
+        });
+        // brand text
+        if (currentOrg === "tiw") {
+          el.brandTitle.textContent = "Temple of Inner Wisdom";
+          el.brandSub.textContent = "Festival messages & deeper invitations";
+        } else if (currentOrg === "soulcast") {
+          el.brandTitle.textContent = "Soulcast";
+          el.brandSub.textContent = "Shreans Daga Foundation";
+        } else if (currentOrg === "maitri") {
+          el.brandTitle.textContent = "Maitri Bodh";
+          el.brandSub.textContent = "Messages and reflections";
+        } else if (currentOrg === "qlu") {
+          el.brandTitle.textContent = "QLU";
+          el.brandSub.textContent = "Session classes";
+        } else {
+          el.brandTitle.textContent = "Awakening the Wisdom Within";
+          el.brandSub.textContent = "Spiritual study notes & discourses";
+        }
+      }
+
+      function parseUrl() {
+        const params = new URLSearchParams(location.search);
+        const o = (params.get("org") || "").toLowerCase();
+        const s = (params.get("section") || "").toLowerCase();
+        if (o === "qlu" || o === "tiw" || o === "pssm" || o === "maitri" || o === "soulcast") currentOrg = o;
+        if (s && META[s]) {
+          currentSection = s;
+        } else {
+          currentSection = ORG_CONFIG[currentOrg].defaultSection;
+        }
+      }
+
+      function updateUrl() {
+        const params = new URLSearchParams();
+        params.set("org", currentOrg);
+        params.set("section", currentSection);
+        history.replaceState(null, "", "?" + params.toString());
+      }
+
+      function showList() {
+        el.hero.classList.remove("hidden");
+        el.filters.classList.remove("hidden");
+        el.list.classList.remove("hidden");
+        el.viewer.classList.remove("active");
+        el.frame.src = "about:blank";
+      }
+
+      function showViewer(href, title) {
+        el.hero.classList.add("hidden");
+        el.filters.classList.add("hidden");
+        el.list.classList.add("hidden");
+        el.viewer.classList.add("active");
+        el.frame.src = href;
+        el.openNew.href = href;
+        el.openNew.textContent = "Open in new tab";
+      }
+
+      function render() {
+        const meta = META[currentSection] || META.patriji;
+        el.sectionTitle.textContent = meta.title;
+        el.sectionDesc.textContent = meta.desc;
+
+        const items = (DATA[currentSection] || []).slice();
+        const groups = Array.from(new Set(items.map(i => i.group || "Other")));
+
+        // filters
+        el.filters.innerHTML = "";
+        const allChip = document.createElement("button");
+        allChip.className = "chip" + (currentGroup === "all" ? " active" : "");
+        allChip.textContent = "All";
+        allChip.onclick = () => { currentGroup = "all"; render(); };
+        el.filters.appendChild(allChip);
+        groups.forEach(g => {
+          const chip = document.createElement("button");
+          chip.className = "chip" + (currentGroup === g ? " active" : "");
+          chip.textContent = g;
+          chip.onclick = () => { currentGroup = g; render(); };
+          el.filters.appendChild(chip);
+        });
+
+        // list
+        el.list.innerHTML = "";
+        const q = currentQuery.trim().toLowerCase();
+        const filtered = items.filter(item => {
+          if (currentGroup !== "all" && (item.group || "Other") !== currentGroup) return false;
+          if (!q) return true;
+          const hay = ((item.search || "") + " " + (item.title || "") + " " + (item.sub || "")).toLowerCase();
+          return hay.includes(q);
+        });
+
+        if (!filtered.length) {
+          el.list.innerHTML = '<div class="empty">No items match your search.</div>';
+          return;
+        }
+
+        filtered.forEach(item => {
+          const a = document.createElement("a");
+          a.className = "card";
+          a.href = item.href;
+          a.onclick = (e) => {
+            e.preventDefault();
+            showViewer(item.href, item.title);
+          };
+          a.innerHTML = `
+            <div class="card-top">
+              <h2 class="card-title">${item.title}</h2>
+              <span class="badge">${LANG_LABEL[item.lang] || (item.lang || "").toUpperCase()}</span>
+            </div>
+            <p class="card-sub">${item.sub || ""}</p>
+            <div class="card-meta">${item.group || ""}</div>
+          `;
+          el.list.appendChild(a);
+        });
+      }
+
+      // events
+      el.orgSwitcher.addEventListener("click", (e) => {
+        const btn = e.target.closest(".org-button");
+        if (!btn) return;
+        currentOrg = btn.dataset.org;
+        currentSection = ORG_CONFIG[currentOrg].defaultSection;
+        currentGroup = "all";
+        setOrg(currentOrg);
+        document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n.dataset.section === currentSection));
+        updateUrl();
+        showList();
+        render();
+      });
+
+      el.sidebar.addEventListener("click", (e) => {
+        const btn = e.target.closest(".nav-item");
+        if (!btn) return;
+        currentSection = btn.dataset.section;
+        currentGroup = "all";
+        document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n === btn));
+        updateUrl();
+        showList();
+        render();
+      });
+
+      el.backBtn.addEventListener("click", () => {
+        showList();
+      });
+
+      el.searchInput.addEventListener("input", () => {
+        currentQuery = el.searchInput.value || "";
+        render();
+      });
+
+      // boot
+      parseUrl();
+      setOrg(currentOrg);
+      document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n.dataset.section === currentSection));
+      updateUrl();
+      render();
+    })();
+  </script>
 </body>
+
 </html>
