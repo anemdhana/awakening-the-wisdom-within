@@ -107,11 +107,18 @@
     }
 
     .org-button img {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       object-fit: contain;
       display: block;
+      flex-shrink: 0;
       filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.08));
+    }
+
+    .org-button img.org-photo {
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .brand {
@@ -440,24 +447,24 @@
       <div class="brand-wrap">
         <div class="org-switcher" id="orgSwitcher" aria-label="Organization selector">
           <button type="button" class="org-button active" data-org="pssm" aria-label="PSSM">
-            <img src="assets/logos/pssm-logo.svg" alt="PSSM logo" onerror="this.style.display='none'">
+            <img src="assets/logos/pssm-logo.png" alt="PSSM">
             PSSM
           </button>
-          <button type="button" class="org-button" data-org="soulcast" aria-label="Soulcast">
-            <img src="assets/logos/soulcast-logo.svg" alt="Soulcast logo" onerror="this.style.display='none'">
-            Soulcast
-          </button>
           <button type="button" class="org-button" data-org="qlu" aria-label="QLU">
-            <img src="assets/logos/qlu-logo.svg" alt="QLU logo" onerror="this.style.display='none'">
+            <img src="assets/logos/qlu-logo.png" alt="QLU">
             QLU
           </button>
           <button type="button" class="org-button" data-org="tiw" aria-label="Temple of Inner Wisdom">
-            <img src="assets/logos/tiw-logo-responsive.svg" alt="Temple of Inner Wisdom logo" onerror="this.style.display='none'">
+            <img src="assets/logos/tiw-logo-responsive.svg" alt="TIW">
             TIW
           </button>
           <button type="button" class="org-button" data-org="maitri" aria-label="Maitri Bodh">
-            <img src="https://scontent.fmaa9-1.fna.fbcdn.net/v/t39.30808-1/299600325_603813538060256_2716781792230094510_n.jpg?stp=dst-jpg_tt6&cstp=mx640x640&ctp=s200x200&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=pwq25JY3JXgQ7kNvwFqkbVK&_nc_oc=AdoqdrxSxvHwMGB_z9gCce2HixAJ83_o8KgWjGz3kp6Jmf0Y6OSxsiXT5DzjcyP1QID4RLsFAhGAVCtIdnOGA9ut&_nc_zt=24&_nc_ht=scontent.fmaa9-1.fna&_nc_gid=9F9HZ5yniZUJC4mblGZa_g&_nc_ss=7b2a8&oh=00_AQLj53I2pRgEWWBPAruDRSPqawcN_x6KJ77KcISALvInTw&oe=6AADF9C7" alt="Maitri Bodh logo" onerror="this.style.display='none'">
+            <img src="assets/logos/MaitriBodh-logo.png" alt="Maitri">
             Maitri
+          </button>
+          <button type="button" class="org-button" data-org="soulcast" aria-label="Shreans Daga Foundation">
+            <img class="org-photo" src="assets/images/shreans-daga.jpg" alt="SDF">
+            SDF
           </button>
         </div>
         <a class="brand" href="./">
@@ -633,7 +640,7 @@
           el.brandTitle.textContent = "Temple of Inner Wisdom";
           el.brandSub.textContent = "Festival messages & deeper invitations";
         } else if (currentOrg === "soulcast") {
-          el.brandTitle.textContent = "Soulcast";
+          el.brandTitle.textContent = "SDF · Soulcast";
           el.brandSub.textContent = "Shreans Daga Foundation";
         } else if (currentOrg === "maitri") {
           el.brandTitle.textContent = "Maitri Bodh";
