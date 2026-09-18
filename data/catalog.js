@@ -1,2 +1,2 @@
 window.PSSM_CATALOG = window.PSSM_CATALOG || {};
-/* see full content in next update */
+window.PSSM_CATALOG['patriji'] = [{ "href": "Brahmarshi%20Patriji/18%20Guiding%20Principles/principles/index.html", "title": "18 Guiding Principles · Individual Pages", "sub": "Each principle on its own page", "lang": "en", "group": "18 Guiding Principles", "search": "18 guiding principles individual pages each principle on its own page", "featured": true }];
