@@ -1,15 +1,19 @@
-# National Ahimsa Dhyana Mahasabha Collection
+# జాతీయ అహింసా ధ్యాన మహాసభలు
 
-Instagram-style Q&A and study materials from the National Ahimsa Dhyana Mahasabha (PSSM).
+**National Ahimsa Dhyana Mahasabha**
 
-- **Telugu + English** Q&A cards
-- Curated for swadhyaya / sharing
+- **Dates**: 1–5 October
+- **Venue**: Nampally Exhibition Grounds, Hyderabad
+- **Facebook**: https://www.facebook.com/profile.php?id=61586315486621
 
-## Files
+## Pages in this collection
 
-| File | Description |
-|------|-------------|
-| `ahimsa-dhyana-mahasabha-instagram.html` | Instagram-style Q&A presentation |
-| `index.html` | Collection landing page |
+| Language | File | Description |
+|----------|------|-------------|
+| Telugu | [ahimsa-dhyana-mahasabha-instagram.html](ahimsa-dhyana-mahasabha-instagram.html) | Instagram-style Q&A story |
+| English | [ahimsa-dhyana-mahasabha-instagram-en.html](ahimsa-dhyana-mahasabha-instagram-en.html) | Instagram-style Q&A story |
+| Index | [index.html](index.html) | Landing page with language chooser |
 
-Migrated from `pssm-swadhyaya-notes` into **awakening-the-wisdom-within**.
+Both story pages support **Full Screen** mode (button inside the story).
+
+Place `jadms.jpg` (event logo) in this folder for the avatar/logo to appear.
