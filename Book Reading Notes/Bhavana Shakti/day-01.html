@@ -3,97 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>భావనా శక్తి — రోజు 1 | పరిచయం</title>
+<title>భావనా శక్తి — రోజు 1 | పరిచయం · సంపూర్ణం</title>
 <style>
 :root{--ink:#1a1a1a;--muted:#555;--accent:#8b4513;--card:#fff;--border:#e8e0d5;--shloka-bg:#fdf8f0;--shloka-border:#c9a66b}
-*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans Telugu","Noto Sans",Georgia,serif;line-height:1.75;color:var(--ink);background:#f4f0ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans Telugu","Noto Sans",Georgia,serif;line-height:1.78;color:var(--ink);background:#f4f0ea}
 .site-wrap{max-width:820px;margin:0 auto;padding:0 1rem 3rem}
 .author-row{display:flex;gap:1rem;align-items:flex-start;margin:.4rem 0 .9rem}
 .author-row img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid rgba(186,122,58,.28)}
-.author-info strong{display:block;font-size:1.05rem}.author-info span{font-size:.85rem;color:var(--muted)}
+.author-info strong{display:block;font-size:1.05rem}
+.author-info span{font-size:.85rem;color:var(--muted)}
 .author-row nav{margin-left:auto;display:flex;gap:.7rem;flex-wrap:wrap}
 .author-row nav a{color:#6b3411;text-decoration:none;font-size:.9rem}
 .eyebrow{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 .3rem}
 h1{font-size:1.65rem;line-height:1.3;margin:0 0 .5rem;color:#2c1810}
 .intro{font-size:1.02rem;color:var(--muted);margin-bottom:1.3rem;border-left:3px solid var(--shloka-border);padding-left:1rem}
-.section-title{font-size:1.25rem;margin:2.2rem 0 .9rem;padding-bottom:.35rem;border-bottom:2px solid var(--shloka-border);color:#3d2314}
-.qa-block{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.35rem;margin-bottom:1rem}
-.qa-block h3{margin:0 0 .65rem;font-size:1.08rem;color:#3d2314}
-.speaker{font-size:1.02rem;line-height:1.75;margin:0 0 .8rem}
-.highlight{background:var(--shloka-bg);border-left:4px solid var(--shloka-border);padding:.8rem 1.05rem;margin:.9rem 0;border-radius:0 8px 8px 0}
-.homework{background:#f0f7f0;border:1px solid #c5e1c5;border-radius:10px;padding:1rem 1.15rem;margin:1.1rem 0}
+.section-title{font-size:1.25rem;margin:2.3rem 0 .9rem;padding-bottom:.35rem;border-bottom:2px solid var(--shloka-border);color:#3d2314}
+.qa-block{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.4rem;margin-bottom:1.1rem}
+.qa-block h3{margin:0 0 .7rem;font-size:1.1rem;color:#3d2314}
+.speaker{font-size:1.03rem;line-height:1.78;margin:0 0 .85rem}
+.highlight{background:var(--shloka-bg);border-left:4px solid var(--shloka-border);padding:.85rem 1.1rem;margin:1rem 0;border-radius:0 8px 8px 0}
+.homework{background:#f0f7f0;border:1px solid #c5e1c5;border-radius:10px;padding:1.05rem 1.2rem;margin:1.2rem 0}
 .homework h4{margin:0 0 .55rem;color:#2d5a2d}
-.quote-block{background:#fdf8f0;border-left:4px solid #c9a66b;padding:.95rem 1.2rem;margin:.9rem 0;border-radius:0 10px 10px 0;font-size:1.04rem}
+.quote-block{background:#fdf8f0;border-left:4px solid #c9a66b;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 10px 10px 0;font-size:1.05rem}
 .section-num{display:inline-block;background:#8b4513;color:#fff;width:1.55rem;height:1.55rem;border-radius:50%;text-align:center;font-size:.82rem;line-height:1.55rem;margin-right:.35rem}
-.compact-list{margin:.4rem 0;padding-left:1.2rem}.compact-list li{margin-bottom:.5rem;line-height:1.65}
-.takeaway-grid{display:grid;gap:.65rem;margin:.9rem 0}
-.takeaway-item{background:#fff;border:1px solid #e8e0d5;border-radius:10px;padding:.85rem 1.05rem;font-size:.98rem}
-.closing{text-align:center;font-size:.88rem;color:var(--muted);margin-top:2.2rem;padding-top:1.1rem;border-top:1px solid var(--border)}
-blockquote{margin:.9rem 0;padding:.75rem 1.1rem;background:#faf6f0;border-left:3px solid #c9a66b;font-style:italic;color:#444}
+.compact-list{margin:.45rem 0;padding-left:1.25rem}
+.compact-list li{margin-bottom:.55rem;line-height:1.68}
+.takeaway-grid{display:grid;gap:.7rem;margin:1rem 0}
+.takeaway-item{background:#fff;border:1px solid #e8e0d5;border-radius:10px;padding:.9rem 1.1rem;font-size:1rem}
+.summary-card{background:linear-gradient(135deg,#fdf8f0,#f7f0e6);border:1px solid var(--shloka-border);border-radius:12px;padding:1.35rem 1.45rem;margin:2rem 0 1.3rem}
+.closing{text-align:center;font-size:.88rem;color:var(--muted);margin-top:2.3rem;padding-top:1.15rem;border-top:1px solid var(--border)}
+blockquote{margin:1rem 0;padding:.8rem 1.15rem;background:#faf6f0;border-left:3px solid #c9a66b;font-style:italic;color:#444}
 .day-nav{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
 .day-nav a{padding:.35rem .75rem;border-radius:6px;background:#fdf8f0;border:1px solid #e8e0d5;color:#6b3411;text-decoration:none;font-size:.9rem}
 .day-nav a.active{background:#8b4513;color:#fff;border-color:#8b4513}
-.for-whom{display:grid;gap:.6rem;margin:.8rem 0}
-.for-whom div{background:#fff;border:1px solid #e8e0d5;border-radius:8px;padding:.7rem 1rem;font-size:.96rem}
+.for-whom{display:grid;gap:.65rem;margin:.9rem 0}
+.for-whom div{background:#fff;border:1px solid #e8e0d5;border-radius:8px;padding:.75rem 1.05rem;font-size:.97rem}
+.real-line{background:#fff8f0;border:1px dashed #d4b483;border-radius:8px;padding:.7rem 1rem;margin:.7rem 0;font-size:.98rem}
 </style>
 </head>
 <body>
 <div class="site-wrap">
-<div class="author-row">
-<img src="https://i.ytimg.com/vi/1TAz2nEKJ_g/hqdefault.jpg" alt="భావనా శక్తి">
-<div class="author-info"><strong>భారతీ మేడం</strong><span>స్వాధ్యాయ యోగం · అరవింద్ రెడ్డి గారి “భావనా శక్తి”</span></div>
-<nav><a href="index.html">Catalogue</a><a href="#practice">Practice</a></nav>
-</div>
-<p class="eyebrow">Book Reading Notes · Telugu · Day 1/4</p>
-<h1>భావనా శక్తి — రోజు 1</h1>
-<div class="day-nav"><a href="day-01.html" class="active">రోజు 1</a><a href="day-02.html">రోజు 2</a><a href="day-03.html">రోజు 3</a><a href="day-04.html">రోజు 4</a></div>
+  <div class="author-row">
+    <img src="https://i.ytimg.com/vi/1TAz2nEKJ_g/hqdefault.jpg" alt="భావనా శక్తి">
+    <div class="author-info">
+      <strong>భారతీ మేడం</strong>
+      <span>స్వాధ్యాయ యోగం · అరవింద్ రెడ్డి గారి “భావనా శక్తి” · రోజు 1</span>
+    </div>
+    <nav>
+      <a href="index.html">Catalogue</a>
+      <a href="#practice">Practice</a>
+    </nav>
+  </div>
 
-<p class="intro">భావనా శక్తి అంటే ఏమిటి? యద్భావం తద్భవతి — మన భావమే మన సృష్టి. ఈ రోజు మూల సూత్రాలు, వాక్‌శక్తి, భూమి ప్రయోగశాల.</p>
+  <p class="eyebrow">Book Reading Notes · Telugu · Day 1/4 · Expanded</p>
+  <h1>భావనా శక్తి — రోజు 1</h1>
+  <div class="day-nav">
+    <a href="day-01.html" class="active">రోజు 1</a>
+    <a href="day-02.html">రోజు 2</a>
+    <a href="day-03.html">రోజు 3</a>
+    <a href="day-04.html">రోజు 4</a>
+  </div>
 
-<div class="quote-block"><strong>యద్భావం తద్భవతి</strong><br>మనం ఏ భావంతో ఉంటామో / చూస్తామో — అదే మన జీవితంలో ప్రకటితమవుతుంది.</div>
+  <p class="intro">
+    భావనా శక్తి అంటే ఏమిటి? యద్భావం తద్భవతి — మన భావమే మన సృష్టి.
+    ఈ రోజు భారతీ మేడం చెప్పిన మూల సూత్రాలు, ఉప్పు ఉదాహరణ, దృష్టి-సృష్టి,
+    వాక్‌శక్తి, భూమి ప్రయోగశాల — అన్నీ విస్తృతంగా.
+  </p>
 
-<div class="qa-block"><h3><span class="section-num">1</span> భావం = జీవితంలో ఉప్పు</h3>
-<p class="speaker">వంటలో ఉప్పు లేకపోతే రుచి ఉండదు. అలాగే ప్రేమ, క్షమ, లెట్-గో — భావం లేకుండా చేస్తే యాంత్రికంగా ఉంటాయి. భావయుక్తంగా చేస్తేనే జీవం పోసుకుంటాయి.</p>
-<div class="highlight">భావం లేని ప్రేమ → యాంత్రికం<br>భావం ఉన్న ప్రేమ → హృదయాన్ని తాకుతుంది</div></div>
+  <div class="quote-block">
+    <strong>యద్భావం తద్భవతి</strong><br>
+    మనం ఏ భావంతో ఉంటామో / చూస్తామో — అదే మన జీవితంలో ప్రకటితమవుతుంది.
+  </div>
 
-<div class="qa-block"><h3><span class="section-num">2</span> దృష్టి + భావం = సృష్టి</h3>
-<p class="speaker">చీకటిలో కర్రకి బట్ట వేలాడుతుంటే — భయంతో చూస్తే “దయ్యం” అనిపిస్తుంది. జ్ఞానంతో చూస్తే “కేవలం కర్ర + బట్ట” అనిపిస్తుంది.</p>
-<blockquote>జైసా దృష్టి వైసా సృష్టి — నీ అంతర్దృష్టి ఎలా ఉందో బయటి సృష్టి అలా కనిపిస్తుంది.</blockquote></div>
+  <div class="quote-block">
+    భావం = జీవితంలో <strong>ఉప్పు</strong>.<br>
+    ప్రేమ, క్షమ, లెట్-గో — ఇవన్నీ భావయుక్తంగా ఉంటేనే రుచి వస్తుంది.
+    భావం లేకుండా చేస్తే ఉప్పు లేని కూరలా ఉంటుంది.
+  </div>
 
-<div class="qa-block"><h3><span class="section-num">3</span> మనమే సృష్టికర్త</h3>
-<p class="speaker">పత్రీజీ చెప్పినట్టు — నీవు ఏమి ఇస్తావో అదే పొందుతావు. బయటి పరిస్థితి కాదు, మన లోపలి భావమే ఫలితాన్ని నిర్ణయిస్తుంది.</p></div>
+  <h2 class="section-title">1. భావం లేకపోతే ఏమవుతుంది?</h2>
+  <div class="qa-block">
+    <p class="speaker">
+      మనం రుచికరమైన తిండి వండుకుంటాం. కానీ రుచి లేకుండా తింటున్నాం.
+      ఎందుకు? భావం జోడించకపోవడం వల్ల. గుణాలు, ఆలోచనలు, అనుభూతులు —
+      దేనికైనా భావం యాడ్ కాకపోతే అది ఉప్పు లేని కూరలా ఉంటుంది.
+    </p>
+    <div class="real-line">
+      “మెయిన్ ఇంగ్రిడియంట్ ఉప్పు ఎలా అయితే వంటలో ఉందో — మన జీవితంలో భావం అంత ప్రాధాన్యం.”
+    </div>
+    <p class="speaker">
+      ప్రేమను భావయుక్తంగా పొందటం, క్షమను భావయుక్తంగా పొందటం, లెట్-గోను భావయుక్తంగా చేయటం —
+      ఇవన్నీ భావం తోడైతేనే జీవం పోసుకుంటాయి.
+    </p>
+  </div>
 
-<div class="qa-block"><h3><span class="section-num">4</span> వాక్‌శక్తి</h3>
-<p class="speaker">నిష్ఠ + సానుకూల భావం + ప్రేమ + క్షమ — ఇవి సాధన చేస్తే వాక్‌శక్తి ప్రకటితమవుతుంది. మాటలు శక్తివంతంగా మారతాయి.</p>
-<div class="highlight">యజ్ఞం సమయంలో మేఘాలు వచ్చినప్పుడు ఒక మాస్టర్ ఆకాశం వైపు చూడగానే వర్షం ఆగిపోయింది. పని అయిన తర్వాత మళ్ళీ చూడగానే వర్షం పడింది.</div></div>
+  <h2 class="section-title">2. దృష్టి + భావం = సృష్టి</h2>
+  <div class="qa-block">
+    <p class="speaker">
+      చీకటిలో ఒక కర్రకి బట్ట వేలాడుతుంటే — భయంతో కూడిన దృష్టి వెళ్లితే “దయ్యం” అనిపిస్తుంది.
+      జ్ఞానంతో కూడిన దృష్టి వెళ్లితే దగ్గరికి వెళ్లి చూసి “అరే ఇది ఒక చొక్కా, ఒక కర్ర” అనిపిస్తుంది.
+    </p>
+    <div class="highlight">
+      దేనితో పాటు మనం దాన్ని అనుసంధానం చేస్తున్నామో — దాని ప్రకారంగానే అది మనకు కనిపిస్తుంది.
+    </div>
+    <blockquote>
+      జైసా దృష్టి వైసా సృష్టి — నీ అంతర్దృష్టి ఎలా ఉందో, బయటి సృష్టి అలా కనిపిస్తుంది.
+    </blockquote>
+    <p class="speaker">
+      మన పిరమిడ్ మాస్టర్స్‌కు, పత్రీజీ గారు చెప్పిన సత్యం — నీ వాస్తవానికి నీవే సృష్టికర్తవి.
+      నీవు ఏమి ఇస్తావో అదే పొందుతావు. వేదాలు, ఉపనిషత్తులు ఎన్ని రకాలుగా చెప్పినా
+      “యద్భావం తద్భవతి” ఒక్కటే అండర్‌లైన్ అయి ఉంది.
+    </p>
+  </div>
 
-<div class="qa-block"><h3><span class="section-num">5</span> భూమి = ప్రయోగశాల</h3>
-<p class="speaker">ఈ భూమి ఒక పాఠశాల, ఒక ప్రయోగశాల. ప్రతి పరిస్థితి ఒక పాఠం. కొంతమంది పాజిటివిటీ నేర్పుతారు; కొంతమంది “ఎలా ఉండకూడదు” అని నేర్పుతారు. రెండూ పాఠాలే.</p></div>
+  <h2 class="section-title">3. మనమే సృష్టికర్త</h2>
+  <div class="qa-block">
+    <p class="speaker">
+      బయటి పరిస్థితి కాదు — మన లోపలి భావమే ఫలితాన్ని నిర్ణయిస్తుంది.
+      మనం ఏ భావంతో చేస్తామో, ఏ భావంతో ఉంటామో — అదే మన నిజ జీవితంలో ప్రకటితమవుతుంది.
+    </p>
+    <div class="real-line">
+      “నీవు ఏమి ఇస్తావో అదే పొందుతావు” — పత్రీజీ
+    </div>
+  </div>
 
-<h2 class="section-title" id="practice">ఆచరణ — అందరికీ</h2>
-<div class="for-whom">
-<div><strong>యువత:</strong> ఒక కష్టమైన పరిస్థితిని తీసుకొని “నేను దీన్ని ఏ భావంతో చూస్తున్నాను?” అని అడగండి.</div>
-<div><strong>గృహిణులు:</strong> వంట చేస్తున్నప్పుడు “భావయుక్తంగా చేస్తున్నానా?” అని గమనించండి.</div>
-<div><strong>బిజీ వ్యక్తులు:</strong> సాయంత్రం 3 నిమిషాలు — “ఈరోజు నేను ఏ భావంతో ఎక్కువగా ఉన్నాను?”</div>
-</div>
+  <h2 class="section-title">4. వాక్‌శక్తి ఎలా వస్తుంది?</h2>
+  <div class="qa-block">
+    <p class="speaker">
+      నిష్ఠగా, మౌనంగా, సానుకూల భావంతో, అందరి పట్ల ప్రేమతో, క్షమతో ఉండటం —
+      వచ్చిన పరిస్థితులను “యస్ ఇట్ ఈస్”గా అంగీకరించడం — ఇలా కొన్నాళ్లు సాధన జరిగితే
+      వాక్‌శక్తి ప్రకటితమవుతుంది.
+    </p>
+    <p class="speaker">
+      వాళ్ళు నోరు తెరిచి “ఇది నీకు ఇలా జరుగుతుంది నాన్న” అన్నారు అంటే — అది అవుతూ ఉంటుంది.
+      అంటే వాళ్ళలో వాక్‌శక్తి అనే గొప్ప గుణం ప్రకటితమైంది.
+    </p>
+    <div class="highlight">
+      <strong>ఉదాహరణ:</strong> గాయత్రి మహాయజ్ఞం చేస్తున్నప్పుడు నల్లని మేఘాలు వచ్చి వర్షం పడబోతోంది.
+      మాస్టర్ ఒక్కసారి ఆకాశం వైపు చూశారు — వర్షం ఆగిపోయింది.
+      యజ్ఞం, భోజనాలు అన్నీ అయిన తర్వాత మళ్ళీ చూశారు — అప్పుడు వర్షం పడింది.
+      ప్రకృతిని ఆపారు కాదు; ప్రకృతి ధర్మంగా దాని పని చేయనిచ్చారు. ఇది భావశక్తి + సాధన ఫలితం.
+    </div>
+  </div>
 
-<div class="homework"><h4>📝 ఇంటి పని (రోజు 1)</h4>
-<ul class="compact-list">
-<li>సాయంత్రం 5 నిమిషాలు భావ పరిశీలన చేయండి.</li>
-<li>ఒక నెగటివ్ పరిస్థితిని తీసుకొని దానికి కొత్త భావం ఇవ్వండి.</li>
-<li>“నేను సృష్టికర్తని” అని 7 సార్లు చెప్పుకోండి.</li>
-</ul></div>
+  <h2 class="section-title">5. భూమి = ప్రయోగశాల</h2>
+  <div class="qa-block">
+    <p class="speaker">
+      ఈ భూమి ఒక పాఠశాల, ఒక ప్రయోగశాల. ప్రతి పరిస్థితి ఒక పాఠం / గుణపాఠం.
+      కొంతమంది పాజిటివిటీ నేర్పుతారు; కొంతమంది “ఎలా ఉండకూడదు” అని నేర్పుతారు.
+      రెండూ పాఠాలే. రెండూ నుంచి నేర్చుకోవచ్చు.
+    </p>
+    <div class="real-line">
+      “ఇక్కడ అంతా కూడా నేర్చుకోవడము, తెలుసుకోవడము, ఎదగడము, అనుభవాలని పంచుకోవడము, ఆనందించడము మాత్రమే ఉన్నది.”
+    </div>
+    <p class="speaker">
+      స్వాధ్యాయం అంటే మనకి మనకే ఎరుక పరుచుకునే సందర్భాన్ని క్రియేట్ చేసుకోవడం.
+      “మొన్న నేనేగా చెప్పాను — ఇప్పుడు నేనే పాటించకపోతే నాకు ఎవరు చెప్తారు?” అని
+      మనల్ని మనకే అలర్ట్ చేసుకోవడమే స్వాధ్యాయం.
+    </p>
+  </div>
 
-<div class="takeaway-grid">
-<div class="takeaway-item">1. యద్భావం తద్భవతి</div>
-<div class="takeaway-item">2. భావం = ఉప్పు</div>
-<div class="takeaway-item">3. మనమే సృష్టికర్త</div>
-<div class="takeaway-item">4. దృష్టి + భావం = సృష్టి</div>
-<div class="takeaway-item">5. వాక్‌శక్తి సాధనతో వస్తుంది</div>
-<div class="takeaway-item">6. భూమి = ప్రయోగశాల</div>
-</div>
+  <h2 class="section-title">6. త్వరగా నేర్చుకోండి</h2>
+  <div class="qa-block">
+    <p class="speaker">
+      ఎదగటంలో పోటీ ఉండాలి — డబ్బు సంపాదించడంలో, పేర్లు ప్రతిభల్లో, లక్షల పుస్తకాలు చదివానని కాదు.
+      మన స్థాయిని ఉన్నతంగా ఎదిగించుకోవడంలో పోటీ ఉండాలి.
+      భావంతో మనల్ని మనం కణకణాన్ని నింపాలి. ఆ భావాన్ని స్టేబుల్‌గా కాపాడుకోవాలి.
+      పరిస్థితి మారినప్పుడల్లా మారకూడదు.
+    </p>
+    <div class="highlight">
+      ఈ జన్మలోనే, ఈ భౌతిక శరీరంతోనే అనుభవించే సామర్థ్యం మనలో వస్తుంది —
+      అప్పుడు అద్భుతమైన లోకాలు మన దగ్గరే, మన అంతరంలోనే ఉంటాయి.
+    </div>
+  </div>
 
-<div class="closing">భారతీ మేడం · అరవింద్ రెడ్డి గారి “భావనా శక్తి” · PMC Digital Channel<br>బ్రహ్మర్షి పితామహ పత్రీజీ స్ఫూర్తి · సర్వే జనా సుఖినో భవంతు</div>
+  <h2 class="section-title" id="practice">ఆచరణ — అందరికీ తగినట్టు</h2>
+  <div class="for-whom">
+    <div><strong>యువత:</strong> ఒక కష్టమైన పరిస్థితిని తీసుకొని “నేను దీన్ని ఏ భావంతో చూస్తున్నాను?” అని అడగండి. సమాధానం రాసుకోండి.</div>
+    <div><strong>గృహిణులు:</strong> వంట చేస్తున్నప్పుడు లేదా పిల్లలతో మాట్లాడేటప్పుడు “భావయుక్తంగా చేస్తున్నానా?” అని గమనించండి.</div>
+    <div><strong>బిజీ వ్యక్తులు:</strong> సాయంత్రం 3–5 నిమిషాలు — “ఈరోజు నేను ఏ భావంతో ఎక్కువగా ఉన్నాను?” అని పరిశీలించండి.</div>
+    <div><strong>అందరూ:</strong> “నేను సృష్టికర్తని” అని రోజూ 7 సార్లు చెప్పుకోండి. భావంతో చెప్పండి.</div>
+  </div>
+
+  <div class="homework">
+    <h4>📝 ఇంటి పని (రోజు 1) — తప్పకుండా చేయండి</h4>
+    <ul class="compact-list">
+      <li>సాయంత్రం 5 నిమిషాలు భావ పరిశీలన — “ఈరోజు నేను ఏ భావంతో ఎక్కువగా ఉన్నాను?”</li>
+      <li>ఒక నెగటివ్ పరిస్థితిని తీసుకొని దానికి కొత్త, సానుకూల భావం ఇవ్వండి. ఫలితం గమనించండి.</li>
+      <li>“నేను సృష్టికర్తని. నేను ఏమి ఇస్తానో అదే పొందుతాను” — 7 సార్లు, భావంతో.</li>
+      <li>ఎవరితోనైనా మాట్లాడే ముందు ఒక క్షణం ఆగి — “నా భావం ఏమిటి?” అని చూడండి.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">గుర్తుంచుకోవాల్సిన అంశాలు</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway-item">1. <strong>యద్భావం తద్భవతి</strong> — భావమే సృష్టి</div>
+    <div class="takeaway-item">2. భావం = జీవితంలో <strong>ఉప్పు</strong></div>
+    <div class="takeaway-item">3. భావం లేని గుణం = ఉప్పు లేని కూర</div>
+    <div class="takeaway-item">4. దృష్టి + భావం = కనిపించే ప్రపంచం</div>
+    <div class="takeaway-item">5. మనమే <strong>సృష్టికర్త</strong></div>
+    <div class="takeaway-item">6. నిష్ఠ + ప్రేమ + క్షమ → <strong>వాక్‌శక్తి</strong></div>
+    <div class="takeaway-item">7. భూమి = <strong>ప్రయోగశాల</strong></div>
+    <div class="takeaway-item">8. స్వాధ్యాయం = స్వయం అలర్ట్ సిస్టమ్</div>
+    <div class="takeaway-item">9. త్వరగా నేర్చుకోండి — ఎదగటంలో పోటీ</div>
+    <div class="takeaway-item">10. ఈ జన్మలోనే అనుభవించే సామర్థ్యం ఉంది</div>
+  </div>
+
+  <div class="summary-card">
+    <p><strong>రోజు 1 — ఒక వాక్యంలో</strong></p>
+    <p style="font-size:1.12rem;text-align:center;margin-top:.5rem">
+      భావయుక్తంగా జీవించండి.<br>
+      యద్భావం తద్భవతి.
+    </p>
+  </div>
+
+  <div class="closing">
+    భారతీ మేడం · అరవింద్ రెడ్డి గారి “భావనా శక్తి” · రోజు 1 · PMC Digital Channel<br>
+    బ్రహ్మర్షి పితామహ పత్రీజీ స్ఫూర్తి · సర్వే జనా సుఖినో భవంతు
+  </div>
 </div>
 </body>
 </html>
