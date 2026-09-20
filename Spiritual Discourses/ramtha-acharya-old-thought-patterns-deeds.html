@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Through Old Thought Patterns &amp; Deeds — Ramtha &amp; Acharya</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #8b4513;
+      --card: #fff;
+      --border: #e8e0d5;
+      --shloka-bg: #fdf8f0;
+      --shloka-border: #c9a66b;
+      --heading: #3d2314;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #f4f0ea;
+    }
+    .site-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0 1rem;
+    }
+    .author-row .badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f0edf7, #d8d0e8);
+      border: 2px solid rgba(107, 91, 149, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      color: #4a3c7a;
+      font-weight: 700;
+    }
+    .author-info strong { display: block; font-size: 1.05rem; }
+    .author-info span { font-size: 0.85rem; color: var(--muted); }
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.4rem;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 1.6rem;
+      line-height: 1.3;
+      margin: 0 0 0.8rem;
+      color: #2c1810;
+    }
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      margin: 2rem 0 0.85rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: var(--heading);
+    }
+    .qa-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem 1.3rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .qa-block p { margin: 0.55rem 0; font-size: 1.05rem; }
+    .quote-card {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      border-radius: 0 10px 10px 0;
+      padding: 1.1rem 1.3rem;
+      margin: 1.1rem 0;
+      font-size: 1.1rem;
+      line-height: 1.55;
+      color: #2c1810;
+      font-style: italic;
+    }
+    .quote-card .ref {
+      display: block;
+      margin-top: 0.65rem;
+      font-size: 0.88rem;
+      color: #8b4513;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .highlight {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      padding: 0.9rem 1.15rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 1.03rem;
+    }
+    .step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .step strong {
+      color: var(--heading);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .compare {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      margin: 0.8rem 0;
+    }
+    .compare th {
+      background: #2c1810;
+      color: #f5ebe0;
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .compare td {
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.85rem;
+      vertical-align: top;
+    }
+    .compare tr:nth-child(even) td { background: #faf8f4; }
+    .summary-card {
+      background: #2c1810;
+      color: #f5ebe0;
+      border-radius: 12px;
+      padding: 1.35rem 1.5rem;
+      margin: 2.2rem 0 1.4rem;
+      line-height: 1.65;
+    }
+    .summary-card strong { color: #e8c48a; }
+    .closing {
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    ul.simple { margin: 0.5rem 0; padding-left: 1.25rem; }
+    ul.simple li { margin-bottom: 0.4rem; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.4rem; }
+      .author-row .badge { width: 56px; height: 56px; font-size: 1.1rem; }
+      .compare { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrap">
+    <article>
+      <div class="author-row">
+        <div class="badge" aria-hidden="true">R·A</div>
+        <div class="author-info">
+          <strong>Ramtha &amp; Acharya</strong>
+          <span>Thought · Desire · Freedom from the old program</span>
+        </div>
+      </div>
+
+      <p class="eyebrow">Study note · Opening the mind</p>
+      <h1>How to Get Through Old Thought Patterns &amp; Deeds</h1>
+      <p class="intro">
+        According to Ramtha — and in the practical tone shared with Acharya —
+        old thought patterns and old deeds are not broken by fighting them.
+        They dissolve when you stop feeding them and deliberately install a new way of thinking and feeling.
+      </p>
+
+      <h2 class="section-title">1. See what the old pattern actually is</h2>
+      <div class="qa-block">
+        <p>Ramtha is clear: you are what you have thought long enough to believe.</p>
+        <p>Old patterns — guilt, fear, “I am not enough”, revenge, self-pity, the need to control — are simply <strong>repeated thoughts that have become the neural program</strong>. Deeds follow those thoughts.</p>
+        <p>The first move is not “fix me.” It is:</p>
+        <div class="highlight">
+          Notice the thought without becoming it.<br>
+          “This is an old program speaking. It is not the truth of who I am.”
+        </div>
+        <p>That simple recognition already loosens the grip.</p>
+      </div>
+
+      <h2 class="section-title">2. Do not fight the old thought — starve it</h2>
+      <div class="qa-block">
+        <p>Fighting an old pattern still gives it attention and energy. Ramtha’s way is different:</p>
+        <ul class="simple">
+          <li>Do not argue with the old thought.</li>
+          <li>Do not suppress it.</li>
+          <li>Do not rehearse the old story (“I always do this… because of what happened…”).</li>
+        </ul>
+        <p>Just <strong>stop feeding it</strong>. When the old thought arises, gently refuse to continue the conversation with it.</p>
+      </div>
+
+      <div class="quote-card">
+        “Whatever you contemplate long enough, merely by desire, you will become.”
+        <span class="ref">— Ramtha</span>
+      </div>
+
+      <h2 class="section-title">3. Desire a new thought more than the comfort of the old one</h2>
+      <div class="qa-block">
+        <p>The old pattern continues because some part of you still finds it familiar or “safe.”</p>
+        <p>The new pattern begins the moment <strong>desire for freedom, love, or knowingness becomes stronger</strong> than the need to stay in the old groove.</p>
+        <p>Practically:</p>
+        <ul class="simple">
+          <li>Decide what you now choose to be — calm, free, loving, powerful, open.</li>
+          <li>Desire that state more than you desire the old reaction.</li>
+          <li>Feel it — even for a few seconds — as if it is already true.</li>
+        </ul>
+        <p><strong>Feeling</strong> is what writes the new program into the cells.</p>
+      </div>
+
+      <h2 class="section-title">4. Closed mind vs opening the mind</h2>
+      <div class="qa-block">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Closed mind</th>
+              <th>Opening the mind</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>“What will people think?”</td>
+              <td>“I allow this new thought. I feel it.”</td>
+            </tr>
+            <tr>
+              <td>Immediately lists why change is impossible</td>
+              <td>Allows the desire and takes one small aligned step</td>
+            </tr>
+            <tr>
+              <td>Judges self and others</td>
+              <td>Sees the pure Isness — no comparison</td>
+            </tr>
+            <tr>
+              <td>Reacts from the wound</td>
+              <td>Responds from the present</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top:0.9rem;">Opening the mind is not a technique first — it is <strong>willingness + desire + self-love</strong>. When that is present, the old neural net loses its monopoly.</p>
+      </div>
+
+      <h2 class="section-title">5. About old deeds</h2>
+      <div class="qa-block">
+        <p>Ramtha does not treat past deeds as a permanent sentence. They are the <strong>result</strong> of past thought.</p>
+        <p>Once the thought that created them is no longer fed:</p>
+        <ul class="simple">
+          <li>The emotional charge fades.</li>
+          <li>The need to repeat the deed disappears.</li>
+          <li>New deeds naturally arise from the new consciousness.</li>
+        </ul>
+        <p>You do not have to “pay off” every old action through suffering. You <strong>outgrow the consciousness that produced it</strong>. That is the real release.</p>
+        <div class="highlight">
+          Acharya’s practical voice adds: respond from the present, not from the wound.
+          When the old trigger comes, pause, stay centred, and choose the response that belongs to who you are <em>now</em> — not who you were when the pattern was formed.
+        </div>
+      </div>
+
+      <h2 class="section-title">6. A simple daily practice</h2>
+      <div class="step"><strong>1. Catch</strong> the old thought the moment it appears.</div>
+      <div class="step"><strong>2. Name it</strong> silently: “I see you. I no longer need you.”</div>
+      <div class="step"><strong>3. Replace</strong> it immediately with a thought you desire to live.</div>
+      <div class="step"><strong>4. Feel</strong> that new thought for 10–20 seconds. (This is the most important part.)</div>
+      <div class="step"><strong>5. Act</strong> from the new feeling in the next small moment.</div>
+      <div class="qa-block">
+        <p>Consistency matters more than intensity. Thought by thought, feeling by feeling, the old program is rewritten.</p>
+      </div>
+
+      <div class="summary-card">
+        <p>
+          <strong>Essence</strong><br>
+          Old patterns and deeds end when you stop believing them and start desiring — and feeling — a greater truth about yourself.
+          That is the heart of Ramtha’s teaching, and it aligns with Acharya’s practical counsel:
+          do not live from the old wound; live from the freedom that is available now.
+        </p>
+      </div>
+
+      <div class="quote-card">
+        “You are precisely what you are thinking. Everything you think, so will it be in your life.”
+        <span class="ref">— Ramtha, The White Book</span>
+      </div>
+
+      <p class="closing">
+        Related · Closed Mind vs Opening the Mind<br>
+        Related · When Mother Criticizes &amp; Hurts<br>
+        Ramtha &amp; Acharya · Awakening the Wisdom Within
+      </p>
+    </article>
+  </div>
+</body>
+</html>
