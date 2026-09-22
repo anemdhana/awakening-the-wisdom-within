@@ -205,10 +205,9 @@
     <button type="button" id="next" aria-label="Next slide">Next →</button>
   </div>
 
-  <script src="meditator-data.js"></script>
   <script>
     (function () {
-      const MED = window.ANAPANASATI_MED;
+      const MED = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 268'%3E%3Cellipse cx='100' cy='242' rx='70' ry='18' fill='%233d2a1f'/%3E%3Cpath d='M58 105 C54 140 60 175 78 200 C88 212 112 212 122 200 C140 175 146 140 142 105 C138 78 120 60 100 60 C80 60 62 78 58 105Z' fill='%23e8c4a8'/%3E%3Cellipse cx='100' cy='48' rx='36' ry='40' fill='%23e8c4a8'/%3E%3Cellipse cx='70' cy='52' rx='7' ry='11' fill='%23deb896'/%3E%3Cellipse cx='130' cy='52' rx='7' ry='11' fill='%23deb896'/%3E%3Cpath d='M80 50 Q90 56 100 50' fill='none' stroke='%234a3728' stroke-width='2.8' stroke-linecap='round'/%3E%3Cpath d='M100 50 Q110 56 120 50' fill='none' stroke='%234a3728' stroke-width='2.8' stroke-linecap='round'/%3E%3Cline x1='93' y1='66' x2='107' y2='66' stroke='%234a3728' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M68 118 Q60 150 74 180' fill='none' stroke='%23c4a080' stroke-width='2'/%3E%3Cpath d='M132 118 Q140 150 126 180' fill='none' stroke='%23c4a080' stroke-width='2'/%3E%3Cellipse cx='100' cy='202' rx='24' ry='11' fill='%23e0b890'/%3E%3Cline x1='100' y1='36' x2='100' y2='158' stroke='%237ec8e3' stroke-width='5.5' stroke-linecap='round'/%3E%3C/svg%3E";
       document.querySelectorAll("img.med").forEach(function (img) { img.src = MED; });
 
       const slides = Array.from(document.querySelectorAll(".slide"));
