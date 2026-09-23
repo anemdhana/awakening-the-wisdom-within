@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is the Soul — Seat, What It Carries, How Emotion Is Stored | Ramtha</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #8b4513;
+      --card: #fff;
+      --border: #e8e0d5;
+      --shloka-bg: #fdf8f0;
+      --shloka-border: #c9a66b;
+      --heading: #3d2314;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #f4f0ea;
+    }
+    .site-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0 1rem;
+    }
+    .author-row .badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f0edf7, #d8d0e8);
+      border: 2px solid rgba(107, 91, 149, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      color: #4a3c7a;
+      font-weight: 700;
+    }
+    .author-info strong { display: block; font-size: 1.05rem; }
+    .author-info span { font-size: 0.85rem; color: var(--muted); }
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.4rem;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 1.55rem;
+      line-height: 1.3;
+      margin: 0 0 0.8rem;
+      color: #2c1810;
+    }
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      margin: 2rem 0 0.85rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: var(--heading);
+    }
+    .qa-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem 1.3rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .qa-block p { margin: 0.55rem 0; font-size: 1.05rem; }
+    .quote-card {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      border-radius: 0 10px 10px 0;
+      padding: 1.1rem 1.3rem;
+      margin: 1.1rem 0;
+      font-size: 1.08rem;
+      line-height: 1.55;
+      color: #2c1810;
+      font-style: italic;
+    }
+    .quote-card .ref {
+      display: block;
+      margin-top: 0.65rem;
+      font-size: 0.88rem;
+      color: #8b4513;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .highlight {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      padding: 0.9rem 1.15rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 1.03rem;
+    }
+    .compare {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      margin: 0.8rem 0;
+    }
+    .compare th {
+      background: #2c1810;
+      color: #f5ebe0;
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .compare td {
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.85rem;
+      vertical-align: top;
+    }
+    .compare tr:nth-child(even) td { background: #faf8f4; }
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+      margin: 0.9rem 0;
+      font-size: 0.98rem;
+    }
+    .flow span {
+      background: var(--shloka-bg);
+      border: 1px solid var(--shloka-border);
+      border-radius: 8px;
+      padding: 0.45rem 0.75rem;
+    }
+    .flow .arrow { background: transparent; border: none; color: var(--accent); font-weight: 700; }
+    .summary-card {
+      background: #2c1810;
+      color: #f5ebe0;
+      border-radius: 12px;
+      padding: 1.35rem 1.5rem;
+      margin: 2.2rem 0 1.4rem;
+      line-height: 1.65;
+    }
+    .summary-card strong { color: #e8c48a; }
+    .closing {
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    ul.simple { margin: 0.5rem 0; padding-left: 1.25rem; }
+    ul.simple li { margin-bottom: 0.4rem; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.35rem; }
+      .author-row .badge { width: 56px; height: 56px; font-size: 1rem; }
+      .compare { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrap">
+    <article>
+      <div class="author-row">
+        <div class="badge" aria-hidden="true">R</div>
+        <div class="author-info">
+          <strong>Ramtha</strong>
+          <span>The White Book · Spirit, soul &amp; the record of emotion</span>
+        </div>
+      </div>
+
+      <p class="eyebrow">Study note · Nature of the soul</p>
+      <h1>What Exactly Is the Soul — Where It Seats, What It Carries, How Emotion Is Stored</h1>
+      <p class="intro">
+        According to Ramtha, you are not primarily a body.
+        You are Spirit and soul combined — a light-entity and an emotional entity.
+        This page gathers his precise teaching on what the soul is, where it sits,
+        what it records, and how feelings become memory.
+      </p>
+
+      <h2 class="section-title">1. Spirit and soul — the two that you are</h2>
+      <div class="qa-block">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Spirit</th>
+              <th>Soul</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A pure point of light — the God principle</td>
+              <td>An emotional entity</td>
+            </tr>
+            <tr>
+              <td>Surrounds every molecular structure of the body; houses and supports the mass</td>
+              <td>The recorder — the Book of Life</td>
+            </tr>
+            <tr>
+              <td>The immortal “you” that is always</td>
+              <td>What makes you a unique personality self</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="quote-card">
+          “What you truly are is Spirit and soul, a light-entity and an emotional entity combined.”
+          <span class="ref">— Ramtha, The White Book</span>
+        </div>
+        <p>You are known by your emotions, not by your body. The prize of embodiment is the gathering of creative life called <strong>emotion</strong>, so the soul may fulfill itself in wisdom.</p>
+      </div>
+
+      <h2 class="section-title">2. Where the soul seats</h2>
+      <div class="qa-block">
+        <div class="quote-card">
+          “Your soul lies within the mass, near your heart, in a cavity under a shield of bone wherein nothing exists except electrical energy.”
+          <span class="ref">— Ramtha</span>
+        </div>
+        <ul class="simple">
+          <li><strong>Location:</strong> near the heart, under the breastbone (sternum).</li>
+          <li><strong>Nature of the seat:</strong> not flesh — a cavity of pure electrical energy.</li>
+          <li>From there the soul governs the body through its emotional structure, including the release of hormones that maintain life.</li>
+        </ul>
+        <p><strong>At exit (death or conscious departure):</strong></p>
+        <ul class="simple">
+          <li>The Spirit calls the soul forth.</li>
+          <li>The soul travels upward through the energy centers (seals / chakras).</li>
+          <li>It leaves the body through the <strong>seventh seal — the pituitary gland</strong> in the center of the head.</li>
+          <li>That passage is often experienced as moving through a tunnel with the sound of wind.</li>
+        </ul>
+        <p>The soul is memory. Once it leaves, the body expires and the entity becomes a free soul-self. The transition is described as painless and momentary.</p>
+      </div>
+
+      <h2 class="section-title">3. What the soul carries</h2>
+      <div class="qa-block">
+        <p>The soul carries <strong>emotion</strong> — and emotion <em>is</em> memory.</p>
+        <ul class="simple">
+          <li>It does <strong>not</strong> primarily store pictures, words, or intellectual data.</li>
+          <li>It stores the <strong>emotional frequency / sensation</strong> of every thought you have ever accepted and felt throughout the body.</li>
+          <li>Because each collection of recorded emotions is unique, each person has a unique ego identity / personality self.</li>
+        </ul>
+        <p>Therefore the soul carries:</p>
+        <ul class="simple">
+          <li>Every thought that was fully felt</li>
+          <li>Every experience converted into feeling</li>
+          <li>The wisdom (or limitation) gained from those feelings across lifetimes</li>
+          <li>The emotional attitudes that later magnetically draw matching circumstances into life</li>
+        </ul>
+        <p>Ramtha calls the soul an <strong>unbiased recorder</strong> — a scientific, non-judging computer of emotion. He also calls it the <strong>Book of Life</strong>: the complete record of the journey of involution and evolution of that individual, stored as wisdom.</p>
+      </div>
+
+      <h2 class="section-title">4. How emotions / feelings are stored</h2>
+      <div class="qa-block">
+        <p>The sequence Ramtha gives is exact:</p>
+        <div class="flow">
+          <span>Thought received</span>
+          <span class="arrow">→</span>
+          <span>Accepted by the brain</span>
+          <span class="arrow">→</span>
+          <span>Sensation in every cell</span>
+          <span class="arrow">→</span>
+          <span>Recorded in the soul as emotion</span>
+        </div>
+        <ol style="padding-left:1.25rem; margin:0.6rem 0;">
+          <li><strong>Thought</strong> is received from the infinite field of consciousness (the brain does not generate thought; it receives it).</li>
+          <li>The thought is accepted and sent through the central nervous system.</li>
+          <li>It produces a sensation in every cell of the body — a rush, a feeling, an emotion.</li>
+          <li>That cellular feeling is sent to the <strong>soul</strong>.</li>
+          <li>The soul records the sensation as emotion (for referral / memory).</li>
+          <li>When a similar feeling arises later, the soul searches its banks, finds the match, and returns information to the reasoning brain so the intellect can name or image it.</li>
+        </ol>
+        <div class="highlight">
+          Memory has no size; it is an essence.<br>
+          Memory is not visual first — <strong>emotion creates the visual image</strong>.<br>
+          The soul does not record the picture of a flower; it records the <em>feeling</em> of the flower. Emotion later reconstructs the image.
+        </div>
+        <p>Every word you speak is only a sound that expresses a feeling already living in the soul. Whatever you think <strong>and then feel</strong> becomes the magnetic frequency of the soul — and that frequency draws matching outer circumstances.</p>
+      </div>
+
+      <h2 class="section-title">5. Why this matters for change</h2>
+      <div class="qa-block">
+        <p>The purpose of embodiment is for the soul to gather emotion and thereby fulfill itself in wisdom.</p>
+        <p>Changing life is not primarily about rearranging outer conditions. It is about changing the emotional recordings in the soul — by deliberately thinking <em>and feeling</em> a new thought until it is recorded more strongly than the old one.</p>
+        <p>Thought by thought, feeling by feeling, the Book of Life is rewritten.</p>
+      </div>
+
+      <div class="summary-card">
+        <p>
+          <strong>Essence</strong><br>
+          <strong>Spirit</strong> = the light that you are.<br>
+          <strong>Soul</strong> = the emotional Book of Life, seated near the heart in a cavity of electrical energy.<br>
+          <strong>What it carries</strong> = every thought that was fully felt, stored as emotion.<br>
+          <strong>How feeling is stored</strong> = thought accepted → electrical sensation in every cell → recorded by the soul as pure emotional memory.
+        </p>
+      </div>
+
+      <div class="quote-card">
+        “Your soul records and stores, in the form of emotion, every thought you have ever entertained. It is because of the unique collectiveness of emotion stored within your soul that you have a unique ego identity or personality self.”
+        <span class="ref">— Ramtha, The White Book</span>
+      </div>
+
+      <p class="closing">
+        Related · Closed Mind vs Opening the Mind<br>
+        Related · Old Thought Patterns &amp; Deeds<br>
+        Ramtha · The White Book · Awakening the Wisdom Within
+      </p>
+    </article>
+  </div>
+</body>
+</html>
