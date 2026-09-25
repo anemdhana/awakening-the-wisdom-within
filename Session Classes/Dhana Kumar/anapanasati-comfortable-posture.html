@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anapanasati · Comfortable Posture | Dhana Kumar</title>
+  <style>
+    :root {
+      --bg: #f4f0ea; --card: #fffdf9; --ink: #2c241c; --muted: #6b635a;
+      --accent: #8b5a2b; --teal: #4a7c74; --teal-soft: #e8f3f0;
+      --line: #e0d6c8; --alert: #b45a42;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg); color: var(--ink);
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.75rem 1.25rem; background: #ebe4d8;
+      border-bottom: 1px solid var(--line); flex-shrink: 0;
+    }
+    .topbar .author { font-size: 0.95rem; color: var(--accent); font-weight: 700; }
+    .topbar .hint { font-size: 0.8rem; color: var(--muted); }
+    .topbar .hint kbd {
+      display: inline-block; padding: 0.1rem 0.4rem;
+      border: 1px solid var(--line); border-radius: 4px;
+      background: #fff; font-family: system-ui, sans-serif; font-size: 0.75rem;
+    }
+    .deck {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      padding: 1rem; position: relative;
+    }
+    .slide {
+      display: none; width: min(640px, 100%); background: var(--card);
+      border: 1px solid var(--line); border-radius: 20px;
+      padding: 1.75rem 1.5rem 1.5rem;
+      box-shadow: 0 4px 24px rgba(60,40,20,0.06);
+      text-align: center; animation: fadeIn 0.35s ease;
+    }
+    .slide.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+    .slide h2 { font-size: 1.35rem; color: var(--accent); margin-bottom: 1rem; font-weight: 700; }
+    .med-wrap {
+      display: flex; justify-content: center; margin: 0.35rem auto 1rem;
+      position: relative; min-height: 210px; align-items: center;
+    }
+    .med {
+      width: 170px; height: auto; display: block;
+      user-select: none; -webkit-user-drag: none;
+    }
+    .slide.fade-body .med { opacity: 0.18; transition: opacity 0.5s ease; }
+    .slide.pulse-breath .med {
+      animation: softPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes softPulse {
+      0%, 100% { filter: drop-shadow(0 0 0 transparent); transform: scale(1); }
+      50% { filter: drop-shadow(0 0 6px rgba(126, 200, 227, 0.55)); transform: scale(1.02); }
+    }
+    .scan-dot {
+      position: absolute; width: 12px; height: 12px; border-radius: 50%;
+      transform: translate(-50%, -50%); pointer-events: none;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.9);
+    }
+    .scan-dot.g { background: #5a9e6f; }
+    .scan-dot.b { background: #4a8ab5; }
+    .pin {
+      position: absolute; width: 18px; height: 18px; border-radius: 50% 50% 50% 0;
+      background: var(--alert); transform: translate(-50%, -50%) rotate(-45deg);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2); pointer-events: none;
+    }
+    .pin::after {
+      content: ""; position: absolute; width: 6px; height: 6px; border-radius: 50%;
+      background: #fff; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    }
+    .thought {
+      position: absolute; border-radius: 50%;
+      background: rgba(139, 90, 43, 0.12); border: 1.5px solid rgba(139, 90, 43, 0.35);
+      pointer-events: none;
+    }
+    .body { font-size: 1.08rem; line-height: 1.55; color: var(--ink); margin: 0.4rem 0; }
+    .muted { color: var(--muted); font-size: 0.98rem; }
+    .callout {
+      margin: 1rem auto 0; max-width: 92%; padding: 0.75rem 1rem;
+      border-radius: 12px; background: var(--teal-soft);
+      border: 1px solid #b5d4cc; color: var(--teal); font-weight: 700; font-size: 1rem;
+    }
+    .callout.cream {
+      background: #fdf6ea; border-color: var(--line); color: var(--ink); font-weight: 400;
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; padding: 0.85rem 1rem 1.25rem; flex-shrink: 0;
+    }
+    .nav button {
+      appearance: none; border: 1px solid var(--line); background: #fff;
+      color: var(--accent); font: inherit; font-size: 0.95rem;
+      padding: 0.55rem 1.1rem; border-radius: 999px; cursor: pointer; min-width: 6.5rem;
+    }
+    .nav button:hover { background: #f7f1e8; }
+    .nav button:disabled { opacity: 0.35; cursor: default; }
+    .progress { font-size: 0.9rem; color: var(--muted); min-width: 4rem; text-align: center; }
+    .dots { display: flex; gap: 0.4rem; justify-content: center; margin-top: 0.25rem; }
+    .dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--line); cursor: pointer; }
+    .dots span.on { background: var(--accent); }
+    @media (max-width: 520px) {
+      .slide { padding: 1.25rem 1rem; }
+      .med { width: 140px; }
+      .topbar .hint { display: none; }
+      .body { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="author">Dhana Kumar · Anapanasati</div>
+    <div class="hint"><kbd>←</kbd> <kbd>→</kbd> or <kbd>Space</kbd> to navigate</div>
+  </div>
+
+  <div class="deck" id="deck">
+    <section class="slide active" data-i="0">
+      <h2>1 · Comfortable Posture</h2>
+      <div class="med-wrap"><img class="med" alt="Meditator"></div>
+      <p class="body">Sit so the body can rest completely.</p>
+      <p class="muted">No force. No strain. Soft natural ease.</p>
+      <div class="callout">Comfort first — then the mind can settle.</div>
+    </section>
+
+    <section class="slide" data-i="1">
+      <h2>2 · Scan the Whole Body</h2>
+      <div class="med-wrap">
+        <img class="med" alt="Meditator">
+        <span class="scan-dot g" style="left:48%; top:10%"></span>
+        <span class="scan-dot b" style="left:48%; top:24%"></span>
+        <span class="scan-dot g" style="left:30%; top:38%"></span>
+        <span class="scan-dot b" style="left:66%; top:38%"></span>
+        <span class="scan-dot g" style="left:48%; top:52%"></span>
+        <span class="scan-dot b" style="left:34%; top:68%"></span>
+        <span class="scan-dot g" style="left:62%; top:68%"></span>
+        <span class="scan-dot b" style="left:48%; top:84%"></span>
+      </div>
+      <p class="body">Closely watch every part of the body.</p>
+      <p class="muted">Shoulders · neck · back · hips · legs · jaw</p>
+      <p class="body" style="color:var(--teal); font-weight:700; margin-top:0.6rem">Wherever there is tightness — adjust.</p>
+    </section>
+
+    <section class="slide" data-i="2">
+      <h2>3 · The Ant-Bite Example</h2>
+      <div class="med-wrap">
+        <img class="med" alt="Meditator">
+        <span class="pin" style="left:68%; top:36%"></span>
+      </div>
+      <p class="body">If an ant bites you, you know exactly where it is.</p>
+      <p class="body" style="color:var(--teal); font-weight:700">You go there and make that spot relax.</p>
+      <div class="callout cream">Use the same precision for every tiny discomfort in the body.</div>
+    </section>
+
+    <section class="slide fade-body" data-i="3">
+      <h2>4 · Body Fades… Breath Remains</h2>
+      <div class="med-wrap"><img class="med" alt="Meditator"></div>
+      <p class="body">When no discomfort is left,</p>
+      <p class="body">the body fades into the background.</p>
+      <p class="body" style="color:var(--teal); font-weight:700; margin-top:0.5rem">Only the natural breath remains.</p>
+    </section>
+
+    <section class="slide" data-i="4">
+      <h2>5 · If Discomfort Returns…</h2>
+      <div class="med-wrap">
+        <img class="med" alt="Meditator">
+        <span class="pin" style="left:68%; top:36%"></span>
+      </div>
+      <p class="body">Body slowly “reappears” from the fade —</p>
+      <p class="body">an alert that something needs adjusting.</p>
+      <p class="body" style="color:var(--teal); font-weight:700; margin-top:0.5rem">Pause. Soften that place. Return to ease.</p>
+    </section>
+
+    <section class="slide pulse-breath" data-i="5">
+      <h2>6 · Stay with the Breath Path</h2>
+      <div class="med-wrap"><img class="med" alt="Meditator"></div>
+      <p class="body">Attention rests only on natural breath.</p>
+      <p class="body">Feel sensations inside the breath path —</p>
+      <p class="body" style="color:var(--teal); font-weight:700; margin-top:0.5rem">as air moves in… and as it moves out.</p>
+    </section>
+
+    <section class="slide" data-i="6">
+      <h2>7 · When Thoughts Appear</h2>
+      <div class="med-wrap">
+        <img class="med" alt="Meditator">
+        <span class="thought" style="width:36px;height:36px;left:6%;top:6%"></span>
+        <span class="thought" style="width:48px;height:48px;right:4%;top:2%"></span>
+        <span class="thought" style="width:28px;height:28px;right:12%;top:26%"></span>
+      </div>
+      <p class="body">Thoughts will come — that is natural.</p>
+      <p class="body">Simply be aware: “a thought is here.”</p>
+      <p class="body" style="color:var(--teal); font-weight:700; margin-top:0.4rem">Gently return to the breath.</p>
+      <div class="callout">Aware → Return → Continue</div>
+    </section>
+  </div>
+
+  <div class="nav">
+    <button type="button" id="prev" aria-label="Previous slide">← Back</button>
+    <div>
+      <div class="progress"><span id="cur">1</span> / <span id="total">7</span></div>
+      <div class="dots" id="dots"></div>
+    </div>
+    <button type="button" id="next" aria-label="Next slide">Next →</button>
+  </div>
+
+  <script src="meditator-data.js"></script>
+  <script>
+    (function () {
+      var medSrc = (typeof window.ANAPANASATI_MED === "string" && window.ANAPANASATI_MED.indexOf("image/") > -1)
+        ? window.ANAPANASATI_MED
+        : "meditator.png";
+      document.querySelectorAll("img.med").forEach(function (img) {
+        img.src = medSrc;
+        img.onerror = function () { this.onerror = null; this.src = "meditator.png"; };
+      });
+
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const total = slides.length;
+      let i = 0;
+      const curEl = document.getElementById("cur");
+      const totalEl = document.getElementById("total");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      const dotsEl = document.getElementById("dots");
+      totalEl.textContent = total;
+
+      for (let n = 0; n < total; n++) {
+        const s = document.createElement("span");
+        if (n === 0) s.classList.add("on");
+        s.addEventListener("click", function () { go(n); });
+        dotsEl.appendChild(s);
+      }
+
+      function go(n) {
+        if (n < 0 || n >= total) return;
+        slides[i].classList.remove("active");
+        dotsEl.children[i].classList.remove("on");
+        i = n;
+        slides[i].classList.add("active");
+        dotsEl.children[i].classList.add("on");
+        curEl.textContent = i + 1;
+        prevBtn.disabled = i === 0;
+        nextBtn.disabled = i === total - 1;
+        try { history.replaceState(null, "", "#s" + (i + 1)); } catch (e) {}
+      }
+
+      function next() { go(i + 1); }
+      function prev() { go(i - 1); }
+
+      prevBtn.addEventListener("click", prev);
+      nextBtn.addEventListener("click", next);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+        switch (e.key) {
+          case "ArrowRight": case "ArrowDown": case " ": case "PageDown": case "n": case "N":
+            e.preventDefault(); next(); break;
+          case "ArrowLeft": case "ArrowUp": case "PageUp": case "p": case "P": case "Backspace":
+            e.preventDefault(); prev(); break;
+          case "Home": e.preventDefault(); go(0); break;
+          case "End": e.preventDefault(); go(total - 1); break;
+        }
+      });
+
+      var tx = null;
+      document.getElementById("deck").addEventListener("touchstart", function (e) {
+        tx = e.changedTouches[0].screenX;
+      }, { passive: true });
+      document.getElementById("deck").addEventListener("touchend", function (e) {
+        if (tx == null) return;
+        var dx = e.changedTouches[0].screenX - tx;
+        if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+        tx = null;
+      }, { passive: true });
+
+      var m = location.hash.match(/s(\d+)/i);
+      if (m) {
+        var n = parseInt(m[1], 10) - 1;
+        if (n >= 0 && n < total) go(n); else go(0);
+      } else go(0);
+    })();
+  </script>
+</body>
+</html>
