@@ -3,219 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anapanasati — Comfortable Posture | Dhana Kumar</title>
+  <title>Anapanasati · Comfortable Posture | Dhana Kumar</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #1a1410;
-      color: #2c1f14;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    :root {
+      --bg: #f4f0ea; --card: #fffdf9; --ink: #2c241c; --muted: #6b635a;
+      --accent: #8b5a2b; --teal: #4a7c74; --teal-soft: #e8f3f0;
+      --line: #e0d6c8; --alert: #b45a42;
     }
-    #deck {
-      width: 100%;
-      max-width: 420px;
-      aspect-ratio: 3/4;
-      max-height: 85vh;
-      position: relative;
-      background: #faf6f0;
-      border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
-      overflow: hidden;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg); color: var(--ink);
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.75rem 1.25rem; background: #ebe4d8;
+      border-bottom: 1px solid var(--line); flex-shrink: 0;
+    }
+    .topbar .author { font-size: 0.95rem; color: var(--accent); font-weight: 700; }
+    .topbar .hint { font-size: 0.8rem; color: var(--muted); }
+    .topbar .hint kbd {
+      display: inline-block; padding: 0.1rem 0.4rem;
+      border: 1px solid var(--line); border-radius: 4px;
+      background: #fff; font-family: system-ui, sans-serif; font-size: 0.75rem;
+    }
+    .deck {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      padding: 1rem; position: relative;
     }
     .slide {
-      position: absolute;
-      inset: 0;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 28px 24px 20px;
-      text-align: center;
-      background: #faf6f0;
+      display: none; width: min(640px, 100%); background: var(--card);
+      border: 1px solid var(--line); border-radius: 20px;
+      padding: 1.75rem 1.5rem 1.5rem;
+      box-shadow: 0 4px 24px rgba(60,40,20,0.06);
+      text-align: center; animation: fadeIn 0.35s ease;
     }
-    .slide.active { display: flex; }
-    .slide h1 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #2c1f14;
-      margin-bottom: 6px;
-      line-height: 1.25;
+    .slide.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
     }
-    .slide h2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #5a4030;
-      margin-bottom: 14px;
-    }
-    .slide p, .slide li {
-      font-size: 0.95rem;
-      line-height: 1.45;
-      color: #3d2a1f;
-    }
-    .slide ul {
-      text-align: left;
-      margin: 8px 0 0;
-      padding-left: 1.2em;
-    }
-    .slide li { margin-bottom: 6px; }
+    .slide h2 { font-size: 1.35rem; color: var(--accent); margin-bottom: 1rem; font-weight: 700; }
     .med-wrap {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 0;
-      margin: 8px 0;
+      display: flex; justify-content: center; margin: 0.35rem auto 1rem;
+      position: relative; min-height: 210px; align-items: center;
     }
     .med {
-      width: 180px;
-      max-width: 48vw;
-      height: auto;
-      object-fit: contain;
+      width: 170px; height: auto; display: block;
+      user-select: none; -webkit-user-drag: none;
     }
     .slide.fade-body .med { opacity: 0.18; transition: opacity 0.5s ease; }
     .slide.pulse-breath .med {
-      animation: pulse 3.2s ease-in-out infinite;
+      animation: softPulse 2.4s ease-in-out infinite;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
+    @keyframes softPulse {
+      0%, 100% { filter: drop-shadow(0 0 0 transparent); transform: scale(1); }
+      50% { filter: drop-shadow(0 0 6px rgba(126, 200, 227, 0.55)); transform: scale(1.02); }
     }
-    .tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #8b6914;
-      background: #f5ecd4;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 10px;
+    .scan-dot {
+      position: absolute; width: 12px; height: 12px; border-radius: 50%;
+      border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.08); pointer-events: none;
     }
-    .footer-note {
-      font-size: 0.78rem;
-      color: #7a6355;
-      margin-top: 10px;
+    .scan-dot.g { background: #6a9e8a; }
+    .scan-dot.b { background: var(--accent); }
+    .pin {
+      position: absolute; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--alert); border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--alert); pointer-events: none;
+    }
+    .thought {
+      position: absolute; border: 1.5px solid var(--line);
+      background: #faf8f5; border-radius: 50%; pointer-events: none;
+    }
+    .body { font-size: 1.08rem; line-height: 1.55; color: var(--ink); margin: 0.4rem 0; }
+    .muted { color: var(--muted); font-size: 0.98rem; }
+    .callout {
+      margin: 1rem auto 0; max-width: 92%; padding: 0.75rem 1rem;
+      border-radius: 12px; background: var(--teal-soft);
+      border: 1px solid #b5d4cc; color: var(--teal); font-weight: 700; font-size: 1rem;
+    }
+    .callout.cream {
+      background: #fdf6ea; border-color: var(--line); color: var(--ink); font-weight: 400;
     }
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 420px;
-      margin-top: 16px;
-      padding: 0 8px;
-      gap: 12px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; padding: 0.85rem 1rem 1.25rem; flex-shrink: 0;
     }
     .nav button {
-      background: #3d2a1f;
-      color: #faf6f0;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      min-width: 90px;
+      appearance: none; border: 1px solid var(--line); background: #fff;
+      color: var(--accent); font: inherit; font-size: 0.95rem;
+      padding: 0.55rem 1.1rem; border-radius: 999px; cursor: pointer; min-width: 6.5rem;
     }
-    .nav button:disabled {
-      opacity: 0.35;
-      cursor: default;
-    }
-    .nav button:hover:not(:disabled) { background: #5a4030; }
-    .progress {
-      font-size: 0.85rem;
-      color: #c4b5a5;
-      text-align: center;
-    }
-    .dots {
-      display: flex;
-      gap: 6px;
-      justify-content: center;
-      margin-top: 6px;
-    }
+    .nav button:hover { background: #f7f1e8; }
+    .nav button:disabled { opacity: 0.35; cursor: default; }
+    .progress { font-size: 0.9rem; color: var(--muted); text-align: center; margin-bottom: 0.35rem; }
+    .dots { display: flex; gap: 0.4rem; justify-content: center; }
     .dots span {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: #5a4a3a;
+      width: 8px; height: 8px; border-radius: 50%; background: #d0c6b8; cursor: pointer;
     }
-    .dots span.on { background: #e8c87a; }
+    .dots span.on { background: var(--accent); }
     @media (max-width: 520px) {
-      #deck { max-height: 78vh; border-radius: 12px; }
+      .slide { padding: 1.25rem 1rem 1.1rem; }
       .med { width: 140px; }
-      .slide { padding: 20px 16px 14px; }
-      .slide h1 { font-size: 1.15rem; }
+      .topbar { flex-direction: column; gap: 0.25rem; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <div id="deck">
+  <div class="topbar">
+    <div class="author">Dhana Kumar</div>
+    <div class="hint">Use <kbd>←</kbd> <kbd>→</kbd> or <kbd>Space</kbd> · swipe on phone</div>
+  </div>
+
+  <div class="deck" id="deck">
     <!-- 1 -->
-    <section class="slide active" data-i="0">
-      <span class="tag">Anapanasati</span>
-      <h1>Comfortable Posture</h1>
-      <h2>Foundation for breath awareness</h2>
+    <section class="slide active">
+      <h2>Anapanasati · Comfortable Posture</h2>
       <div class="med-wrap"><img class="med" alt="Meditator"></div>
-      <p class="footer-note">Sit so the body can rest completely.</p>
+      <p class="body">Sit so the body can rest completely.</p>
+      <p class="muted">Foundation for breath awareness.</p>
     </section>
+
     <!-- 2 -->
-    <section class="slide" data-i="1">
-      <span class="tag">Posture</span>
-      <h1>Sit comfortably</h1>
+    <section class="slide">
+      <h2>Sit comfortably</h2>
       <div class="med-wrap">
         <img class="med" alt="Meditator">
       </div>
-      <ul>
-        <li>Spine naturally upright — not rigid</li>
-        <li>Shoulders soft, chest open</li>
-        <li>Hands rest in the lap</li>
-      </ul>
+      <p class="body">Spine naturally upright — not rigid.</p>
+      <p class="body">Shoulders soft, chest open.</p>
+      <p class="body">Hands rest in the lap.</p>
     </section>
+
     <!-- 3 -->
-    <section class="slide pulse-breath" data-i="2">
-      <span class="tag">Breath</span>
-      <h1>Natural breathing</h1>
+    <section class="slide pulse-breath">
+      <h2>Natural breathing</h2>
       <div class="med-wrap">
         <img class="med" alt="Meditator">
       </div>
-      <p>No force. No strain. Soft natural effort.</p>
+      <p class="body">No force. No strain.</p>
+      <p class="callout">Soft natural effort.</p>
     </section>
+
     <!-- 4 -->
-    <section class="slide" data-i="3">
-      <span class="tag">Awareness</span>
-      <h1>Know the breath</h1>
+    <section class="slide">
+      <h2>Know the breath</h2>
       <div class="med-wrap"><img class="med" alt="Meditator"></div>
-      <p>Feel the breath as it is — in and out.</p>
+      <p class="body">Feel the breath as it is — in and out.</p>
     </section>
+
     <!-- 5 -->
-    <section class="slide fade-body" data-i="4">
-      <span class="tag">Body</span>
-      <h1>Body becomes quiet</h1>
+    <section class="slide fade-body">
+      <h2>Body becomes quiet</h2>
       <div class="med-wrap">
         <img class="med" alt="Meditator">
       </div>
-      <p>As the body settles, attention stays with the breath.</p>
+      <p class="body">As the body settles, attention stays with the breath.</p>
     </section>
+
     <!-- 6 -->
-    <section class="slide" data-i="5">
-      <span class="tag">Mind</span>
-      <h1>Mind settles</h1>
+    <section class="slide">
+      <h2>Mind settles</h2>
       <div class="med-wrap"><img class="med" alt="Meditator"></div>
-      <p>Thoughts may come and go. Return gently to the breath.</p>
+      <p class="body">Thoughts may come and go.</p>
+      <p class="muted">Return gently to the breath.</p>
     </section>
+
     <!-- 7 -->
-    <section class="slide" data-i="6">
-      <span class="tag">Practice</span>
-      <h1>Continue with ease</h1>
+    <section class="slide">
+      <h2>Continue with ease</h2>
       <div class="med-wrap">
         <img class="med" alt="Meditator">
       </div>
-      <p class="footer-note">Comfort first. Awareness follows.</p>
+      <p class="callout cream">Comfort first. Awareness follows.</p>
     </section>
   </div>
 
@@ -228,17 +190,10 @@
     <button type="button" id="next" aria-label="Next slide">Next →</button>
   </div>
 
-  <script src="meditator-data.js"></script>
   <script>
     (function () {
-      // Use exact original PSSM meditator PNG (not SVG recreation)
-      var medSrc = (window.ANAPANASATI_MED && window.ANAPANASATI_MED.indexOf('image/png') > -1)
-        ? window.ANAPANASATI_MED
-        : 'meditator.png';
-      document.querySelectorAll('img.med').forEach(function (img) {
-        img.src = medSrc;
-        img.onerror = function () { this.onerror = null; this.src = 'meditator.png'; };
-      });
+      var MED = "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20160%20189%22%20width%3D%22160%22%20height%3D%22189%22%3E%0A%20%20%3C%21--%20pants%20-%20wider%20seated%20base%20--%3E%0A%20%20%3Cpath%20d%3D%22M18%20128%0A%20%20%20%20%20%20%20%20%20%20%20C12%20155%2040%20180%2070%20185%0A%20%20%20%20%20%20%20%20%20%20%20C78%20188%2082%20186%2080%20186%0A%20%20%20%20%20%20%20%20%20%20%20C78%20186%2082%20188%2090%20185%0A%20%20%20%20%20%20%20%20%20%20%20C120%20180%20148%20155%20142%20128%0A%20%20%20%20%20%20%20%20%20%20%20C134%20118%20100%20112%2080%20112%0A%20%20%20%20%20%20%20%20%20%20%20C60%20112%2026%20118%2018%20128Z%22%20fill%3D%22%233d2a1f%22/%3E%0A%20%20%3C%21--%20hands%20clasped%20in%20center%20of%20lap%20--%3E%0A%20%20%3Cellipse%20cx%3D%2270%22%20cy%3D%22148%22%20rx%3D%2213%22%20ry%3D%229%22%20fill%3D%22%23e8c4a8%22/%3E%0A%20%20%3Cellipse%20cx%3D%2290%22%20cy%3D%22148%22%20rx%3D%2213%22%20ry%3D%229%22%20fill%3D%22%23e8c4a8%22/%3E%0A%20%20%3Cpath%20d%3D%22M62%20146%20Q80%20154%2098%20146%22%20fill%3D%22none%22%20stroke%3D%22%23d4a88a%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3C%21--%20torso%20with%20clearer%20shoulders%20--%3E%0A%20%20%3Cpath%20d%3D%22M42%2055%0A%20%20%20%20%20%20%20%20%20%20%20C36%2085%2042%20122%2058%20140%0A%20%20%20%20%20%20%20%20%20%20%20Q70%20152%2080%20152%0A%20%20%20%20%20%20%20%20%20%20%20Q90%20152%20102%20140%0A%20%20%20%20%20%20%20%20%20%20%20C118%20122%20124%2085%20118%2055%0A%20%20%20%20%20%20%20%20%20%20%20C114%2042%2098%2034%2080%2034%0A%20%20%20%20%20%20%20%20%20%20%20C62%2034%2046%2042%2042%2055Z%22%20fill%3D%22%23e8c4a8%22/%3E%0A%20%20%3C%21--%20outer%20arm%20curves%20for%20definition%20--%3E%0A%20%20%3Cpath%20d%3D%22M48%2072%20Q38%20110%2055%20140%22%20fill%3D%22none%22%20stroke%3D%22%23c4a080%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M112%2072%20Q122%20110%20105%20140%22%20fill%3D%22none%22%20stroke%3D%22%23c4a080%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3C%21--%20neck%20--%3E%0A%20%20%3Crect%20x%3D%2271%22%20y%3D%2248%22%20width%3D%2218%22%20height%3D%2216%22%20rx%3D%225%22%20fill%3D%22%23e8c4a8%22/%3E%0A%20%20%3C%21--%20head%20--%3E%0A%20%20%3Cellipse%20cx%3D%2280%22%20cy%3D%2228%22%20rx%3D%2229%22%20ry%3D%2231%22%20fill%3D%22%23e8c4a8%22/%3E%0A%20%20%3C%21--%20ears%20--%3E%0A%20%20%3Cellipse%20cx%3D%2253%22%20cy%3D%2230%22%20rx%3D%225%22%20ry%3D%228.5%22%20fill%3D%22%23deb896%22/%3E%0A%20%20%3Cellipse%20cx%3D%22107%22%20cy%3D%2230%22%20rx%3D%225%22%20ry%3D%228.5%22%20fill%3D%22%23deb896%22/%3E%0A%20%20%3C%21--%20closed%20eyes%20--%3E%0A%20%20%3Cpath%20d%3D%22M65%2028%20Q72%2034%2079%2028%22%20fill%3D%22none%22%20stroke%3D%22%234a3728%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M81%2028%20Q88%2034%2095%2028%22%20fill%3D%22none%22%20stroke%3D%22%234a3728%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3C%21--%20mouth%20--%3E%0A%20%20%3Cline%20x1%3D%2273%22%20y1%3D%2241%22%20x2%3D%2287%22%20y2%3D%2241%22%20stroke%3D%22%234a3728%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3C%21--%20blue%20breath%20line%20-%20thinner%2C%20nose%20to%20mid-chest%20like%20original%20--%3E%0A%20%20%3Cline%20x1%3D%2280%22%20y1%3D%2216%22%20x2%3D%2280%22%20y2%3D%22112%22%20stroke%3D%22%237ec8e3%22%20stroke-width%3D%223.2%22%20stroke-linecap%3D%22round%22/%3E%0A%3C/svg%3E";
+      document.querySelectorAll("img.med").forEach(function (img) { img.src = MED; });
 
       const slides = Array.from(document.querySelectorAll(".slide"));
       const total = slides.length;
@@ -250,26 +205,26 @@
       const dotsEl = document.getElementById("dots");
       totalEl.textContent = total;
 
-      for (let d = 0; d < total; d++) {
+      for (let n = 0; n < total; n++) {
         const s = document.createElement("span");
-        if (d === 0) s.className = "on";
+        if (n === 0) s.classList.add("on");
+        s.addEventListener("click", function () { go(n); });
         dotsEl.appendChild(s);
       }
-      const dots = dotsEl.querySelectorAll("span");
 
       function go(n) {
         if (n < 0 || n >= total) return;
         slides[i].classList.remove("active");
+        dotsEl.children[i].classList.remove("on");
         i = n;
         slides[i].classList.add("active");
+        dotsEl.children[i].classList.add("on");
         curEl.textContent = i + 1;
         prevBtn.disabled = i === 0;
         nextBtn.disabled = i === total - 1;
-        dots.forEach(function (dot, idx) {
-          dot.className = idx === i ? "on" : "";
-        });
-        location.hash = "s" + (i + 1);
+        try { history.replaceState(null, "", "#s" + (i + 1)); } catch (e) {}
       }
+
       function next() { go(i + 1); }
       function prev() { go(i - 1); }
 
@@ -277,13 +232,12 @@
       nextBtn.addEventListener("click", next);
 
       document.addEventListener("keydown", function (e) {
+        if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
         switch (e.key) {
           case "ArrowRight": case "ArrowDown": case " ": case "PageDown": case "n": case "N":
-            e.preventDefault();
-            next(); break;
+            e.preventDefault(); next(); break;
           case "ArrowLeft": case "ArrowUp": case "PageUp": case "p": case "P": case "Backspace":
-            e.preventDefault();
-            prev(); break;
+            e.preventDefault(); prev(); break;
           case "Home": e.preventDefault(); go(0); break;
           case "End": e.preventDefault(); go(total - 1); break;
         }
