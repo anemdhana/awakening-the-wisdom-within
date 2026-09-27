@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramtha · Thought → Emotion → Soul → Magnetic Pull (Manifestation Cycle)</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #8b4513;
+      --card: #fff;
+      --border: #e8e0d5;
+      --shloka-bg: #fdf8f0;
+      --shloka-border: #c9a66b;
+      --heading: #3d2314;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #f4f0ea;
+    }
+    .site-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+    .author-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0 1rem;
+    }
+    .author-row .badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f0edf7, #d8d0e8);
+      border: 2px solid rgba(107, 91, 149, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      color: #4a3c7a;
+      font-weight: 700;
+    }
+    .author-info strong { display: block; font-size: 1.05rem; }
+    .author-info span { font-size: 0.85rem; color: var(--muted); }
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.4rem;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 1.45rem;
+      line-height: 1.3;
+      margin: 0 0 0.8rem;
+      color: #2c1810;
+    }
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+      border-left: 3px solid var(--shloka-border);
+      padding-left: 1rem;
+    }
+    .diagram-wrap {
+      margin: 1.2rem 0 1.6rem;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .diagram-wrap img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+    .diagram-caption {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.12rem;
+      margin: 1.8rem 0 0.75rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--shloka-border);
+      color: var(--heading);
+    }
+    .qa-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 0.9rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .qa-block p { margin: 0.45rem 0; font-size: 1.03rem; }
+    .quote-card {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.2rem;
+      margin: 0.9rem 0;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: #2c1810;
+      font-style: italic;
+    }
+    .quote-card .ref {
+      display: block;
+      margin-top: 0.55rem;
+      font-size: 0.88rem;
+      color: #8b4513;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .step-card {
+      display: flex;
+      gap: 0.85rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.95rem 1.1rem;
+      margin-bottom: 0.65rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: #2c1810;
+      color: #f5ebe0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .step-body strong { color: var(--heading); display: block; margin-bottom: 0.2rem; }
+    .step-body p { margin: 0; font-size: 0.98rem; color: #333; }
+    .step-body .ramtha { font-size: 0.9rem; color: var(--accent); margin-top: 0.35rem; }
+    .highlight {
+      background: var(--shloka-bg);
+      border-left: 4px solid var(--shloka-border);
+      padding: 0.85rem 1.1rem;
+      margin: 0.9rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 1.02rem;
+    }
+    .summary-card {
+      background: #2c1810;
+      color: #f5ebe0;
+      border-radius: 12px;
+      padding: 1.25rem 1.4rem;
+      margin: 1.8rem 0 1.2rem;
+      line-height: 1.65;
+    }
+    .summary-card strong { color: #e8c48a; }
+    .closing {
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    ul.simple { margin: 0.4rem 0; padding-left: 1.2rem; }
+    ul.simple li { margin-bottom: 0.3rem; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.25rem; }
+      .author-row .badge { width: 56px; height: 56px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrap">
+    <article>
+      <div class="author-row">
+        <div class="badge" aria-hidden="true">R</div>
+        <div class="author-info">
+          <strong>Ramtha</strong>
+          <span>Thought · Emotion · Soul · Magnetic manifestation</span>
+        </div>
+      </div>
+
+      <p class="eyebrow">Study note · The White Book mechanism</p>
+      <h1>Thought → Emotion (Frequency) → Soul → Magnetic Pull</h1>
+      <p class="intro">
+        How a clear thought becomes outer reality — the same law Ramtha teaches for healing the body, changing form, and drawing any ideal. The diagram below maps the cycle; the text aligns each step with <em>The White Book</em>.
+      </p>
+
+      <div class="diagram-wrap">
+        <img src="assets/ramtha-thought-emotion-soul-cycle.jpg"
+             alt="8-step cycle: Thought, Emotion (Frequency), Recorded in Soul, Magnetic Pull, Opportunities, Inspired Action, Outer Form Matches, Continue the Cycle"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <p class="diagram-caption" style="display:none;">Diagram: 8-step manifestation cycle (Thought → Emotion → Soul → Magnetic Pull → Opportunities → Action → Outer Form → Continue)</p>
+        <p class="diagram-caption">Thought creates emotion (frequency) → recorded in the soul → magnetic pull → opportunities → inspired action → outer form matches → keep the cycle elevated.</p>
+      </div>
+
+      <h2 class="section-title">The law in one breath</h2>
+      <div class="qa-block">
+        <div class="quote-card">
+          Whatever thought of fulfillment you allow yourself to feel leaves your body through your electromagnetic field and draws to you whatever will produce the same feeling.
+          <span class="ref">— Ramtha</span>
+        </div>
+        <p>Thought accepted → sensation in every cell → recorded in the soul as emotion → becomes the magnetic program of your life. That is the cycle the diagram shows.</p>
+      </div>
+
+      <h2 class="section-title">The eight steps (Ramtha’s map)</h2>
+
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Thought</strong>
+          <p>You create a clear thought or image of what you want. The brain does not invent thought — it receives it. You focus a definite ideal.</p>
+          <p class="ramtha">Ramtha: Whatever you contemplate long enough, merely by desire, you will become.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Emotion (Frequency)</strong>
+          <p>The thought is accepted and sent through the nervous system. Every cell feels it as joy, gratitude, love, excitement — or fear, lack, anger. That feeling <em>is</em> the frequency.</p>
+          <p class="ramtha">Ramtha: Emotion is the frequency. You can always tell how something is thinking through the frequency it emits called emotion.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Recorded in Soul</strong>
+          <p>The soul (emotional entity) records the emotion scientifically, without judgment. It becomes a seed or program in the Book of Life — not merely “subconscious” in the ordinary sense, but the soul’s permanent memory near the heart.</p>
+          <p class="ramtha">Ramtha: The soul is a grand recorder… every emotion felt within the embodiment is stored there.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>Magnetic Pull</strong>
+          <p>The recorded emotion leaves as an electromagnetic signature. It attracts people, opportunities, ideas, and resources that match that same frequency.</p>
+          <p class="ramtha">Ramtha: The more completely and intensely the desire is felt, the more complete the fulfillment. Knowingness amplifies the pull.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <strong>Opportunities Appear</strong>
+          <p>You begin to notice aligned events: right people, new ideas, helpful resources, favorable situations. These are not accidents — they are the magnetic match to what the soul is broadcasting.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <strong>Inspired Action</strong>
+          <p>You take steps that feel natural and supported. Action is not forced from fear; it is guided by the same frequency already recorded. The universe and the body move together.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">7</div>
+        <div class="step-body">
+          <strong>Outer Form Matches</strong>
+          <p>Inner thought and emotion take outer form in physical reality — home, health, relationship, limb, healing, or any ideal given to a fully operational brain and soul.</p>
+          <p class="ramtha">Ramtha: Fully operational, your brain has the ability to completely heal your body in a splendid moment, or to change it physically into any ideal you give it.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">8</div>
+        <div class="step-body">
+          <strong>Continue the Cycle</strong>
+          <p>Keep thoughts pure and emotions high. The cycle does not stop. Elevated thought → elevated emotion → new record in the soul → stronger magnetic pull → more of what matches. Awareness keeps the loop clean.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">Critical clarifications (White Book)</h2>
+      <div class="qa-block">
+        <ul class="simple">
+          <li><strong>Soul ≠ ordinary “subconscious.”</strong> In Ramtha the soul is the emotional entity that stores every felt frequency as the Book of Life. It sits near the heart and is the magnetic engine of your tomorrows.</li>
+          <li><strong>Feeling is non-negotiable.</strong> Thinking “I should be free / healed / abundant” without feeling it does not rewrite the record. Emotion is what the soul stores.</li>
+          <li><strong>Knowingness is high frequency.</strong> Absolute certainty (“it is already so”) amplifies the magnetic field far more than hope or belief.</li>
+          <li><strong>Same law for body and world.</strong> Growing a limb, healing in a moment, or drawing a home uses the identical cycle: ideal thought → felt frequency → soul record → outer match.</li>
+          <li><strong>Lower frequencies also magnetize.</strong> Fear, lack, and judgment run the same cycle and draw matching circumstances. Starve those; feed love, joy, knowingness.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">How to use the cycle daily</h2>
+      <div class="qa-block">
+        <div class="highlight">
+          1. Hold one clear ideal (health, freedom for all life, peace, a specific form).<br>
+          2. Desire it and <strong>feel</strong> it as already true for a few seconds to a few minutes.<br>
+          3. Know it is so — do not argue with the old program.<br>
+          4. Notice opportunities without forcing; take inspired action.<br>
+          5. When the old frequency rises: Catch → Name → Starve → Desire → Feel the new one again.
+        </div>
+        <p>Consistency of elevated emotion rewires the Book of Life faster than intensity without repetition.</p>
+      </div>
+
+      <div class="summary-card">
+        <p>
+          <strong>Essence</strong><br>
+          Thought → felt as emotion (frequency) → recorded in the soul → magnetic pull → outer form.<br>
+          Keep the thought pure and the emotion high. The cycle continues and brings more of what you have allowed yourself to feel.
+        </p>
+      </div>
+
+      <p class="closing">
+        Related · What Is the Soul · Spirit &amp; Soul (Light vs Emotional Entity)<br>
+        Related · Freeing Negative Thought Patterns Daily · Emotional Frequency for Animals<br>
+        Related · Brain, limb, and healing (White Book)<br>
+        Ramtha · The White Book · Awakening the Wisdom Within
+      </p>
+    </article>
+  </div>
+</body>
+</html>
