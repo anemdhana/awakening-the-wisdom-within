@@ -7,15 +7,24 @@
   <link rel="stylesheet" href="../../css/site.css">
   <style>
     .day-list { list-style: none; padding: 0; margin: 1.5rem 0; }
-    .day-list li {
+    .day-item {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; padding: 0.85rem 1rem; margin-bottom: 0.6rem;
+      gap: 12px; padding: 12px 14px; margin-bottom: 0.6rem;
       background: rgba(255,252,245,0.9); border: 1px solid #e8dcc8;
-      border-radius: 8px; flex-wrap: wrap;
+      border-radius: 12px; flex-wrap: wrap;
     }
-    .day-list a.day-title { font-weight: 600; color: #3d2b1f; text-decoration: none; flex: 1; min-width: 200px; }
-    .day-list a.day-title:hover { color: #8b4513; }
-    .day-list .pending { color: #999; font-size: 0.85rem; }
+    .day-main { flex: 1; min-width: 0; text-decoration: none; color: inherit; }
+    .day-main strong { display: block; font-size: 14px; color: #3d2b1f; margin-bottom: 2px; }
+    .day-main em { font-style: normal; font-size: 13px; color: #5c4033; line-height: 1.4; }
+    .day-langs { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+    .day-langs a {
+      display: block; min-width: 62px; padding: 3px 8px; border-radius: 6px;
+      font-size: 11px; line-height: 1.3; text-align: center; text-decoration: none;
+      color: #3d2b1f; background: rgba(255,252,247,0.95);
+      border: 1px solid rgba(186,122,58,0.28); white-space: nowrap;
+    }
+    .day-langs a:hover { background: #2f241c; color: #f7efe3; border-color: #2f241c; }
+    .day-langs .pending { color: #999; font-size: 11px; text-align: center; padding: 3px 8px; }
     .author-row {
       display: flex; align-items: center; gap: 1rem; margin: 1rem 0 1.5rem;
       flex-wrap: wrap;
@@ -62,19 +71,74 @@
         <p>ఆధ్యాత్మిక జ్ఞానంలో తెలుసుకోవాల్సినవి <strong>రెండే</strong>: <strong>శక్తి</strong> మరియు <strong>చైతన్యం</strong>. శక్తి = పార్వతి, దుర్గ, ఆదిశక్తి, పరాశక్తి. చైతన్యం = ఈశ్వరుడు, సర్వేశ్వరుడు, సర్వాంతర్యామి.</p>
         <p>దేవీ నవరాత్రులు కేవలం ఎంజాయ్‌మెంట్ కాదు — <strong>శక్తి సాధనకు అనుకూలమైన తొమ్మిది రోజులు</strong>. ఈ కాలంలో పరాశక్తి ఆశక్తి వెయ్యి రెట్లు అధికంగా అందుబాటులో ఉంటుంది. లైఫ్‌లో స్ట్రగుల్ అవుతున్నవారు, స్టక్ అయినవారు సాధన చేస్తే ఫలితం పొందుతారు.</p>
         <p>ఈ 9 రోజుల ప్రోగ్రామ్ డా. న్యూటన్ బోధనల ఆధారంగా — సమర్పణ భావం, అంతర్ముఖ శక్తి, దేవీ సాధన, టోటల్ సరెండర్.</p>
+        <p>భాషలు: <strong>English</strong> · <strong>తెలుగు</strong></p>
       </div>
 
       <h2>9 రోజుల షెడ్యూల్</h2>
       <ul class="day-list">
-        <li><span class="day-title">రోజు 1 · దేవీ నవరాత్రులు — పరిచయం</span><span class="pending">త్వరలో</span></li>
-        <li><a class="day-title" href="day-02.html">రోజు 2 · శక్తి & చైతన్యం · దేవీ సమర్పణ సాధన</a></li>
-        <li><span class="day-title">రోజు 3</span><span class="pending">త్వరలో</span></li>
-        <li><span class="day-title">రోజు 4</span><span class="pending">త్వరలో</span></li>
-        <li><span class="day-title">రోజు 5</span><span class="pending">త్వరలో</span></li>
-        <li><span class="day-title">రోజు 6</span><span class="pending">త్వరలో</span></li>
-        <li><span class="day-title">రోజు 7</span><span class="pending">త్వరలో</span></li>
-        <li><span class="day-title">రోజు 8</span><span class="pending">త్వరలో</span></li>
-        <li><span class="day-title">రోజు 9 · విజయదశమి</span><span class="pending">త్వరలో</span></li>
+        <li>
+          <div class="day-item">
+            <span class="day-main">
+              <strong>రోజు 1</strong>
+              <em>దేవీ నవరాత్రులు — పరిచయం</em>
+            </span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <a class="day-main" href="day-02.html">
+              <strong>రోజు 2</strong>
+              <em>శక్తి & చైతన్యం · దేవీ సమర్పణ సాధన</em>
+            </a>
+            <div class="day-langs">
+              <a href="day-02.html">English</a>
+              <a href="day-02-te.html">తెలుగు</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <span class="day-main"><strong>రోజు 3</strong></span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <span class="day-main"><strong>రోజు 4</strong></span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <span class="day-main"><strong>రోజు 5</strong></span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <span class="day-main"><strong>రోజు 6</strong></span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <span class="day-main"><strong>రోజు 7</strong></span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <span class="day-main"><strong>రోజు 8</strong></span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="day-item">
+            <span class="day-main"><strong>రోజు 9 · విజయదశమి</strong></span>
+            <div class="day-langs"><span class="pending">త్వరలో</span></div>
+          </div>
+        </li>
       </ul>
 
       <div class="highlight">
